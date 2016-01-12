@@ -1,10 +1,10 @@
 // Our Approach Page
 
 //for the shop items section (used to be the approach footer), this is now a shared component
-@import "modules/shop_items";
+@import "../shop_items";
 
-@import "modules/video_controls";
-@import "modules/approach/chapters";
-@import "modules/approach/hero";
-@import "modules/approach/prop";
-@import "modules/approach/video";
+@import "../video_controls";
+@import "chapters";
+@import "hero";
+@import "prop";
+@import "video";

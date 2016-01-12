@@ -1,8 +1,8 @@
 // Design Mattress Page
 
-@import "modules/design/shared/hero";
-@import "modules/video_controls";
-@import "modules/design/mattress/aside";
-@import "modules/design/mattress/list_of_stats";
-@import "modules/design/shared/design_value_prop";
-@import "modules/design/shared/foam_factors";
+@import "../shared/hero";
+@import "../../video_controls";
+@import "aside";
+@import "list_of_stats";
+@import "../shared/design_value_prop";
+@import "../shared/foam_factors";

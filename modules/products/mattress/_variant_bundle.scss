@@ -1,20 +1,20 @@
 // Mattress Product Page
 
-@import "modules/products/shared";
+@import "../shared";
 
 // Product hero with carousel and add to cart module
-@import "modules/products/mattress/gallery";
-@import "modules/forms/size_selector_exposed";
+@import "gallery";
+@import "../../forms/size_selector_exposed";
 
 // Mattress info
-@import "modules/products/mattress/add_to_cart";
-@import "modules/products/mattress/add_to_cart_one_size";
-@import "modules/products/mattress/diagram";
-@import "modules/products/mattress/infographic";
-@import "modules/products/mattress/props";
+@import "add_to_cart";
+@import "add_to_cart_one_size";
+@import "diagram";
+@import "infographic";
+@import "props";
 
 // Amazon Gift Card
-@import "modules/products/mattress/gift_card_banner";
+@import "gift_card_banner";
 
-@import "modules/reviews/review";
-@import "modules/reviews/reviews_one_size";
+@import "../../reviews/review";
+@import "../../reviews/reviews_one_size";

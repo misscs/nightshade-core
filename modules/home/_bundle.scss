@@ -1,8 +1,8 @@
 // local
-@import "modules/home/home";
-@import "modules/home/sandwich";
+@import "home";
+@import "sandwich";
 
-@import "modules/gallery/gallery";
-@import "modules/press_gallery";
-@import "modules/approach";
-@import "modules/shop_items";
+@import "../gallery/gallery";
+@import "../press_gallery";
+@import "../approach";
+@import "../shop_items";

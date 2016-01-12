@@ -1,2 +1,5 @@
-# nightshade-styles
-Casper pattern and style scss library
+# Nightshade Styles
+
+_**N.B.** This repo is very specific to Casper. We've released it for others
+to share our approach, but we don't recommend using it in your production
+environment until we release `1.0.0`_

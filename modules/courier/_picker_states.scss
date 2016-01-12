@@ -1,0 +1,18 @@
+// Selected time slot
+.courier-slot-input:checked {
+  ~ .courier-slot-label {
+    background-color: color(tab-hover);
+    color: color(primary);
+    font-weight: bold;
+  }
+}
+
+// Unavailable time slot
+.is-unavailable.courier-slot-picker-slot {
+  .courier-slot-label {
+    background-color: color(light-background);
+    cursor: default;
+    text-decoration: line-through;
+    color: color(medium-text);
+  }
+}

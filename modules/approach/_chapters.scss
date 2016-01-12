@@ -1,0 +1,170 @@
+// Handle the Chapter alternating stories
+
+.approach-chapter {
+  padding: size(5em) size(mobile-sides) size(large);
+
+  hgroup {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  &-sub-header {
+    position: relative;
+    order: 1;
+    margin-bottom: size(medium);
+    padding-bottom: size(1.7em);
+
+    &:after {
+      content: '';
+      border-bottom: 2px solid color(border);
+      width: 50px;
+      position: absolute;
+      bottom: 0;
+      height: 0;
+      left: 50%;
+      margin-left: -25px;
+    }
+
+    @include respond-at-and-above($break-large) {
+      margin: size(normal) 0;
+      padding-bottom: size(large);
+
+      &:after {
+        width: 80px;
+        bottom: 6px;
+        margin-left: -40px;
+      }
+    }
+  }
+
+  &-header {
+    margin: 0 auto;
+    padding-bottom: size(smaller);
+    position: relative;
+    order: 2;
+
+    @include respond-below($break-mobile) {
+      max-width: 15em;      
+    }
+  }
+
+  @include respond-at-and-above(64em) {
+    padding: size(6em) size(mobile-sides);
+  }
+}
+
+
+.approach-stories {
+  padding: size(large) 0;
+}
+
+
+.approach-story {
+  padding: size(large);
+
+  &-copy {
+    max-width: 530px;
+
+    @include respond-between($break-mobile, $break-large) {
+      padding: 0 size(small);
+    }
+
+    @include respond-at-and-above($break-medium) {
+      width: 42%;
+    }
+
+    @include respond-at-and-above($break-large) {
+      width: 38%;
+    }
+  }
+
+  &-illustration {
+    display: inline-block;
+    width: 100%;
+    min-width: 120px;
+    margin: 0 auto size(large);
+
+    &-image {
+      max-width: 100%;
+
+      @include respond-at-and-above($break-medium) {
+        max-width: 320px;
+      }
+    }
+
+    @include respond-at-and-above($break-medium) {
+      width: 46%;
+      margin-bottom: size(small);
+      position: relative;
+      margin: 0;
+
+      &-image {
+        max-width: 360px;
+      }
+    }
+
+    @include respond-at-and-above($break-large) {
+      width: 55%;
+
+      &-image {
+        max-width: 440px;
+      }
+    }
+  }
+
+  &-illustration-image {
+
+    @include respond-at-and-above($break-medium) {
+      width: 82%;
+    }
+  }
+
+  @include respond-at-and-above($break-medium) {
+    padding: size(largest) 0;
+
+    .approach-story-copy {
+      text-align: left;
+    }
+  }
+
+  &:nth-child(even) {
+
+    @include respond-at-and-above($break-medium) {
+      flex-direction: row;
+    }
+
+    @include respond-at-and-above($break-large) {
+      margin-left: 2%;
+    }
+  }
+
+  @include respond-at-and-above($break-medium) {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    min-height: 300px;
+    margin: size(large) 0;
+  }
+}
+
+
+.approach-chapter-sub {
+
+  &-link {
+    border-bottom: 1px solid color(blue);
+  }
+}
+
+.approach-chapter--customer {
+  background: color(lightest-grey);
+
+  .approach-chapter-header {
+    max-width: 500px;
+
+    @include respond-at-and-above($break-large) {
+      max-width: none;
+    }
+  }
+}

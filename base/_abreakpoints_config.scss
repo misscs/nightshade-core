@@ -1,0 +1,67 @@
+// 6/*doc
+// ---
+// title: Breakpoints
+// name: breakpoints
+// category: components
+// ---
+
+// Name            | Width
+// ------------------| ------------------------------------------------
+// `tablet`          | Apple ipad mini in landscape ($break-large: 1024)
+// `tablet-portrait` | Common size for tablets in portrait mode ($break-medium: 768)
+// `show-diagram-tabs` | when the product diagram switches to tabs
+// `popupheader` | when header overlays lifestyle gallery
+
+
+
+
+
+// */
+
+
+
+// $breakpoints: (
+//   tablet: 64em,
+//   tablet-portrait: 48em,
+
+//   show-diagram-tabs: 56.25em,
+
+//   popup-header: 75em,
+
+//   fits-iphone6: 600
+
+
+
+// );
+
+
+// // size
+// // -----
+// @function break($size) {
+
+//   @if type-of($size) == 'number' {
+//     @return $size/16 + em;
+//   } @else {
+//     $size: map-get($breakpoints, $size);
+//     @return #{$size};
+//   }
+
+// }
+
+
+
+// // Media Query Break Points --------------------------------------------
+// $break-700: 700px;
+// $break-xl: 1280px;
+
+
+
+
+// // For styleguide
+// // @@@ move this out
+// $nightshade-menu-drawer: 50em;
+
+// //For value props of home page
+// $info-nav-width: 1080px;
+
+

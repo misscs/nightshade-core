@@ -1,0 +1,193 @@
+// Form field styles for ATC
+// @@@ TODO can we leverage any of these for new product pages?
+.form-field--atc {
+  padding: size(medium) 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  .form-label {
+    flex: 1 1 auto;
+  }
+}
+
+.form-input--atc {
+  flex: 1 1 62%;
+}
+
+.form-input--price {
+  @extend %chronicle-deck;
+
+  font-size: 42px;
+  line-height: 0.75;
+}
+
+.add-to-cart-title {
+  font-size: 21px;
+  margin-bottom: 0.65rem;
+
+  @include respond-between($break-small, 1023px) {
+    font-size: 24px;
+  }
+}
+
+.add-to-cart-inner,
+.fieldset-product-purchase-inner {
+  @include respond-below($break-large - 1) {
+    max-width: 446px;
+    margin: 0 auto;
+    padding-top: size(largest);
+    padding-bottom: size(largest);
+  }
+
+  @include respond-at-and-above($break-large) {
+    width: 446px;
+  }
+}
+
+.add-to-cart-form {
+  position: relative;
+}
+
+// @@@ can these get targeted at a higher component level?
+// @@@ Refactor form fields
+.add-to-cart-button {
+  width: 100%;
+  display: block;
+
+  @include respond-below(374px) {
+    &.is-loading {
+      padding-right: 35px;
+    }
+  }
+}
+
+// Ships by date and tooltip
+.product-purchase-details {
+  text-align: center;  
+  letter-spacing: size(smaller-tracking);
+  padding-bottom: size(normal);
+  border-bottom: 1px solid color(dark-border);
+}
+
+.product-purchase-details-item{
+  display: inline-block;
+}
+
+.product-purchase-details--ships-by {
+  position: relative;
+
+  @include respond-at-and-above($break-small) {
+    padding-left: 13px;
+    margin-left: 6px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -2px;
+      height: 22px;
+      width: 1px;    
+      margin-top: 2px;
+      background-color: color(medium-border);
+    }
+  }
+}
+
+.product-purchase-details--rating {
+  cursor: pointer;
+
+  @include respond-below($break-small) {
+    display: block;
+  }
+}
+
+// styling for optional ships by tooltip
+.product-purchase-details-ships-by {
+  &-tooltip,
+  &-tooltip-toggle {
+    display: inline-block;
+    font-weight: size(normal);
+  }
+
+  &-tooltip-toggle {
+    @include circle(18px, med-dark-background);
+    position: relative;
+    cursor: pointer;    
+    vertical-align: top;
+    margin: 1px 0 0 3px;
+    font-size: 14px;
+  }
+
+  &-description {
+    bottom: 45px;
+    width: 254px;
+    font-weight: normal;
+
+    &[data-placement="top"] {
+      left: -352%
+    }
+
+    &[data-arrow="bottom"]:after {
+      left: 78%
+    }
+  }
+}
+
+// stars in purchase module, overwriting base star styles
+.add-to-cart {
+  
+  // should create a base class or redo sizing to avoid applying the same style to these classes
+  .rating-star-wrap,
+  .rating-star-mask,
+  .rating-star {
+    @include square(.75em);
+    margin-right: 0;    
+  }
+
+  .rating-stars-stats {
+    display: inline-block;
+    text-align: center;
+    margin-left: 0;
+    margin-bottom: 3px;
+
+    @include respond-at-and-above($break-small) {
+      margin-bottom: 0;
+    }
+    
+    .rating-stars-stats--fraction {
+      margin: 0 2px;
+    }
+  }
+
+  .reviews-stats-table-section {
+    @include z-index(tooltip);
+    width: 345px;
+    max-width: none;    
+    top: 180%; 
+
+    @include respond-below($break-mobile) {
+      width: 305px;
+      padding: 20px 20px 27px;  
+    }
+
+    @include respond-below($break-small) {
+      left: 50%;
+    }
+  }
+
+  .reviews-stats-table {
+    margin-bottom: 10px;
+  }
+
+  .reviews-stats-read-all {
+    padding-bottom: 2px;
+    border-bottom: 1px solid color(dark-text);
+    color: color(darkest-text);
+  }
+
+  // disable hover events for stats table in the purchase module
+  .reviews-stats-table-row {
+    pointer-events: none;
+  }
+}

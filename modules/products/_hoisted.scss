@@ -1,0 +1,55 @@
+@import "modules/products/mattress/info_config";
+
+.header--hoisted {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  padding: 35px 23px 0;
+  background: color(background);
+  position: relative;
+
+  @include respond-at-and-above(900px) {
+    padding: 42px 23px 0;
+  }
+
+
+  .header-title {
+    max-width: 290px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-between($break-mobile, $break-small) {
+      max-width: 350px;
+    }
+
+
+    @include respond-at-and-above($break-small) {
+      max-width: 100%;
+    }
+  }
+
+  .header-copy {
+    margin: 0 auto;
+    padding: 0 3px 20px;
+
+    @include respond-between(441px, 625px) {
+      padding: 0 24px 30px;
+    }
+
+
+    @include respond-between(625px, 1200px) {
+      padding: 0 42px 30px;
+    }
+
+
+    @include respond-between(870px, 1200px) {
+      max-width: 825px;
+    }
+
+
+    @include respond-at-and-above(1200px) {
+      max-width: 100%;
+      padding: 0 115px 30px;
+    }
+  }
+}

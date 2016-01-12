@@ -1,0 +1,92 @@
+.reviews-gallery {
+  .gallery-controls {
+    .gallery-prev {
+      left: 50px;
+    }
+
+    .gallery-next {
+      right: 50px;
+    }
+
+    @include respond-below($break-large) {
+      display: none;
+
+      &:hover {
+        display: none;
+      }
+    }
+  }
+}
+
+.landing-reviews {
+  position: relative;
+
+  .product-reviews-container {
+    background: color(background);
+    padding: 100px 0;
+    fill: color(primary);
+
+    @include respond-below($break-small) {
+      padding: 65px 0;
+
+      .gallery-container {
+        overflow: hidden;
+      }
+    }
+
+
+    .product-review {
+      visibility: hidden;
+      transform: translateZ(0);
+
+      &.is-active {
+        visibility: visible;
+      }
+    }
+
+    .product-reviews-title {
+      white-space: normal;
+      margin: 0 auto 25px;
+
+      @include respond-below($break-small) {
+        margin: 0 25px 25px 25px;
+      }
+
+
+      @include respond-below(584px) {
+        margin-bottom: 0;
+      }
+    }
+
+    [data-icon="star"] {
+      vertical-align: top;
+    }
+
+    .product-reviews-copy {
+      @extend %chronicle-deck;
+
+      max-width: 600px;
+      margin: 9px auto 20px auto;
+      white-space: normal;
+
+      @include respond-below(660px) {
+        max-width: 90%;
+      }
+
+
+      @include respond-below($break-small) {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+
+    .product-reviews-author {
+      margin: 0 auto 31px;
+      white-space: normal;
+
+      @include respond-below(660px) {
+        max-width: 90%;
+      }
+    }
+  }
+}

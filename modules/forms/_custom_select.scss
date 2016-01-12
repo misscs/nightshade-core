@@ -1,0 +1,126 @@
+// Custom Select dropdowns with optional color swatches
+
+// Find a place to put this
+.text-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.custom-select {
+  @extend %verlag;
+  position: relative;
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: size(medium-tracking);
+  text-transform: uppercase;
+  text-align: left;
+  user-select: none;
+
+  &--color {
+
+    .custom-select-selected,
+    .custom-select-option {
+      padding-left: 45px;
+
+      @include before("") {
+        @include square(22px);
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        border: 1px solid color(dark-border);
+        border-radius: size(normal-corners);
+        background: color(background);
+      }
+
+      &[data-color*="chambray"] {
+
+        @include before("") {
+          background-image: linear-gradient(135deg, color(background) 50%, color(medium-grey) 50%, color(medium-grey));
+        }
+      }
+    }
+  }
+}
+
+.custom-select-selected {
+  @extend .text-ellipsis;
+  position: relative;
+  z-index: 1;
+  height: 48px;
+  padding: 1.1em size(larger) 0.9em size(normal);
+  font-weight: 600;
+  border: 1px solid color(dark-border);
+  border-radius: size(normal-corners);
+  background-image: image-url('nightshade/icons/select-arrow.svg');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px 8px;
+  cursor: pointer;
+
+  #{$focus} {
+    border-color: color(medium-border);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  .custom-select.is-selected & {
+    border-color: color(medium-border);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .product-purchase & {
+    background-image: image-url('nightshade/icons/select-arrow-red.svg');
+  }
+}
+
+.custom-select-options {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: color(background);
+  border: 1px solid color(medium-border);
+  border-top: 0;
+  border-bottom-left-radius: size(normal-corners);
+  border-bottom-right-radius: size(normal-corners);
+  overflow: hidden;
+
+  .custom-select.is-selected & {
+    display: block;
+  }
+}
+
+.custom-select-option {
+  @extend .text-ellipsis;
+  display: block;
+  position: relative;
+  padding: 1.1em size(normal) 0.9em;
+  background: color(background);
+  border-top: 1px solid color(dark-border);
+  cursor: pointer;
+
+  #{$focus},
+  &.is-focused {
+    background: color(light-background);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  .custom-select-row:first-child & {
+    border-top: 0;
+  }
+}
+
+.custom-select-radio {
+  @extend %is-hidden;
+}

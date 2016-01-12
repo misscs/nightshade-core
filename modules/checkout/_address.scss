@@ -1,0 +1,16 @@
+// Contains shipping and billing address fields
+.form-fieldset-address {
+  .form-field,
+  .form-field-group {
+    transition: opacity 0.15s;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+
+    & > .form-field,
+    & > .form-field-group {
+      opacity: 0.3;
+    }
+  }
+}

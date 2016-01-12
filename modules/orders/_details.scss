@@ -1,0 +1,143 @@
+// Order Details
+// =============
+// Displays order information: Shipping, Billing, Payment, and Delivery
+
+
+.order-detail {
+  margin-bottom: size(large);
+}
+
+
+.shipping-message {
+  max-width:  230px;
+  margin-bottom: size(small);
+}
+
+
+.order-detail-title {
+  margin-bottom: size(tiny);
+  text-transform: none;
+}
+
+@include respond-between($form-2col, $form-tablet) {
+  @include with-layout($order-details-medium) {
+    .order-details {
+      @include container;
+    }
+
+    .order-detail {
+      @include gallery(1 of 2);
+    }
+
+  }
+}
+
+// Original details layout
+
+@include respond-at-and-above($form-tablet) {
+  @include with-layout($order-details-large) {
+    .order-details {
+      @include container;
+      font-size: 15px;
+    }
+
+    // Container that wraps shipping, billing, and payment details
+    // Used to achieve vertical rhythm
+    .order-details-group {
+      @include span(3 first);
+    }
+
+    .order-detail--shipping {
+      @include span(1 of (1.75 1.75 1.5) first);
+    }
+
+
+    .order-detail--billing {
+      @include span(1 of (1.75 1.75 1.5) at 2);
+    }
+
+
+    .order-detail--payment {
+     @include span(1 of (1.75 1.75 1.5) last);
+    }
+
+
+    .order-detail--delivery {
+      @include span(2 last);
+    }
+  }
+}
+
+// Details layout with totals
+.with-totals {
+  @include respond-at-and-above($form-tablet) {
+    @include with-layout($order-details-large) {
+      .order-details {
+        @include container;
+      }
+
+      // Container that wraps shipping, billing, and payment details
+      // Used to achieve vertical rhythm
+      .order-details-group {
+        width: 100%;
+      }
+
+      .order-detail--shipping {
+        @include span(1 of (3 3 3 3) first);
+      }
+
+
+      .order-detail--billing {
+        @include span(1 of (3 3 3 3) at 2);
+      }
+
+
+      .order-detail--payment {
+       @include span(1 of (3 3 3 3) at 3);
+      }
+
+      .order-detail--totals {
+        @include span(1 of (3 3 3 3) last);
+        padding-right: 50px;
+
+        .value {
+          float: right;
+        }
+
+        .row {
+          clear: both;
+        }
+      }
+
+
+      .order-detail--delivery {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@include respond-below($form-tablet) {
+  .order-detail {
+    padding-bottom: 35px;
+    margin-bottom: 20px;
+  }
+
+  .order-totals-inner {
+    max-width: 210px;
+
+    .value {
+      float: right;
+    }
+  }
+}
+
+@include respond-below($break-medium) {
+  .order-detail {
+    border-bottom: 1px solid color(light-grey);
+  }
+  .order-detail:last-child {
+    border-bottom: none;
+  }
+}

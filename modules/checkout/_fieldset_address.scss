@@ -1,0 +1,19 @@
+// Address Fieldset
+// ================
+// Element that contains the shipping and billing address form fields.
+// Fade and disable form fields when the user toggles between countries
+// @see views/spree/checkout/address/_form
+
+.form-fieldset-address {
+  .form-field {
+    transition: opacity 0.15s;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
+
+    .form-field {
+      opacity: 0.3;
+    }
+  }
+}

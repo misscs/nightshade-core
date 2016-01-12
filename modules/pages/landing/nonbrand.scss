@@ -1,0 +1,112 @@
+// non brand = one perfect mattress
+.nonbrand-landing-header-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 12%;
+
+  @include respond-between($break-414, $break-small) {
+    top: 6%;
+  }
+
+
+  @include respond-between($break-small, $break-medium) {
+    top: 7%;
+  }
+
+
+  @include respond-between($break-medium, $break-xl) {
+    top: 4%;
+  }
+
+  @include respond-at-and-above($break-xl) {
+    top: 11%;
+  }
+
+  @include respond-at-and-above(1400px) {
+    top: 9%;
+  }
+
+  @include respond-at-and-above(2000px) {
+    top: 15%;
+  }
+}
+
+.nonbrand-landing-hero-nyt-logo {
+  position: relative;
+  height: 21px;
+  width: 150px;
+  margin: 20px auto;
+
+  @include respond-at-and-above($break-small) {
+    height: 26px;
+    width: 190px;
+  }
+}
+
+
+.nonbrand-landing-quote {
+  text-transform: none;
+  color: color(text);
+  position: relative;
+  font-size: 20px;
+  line-height: 1.2;
+  padding: 0 30px;
+
+  @include respond-between($break-414, 666px) {
+    font-size: 22px;
+  }
+
+
+  @include respond-between(666px, $break-medium) {
+    font-size: 26px;
+  }
+
+
+  @include respond-between($break-medium, $break-large) {
+    font-size: 31px;
+  }
+
+
+  @include respond-at-and-above($break-large) {
+    font-size: 40px;
+    max-width: 650px;
+  }
+
+
+  @include respond-at-and-above($break-xl) {
+    padding: 0 0;
+    margin-bottom: 25px;
+    font-size: 41px;
+  }
+
+  @include respond-at-and-above(1400px) {
+    font-size: 54px;
+    max-width: 800px;
+  }
+}
+
+
+.nonbrand-header-shop-cta {
+  background-color: color(light-background);
+  padding: size(largest) 0;
+
+  @include respond-at-and-above($break-large) {
+    position: absolute;
+    left: 0;
+    right: 0;    
+    top: 79%;
+    padding: 0;
+    background-color: transparent;
+    margin: 0 auto;
+  }
+
+  @include respond-at-and-above($break-xl) {
+    top: 80%;
+  }
+  
+  @include respond-at-and-above(2000px) {
+    top: 81%;
+  }
+}

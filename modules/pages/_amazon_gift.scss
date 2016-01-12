@@ -1,0 +1,229 @@
+body {
+  background-color: #D7EFFF !important;
+}
+
+input {
+  background: #fff;
+}
+
+
+.amazon-gift-page,
+.amazon-gift-landing-page {
+  text-align: center;
+  max-width: 620px;
+  margin: 12px auto 50px auto;
+  padding: 78px 40px 0 40px;
+
+  @include respond-below($break-small) {
+    padding: 40px 0;
+    max-width: 90%;
+  }
+
+  .holly-wrap {
+    max-width: 110px;
+    min-height: 76px;
+    margin: 0 auto 20px auto;
+
+    @include respond-below($break-small) {
+      max-width: 88px;
+      min-height: 60.5px;
+    }
+  }
+
+  .gifting-header,
+  .gifting-subhead,
+  .gifting-copy,
+  .title,
+  .secondary-header {
+    color: #00237E;
+  }
+
+  .gifting-header {
+    font-family: "Verlag Black A", "Verlag Black B", "Verlag A", "Verlag B", "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 32px;
+    margin-bottom: 13px;
+
+    @include respond-below($break-small) {
+      font-size: 26px;
+    }
+  }
+
+  .gifting-subhead, .gifting-copy {
+    margin-bottom: 55px;
+    font-size: 18px;
+
+    .secondary {
+      margin-top: 18px;
+    }
+  }
+
+  .amazon-gift-form {
+    max-width: 402px;
+
+    .amazon-field-wrapper {
+      width: 100%;
+    }
+
+    .amazon-form-input {
+      padding: 12.75px 17px;
+      display: block;
+      cursor: default;
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #e7e8e8;
+      font-size: 17px;
+      line-height: 1.313em;
+    }
+
+    .gift-submit {
+      padding: 14px 47px;
+      width: auto;
+      float: left;
+      margin-top: 24px;
+      font-size: 14px;
+      font-family: "Verlag Black A", "Verlag Black B", "Verlag A", "Verlag B", "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: 800;
+
+      @include respond-below($break-small) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.amazon-gift-terms-footer {
+  text-align: center;
+  padding: 0 0 30px 0;
+  color: #00237E;
+  font-size: 0.75em;
+  line-height: 1.72em;
+  max-width: 646px;
+  margin: 0 auto;
+
+  a {
+    border-bottom: 1px solid #00237E;
+  }
+
+  .pipe {
+    padding: 0 3px 0 5px;
+  }
+
+  @include respond-below($break-small) {
+    padding: 0 20px 30px 20px;
+  }
+
+  .terms-footer-section {
+    p {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+.amazon-gift-page {
+  margin: 0 auto 162px auto;
+}
+
+.amazon-gift-landing-page {
+  max-width: 590px;
+  padding: 0;
+  margin: 60px auto 50px auto;
+
+  .number {
+    background: #00237E;
+    color: #D7EFFF;
+    font-family: "Verlag Black A", "Verlag Black B", "Verlag A", "Verlag B", "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 800;
+    width: 34px;
+    height: 34px;
+    border-radius: 17px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 12px;
+    padding-left: 2px;
+    margin: 0 auto 16px auto;
+  }
+
+  .number-1 {
+    padding-left: 1px;
+  }
+
+  h2.secondary-header {
+    margin-bottom: 50px;
+  }
+
+  h2.title {
+    margin-bottom: 12px;
+  }
+
+  h2.secondary-header,
+  h2.title {
+    font-size: 22px;
+  }
+
+  .squirrel-wrap {
+    max-width: 350px;
+    min-height: 240px;
+    margin: 0 auto 18px auto;
+    padding: 0
+  }
+
+  .gifting-subhead, .gifting-copy {
+    font-size: 16px;
+  }
+
+  .gifting-subhead {
+    margin-bottom: 42px;
+  }
+
+  .gifting-copy {
+    font-size: 17px;
+    margin: 0 auto 40px auto;
+    max-width: 470px;
+  }
+
+  hr {
+    background: #b7d0ec;
+    margin-bottom: 50px;
+
+    &.sm {
+      max-width: 330px;
+    }
+
+    &.lg {
+      max-width: 100%;
+      margin: 44px auto 0 auto;
+    }
+  }
+
+  .shop-cta-btn {
+    font-size: 17px;
+    margin: 22px auto 0 auto;
+  }
+}
+
+
+@include respond-below($break-small) {
+  .amazon-gift-landing-page {
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 40px auto 50px auto;
+
+    hr.sm {
+      margin-bottom: 65px;
+    }
+
+    h1.gifting-header {
+      font-size: 26px;
+    }
+
+    .squirrel-wrap {
+      min-height: 220px;
+      margin-bottom: 5px;
+    }
+
+    .gifting-copy {
+      margin-bottom: 80px;
+    }
+  }
+}

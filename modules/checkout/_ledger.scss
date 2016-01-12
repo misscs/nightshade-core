@@ -1,0 +1,227 @@
+// Order Ledger
+// =============
+// The order ledger is a component comprised of two checkout modules
+// - Order Summary Table
+// - Product Item
+
+// Parent element for the component
+.order-ledger {
+  // Product image must remain at top so Suzy can override the widths
+  .product-image {
+    @include respond-between($form-2col, $form-max) {
+      @include square(product-thumb-medium);
+    }
+
+    @include respond-at-and-above($form-max) {
+      @include square(product-thumb-large);
+    }
+  }
+
+  @include respond-below($form-2col) {
+    .form-label {
+      @include is-hidden;
+    }
+
+    .product-item-detail-item--total {
+      @include is-hidden--clip;
+    }
+
+    .order-ledger-item .product-item-detail-item--price {
+      margin-top: 0;
+    }
+    .order-ledger-item {
+      padding-bottom: 56px;
+    }
+    .ships-by {
+      position: absolute;
+      bottom: -38px;
+    }
+    .product-item {
+      position: relative;
+    }
+  }
+
+
+  @include respond-at-and-above($form-2col) {
+    @include with-layout($order-item-layout) {
+      .order-ledger-item {
+        @include container;
+      }
+
+      .product-item-details {
+        @include span(3 last);
+      }
+
+      .product-item-header {
+        @include span(2 first);
+      }
+
+      .product-image {
+        @include span(1 of (1 3) first);
+      }
+
+      .product-item-description {
+        @include span(1 of (1 3) last);
+      }
+
+      .product-item-detail-item--price {
+        @include span(1 of (1 1 1) first);
+      }
+
+      .product-item-detail-item--quantity {
+        @include span(1 of (1 1 1) at 2);
+
+        position: static;
+        right: auto;
+        bottom: auto;
+      }
+
+      .product-item-detail-item--total {
+        @include span(1 of (1 1 1) last);
+      }
+
+      .form-label {
+        position: absolute;
+        top: -55px;
+
+        &:nth-child(n+2) {
+          .form-label {
+            @include is-hidden;
+          }
+        }
+      }
+
+      // Contains ledger, form-actions, and promo link on cart page
+      .order-ledger-footer {
+        @include span(3 last);
+      }
+    }
+
+
+    .ships-by {
+      padding-top: size(smallest);
+    }
+  }
+}
+
+// Parent element wrapper for all .order-ledger-item
+.order-ledger-items {
+  padding-top: size(normal);
+  border-top: 1px solid color(border);
+}
+
+// Each line item for every Casper product in a cart.
+// Wraps `.product-item`
+.order-ledger-item {
+  margin-bottom: size(normal);
+  padding-bottom: size(largest);
+  border-bottom: 1px solid color(border);
+  position: relative;
+
+  @include respond-at-and-above($form-2col) {
+    padding-bottom: size(normal);
+  }
+
+
+  .product-description {
+    @include is-hidden--position;
+
+    @include respond-at-and-above($form-2col) {
+      margin-top: size(small);
+      padding-right: 75px;
+      max-width: 312px;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+
+
+    @include respond-at-and-above($break-large) {
+      padding-right: 175px;
+      max-width: none;
+    }
+  }
+
+  .product-item-detail-item {
+    margin-top: gutter();
+
+    @include respond-at-and-above($form-2col) {
+      .value {
+        display: block;
+        padding: size(large) 0;
+      }
+    }
+  }
+
+  .btn--delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.35;
+    transition: opacity 0.2s;
+
+    @include respond-at-and-above($form-2col) {
+      top: 34%;
+    }
+
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .form-input-quantity {
+    width: 54px;
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+
+.link-update {
+  font-size: 13px;
+}
+
+.order-ledger-footer {
+  // @@@ refactor to leverage susy grid instead
+  @include respond-between($form-2col, $form-max) {
+    .order-summary-value {
+      padding-right: 3.5em;
+    }
+  }
+
+
+  @include respond-at-and-above($form-max) {
+    .order-summary-value {
+      padding-right: 5em;
+    }
+  }
+
+
+  .form-actions {
+    text-align: right;
+
+    @include respond-at-and-above($form-2col) {
+      padding-right: 60px;
+    }
+  }
+
+  .checkout-button {
+    width: 100%;
+  }
+
+  .form-fieldset-promo {
+    @include respond-at-and-above($form-2col) {
+      margin-right: 60px;
+    }
+  }
+}
+
+// Because the quantity changes from input to span, this controls the how its styled in review and confirm page on mobile
+@include respond-below($form-2col) {
+  .form-section-review-order,
+  .order-status {
+    .product-item-detail-item--quantity {
+      bottom: 50%;
+    }
+  }
+}

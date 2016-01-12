@@ -1,0 +1,126 @@
+// Address Verification Modal styling
+// @@@ Refactor me please
+
+.address-verification-title {
+  border-bottom: 1px solid color(dark-border);
+  padding-bottom: 1em;
+  color: color(text);
+}
+
+.address-verification {
+  text-align: left;
+
+  .checkout-continue-button {
+    float: none;
+  }
+
+  .address-suggestion-header {
+    color: color(text);
+    letter-spacing: size(larger-tracking);
+
+    @include respond-below($break-mobile) {
+      font-size: 12px;
+    }
+  }
+
+  .edit_order {
+    width: 100%;
+
+    .address-suggestions {
+      list-style-type: none;
+      padding: size(normal) 0;
+    }
+
+    .address-suggestion {
+      font-size: 13px;
+      border-bottom: 1px solid color(dark-border);
+      transition: background-color 0.15s;
+      padding: size(small);
+
+      @include respond-at-and-above($break-mobile) {
+        font-size: 16px;
+        margin: 0;
+      }
+
+
+      * {
+        cursor: pointer;
+      }
+
+      &:hover,
+      &.checked {
+        background: color(medium-background);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .radio-wrap {
+        float: left;
+        margin: (-2px) 16px 0 0;
+      }
+
+      .address-detail {
+        padding-left: 32px;
+
+        .diff {
+          color: color(accent);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .comma {
+    @include after(",");
+
+    display: inline;
+    margin: 0 2px 0 -2px;
+  }
+
+  .edit-link {
+    border: 1px solid color(dark-border);
+    border-radius: size(small-corners);
+    padding: 5px 7px 2px;
+    margin-left: 8px;
+    color: color(secondary);
+  }
+}
+
+// Unrecognized Modal styling
+.unrecognized-address {
+  text-align: left;
+
+  .unrecognized-address-details {
+    padding: 20px;
+  }
+
+  .unrecognized-address-button {
+    display: block;
+
+    @include respond-at-and-above(460px) {
+      display: inline-block;
+    }
+  }
+
+  .unrecognized-address-continue {
+    margin-top: size(normal);
+
+    @include respond-at-and-above(460px) {
+      margin-top: 0;
+    }
+  }
+
+  .unrecognized-address-edit {
+    margin-top: size(normal);
+
+    @include respond-at-and-above(460px) {
+      margin: 0 size(normal) 0 0;
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+}

@@ -1,0 +1,112 @@
+// Order status page
+// - # The Order Status page has two functions
+// - # 1) Immediately upon completing their order
+// - # 2) A customers order tracking & summary page accessible from their account
+// @see orders/show
+//
+
+.order-details-header h3 .main-text {
+  color: color(blue);
+  font-size: 22px;
+}
+
+.order-status {
+  margin-bottom: 0;
+  font-size: 16px;
+
+  .banner {
+    background: #f2f4f8;
+
+    h1 {
+      color: color(blue);
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: color(light-gray);
+      font-weight: 300;
+    }
+  }
+
+  .form-fieldset--order-details {
+    margin-top: 25px;
+  }
+
+  .order-ledger {
+    margin-top: 35px;
+  }
+}
+
+.order-banner {
+  padding: 102px 20px 107px 20px;
+}
+
+.refer-wrap {
+  font-size: 16px;
+  background: color(light-background);
+  border-radius: size(small-corners);
+  margin: 5px auto 70px;
+  padding: 70px 20px 62px;
+  border: 1px solid color(border);
+
+  .refer-wrap-heading {
+    color: color(primary);
+    font-size: 19.5px;
+    margin-bottom: 2px;
+  }
+
+  .refer-wrap-body {
+    font-size: 1.3em;
+    margin: 12px auto 38px;
+  }
+}
+
+@include respond-below(750px) {
+  .order-status {
+    .form-fieldset--order-details {
+      margin-top: 0;
+    }
+  }
+
+  .order-banner {
+    padding: 60px 20px 65px 20px;
+  }
+}
+
+
+@include respond-at-and-above(751px) {
+  .order-status {
+    .banner {
+      h1 {
+        font-size: 39px;
+      }
+
+      p {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+
+.order-confirmed-messaging {
+  margin: 0 auto;
+
+  @include respond-below(400px) {
+    max-width: 250px;
+  }
+
+
+  &:last-child {
+    margin-top: 10px;
+  }
+}
+
+// wrapper element that contains the headline and link to take the survey
+.status-block {
+  margin-top: size(normal);
+}
+
+.shipping-delay {
+  max-width: 210px;
+}

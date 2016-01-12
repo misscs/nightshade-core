@@ -1,0 +1,145 @@
+
+// Order Summary Table
+// ===================
+
+@import "modules/checkout/order_summary_config";
+
+
+.order-summary-widget {
+
+  @include respond-at-and-above($form-2col) {
+    // Needed to override max-width set in layout
+    &.checkout-region-aside {
+      width: 350px;
+    }
+  }
+
+  .trial-warranty--block-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    width: 100%;
+    margin-top: size(large)    ;
+
+    @include respond-at-and-above($form-2col) {
+      position: relative;
+      bottom: 0;
+      border-top: 1px solid color(border);
+      border-bottom: 1px solid color(border);
+    }
+  }
+
+  .trial-warranty--block {
+    @include checkout-section-width-compact;
+  }
+
+  &.stick,
+  &.affix-top {
+    @include respond-at-and-above($form-2col) {
+      @include sticky-properties;
+    }
+  }
+}
+
+
+
+// Order summary widget title element
+// On mobile, it toggles the contents of the block
+.form-legend-order-summary {
+  margin-bottom: 10px;
+
+  @include respond-below($form-2col) {
+    font-size: 13px;
+    border: 0;
+  }
+
+  @include respond-at-and-above($form-2col) {
+    cursor: default
+  }
+
+  [data-icon="arrow"] {
+    vertical-align: baseline;
+  }
+}
+
+
+// Tabular order data
+.order-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// Divider line
+.order-summary-divider-col {
+  padding: 10px 0;
+}
+
+.order-summary-divider {
+  border-bottom: 1px solid color(border);
+}
+
+
+// Class used for order ledger items
+.order-summary-label {
+  padding: 4px 0;
+  width: span(2 of 3);
+  font-size: 14px;
+}
+
+
+// Shows cart total in the header
+// visibility: mobile only
+.order-summary-total {
+  float: right;
+}
+
+
+// Class used for order ledger values
+.order-summary-value {
+  padding-left: gutter();
+  text-align: right;
+  white-space: nowrap; // Prevent negative dollar amount breaking over two lines
+
+  @include respond-at-and-above($form-2col) {
+
+    &.is-negative-amount {
+      text-indent: -0.375em;
+    }
+  }
+}
+
+// style for surchage tooltip in the order summary table
+.surcharge-tooltip {
+  @include circle(18px);
+  display: inline-block;
+  transition: background-color .15s;
+  background-color: color(dark-background);
+  text-align: center;
+  top: -1px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: color(light-grey);
+  }
+}
+
+.surcharge-tooltip-toggle {
+  margin-left: 2px;
+}
+
+.surcharge-tooltip-callout {
+  min-width: 225px;
+  padding: 25px 15px;
+}
+
+.surcharge-tooltip-copy {
+  transition: color .15s;
+  font-size: 1em;
+  text-align: left;
+  text-transform: initial;
+
+  &:hover{
+    color: lighten(color(primary), 20%);
+  }
+}

@@ -1,0 +1,155 @@
+// Parent container
+// @@@ we should be able to create a pattern out of these boxes
+.page--help {
+  .form-section {
+    padding-top: 55px;
+  }
+}
+
+.contact-options {
+  padding: 25px 0px 29px;
+
+  @include respond-at-and-above(800px) {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1000px;
+    padding: 55px 35px 40px;
+  }
+}
+
+.contact-option-body {
+  max-width: 300px;
+  margin: 0 auto 2px;
+  font-size: 18px;
+
+  @include respond-at-and-above(800px) {
+    max-width: 250px;
+  }
+}
+
+.contact-option-hours {
+  font-size: 14px;
+
+  @include respond-between($break-small, 780px) {
+    font-size: 12px;
+  }
+}
+
+.contact-options-item {
+  padding: 25px 0;
+  display: block;
+
+  @include respond-at-and-above(800px) {
+    flex: 1 33%;
+  }
+
+  [data-icon] {
+    fill: color(background);
+  }
+
+  &:not(.contact-option--sms) [data-icon] {
+    margin-right: 5px;
+  }
+}
+
+.contact-option-title {
+  margin-bottom: 4px;
+  margin-top: 9px;
+  display: inline-block;
+}
+
+.contact-options-btn {
+  width: 85%;
+  margin-bottom: 1.5em;
+  white-space: nowrap;
+  padding: 1.15em 0;
+  max-width: 350px;
+
+  @include respond-at-and-above(800px) {
+    max-width: none;
+  }
+}
+
+// Don't show for small devices. Olark is not available for smaller screenwidths
+.contact-option--chat {
+  @include respond-below($break-small) {
+    @include is-hidden;
+  }
+}
+
+.help-page-faq {
+  padding: 13px 20px;
+  line-height: 1.2;
+  background-color: color(dark-background);
+  color: color(background);
+}
+
+.help-page-link {
+  @include link(background, background, true);
+
+  font-style: italic;
+  letter-spacing: 0.02em;
+  font-size: 16px;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @include respond-at-and-above($break-small) {
+    font-size: 19px;
+    line-height: 1.4;
+    max-width: none;
+    display: initial;
+  }
+}
+
+.banner--help {
+
+  .banner-copy {
+    max-width: 468px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-at-and-above($break-large) {
+      max-width: 586px;
+    }
+  }
+}
+
+.form-section--help {
+  border-top: 1px solid color(border);
+  padding-bottom: 65px;
+
+  @include respond-at-and-above(800px) {
+    padding-bottom: 100px;
+  }
+}
+
+.form-section-header {
+  margin-bottom: 40px;
+}
+
+.form-section-header--ask {
+  position: relative;
+}
+
+.form-section-body {
+  max-width: 92%;
+
+  @include respond-at-and-above(800px) {
+    max-width: 82%;
+  }
+}
+
+.form-section-body--help {
+  @include respond-at-and-above($break-large) {
+    max-width: 720px;
+  }
+}
+
+.form-section--ask {
+  display: none;
+  border-top: 1px solid color(border);
+  margin-bottom: 5px;
+  position: relative;
+}

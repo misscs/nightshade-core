@@ -1,0 +1,56 @@
+// @@@ colors should come from colors map
+.amazon-gift-banner {
+  display: none;
+  position: relative;
+  text-align: center;
+  background: #D7EFFF;
+  padding: 23px 20px 21px 20px;
+  color: color(primary);
+  overflow: hidden;
+
+  h2 {
+    margin-bottom: 0;
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 17px;
+
+    a {
+      border-bottom: 1px solid color(primary);
+    }
+  }
+
+  .close-btn {
+    @include square(14px);
+    display: block;
+    position: absolute;
+    top: 2px;
+    right: 12px;
+    color: #a5bbde;
+    font-size: 28px;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// @@@ prefer mobile first whenever possible
+@include respond-below($break-small) {
+  .amazon-gift-banner {
+    padding: 26px 20px;
+
+    // @@@ elements should only be targeted by class name
+    h2 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+

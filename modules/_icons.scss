@@ -1,0 +1,80 @@
+//doc
+// ---
+// title: Icons
+// name: icons
+// category: components
+// ---
+//
+// Casper icon system leverages SVG `<use>` and `<symbols>`. To use an icon,
+// find the ID of the icons you want to use
+//
+// ```haml_example
+// = render 'nightshade/shared/icons'
+//
+// ```
+
+// --- end doc
+
+button.icon {
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.icon-lock {
+  @include square(20px);
+
+  fill: color(medium-text);
+}
+
+[data-icon] {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  pointer-events: none; // Required to prevent click bubbling issues
+
+  .icon {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &[data-size="large"] {
+    @include square(64px);
+  }
+
+  &[data-size="medium"] {
+    @include square(48px);
+  }
+
+  &[data-size="default"] {
+    @include square(32px);
+  }
+
+  &[data-size="small"] {
+    @include square(24px);
+  }
+
+  &[data-size="x-small"] {
+    @include square(16px);
+  }
+
+  &[data-size="tiny"] {
+    @include square(10px);
+  }
+
+  &[data-size="micro"] {
+    @include square(8px);
+  }
+}
+
+[data-icon="close"] {
+  @include square(13px);
+  vertical-align: top;
+  fill: color(text);
+  cursor: pointer;
+}

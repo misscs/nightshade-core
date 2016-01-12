@@ -1,0 +1,23 @@
+// Airbnb color
+
+$airbnb-color: #f05c61;
+
+// Susy Grids
+
+$airbnb-mobile-break: 530px;
+
+
+$airbnb-tablet: (
+  output: isolate,
+  columns: 1 1,
+  gutters: 1/10,
+  gutter-position: split
+);
+
+$airbnb-desktop: (
+  output: isolate,
+  columns: 1 1 1,
+  gutters: 1/10,
+  gutter-position: split
+);
+

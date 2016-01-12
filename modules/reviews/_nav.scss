@@ -1,0 +1,120 @@
+.reviews-nav {
+  height: 70px;
+  width: 100%;
+}
+
+.reviews-nav-tab {
+  @include z-index(bump);
+
+  display: inline-block;
+  background-color: color(background);
+  margin-top: 30px;
+  height: 40px;
+  padding: size(smaller);
+  width: 32%;
+  text-align: center;
+  border-bottom: 1px solid color(dark-border);
+  position: relative;
+  color: color(text);
+  text-align: center;
+  font-size: 0.875em;
+  letter-spacing: size(larger-tracking);
+  transition: border 0.15s;
+
+  &.is-active {
+    border: 1px solid color(dark-border);
+    border-bottom: 0;
+    background-color: color(light-background);
+    height: 41px;
+
+    &:before,
+    &:after {
+      @include square(size(normal-corners));
+      position: absolute;
+      bottom: 0;
+      content: " ";
+      border: 1px solid color(dark-border);
+    }
+
+    &:before {
+      left: -(size(normal-corners));
+      border-bottom-right-radius: size(normal-corners);
+      border-width: 0 1px 1px 0;
+      box-shadow: 2px 2px 0 color(light-background);
+    }
+
+    &:after {
+      right: -(size(normal-corners));
+      border-bottom-left-radius: size(normal-corners);
+      border-width: 0 0 1px 1px;
+      box-shadow: (-2px) 2px 0 color(light-background);
+    }
+
+    &.reviews-nav-tab--mattress {
+      border-top-right-radius: size(normal-corners);
+      left: -12px;
+
+      @include respond-between($break-small, $break-medium) {
+        left: -15px;
+      }
+
+    }
+
+    &.reviews-nav-tab--sheets {
+      border-top-right-radius: size(normal-corners);
+      border-top-left-radius: size(normal-corners);
+    }
+
+    &.reviews-nav-tab--pillows {
+      border-top-left-radius: size(normal-corners);
+      right: -13px;
+
+      @include respond-between($break-small, $break-medium) {
+        right: -16px;
+      }
+
+    }
+
+    &:hover {
+      .reviews-nav-tab-text {
+        font-size: size(small);
+        color: color(text);
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &:hover {
+    .reviews-nav-tab-text {
+      border-bottom: 1px solid color(darkest-text);
+      padding: 0;
+    }
+  }
+}
+
+.nav-definitive-article {
+  display: none;
+}
+
+@include respond-at-and-above($break-medium) {
+  .nav-definitive-article {
+    display: inline;
+  }
+
+  .reviews-nav-tab--mattress {
+    margin-left: auto;
+  }
+
+  .reviews-nav-tab--pillows {
+    margin-right: auto;
+  }
+
+  .reviews-nav-tab {
+    width: 180px;
+
+    &.is-active {
+      border-top-right-radius: size(normal-corners);
+      border-top-left-radius: size(normal-corners);
+    }
+  }
+}

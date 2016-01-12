@@ -1,0 +1,170 @@
+// Pillows Gallery
+//
+// All media queries need to be reviewed and refactored at the system level
+// i.e. looking at all the other components to determine what
+// can be standardized
+//
+// Currently lifted straight from the mattress gallery styles
+//
+// 1. Don't display next/prev on product carousel
+
+.pillows-gallery {
+  .gallery-slide {
+    background-size: contain;
+  }
+
+  .gallery-slide-1 {
+    background-position: 0 0;
+
+    @include respond-between(500px, 867px) {
+      background-position: 0 -2em;
+    }
+
+    @include respond-between(867px, $break-large - 1) {
+      background-position: 0 -3vw;
+    }
+
+    @include respond-at-and-above($break-large) {
+      width: 60%;
+      max-width: 1020px;
+      background-position: 0 2em;
+    }
+
+    @include respond-at-and-above(1200px) {
+      background-position: 0 -3vw;
+    }
+
+    @include respond-at-and-above(1580px) {
+      background-position: 0 -5vw;
+    }
+
+    @include respond-at-and-above(1700px) {
+      background-position: 0 -5.3em;
+    }
+
+    @include respond-at-and-above(1900px) {
+      max-width: 1260px;
+      background-position: 0 -11vw;
+    }
+
+    @include respond-at-and-above(2200px) {
+      background-position: 0 -250px;
+    }
+  }
+
+  .gallery-slide-2 {
+    background-position: 0 0;
+    background-size: 110%;
+
+    @include respond-at-and-above(500px) {
+      background-position: 0 -10vw;
+    }
+
+    @include respond-at-and-above($break-medium) {
+      background-position: 0 -8vw;
+    }
+
+    @include respond-at-and-above($break-large) {
+      max-width: 78%;
+      background-size: contain;
+    }
+
+    @include respond-at-and-above(1300px) {
+      background-position: 0 -13vw;
+    }
+
+    @include respond-at-and-above(1500px) {
+      background-position: 0 -15vw;
+    }
+
+    @include respond-at-and-above(2000px) {
+      background-position: 0 -20vw;
+    }
+  }
+
+  .gallery-slide-wrapper-3 {
+    @include respond-at-and-above($break-large) {
+      max-width: $gallery-dot-width;
+      text-align: center;
+    }
+  }
+
+  .gallery-slide-3 {
+    @include respond-at-and-above(500px) {
+      background-position: 0 -4vw;
+    }
+
+    @include respond-between(867px, $break-large - 1) {
+      background-position: center -5vw;
+    }
+
+    @include respond-at-and-above($break-large) {
+      max-width: 1200px;
+      display: inline-block;
+      background-position: 0 3vw;
+    }
+
+    @include respond-at-and-above($break-xl) {
+      background-position: 0 -2vw;
+    }
+
+    @include respond-at-and-above(1500px) {
+      background-position: center -60px;
+    }
+
+    @include respond-at-and-above(1780px) {
+      background-position: center -127px;
+    }
+  }
+
+  .gallery-slide-wrapper-4 {
+    @include respond-at-and-above($break-large) {
+      max-width: $gallery-dot-width;
+      text-align: center;
+    }
+  }
+
+  .gallery-slide-4 {
+    background-position: 0 0;
+
+    @include respond-at-and-above(500px) {
+      background-position: 1vw -8vw;
+      max-width: 920px;
+
+    }
+
+    @include respond-at-and-above($break-large) {
+      max-width: 880px;
+      display: inline-block;
+      background-position: 0 5vw;
+    }
+    
+    @include respond-at-and-above(1140px){
+      background-position: 0 2vw;
+      width: 90%;
+    }
+
+    @include respond-at-and-above(1350px) {
+      background-position: 0 0;
+    }
+
+    @include respond-at-and-above(1500px) {
+      background-position: 0 -3em;
+    }
+  }
+
+  .gallery-dot-1,
+  .gallery-dot-3 {
+    .gallery-thumb {
+      position: relative;
+      top: 10%;
+    }
+  }
+
+  .gallery-dot-4 {
+    .gallery-thumb {
+      position: relative;
+      top: 10%;
+    }
+  }
+}

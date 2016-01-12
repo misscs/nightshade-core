@@ -1,0 +1,279 @@
+// [1]: translateY(-100%) & translate3D weren't options for the usual best case
+// scenario for this type of animation because of the content would go over the button because of the unique requirements of this component; they'd be the most optimal use of the the GPU for a sliding effect normally
+.product-specs-details {
+  position: relative;
+
+  &:before,
+  &:after {
+    @include z-index(bump);
+
+    background-color: color(dark-border);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    top: 62px;
+    position: absolute;
+    vertical-align: middle;
+    width: 1000%;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.product-specs {
+  fill: color(medium-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.product-specs-toggle {
+  @include z-index(size-selector);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  max-width: 300px;
+  background: color(background);
+  color: color(darkest-text);
+  fill: color(darkest-text);
+  border: 1px solid color(dark-border);
+  border-radius: size(small-corners);
+  cursor: pointer;
+  touch-action: none;
+  transition: 0.15s background-color;
+
+  &:hover {
+    background-color: color(med-dark-background);
+  }
+}
+
+.product-specs-title {
+  font-size: 14px;
+  margin-right: size(small);
+  color: color(darkest-text);
+}
+
+.product-specs-info-container {
+  @include z-index(bump);
+
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  margin-top: -27px;
+  text-align: left;
+  border: 1px solid color(dark-border);
+  border-top: 0;
+  cursor: auto;
+  border-radius: size(small-corners);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  padding: 27px 0;
+  position: relative;
+  max-height: 0;
+  transition: max-height 0.6s;
+  background-color: color(background);
+
+  &.is-expanded {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    max-height: 5000px;
+  }
+}
+
+.tech-specs-info-section {
+  position: relative;
+  padding: 2em size(largest);
+  border-bottom: 1px solid color(dark-border);
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    padding: 2em 0;
+    margin-left: size(largest);
+    margin-right: size(largest);
+  }
+}
+
+.product-specs-section-header {
+  @extend %headers;
+
+  width: auto;
+  display: block;
+  padding-right: size(large);
+  font-size: size(smaller);
+
+  @include respond-at-and-above(600px) {
+    width: 30%;
+    display: inline-block;
+
+    &--dimensions {
+      @include respond-between(600px, $break-medium) {
+        display: block;
+        width: auto;
+      }
+
+
+      @include respond-at-and-above($break-medium) {
+        display: inline-block;
+        width: 30%;
+      }
+    }
+  }
+}
+
+.tech-specs-section-copy {
+  width: 69%;
+  vertical-align: top;
+  display: inline-block;
+  line-height: 1.5;
+  letter-spacing: size(smaller-tracking);
+
+  @include respond-below(600px) {
+    width: auto;
+    display: block;
+    padding-top: size(smaller);
+  }
+
+
+  .tech-specs-link {
+    padding-bottom: 2px;
+    border-bottom: 1px solid color(text);
+    color: color(text);
+
+    &:hover {
+      color: color(dark-text);
+      border-bottom: 1px solid color(dark-text);
+    }
+  }
+}
+
+.tech-specs-measurements {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: size(small);
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+
+  &--shipping-box {
+    break-before: column;
+    -webkit-column-break-before: always;
+
+    @include respond-below($break-700) {
+      break-before: auto;
+      -webkit-column-break-before: auto;
+    }
+  }
+
+  &--queen {
+    @include respond-below($break-700) {
+      break-before: always;
+      -webkit-column-break-before: always;
+    }
+  }
+}
+
+.tech-specs-dimensions-title {
+  @extend %verlag-black;
+
+  font-size: size(smaller);
+}
+
+.tech-specs-dimensions-size {
+  white-space: normal;
+}
+
+.tech-specs-columns {
+  height: auto;
+  columns: 1;
+  -moz-columns: 1;
+
+  @include respond-between(350px, $break-700) {
+    columns: 2;
+    -moz-columns: 2;
+  }
+
+
+  @include respond-between($break-700, $break-large) {
+    columns: 3;
+    -moz-columns: 3;
+    max-height: none;
+  }
+
+
+  @include respond-at-and-above($break-large) {
+    columns: 4;
+    -moz-columns: 4;
+    max-height: 10.5em;
+  }
+}
+
+.tech-specs-dimensions-list-section {
+  display: block;
+  margin-top: size(large);
+  padding-bottom: size(large);
+  border-bottom: 1px solid color(dark-border);
+  width: 100%;
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    display: none;
+  }
+}
+
+.tech-specs-product-header {
+  font-size: size(smaller);
+}
+
+.tech-specs-list-item {
+  white-space: nowrap;
+  margin-bottom: size(small);
+}
+
+.tech-specs-dimensions-table-section {
+  display: none;
+
+  @include respond-at-and-above($break-medium) {
+    display: inline-block;
+  }
+}
+
+.tech-specs-table {
+  margin-bottom: size(large);
+  border-collapse: collapse;
+}
+
+.tech-specs-table-cell {
+  width: 11em;
+}
+
+.tech-specs-table-row {
+  height: size(largest);
+  border-bottom: 1px solid color(border);
+}
+
+.tech-specs-table-header {
+  max-width: 6em;
+}
+
+.tech-specs-table-cell-size {
+  width: 12em;
+  vertical-align: middle;
+  font-size: size(smaller);
+}

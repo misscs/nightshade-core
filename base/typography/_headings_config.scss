@@ -1,0 +1,84 @@
+/*doc
+---
+title: Headings
+name: Headings
+parent: typography
+category: stylekit
+---
+
+HTML headings, `<h1>` through `<h4>`, are available. When you want to match
+the font styling of a heading but need a different element use `.h1` through `.h4` classes.
+
+Responsive size breakpoints are baked into each element or its respective class. Text length, or rags, are controlled on the component level.
+
+```haml_example
+%h1 Sleepy
+
+%h1.h2 Sleepy
+
+%h3 Label size
+
+%h4 Used for tiny labels
+```
+*/
+
+
+// Headers
+%headers {
+  @extend %verlag-black;
+  text-transform: uppercase;
+  letter-spacing: size(normal-tracking);
+  margin-top: 0
+}
+
+
+%headers--dark {
+  color: color(primary);
+}
+
+
+%headers--light {
+  color: color(background);
+}
+
+
+%h1 {
+  font-size: 22px;
+
+  @include respond-between(640px, 850px) {
+      font-size: 28px
+  }
+
+  @include respond-at-and-above(850px) {
+    font-size: 32px;
+  }
+}
+
+
+%h2 {
+  font-size: 16px;
+
+  @include respond-between($break-small, $break-medium) {
+    font-size: 18px;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 22px;
+  }
+}
+
+
+%h3 {
+  font-size: 15px;
+}
+
+
+%h4 {
+  font-size: 13px;
+  margin-bottom: size(smallest);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 14px;
+  }
+
+}

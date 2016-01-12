@@ -1,0 +1,128 @@
+// Sections and regional layout for checkout pages
+
+// Generic wrapper class for checkout sections. This class provides max-width.
+// Use it for containers
+.checkout-section {
+  @include checkout-section;
+}
+
+// Contains the section title and form steps (progress indicator)
+.checkout-region-header {
+  @include is-hidden--position;
+
+  margin-bottom: size(large);
+
+  @include respond-at-and-above($form-2col) {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+// The main checkout region. This class is applied to the form. There should
+// only be one main region per checkout page
+.checkout-region-main {
+  margin-top: 0;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+
+  @include respond-below($form-tablet) {
+    margin-bottom: size(largest);
+
+    .checkout-button {
+      width: 100%;
+    }
+  }
+
+
+  @include respond-at-and-above($form-2col) {
+    display: block;
+    margin-bottom: size(between-form-spacing);
+  }
+}
+
+// parent wrapper class for order ledger, promo form, and trial/warranty
+.checkout-region-aside-wrapper {
+  order: -1;
+  width: 100%;
+  position: static;
+}
+
+.checkout-region-aside {
+  @include checkout-section-width-compact;
+
+  padding: size(large) size(large) 0;
+
+  @include respond-at-and-above($form-2col) {
+    width: 100%;
+    padding: size(larger) size(large) size(large);
+  }
+}
+
+.checkout-form-fieldset-wrapper {
+  padding-left: size(mobile-sides);
+  padding-right: size(mobile-sides);
+  margin-top: size(larger);
+
+  @include respond-at-and-above($form-2col) {
+    margin-top: 0;
+  }
+}
+
+// Layout for two-column forms. Unique to Shipping and Billing steps
+.form-payment,
+.form-address,
+.form-delivery {
+  .checkout-form-fieldset-wrapper {
+    margin-bottom: 170px;
+
+    @include respond-below($form-2col) {
+      @include checkout-section-width-compact;
+    }
+  }
+
+  @include respond-between($form-2col, $form-tablet) {
+    @include with-layout($checkout-form-small) {
+      @include container;
+
+      .checkout-form-fieldset-wrapper {
+        @include span(1 first);
+      }
+
+      .checkout-region-aside-wrapper {
+        @include span(1 last);
+      }
+    }
+  }
+
+
+  @include respond-between($form-tablet, $form-max) {
+    @include with-layout($checkout-form-medium) {
+      @include container;
+
+      .checkout-form-fieldset-wrapper {
+        @include span(1 first);
+      }
+
+      .checkout-region-aside-wrapper {
+        @include span(1 last);
+      }
+    }
+  }
+
+
+  @include respond-at-and-above($form-max) {
+    @include with-layout($checkout-form-large) {
+      @include container;
+
+      .checkout-form-fieldset-wrapper {
+        @include span(1 first);
+      }
+
+      .checkout-region-aside-wrapper {
+        @include span(1 last);
+      }
+    }
+  }
+}

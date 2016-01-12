@@ -1,0 +1,81 @@
+.approach-value-prop {
+  padding: 0 size(large);
+}
+
+.approach-value-prop-container {
+  position: relative;
+  padding: size(4em) 0;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    margin-left: 20%;
+    height: 1px;
+    background-color: color(lighter-grey);
+  }
+
+  .approach-prop-copy {
+    margin-bottom: size(medium);
+  }
+
+  .approach-button {
+    margin-top: size(medium);
+  }
+
+  @include respond-at-and-above($break-mobile) {
+    padding: size(5em) 0;
+
+    &:before {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
+}
+
+
+.approach-value-prop-header {
+  padding: 0 size(medium) size(small);
+  margin: 0;
+}
+
+
+.approach-value-prop--process {
+  background-color: color(lightest-grey);
+
+
+  .approach-value-prop-container {
+
+    &:before {
+      height: 0;
+      content: none;
+    }
+  }
+
+  .approach-button {
+    min-width: 190px;
+    margin-left: size(smaller);
+    margin-right: size(smaller);
+  }
+}
+
+
+.approach-prop-copy {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.prop-illustration-image {
+  max-height: 37px;
+  margin-bottom: size(normal);
+}
+
+.approach-value-prop--relationships {
+
+  .prop-illustration-image {
+    max-height: 33px;
+  }
+}

@@ -1,0 +1,36 @@
+// Gift Code
+// =========
+// Generic component for applying a gift code.
+// TODO this styling should live as a global pattern
+// @see email_signup_newsletter
+
+.form-fieldset-promo {
+  margin-top: size(large);
+
+  @include respond-below($form-2col) {
+    &.is-expanded {
+      margin-bottom: size(large);
+      margin-top: size(normal);
+    }
+  }
+}
+
+.form-field-apply-promo {
+  margin-bottom: 0;
+
+  .form-input {
+    width: 70%;
+  }
+
+  // @@@ refactor does not follow pattern `btn`
+  .button-apply-promo {
+    width: 32%;
+    padding: 0;
+  }
+}
+
+.promo-form-link {
+  vertical-align: middle;
+  padding-top: 10px;
+  margin-bottom: 16px;
+}

@@ -1,0 +1,45 @@
+@import 'plugins/box-sizing';
+@import 'plugins/root';
+
+html {
+  @extend %verlag-light;
+  background: color(background);
+  color: color(text);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+}
+
+figure,
+img {
+  border-style: none;
+  max-width: 100%;
+  margin: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+svg {
+  pointer-events: none;
+}
+
+
+ol,
+ul {
+  @extend %lists;
+}
+
+a {
+  text-decoration: none;
+  color: color(primary);
+}
+
+video {
+  outline: 0;
+}

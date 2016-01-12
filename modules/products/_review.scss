@@ -1,0 +1,59 @@
+// recent review section -- scoping to overwrite base styles for review stars and review text
+.product-page-review {
+  border-bottom: 1px solid color(border);
+  padding-top: 60px;
+  padding-bottom: 45px;
+
+  .rating-stars-stats--fraction {
+    margin-right: 6px;
+  }
+  
+  .rating-star-wrap,
+  .rating-star-mask,
+  .rating-star {
+    @include square(1.1em);
+  }
+}
+
+.product-page-review-time {
+  margin-top: 40px;
+}
+
+.product-page-review-title {
+  margin: 0 auto 8px;
+}
+
+.product-page-review-copy {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0 5px;  
+  max-height: 75px;
+}
+
+.product-page-review-info {
+  margin-top: 12px;
+}
+
+.product-page-review-btn {
+  margin: 40px 0 10px;
+}
+
+.product-page-review-info {
+  @include respond-below($break-small) {
+    display: block;
+  }
+}
+
+.product-page-review-inner {
+  max-width: 600px; 
+  margin: 0 auto;
+
+  @include respond-at-and-above($form-tablet) {
+    max-width: 700px;
+  }
+}
+
+.product-page-review-continue-reading {
+  @include link(primary-dark, primary, true);
+  font-size: 16px;
+}

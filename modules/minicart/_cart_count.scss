@@ -1,0 +1,69 @@
+.nav-item--cart {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  margin-right: 5px;
+  padding: 0 10px;
+  transition: background-color 0.15s, color 0.15s;
+
+  @include respond-at-and-above($break-main-nav) {
+    position: relative;
+    margin-right: -10px;
+  }
+
+
+  // Needed to override styles in main-menu
+  &.nav-item {
+    color: color(accent);
+
+    &:hover,
+    &.cart-open {
+      color: mix(#000, color(accent), 10%);
+    }
+  }
+
+  &.has-items {
+    .icon-cart-open {
+      display: inline;
+    }
+
+    .cart-count-item {
+      display: inline-block;
+    }
+
+    .icon-cart-closed {
+      display: none;
+    }
+  }
+}
+
+.icon-cart-closed,
+.icon-cart-open {
+  @include square(30px);
+
+  fill: currentColor;
+}
+
+.icon-cart-open {
+  display: none;
+}
+
+.cart-count-item {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  padding-left: 6px;
+  font-size: 12px;
+  letter-spacing: size(smallest-tracking);
+  text-align: center;
+
+  @include respond-at-and-above($break-main-nav) {
+    top: 15px;
+  }
+}

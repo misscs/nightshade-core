@@ -1,0 +1,72 @@
+// Main Menu
+//
+// 1. Remove grey highlight on iOS
+// 2. Explicitly declare width for IE10 overlap bug. Cannot use
+// shortform flex: 1 1 70px.
+
+@import "modules/layout/main_menu_config";
+
+.nav-main--checkout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include respond-below($break-main-nav - 1) {
+    padding: 0 size(normal);
+  }
+
+
+  .logo {
+    @include respond-at-and-above($break-medium) {
+      margin-right: 45px;
+    }
+
+
+    @include respond-at-and-above($break-main-nav) {
+      margin-right: 35px;
+    }
+  }
+
+  .nav-main-group--primary {
+    display: none;
+  }
+
+  .nav-main-group--user {
+    order: 3;
+    display: none;
+
+    @include respond-at-and-above($break-medium) {
+      display: block;
+      width: 145px;
+      text-align: right;
+    }
+  }
+
+  .phone-number .nav-item {
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 0;
+
+    @include respond-between($break-main-nav, 800px) {
+      .icon-phone {
+        display: inline-block;
+      }
+    }
+
+
+    @include after("") {
+      display: none;
+    }
+  }
+}
+
+.page-title--checkout {
+  order: 2;
+  align-self: center;
+  font-size: 20px;
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 26px;
+  }
+}

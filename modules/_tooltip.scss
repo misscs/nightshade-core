@@ -1,0 +1,125 @@
+@import "modules/tooltip_config";
+
+@include keyframes(pulse-scale-hoizontal-center) {
+  0% {
+    transform: scale3d(1, 1, 1) translate(-50%, 0);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05) translate(-50%, 0);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1) translate(-50%, 0);
+  }
+}
+
+
+@include keyframes(pulse-scale-vertical-center) {
+  0% {
+    transform: scale3d(1, 1, 1) translate(0, -50%);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05) translate(0, -50%);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1) translate(0, -50%);
+  }
+}
+
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: color(background);
+  padding: 25px;
+  width: 100%;
+  z-index: 1;
+  border-radius: size(normal-corners);
+  text-align: center;
+  cursor: default;
+  box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.08);
+
+  &.is-active {
+    display: block;
+  }
+
+  &.-left-align {
+    left: 0;
+    right: 11px;
+  }
+}
+
+// Position of the tooltip relative to the content
+
+// Tooltip is above the target
+[data-placement="top"] {
+  bottom: 100%;
+  left: 50%;
+
+  &.is-active {
+    transform: translate(-50%, 0);
+  }
+
+  .no-touch &.is-active {
+    @include animation(pulse-scale-hoizontal-center, 0.2s, $iteration-count: 1);
+  }
+
+  &.-left-align:after {
+    left: 20%;
+  }
+
+  &.-right-align:after {
+    left: initial;
+    right: 20%;
+    margin: 0 -15px 0 0;
+  }
+}
+
+// Tooltip to the right of the target
+[data-placement="right"] {
+  left: 100%;
+  top: 50%;
+
+  &.is-active {
+    transform: translate(0, -50%);
+  }
+
+  .no-touch &.is-active {
+    @include animation(pulse-scale-vertical-center, 0.2s, $iteration-count: 1);
+  }
+}
+
+// Tooltip to the left of the target
+[data-placement="left"] {
+  right: 100%;
+  top: 50%;
+
+  &.is-active {
+    transform: translate(0, 50%);
+  }
+
+  .no-touch &.is-active {
+    @include animation(pulse-scale-vertical-center, 0.2s, $iteration-count: 1);
+  }
+}
+
+// Tooltip to the bottom of the target
+[data-placement="bottom"] {
+  left: 55%;
+  top: 200%;
+
+  &.is-active {
+    transform: translate(-50%, 0);
+  }
+
+  .no-touch &.is-active {
+    @include animation(pulse-scale-hoizontal-center, 0.2s, $iteration-count: 1);
+  }
+}

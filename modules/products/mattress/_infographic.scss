@@ -1,0 +1,100 @@
+// Bed Frames section
+//
+// 1. Safari mobile does not respect flex-direction: column. Workaround is to
+// use flex-wrap. Need to restrict width to ensure one item per row.
+
+.bed-frames-options {
+  @include respond-at-and-above($break-main-nav) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 444px;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+.bed-frames-option {
+  @include respond-at-and-above($break-main-nav) {
+    flex: 1 0 33%;
+    margin: 0;
+    align-self: baseline;
+
+    &--box-springs {
+      flex: 1 0 34%;
+
+      .bed-frames-option-copy {
+        padding: 0px 20px;
+      }
+    }
+  }
+}
+
+// @@@ refactor. these images should be treated as content
+.bed-frames-drawing--slats {
+  @include respond-at-and-above($break-main-nav) {
+    margin: 23px 0 27px;
+  }
+}
+
+.bed-frames-drawing--box-springs {
+  img {
+    height: 83%;
+
+    @include respond-at-and-above($break-main-nav) {
+      height: 83px;
+    }
+  }
+
+  @include respond-at-and-above($break-main-nav) {
+    margin: 23px 0 18px;
+  }
+}
+
+@include respond-at-and-above($break-main-nav) {
+  .bed-frames-option-copy {
+    padding: 0px 33px;
+  }
+}
+
+
+//control the height for bed frames
+.bed-frames {
+  .product-infographic-drawing {
+    @include respond-at-and-above(560px) {
+      height: 115px;
+    }
+  }
+}
+
+// Flickity styling
+
+.bed-frames {
+  background-color: color(light-background);
+
+  @include respond-below($break-medium) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  /* disable Flickity for large devices */
+  @include respond-at-and-above($break-main-nav) {
+    .bed-frames-options:after {
+      content: "";
+    }
+  }
+
+
+  @include respond-between($break-mobile, $break-medium) {
+    .bed-frames-option {
+      transition: opacity 0.15s;
+      opacity: 0.3;
+
+      &.is-selected {
+        opacity: 1;
+      }
+    }
+  }
+}

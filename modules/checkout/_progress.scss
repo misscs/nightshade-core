@@ -1,0 +1,54 @@
+// Progress Steps
+// ==============
+
+.progress {
+  @include delimited-list(">");
+}
+
+.progress-step {
+  margin-right: size(smallest);
+}
+
+.progress-step-text {
+  @extend %h4;
+
+  text-transform: uppercase;
+  letter-spacing: size(small-tracking);
+  margin-right: size(smaller);
+  font-weight: normal;
+
+  .is-current & {
+    font-weight: 800;
+  }
+
+  .is-completed & {
+    a {
+      color: color(medium-text);
+    }
+  }
+}
+
+// .progress
+//   padding-left: size(mobile-size)
+//   padding-right: size(mobile-size)
+
+// .progress-step
+//   border-right: 1px solid color(border)
+//   text-align: center
+//   width: 25%
+
+//   &.is-current
+//     background: color(medium-background)
+
+//   &:first-child
+//     border-left: 1px solid color(border)
+
+// .progress-step-text
+//   text-transform: uppercase
+//   padding: size(small) size(smaller) size(small) size(smallest)
+//   display: inline-block
+//   color: color(primary)
+//   position: relative
+
+//   .is-current &
+//     font-weight: bold

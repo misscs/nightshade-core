@@ -1,0 +1,123 @@
+@import "modules/products/mattress/info_config";
+
+.product-purchase--mattress {
+  .product-description {
+    display: block;
+    max-width: 22em;
+    margin: 0 auto size(small);
+    text-align: center;
+  }
+
+  .form-field--size {
+    padding-top: size(normal);
+  }
+
+  .add-to-cart-title {
+    margin-bottom: size(smallest);
+  }
+
+  .form-actions {
+    margin-top: 0;
+  }
+
+  .form-help {
+    font-size: 13px;
+    text-align: center;
+
+    @include respond-at-and-above($break-mobile) {
+      padding-left: 40%;
+    }
+  }
+}
+
+.mattress-info-header {
+  padding-bottom: 50px;
+
+  @include respond-at-and-above(1200px) {
+    background: color(background);
+    padding-top: 50px;
+  }
+}
+
+.mattress-info-construction-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 725px;
+  margin: 0 auto;
+}
+
+.mattress-info-construction {
+  padding-top: 38px;
+
+  @include respond-at-and-above(629px) {
+    margin-left: 32px;
+  }
+
+
+  .icon {
+    @include square(50px);
+
+    fill: color(mattress-icon);
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .icon-text {
+    @extend %body--sans-small;
+
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.mattress-info-construction-item {
+  margin-bottom: 24px;
+  padding: 0 36px;
+  flex: 1 0 auto;
+
+  @include respond-between(480px, 628px) {
+    width: 100%;
+  }
+}
+
+// See config
+@each $type, $width in $items {
+  .mattress-info-construction-item--#{$type} {
+    .icon-text {
+      max-width: #{$width};
+    }
+  }
+}
+
+.mattress-info-construction-copy {
+  vertical-align: top;
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+}
+
+@include respond-at-and-above(500px) {
+  .mattress-info-construction-item {
+    flex: 1 0 auto;
+    padding: 0 11px;
+
+    .icon {
+      margin-bottom: 14px;
+    }
+  }
+
+  .mattress-info-construction-copy {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+
+.mattress-info-rule {
+  width: 125px;
+  background: color(border);
+  height: 2px;
+  border: 0;
+}

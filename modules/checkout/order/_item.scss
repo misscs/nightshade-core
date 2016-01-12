@@ -1,0 +1,104 @@
+// Order summary item represent a product line-item in the cart
+// This component appears on the cart, confirm, and order status page
+
+// Parent element that contains each .order-summary-item
+.order-summary-items {
+  padding-top: size(normal);
+  border-top: 1px solid color(border);
+}
+
+.product-item-detail-item {
+  margin-top: gutter();
+
+  @include respond-at-and-above($form-2col) {
+    .value {
+      display: block;
+      padding: size(large) 0;
+    }
+  }
+}
+
+@include respond-below($form-2col) {
+  .product-item-detail-item--quantity {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+    .form-label {
+      @include is-hidden;
+    }
+  }
+
+  .product-item-detail-item--total {
+    @include is-hidden--clip;
+  }
+}
+
+
+@include respond-at-and-above($form-2col) {
+  @include with-layout($order-item-layout) {
+    .order-summary-item {
+      @include container;
+    }
+
+    .product-item-details {
+      @include span(3 last);
+    }
+
+    .product-item-header {
+      @include span(1 first);
+    }
+
+    .product-item-detail-item--price {
+      @include span(1 of (1 1 1) first);
+    }
+
+    .product-item-detail-item--quantity {
+      @include span(1 of (1 1 1) at 2);
+
+      .value {
+        padding-top: 20px;
+      }
+    }
+
+    .product-item-detail-item--total {
+      @include span(1 of (1 1 1) last);
+    }
+  }
+}
+
+
+// Each line item for each Casper product in your cart. This is a wrapper
+// element for .product-item
+.order-summary-item {
+  margin-bottom: size(normal);
+  padding-bottom: size(normal);
+  border-bottom: 1px solid color(border);
+  position: relative;
+
+  .btn--delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.2;
+    transition: opacity 0.2s;
+
+    @include respond-at-and-above($form-2col) {
+      top: 40%;
+    }
+
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    .icon {
+      @include square(13px);
+    }
+  }
+
+  .form-input-quantity {
+    width: 54px;
+    display: block;
+  }
+}

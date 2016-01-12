@@ -1,0 +1,76 @@
+// Confirmation page modules
+// ==========================
+
+.form-confirm {
+  .form-actions {
+    padding-left: 23px;
+    padding-right: 23px;
+
+    @include respond-at-and-above($form-2col) {
+      @include with-layout($order-item-layout) {
+        @include span(3 last);
+
+        padding: 0;
+      }
+    }
+  }
+
+  .form-field-sms-number {
+    margin-left: 25px;
+  }
+}
+
+.form-section-review-order {
+  @include respond-below($break-small) {
+    padding-top: 0;
+
+    .order-ledger {
+      margin-top: 0 !important;
+    }
+  }
+
+
+  .product-item-detail-item--quantity .value {
+    padding-top: 31px;
+  }
+}
+
+.order-detail-link {
+  @include square(13px);
+
+  display: inline-block;
+  fill: color(text);
+  transition: color 0.15s;
+
+  .icon-text {
+    @extend %is-hidden;
+  }
+
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+    fill: color(accent);
+  }
+}
+
+// Special instructions section
+// ----------------------------
+.form-fieldset-special-instructions {
+  margin-bottom: size(larger);
+}
+
+.special-instructions-block--left {
+  @include respond-at-and-above($break-large) {
+    padding-right: 70px;
+  }
+}
+
+// to align the bottom of the text field to the text us number
+.shipping-instructions {
+  .form-input {
+    height: 120px;
+  }
+}

@@ -1,0 +1,410 @@
+//doc
+//
+// ---
+// title: Forms
+// name: forms
+// category: components
+// ---
+//
+// Casper form components.
+//
+// Standard form components are always preferred over custom elements.
+//
+//
+//  Class            |  Description
+//  ---------------- | -----------------
+//  `.form-field`    | The element that wraps label and input
+//  `.form-legend`   | Title of the form
+//  `.form-label`    | The element class for form label.
+//  `.form-label-copy`     | Class to use on `span` element when you need to wrap text
+//  `.form-input`    | The element class for form input
+//  `.form-help`     | Class to designate form or form field help text
+//  `.form-actions`  | The element that contains form buttons and actions
+//
+//
+// ```haml_example
+// %form
+//
+//  %fieldset
+//
+//    .form-legend I am a form
+//
+//    .form-field
+//      %label.form-label
+//        Size
+//      %input{:type => 'text', :class => 'form-input'}
+//
+//    .form-field
+//      %span.form-label Price
+//      %input{:type => 'text', :class => 'form-input'}
+//
+//      %p.form-help Financing is available
+//
+//    .form-actions
+//      %button{:type => 'submit', :class => 'btn btn--primary'} Add to Cart
+//      %input{:type => 'submit', :class => 'btn btn--accent'}
+// ```
+
+// ---------------------------------------------------------
+
+// Reset form elements
+form,
+figure,
+fieldset,
+legend,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  overflow: hidden;
+  width: 100%;
+}
+
+legend {
+  border: 0;
+  display: block;
+  width: 100%;
+}
+
+fieldset {
+  border: 0;
+}
+
+button,
+input {
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  #{$focus} {
+    outline: 0;
+  }
+}
+
+button[disabled] {
+  cursor: default;
+}
+
+input {
+  line-height: 1;
+}
+
+// Get rid of number dropdown "spinners" for an overwhelming amount of browsers
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+// Get rid of number dropdown "spinners" for browsers
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  -ms-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="radio"] {
+  -webkit-appearance: radio;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+select {
+  outline: 0;
+  box-shadow: 0;
+  background: transparent;
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: "";
+  appearance: none;
+
+  &:focus {
+    border: 1px solid color(dark-text);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.form-section-special-instructions {
+  margin-top: size(between-form-spacing);
+}
+
+// Custom form classes
+// @depreciating please use `.form-wrapper` instead
+.form {
+  margin-top: 34px;
+}
+
+// @@@ refactor and consolidate into one class or better way to apply
+.form-section + .form-section,
+.form-fieldset + .form-section,
+.form-section + .form-fieldset,
+.form-fieldset + .form-fieldset {
+  margin-top: 65px;
+
+  @include respond-at-and-above($break-large) {
+    margin-top: 80px;
+  }
+}
+
+.form-field-payment-method {
+  margin-bottom: 8px !important;
+}
+
+
+// the title element
+.form-legend {
+  padding-bottom: 10px;
+  margin-bottom: size(normal);
+  border-bottom: 1px solid color(border);
+  align-items: center;
+
+  @include respond-at-and-above($break-medium) {
+    padding-bottom: 15px;
+    margin-bottom: size(large);
+  }
+
+
+  @include respond-at-and-above($form-tablet) {
+    display: flex;
+  }
+}
+
+.form-legend-alt {
+  @extend %body--sans-small;
+
+  text-transform: lowercase;
+  display: block;
+  margin-top: size(small);
+
+  @include respond-at-and-above($form-tablet) {
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
+
+// @@@ this is overriding default h2
+// how often are we doing this?!
+.form-section-title {
+  margin-bottom: 8px;
+}
+
+.form-field {
+  margin-bottom: 25px;
+}
+
+@include respond-at-and-above($break-large) {
+  .form-field-group {
+    display: flex;
+
+    .form-field {
+      flex: 1 1 50%;
+
+      &:last-child {
+        margin-left: size(normal);
+      }
+    }
+  }
+}
+
+
+.form-label {
+  @extend %headers;
+
+  @extend %h4;
+
+  display: block;
+}
+
+
+.form-label-copy {
+  display: inline-block;
+}
+
+.form-label--alt {
+  @extend %verlag;
+
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: size(small-tracking);
+}
+
+.form-input {
+  @extend %body--sans-small;
+
+  width: 100%;
+  border: 1px solid color(border);
+  margin: 0;
+  padding: size(smaller) size(small);
+  color: color(medium-text);
+  border-radius: size(normal-corners);
+  background: color(background);
+  cursor: auto;
+
+  &:focus {
+    border-color: color(dark-text);
+  }
+
+  // these are for jquery validation plugin
+  // @@@ consolidate these into one class
+  &.has-errors,
+  &.error {
+    border-color: color(accent);
+  }
+}
+
+.form-input--select {
+  fill: color(medium-text);
+  padding-right: size(large);
+  background-image: image-url("nightshade/icons/select-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px 8px;
+  appearance: none;
+  border-radius: size(normal-corners);
+  cursor: pointer;
+
+  // @@@ mozilla arrow
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 color(text);
+  }
+}
+
+.form-input--checkbox {
+  width: auto;
+  cursor: pointer;
+}
+
+.form-input--radio {
+  @include circle(44px, primary);
+
+  &:checked {
+    background: color(primary);
+  }
+}
+
+// Grouped input/submit buttons (e.g. Newsletter signup)
+.form-input-group {
+  display: flex;
+
+  .form-input,
+  .btn {
+    height: 48px;
+  }
+
+  .form-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn {
+    padding: size(smaller) size(small);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.form-actions {
+  margin-top: size(large);
+}
+
+.form-description {
+  margin-top: size(small);
+  margin-bottom: 10px;
+  max-width: 540px;
+
+  // for radios and checkboxes
+  .form-label + & {
+    margin-top: 0;
+    margin-left: 25px;
+  }
+}
+
+.form-help {
+  @extend %serif-family-stack;
+
+  font-size: 14px;
+  color: color(text);
+  margin-top: 0.7rem;
+  font-style: italic;
+  letter-spacing: size(smallest-tracking);
+  display: block;
+
+  a {
+    @include link(text, medium-text, true);
+  }
+}
+
+// Form States
+// -----------
+.is-required {
+  color: color(accent);
+}
+
+.has-errors {
+  // Class added by jQuery form validation when a form-field is invalid
+  &.form-input {
+    border-color: color(accent);
+  }
+}
+
+// @@@ consolidate error handling
+
+// from jquery validation plugin
+label.error {
+  color: color(accent);
+  margin-top: 0.7rem;
+}
+
+// jQuery's validation plugin generates a label. We don't display it to
+// sighted users, but accessible hide it for unsighted users
+label.has-errors {
+  @extend %is-hidden;
+
+  color: color(accent);
+}
+
+// Form button states
+form {
+  .btn--primary {
+    &:focus {
+      box-shadow: 0px 0px 0px 2px mix(color(background), color(primary), 70%);
+    }
+  }
+
+  .btn--secondary {
+    &:focus {
+      box-shadow: 0px 0px 0px 2px mix(color(background), color(primary), 20%);
+    }
+  }
+
+  .btn--accent {
+    &:focus {
+      box-shadow: 0px 0px 0px 2px mix(color(background), color(accent), 70%);
+    }
+  }
+}

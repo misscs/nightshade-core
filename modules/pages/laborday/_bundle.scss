@@ -1,0 +1,150 @@
+// Labor Day Sail Page
+
+.laborday-event {
+  padding: 3.5rem size(large);
+  background: color(light-background);
+
+  @include respond-below($break-small) {
+    padding: size(larger) size(large);
+  }
+
+  .event-month {
+    @extend %verlag-black;
+    margin-bottom: size(smallest);
+    line-height: 37px;
+  }
+
+  [data-icon="anchor"] {
+    margin: 0px 7px;
+    vertical-align: top;
+    fill: color(primary);
+  }
+
+  .event-title {
+    font-size: 2em;
+  }
+
+  .boat-img {
+    width: 225px;
+    height: 129px;
+    margin-bottom: size(largest);
+  }
+
+  .tagline {
+    margin-bottom: size(smallest);
+  }
+
+  .event-date {
+    display: block;
+    margin-bottom: size(normal);
+  }
+
+  .event-description {
+    max-width: 35em;
+    margin: 0 auto;
+  }
+}
+
+.laborday-video {
+  display: block;
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.laborday-tickets-info {
+  position: relative;
+  padding: 8rem size(small);
+  background: color(primary-dark);
+  overflow: hidden;
+
+  @include respond-between($break-small, 950px) {
+    padding: size(largest) size(small);
+  }
+
+  @include respond-below($break-small) {
+    padding: size(large);
+  }
+
+  .content-block {
+    position: relative;
+    z-index: 5;
+  }
+
+  .ticket-heading {
+
+    @include respond-below($break-medium) {
+      font-size: 19px;
+    }
+  }
+
+  .ticket-links {
+    @extend %verlag-black;
+    display: flex;
+    justify-content: center;
+    padding-top: size(small);
+    font-size: 19px;
+    letter-spacing: size(medium-tracking);
+
+    @include respond-below(950px) {
+      flex-direction: column;
+      padding-top: 0;
+    }
+  }
+
+  .ticket-link {
+    padding: 0 size(large);
+    color: darken(color(tab-hover), 10%);
+    border-left: 1px solid color(background);
+    transition: color 0.15s;
+
+    &:hover {
+      color: color(background);
+    }
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    @include respond-between(950px, 1050px) {
+      padding: 0 size(normal);
+    }
+
+    @include respond-below(950px) {
+      display: block;
+      padding: size(smallest) 0;
+      border-left: 0;
+    }
+  }
+}
+
+.laborday-tickets-price {
+  @extend %chronicle-italic;
+  padding: size(smaller);
+  background: darken(color(tab-hover), 10%);
+  font-size: 20px;
+
+  @include respond-below($break-small) {
+    font-size: 18px;
+  }
+}
+
+
+// Replace waves video with static image on touch devices
+
+.touch {
+
+  .laborday-video {
+    display: none;
+  }
+
+  .laborday-tickets-info {
+    background-image: image-url("nightshade/laborday/laborday-waves.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

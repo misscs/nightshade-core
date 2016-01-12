@@ -1,0 +1,26 @@
+.design-story-aside {
+  position: relative;
+  padding: 5em 23px;
+
+  @include respond-below(64em) {
+    background: color(lightest-grey);
+    padding: size(largest) 23px;
+  }
+}
+
+
+.design-story-aside-illustration {
+  margin-bottom: size(large);
+  width: 30%;
+  max-width: 120px;
+}
+
+
+.design-story--aside--copy {
+  max-width: 36em;
+  margin: 0 auto;
+
+  @include respond-at-and-above($break-mobile) {
+    padding: 0 size(small);
+  }
+}

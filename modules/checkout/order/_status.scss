@@ -1,0 +1,23 @@
+// Order status page
+// - # The Order Status page has two functions
+// - # 1) Immediately upon completing their order
+// - # 2) A customers order tracking & summary page accessible from their account
+// @see orders/show
+//
+
+.order-status {
+  margin-bottom: 0;
+}
+
+// wrapper element that contains the headline and link to take the survey
+.status-block {
+  margin-top: size(normal);
+}
+
+// displays in form-legends
+.order-email {
+  @extend %verlag-light;
+
+  float: right;
+  text-transform: lowercase;
+}

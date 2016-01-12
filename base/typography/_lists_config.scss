@@ -1,0 +1,30 @@
+%lists {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin inline-list {
+  list-style-type: none;
+
+  &, & li {
+    display: inline;
+  }
+}
+
+@mixin delimited-list($separator: ", ") {
+
+  li {
+    display: inline-block;
+
+    &:after {
+      content: $separator;
+    }
+
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}

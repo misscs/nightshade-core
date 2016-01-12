@@ -1,0 +1,70 @@
+// Nap Tour Check-in
+.hero--naptour {
+  padding: 2em size(large) 1.5em;
+  background: color(primary) image-url('nightshade/naptour/naptour-path.svg') no-repeat center;
+  background-size: auto 110%;
+  color: color(background);
+
+  @include respond-at-and-above(680px) {
+    background-size: 100% auto;
+  }
+}
+
+.naptour-logo {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 0.5em;
+  background: image-url('nightshade/naptour/naptour-logo.svg') no-repeat;
+  background-size: 100% 100%;
+}
+
+.naptour-heading {
+  margin-bottom: 0;
+}
+
+.naptour-checkin-cities,
+.naptour-checkin-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: size(largest) size(large);
+}
+
+.naptour-checkin-cities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25em;
+
+  .link {
+    margin-bottom: size(smallest);
+  }
+}
+
+.naptour-checkin-form {
+  display: block;
+  min-height: 430px;
+
+  .form-fields {
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  .form-success {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: 0.3s opacity ease-out;
+
+    &.fadein {
+      visibility: visible;
+      height: auto;
+      opacity: 1;
+    }
+  }
+
+  .submit-img {
+    position: absolute;
+  }
+}

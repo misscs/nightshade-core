@@ -1,0 +1,105 @@
+// [1] Because of how our size function works, it returns a string.  This make it unable to add two size function results.  Had to hard code it
+// full screen header: size(super-header-height) + size(header-height) = 100px
+// < 900px screen header: size(super-header-height) + size(fixed-header-height) = 85px
+// < 600px screen header: size(fixed-header-height) + size(mobile-super-header-height) = 115px
+// Class added to body when super header is visible
+.is-super {
+  .container {
+    padding-top: 0;
+  }
+
+  .r-header {
+    top: 35px;
+
+    @include respond-below($break-small) {
+      top: size(mobile-super-header-height);
+    }
+  }
+
+  &.experiment--fixed-header {
+    padding-top: 100px;
+
+    @include respond-between($break-small, 900px) {
+      padding-top: 85px;
+    }
+  }
+}
+
+.super-header {
+  @include z-index(header);
+
+  height: size(super-header-height);
+  background: color(dark-background);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include respond-below($break-small) {
+    height: size(mobile-super-header-height);
+  }
+
+
+  &.is-hidden {
+    visibility: hidden;
+  }
+
+  .btn--super-header-close {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @include respond-between($break-small, 900px) {
+      right: 10px;
+    }
+
+    @include respond-at-and-above(900px) {
+      right: 20px;
+    }
+  }
+}
+
+.super-header-link {
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 35px;
+  font-size: 12px;
+  color: color(background);
+  display: inline-block;
+  letter-spacing: size(normal-tracking);
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.super-header-copy {
+  position: relative;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  color: color(background);
+  display: inline-block;
+  letter-spacing: size(normal-tracking);
+  padding: 0 30px;
+
+  @include respond-at-and-above($break-small) {
+    line-height: 35px;
+    padding: 0;
+    transform: none;
+    top: auto;
+  }
+
+
+  @include respond-between($break-small, 900px) {
+    font-size: 11px;
+  }
+
+
+  @include respond-at-and-above(900px) {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,481 @@
+// [1] No user should have a scroll bar on the dialog itself, but perhaps its
+// inner content. Scrollbars are visible all the time on Windows & Linux users
+// when scroll properties are set to be scrollable explicitly
+//
+// [2] These !importants are necessary for dialogs to work in iPhone/iPad safari correctly
+//     For some reason I think the polyfill adds in top inline styles, which cause
+//     the dialog to not show up at the top of the screen.  These !importants ignore those
+
+.dialog {
+  will-change: transform, opacity;
+  top: 25vh !important;
+  width: 90%;
+  height: auto;
+  max-width: 800px;
+  overflow: hidden;
+  padding: 0;
+  background: color(light-background);
+  border-radius: size(small-corners);
+  border: 2px solid color(border);
+  text-align: center;
+  font-size: 16px;
+  color: color(text);
+  border-radius: size(normal-corners);
+
+  @include respond-between($break-medium, $break-large) {
+    top: 10% !important;
+    top: 8vh !important;
+  }
+
+
+  @include respond-at-and-above($break-small) {
+    font-size: 18px;
+  }
+
+
+  &[open] {
+    opacity: 1;
+    transform: translateY(0px);
+    animation: showModal 0.15s ease-in;
+
+    @at-root {
+      @keyframes showModal {
+        from {
+          opacity: 0;
+          transform: translateY(-100px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &::backdrop, & + .backdrop {
+      animation: showBackdrop 0.2s ease;
+
+      @at-root {
+        @keyframes showBackdrop {
+          from {
+            opacity: 0;
+          }
+
+          to {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &::backdrop,
+  & + .backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    will-change: opacity;
+  }
+
+  .dialog-callout-crawler {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    padding: 1em 2em;
+    border-top: 1px solid color(dark-border);
+  }
+}
+
+.modal-header {
+  font-size: 24px;
+  margin: 45px auto 20px;
+
+  @include respond-at-and-above($break-small) {
+    font-size: 32px;
+  }
+}
+
+.modal-inner {
+  padding: 25px;
+  overflow-y: auto;
+
+  @include respond-at-and-above($break-small) {
+    padding: 40px;
+  }
+}
+
+.modal-content {
+  margin-bottom: size(largest);
+}
+
+// @@@ Needs to be refactored on smaller viewports
+.btn--modal-close {
+  @include positioning(absolute, 0, top right);
+
+  @include square(48px);
+
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.15s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// HOTFIX
+.courier_delivery_modal {
+  .hidden, .is-hidden {
+    display: none;
+  }
+
+  .shipping-options-header {
+    font-size: 26px;
+    margin-top: 20px;
+
+    @include respond-below($break-small) {
+      font-size: 16px;
+    }
+  }
+
+  .shipping-options-subtitle {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+
+  .shipping-options {
+    margin: 15px 20px;
+    text-align: left;
+    transition: opacity 0.3s ease;
+
+    &.disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .option {
+      width: 221px;
+      height: 140px;
+      padding: 10px;
+      vertical-align: top;
+      display: inline-block;
+      margin-right: -4px;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      background: #f5f5f5;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.selected {
+        color: white;
+        background: color(primary);
+        box-shadow: none;
+        opacity: 1;
+
+        .time {
+          .cs-icon-clock {
+            display: none;
+          }
+
+          .cs-icon-clock-white {
+            display: inline-block;
+          }
+        }
+      }
+
+      &:first-child {
+        margin-right: 10px;
+      }
+
+      .option-title {
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+
+        @include respond-below($break-small) {
+          font-size: 15px;
+        }
+      }
+
+      .time {
+        margin: 5px auto;
+        text-align: center;
+
+        .icon {
+          width: 18px;
+          height: 18px;
+          display: inline-block;
+          position: relative;
+          top: 4px;
+          margin-right: 4px;
+        }
+
+        .cs-icon-clock-white {
+          display: none;
+        }
+      }
+
+      .desc {
+        font-size: 13px;
+
+        @include respond-below($break-small) {
+          display: none;
+        }
+      }
+
+      @include respond-below($break-small) {
+        height: 80px;
+        width: 50%;
+        margin: 0;
+        border-radius: 0;
+        vertical-align: top;
+
+        &:first-child {
+          margin-right: -4px;
+        }
+
+        .time {
+          font-size: 11px;
+
+          .icon {
+            width: 10px;
+            height: 10px;
+            margin-right: 2px;
+            position: relative;
+            top: 2px;
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+
+  #courier-options {}
+
+  .courier-options-subtitle {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 16px;
+
+    @include respond-below($break-small) {
+      margin: 10px 0;
+    }
+
+
+    .subtext {
+      font-size: 12px;
+      color: color(text);
+    }
+  }
+
+  #day-of-week {
+    @include respond-below($break-small) {
+      height: 85px;
+    }
+  }
+
+  #apartment-details {
+    position: relative;
+  }
+
+  #doorman-or-walkup {
+    position: relative;
+    margin-top: 20px;
+    height: 53px;
+
+    @include respond-below($break-small) {
+      height: 100px;
+    }
+  }
+
+  #doorman, #walk-up {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: width 0.3s ease;
+
+    &.half {
+      width: 45%;
+    }
+
+    @include respond-below($break-small) {
+      &.half {
+        width: 100%;
+      }
+    }
+
+
+    .courier-options-subtitle {
+      width: 80px;
+      vertical-align: top;
+      display: inline-block;
+      margin-right: 20px;
+      margin-top: 0;
+    }
+
+    .courier-options {
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
+
+  @include respond-at-and-above($break-small) {
+    #walk-up {
+      position: absolute;
+      right: -7px;
+      top: 0;
+      width: 49%;
+      opacity: 0;
+      z-index: 0;
+      transition: opacity 0.3s ease;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  .courier-options {
+    height: 45px;
+    transition: opacity 0.3s ease;
+
+    &.disabled {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .courier-option {
+      padding: 10px 15px;
+      vertical-align: top;
+      display: inline-block;
+      margin-right: -1px;
+      float: left;
+      border: 1px solid #aaa;
+      opacity: 0.6;
+      position: relative;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      background: #f5f5f5;
+      text-align: center;
+
+      &.tod {
+        width: 114px;
+        height: 45px;
+
+        .label-for-ny {
+          position: relative;
+          top: -5px;
+        }
+
+        .label-for-sf {
+          position:relative {}
+        }
+
+        @include respond-below($break-small) {
+          width: 25%;
+          padding: 12px 0;
+          font-size: 12px;
+        }
+      }
+
+      &.dow {
+        width: (100% / 6);
+        height: 45px;
+
+        @include respond-below($break-small) {
+          width: (100% / 3);
+          padding: 12px 0;
+          font-size: 14px;
+          margin-top: -1px;
+          border-radius: 0 !important;
+        }
+
+
+        &.courier-seven-days {
+          width: (100% / 7);
+
+          @include respond-below($break-small) {
+            width: (100% / 4);
+          }
+        }
+      }
+
+      &.yn {
+        width: 50px;
+        height: 45px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.selected {
+        color: white;
+        background: color(primary);
+        box-shadow: none;
+        opacity: 1;
+
+        .time {
+          .cs-icon-clock {
+            display: none;
+          }
+
+          .cs-icon-clock-white {
+            display: inline-block;
+          }
+        }
+      }
+
+      .time-window {
+        display: block;
+        font-size: 12px;
+        margin-top: -9px;
+      }
+
+      &:first-child {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #courier-options {
+    .toggle {
+      -webkit-appearance: radio;
+    }
+
+    .choice {
+      -webkit-appearance: checkbox;
+    }
+  }
+
+  #caveats {
+    font-size: 13px;
+
+    @include respond-below($break-small) {
+      font-size: 10px;
+    }
+  }
+}

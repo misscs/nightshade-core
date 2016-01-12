@@ -1,0 +1,112 @@
+/**
+ * This partial is leveraging Rome, a customizable date (and time) picker
+ *
+ * @link https://github.com/bevacqua/rome
+ * @license MIT
+ */
+
+.rd-container {
+  @include z-index(modal);
+  border-radius: size(small-corners);
+  display: none;
+  border: 1px solid color(border);
+  background-color: color(background);
+  padding: size(small) size(smaller) size(smallest);
+  text-align: center;
+  position: relative;
+
+  @include after("") {
+    @include arrow(top, background, 16px);
+  }
+}
+
+
+.rd-container-attachment {
+  position: absolute;
+  margin-top: size(normal);
+  width: 367px;
+
+  @include respond-at-and-above($form-2col) {
+    width: auto;
+  }
+
+
+}
+
+
+.rd-month {
+  margin-right: 25px;
+}
+
+
+.rd-days {
+  width: 100%;
+  margin-top: size(smaller);
+}
+
+.rd-month:last-child {
+  margin-right: 0;
+}
+
+
+.rd-back,
+.rd-next {
+  @include square(16px);
+  color: color(primary);
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-image: image-url('nightshade/icons/arrow.svg');
+
+  &[disabled] {
+    cursor: default;
+    display: none;
+  }
+}
+
+
+.rd-back {
+  float: left;
+  transform: rotate(180deg);
+}
+
+
+.rd-next {
+  float: right;
+}
+
+
+.rd-day-body {
+  cursor: pointer;
+  text-align: center;
+  padding: size(smallest)
+}
+
+.rd-month-label {
+  @extend %headers;
+  @extend %h4;
+}
+
+
+.rd-day-head {
+  @extend %headers;
+  @extend %h4;
+  color: color(primary);
+  padding-bottom: size(small);
+}
+
+.rd-day-selected,
+.rd-time-selected,
+.rd-time-option:hover {
+  @include circle(24px, primary);
+  cursor: pointer;
+  background-color: color(dark-background);
+  color: color(background);
+  font-weight: bold
+}
+
+
+.rd-day-disabled {
+  cursor: default;
+  color: color(light-text);
+}

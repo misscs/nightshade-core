@@ -1,0 +1,11 @@
+// Generates arrow positions for tooltips
+
+$tooltip-arrow-positions: bottom, right, left, top;
+
+@each $position in $tooltip-arrow-positions {
+  [data-arrow="#{$position}"] {
+    @include after("") {
+      @include arrow($position, background, 15px, $shadow: true);
+    }
+  }
+}

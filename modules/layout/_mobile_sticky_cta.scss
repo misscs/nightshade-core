@@ -1,0 +1,69 @@
+.mobile-sticky-cta {
+  @include z-index("mobile-sticky-cta");
+
+  position: fixed;
+  min-width: 280px; // Fix for Safari on iOS 7
+  max-width: 90%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 0;
+  border-radius: size(normal-corners) size(normal-corners) 0 0;
+  white-space: nowrap;
+  display: none;
+
+  .icon {
+    fill: color(primary);
+    margin-right: 0.25rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .icon-phone {
+    height: 17px;
+    width: 14px;
+  }
+
+  .icon-sms {
+    height: 17px;
+    width: 21px;
+    margin-right: sizing(smaller-tracking);
+  }
+
+  &.btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+// // only display the mobile-sticky-cta on touch viewports and viewports below 500px
+@include respond-below(500px) {
+  .touch {
+    .mobile-sticky-cta {
+      display: block;
+    }
+  }
+}
+
+
+.msc-call-text {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.msc-call-section {
+  display: inline-block;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.msc-call-section--phone {
+  padding-right: 1.5rem;
+  border-right: 1px solid mix(color(primary), color(secondary), 30%);
+
+  // opacity
+}
+
+.msc-call-section--sms {
+  padding-left: 1.1rem;
+}

@@ -1,0 +1,30 @@
+.lifestyle-gallery {
+  min-height: 255px;
+
+  @include min-height-between($break-414, $break-small, 330px);
+
+  @include min-height-between($break-small, $break-large, 255px);
+
+  @include min-height-at-and-above($break-large, 440px);
+
+  .gallery-dots {
+    bottom: 8px;
+
+    @include respond-at-and-above(1200px) {
+      bottom: 50px;
+    }
+  }
+
+
+  // aspect ratios
+  .gallery-container {
+    @include aspect-ratio(5/4);
+
+    @include respond-at-and-above($break-small) {
+
+      // For some reason, it's not actually following a 16/9 aspect ratio
+      // This is to match it to what's on prod
+      padding-bottom: 43.125%;
+    }
+  }
+}

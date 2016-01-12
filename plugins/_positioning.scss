@@ -1,0 +1,21 @@
+// Positioning helpers
+
+@mixin positioning($position, $val: 0, $edges: top right left bottom) {
+  position: $position;
+
+  @each $edge in $edges {
+    #{$edge}: $val;
+  }
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin padding-sides($amt) {
+  padding-left: size($amt);
+  padding-right: size($amt);
+}

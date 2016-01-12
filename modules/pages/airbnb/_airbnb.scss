@@ -1,0 +1,270 @@
+@import "modules/pages/airbnb/config";
+
+.hero--airbnb {
+  padding: 100px 23px;
+  background-image: url('https://casper.imgix.net/airbnb/bedsheets.jpg?auto=format');
+  background-size: cover;
+  background-position: center center;
+
+  @include respond-at-and-above($break-mobile) {
+    padding: 130px 23px;
+  }
+
+}
+
+.hero-airbnb-title {
+  max-width: 500px;
+  margin: 0 auto;
+
+  @include respond-at-and-above(640px) {
+    max-width: 641px;
+  }
+
+}
+
+.hero-airbnb-logos {
+  margin: 0 auto size(large);
+
+  .airbnb-logo {
+    display: inline-block;
+
+  }
+
+  .airbnb-logo-casper {
+    fill: color(primary);
+    width: 98px;
+    height: size(largest);
+
+    @include respond-at-and-above($break-mobile) {
+      width: 130px;
+      height: 60px;
+    }
+
+    .icon {
+      @include square(100%);
+    }
+  }
+  .airbnb-logo-airbnb {
+    fill: $airbnb-color;
+    width: 113px;
+    height: 47px;
+    margin-left: size(small);
+
+    @include respond-at-and-above($break-mobile) {
+      width: 150px;
+      height: 63px;
+      margin-left: size(large);
+    }
+
+    .icon {
+      @include square(100%);
+    }
+  }
+}
+
+.airbnb-listing-banner {
+
+  .cta-banner {
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: 50% 42%;
+    background-image: url('https://casper.imgix.net/airbnb/map.png?auto=format');
+
+    @include respond-below($airbnb-mobile-break) {
+      height: 200px !important;
+      padding-top: 65px;
+      padding-bottom: 0;
+    }
+
+    @include respond-at-and-above($airbnb-mobile-break) {
+      background-size: 350px 217px;
+      background-position: 50%;
+    }
+  }
+
+  .cta-shop-bar-title {
+    max-width: 250px;
+    margin-bottom: size(larger);
+
+    @include respond-at-and-above($break-mobile) {
+      max-width: none;
+    }
+  }
+}
+
+.airbnb-host-banner {
+  background-color: color(background);
+  padding: 65px 23px;
+
+  @include respond-at-and-above($break-mobile) {
+    padding: 80px size(largest);
+  }
+
+  @include respond-at-and-above($break-large) {
+    padding: 100px;
+  }
+}
+
+.airbnb-host-globe {
+  margin-bottom: size(large);
+  fill: color(primary);
+}
+
+.airbnb-host-copy {
+  padding: size(smallest) 0 size(larger);
+  max-width: 725px;
+  margin: 0 auto;
+}
+
+
+// Airbnb Listings
+
+.airbnb-listing {
+  width: 100%;
+  height: 450px;
+
+  @include respond-at-and-above($airbnb-mobile-break) {
+    background-color: color(background);
+  }
+}
+
+.airbnb-listing--image {
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.airbnb-listing--text {
+  padding: 10px;
+
+  @include respond-below($airbnb-mobile-break) {
+    height: 350px;
+  }
+
+  .airbnb-listing-container {
+    @include square(100%);
+    position: relative;
+
+    @include respond-at-and-above($airbnb-mobile-break) {
+      border: 1px solid color(light-background);
+    }
+
+  }
+
+  .airbnb-listing-headshot {
+    @include circle(85px, primary);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 11%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center center;
+
+    @include respond-below($airbnb-mobile-break) {
+      top: 12%;
+    }
+  }
+
+
+  .airbnb-listing-quote {
+    position: absolute;
+    top: 37%;
+    width: 100%; // for IE
+    max-width: 82%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    @include respond-at-and-above($break-medium) {
+      font-size: 1.2em;
+      line-height: 1.4em;
+    }
+
+    @include respond-below($airbnb-mobile-break) {
+      top: 44%;
+      max-width: 90%;
+    }
+  }
+
+  .airbnb-listing-details {
+    position: absolute;
+    bottom: 10%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    @include respond-below($airbnb-mobile-break) {
+      bottom: 10%;
+    }
+  }
+
+  .airbnb-listing-date {
+    font-size: 12px;
+  }
+
+}
+
+.airbnb-listing-author {
+  margin-bottom: 10px;
+}
+
+.airbnb-listings-container {
+  margin: 0 auto;
+  width: 100%;
+
+  @include respond-between($airbnb-mobile-break, 1130px) {
+    max-width: 800px;
+    padding-bottom: 100px;
+  }
+
+  @include respond-at-and-above(1130px) {
+    max-width: 1100px;
+    padding-bottom: 100px;
+  }
+}
+
+.airbnb-host-title {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include respond-at-and-above($break-mobile) {
+    max-width: none;
+  }
+}
+
+.airbnb-host-cta {
+  .btn {
+    width: 100%;
+
+    @include respond-at-and-above($break-mobile) {
+      width: auto;
+    }
+  }
+
+}
+
+.airbnb-listings {
+  @include respond-between($airbnb-mobile-break, 1130px) {
+    @include with-layout($airbnb-tablet) {
+      @include container;
+
+      .airbnb-listing {
+        @include span(1);
+        margin: gutter();
+      }
+    }
+  }
+
+  @include respond-at-and-above(1130px) {
+    @include with-layout($airbnb-desktop) {
+      @include container;
+
+      .airbnb-listing {
+        @include span(1);
+        margin: gutter();
+      }
+    }
+  }
+}

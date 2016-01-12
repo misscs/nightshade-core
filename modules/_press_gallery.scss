@@ -1,0 +1,148 @@
+.press-gallery-container {
+  position: relative;
+  padding-top: 5em;
+  fill: color(primary);
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 91px;
+    background-color: color(light-grey);
+    content: "";
+  }
+
+  @include respond-below($break-small) {
+    padding-top: 4em;
+
+    .gallery-container {
+      overflow: hidden;
+    }
+
+    &:before {
+      height: 59px;
+    }
+  }
+
+
+  .gallery-slide {
+    vertical-align: middle;
+  }
+
+  .icon-quote {
+    @include square(50px);
+
+    fill: color(lighter-grey);
+  }
+}
+
+.press-gallery__title {
+  font-size: size(smaller);
+  text-align: center;
+  letter-spacing: 0.2em;
+}
+
+.press-gallery__container {
+  max-width: $break-xl;
+  margin: 0 auto;
+}
+
+.press-gallery__buttons {
+  position: relative;
+  background-color: color(light-grey);
+
+  .press-gallery__button {
+    width: 25%;
+  }
+
+  @include respond-below($break-small) {
+    .press-gallery__button {
+      width: 33.333%;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.press-gallery__button {
+  display: inline-block;
+  padding: size(large);
+  position: relative;
+  line-height: 1em;
+  border-left: solid 1px color(background);
+  background-color: color(light-grey);
+  fill: color(medium-grey);
+
+  .icon {
+    width: 100%;
+    height: 27px;
+    vertical-align: middle;
+
+    &-fastcompany-small,
+    &-wired-small {
+      padding: 2px 0;
+    }
+  }
+
+  &:last-child {
+    border-right: solid 1px color(background);
+  }
+
+  &.is-active {
+    background-color: color(lighter-grey);
+
+    &:after {
+      display: block;
+      width: size(small);
+      height: size(small);
+      position: absolute;
+      left: 50%;
+      top: 0;
+      background-color: color(light-background);
+      transform: translate(-50%, -50%) rotate(45deg);
+      content: "";
+    }
+  }
+
+  @include respond-below($break-mobile) {
+    padding: size(small);
+  }
+}
+
+.press-gallery__body {
+  @extend %chronicle-deck;
+
+  white-space: normal;
+  margin: 20px auto 50px auto;
+  font-size: 22px;
+  line-height: 1.5;
+
+  @include respond-at-and-above($break-mobile) {
+    margin-bottom: 80px;
+  }
+
+
+  @include respond-at-and-above($break-small) {
+    padding: 0 1em;
+    font-size: 36px;
+  }
+
+
+  @include respond-at-and-above($break-medium) {
+    padding: 0 1.5em;
+  }
+
+
+  @include respond-at-and-above($break-large) {
+    padding: 0 2em;
+    font-size: 40px;
+  }
+
+
+  @include respond-below(660px) {
+    max-width: 90%;
+  }
+}

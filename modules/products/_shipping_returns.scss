@@ -1,0 +1,26 @@
+.shipping-returns-text {
+  margin-top: size(small);
+  max-width: 250px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include respond-between($break-small, $break-medium) {
+    max-width: 420px;
+  }
+
+
+  @include respond-at-and-above($break-medium) {
+    max-width: 495px;
+  }
+}
+
+.shipping-returns-image {
+  background-image: image-url("nightshade/modules/shipping-plane.jpg");
+  background-position: 40% 30%;
+
+  @include respond-at-and-above($break-large) {
+    background-position: 0% 50%;
+  }
+}

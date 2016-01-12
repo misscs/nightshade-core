@@ -1,0 +1,29 @@
+// Product Item
+// ============
+// Individual product in a cart or order
+
+.product-image {
+  @include square(product-thumb-small);
+}
+
+// Uses h4 styles
+.product-title {
+  @extend %verlag;
+
+  max-width: 250px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: size(smaller-tracking);
+  text-transform: none;
+
+  @include respond-at-and-above($break-mobile) {
+    max-width: none;
+  }
+}
+
+.product-item-detail-item--quantity {
+  position: absolute;
+  right: 0;
+  bottom: 13px;
+}

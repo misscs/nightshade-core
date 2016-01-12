@@ -1,0 +1,187 @@
+// native = focus and simplicity
+
+.photo-panel-savings-graph {
+  border: none;
+  height: 100%;
+  background: url("https://casper.imgix.net/seo-landing/savings-graph.png?format=auto&fit=clip&h=800") no-repeat center;    
+  background-size: contain;
+}
+
+.savings-graph-container {
+  background-color: color(light-background);
+}
+
+.photo-panel--savings-block {
+  height: 700px;
+  background-color: color(light-background);
+
+  .photo-panel-content {
+    height: 50%;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .photo-panel-image {
+    padding-bottom: 30px;
+    height: 50%;
+  }
+
+  .photo-panel-image--savings {
+    background-color: color(light-background);
+  }
+
+  @include respond-between(370px, $break-414) {
+    height: 650px;
+
+    .photo-panel-content {
+      padding-top: 60px;
+    }
+
+    .photo-panel-image {
+      padding-bottom: 15px;
+    }
+  }
+
+
+  @include respond-between($break-414, $break-large) {
+    .photo-panel-content {
+      padding-top: 50px;
+      padding-bottom: 0;
+      height: 40%;
+    }
+
+    .photo-panel-image {
+      padding-bottom: 20px;
+      height: 60%;
+    }
+  }
+
+
+  @include respond-at-and-above($break-large) {
+    background-color: color(background);
+    height: 500px;
+
+    .photo-panel-content {
+      height: 100%;
+      padding: 100px 80px;
+    }
+
+    .photo-panel-image {
+      height: 100%;
+      padding: 0;
+    }
+  }
+}
+
+.photo-panel--shipping-returns-block {
+  height: 830px;
+
+  .photo-panel-image {
+    height: 400px;
+  }
+
+  .photo-panel-content {
+    height: 430px;
+    padding: 70px 40px 50px;
+  }
+
+  @include respond-at-and-above($break-small) {
+    .photo-panel-content {
+      padding: 100px 80px;
+    }
+  }
+
+
+  @include respond-between($break-small, $break-large) {
+    height: 800px;
+
+    .photo-panel-content,
+    .photo-panel-image {
+      height: 50%;
+    }
+  }
+
+
+  @include respond-at-and-above($break-large) {
+    height: 500px;
+
+    .photo-panel-content,
+    .photo-panel-image {
+      height: 100%;
+    }
+  }
+}
+
+// styling for wistia containers
+.video-play-button.native-video-btn {
+  margin-top: 164px;
+
+  @include respond-at-and-above($break-large) {
+    margin-top: 214px;
+  }
+}
+
+.wistia_popover_embed {
+  width: 100%;
+}
+
+.native-landing-video {
+  width: 60px;
+  margin: 0 auto;
+
+  @include respond-at-and-above($break-medium) {
+    width: 80px;
+  }
+}
+
+//focus and simplicity native ad page
+.native-landing-header {
+  padding-bottom: 0;
+}
+
+.hero--native-landing{
+  background-color: color(light-background);
+  padding: 3em 0 5.5em;
+  margin-bottom: 0;
+}
+
+.native-landing-copy {
+  width: auto;
+  margin: 0 auto;
+
+  @include respond-at-and-above($break-small) {
+    max-width: 630px;
+  }
+
+  @include respond-at-and-above($break-large) {
+    max-width: 790px;
+  }
+}
+
+.native-landing-hero-head {
+  color: color(primary);
+  margin: 0 auto;
+  padding-bottom: 25px;
+
+  .hero-title-break {
+    display: block;
+  }
+}
+
+.native-landing-banner {
+  background-color: color(primary);
+  padding: 30px 0;
+}
+
+.native-landing-title {
+  color: color(white);
+  margin-bottom: 0;
+}
+
+.native-landing-btn-container {
+  margin-top: 0;
+
+  @include respond-at-and-above($break-medium) {
+    margin-top: -5em;
+  }  
+}

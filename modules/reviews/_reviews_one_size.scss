@@ -1,0 +1,50 @@
+// this is a plain reviews header, with just the rating and a link to the main reviews page
+// currently only used on the mattress size specific variant pages
+
+.reviews-one-size {
+  .reviews-header-container {
+    padding: 2.5em 0;
+    border-top: solid 1px color(light-grey);
+    border-bottom: solid 1px color(light-grey);
+  }
+  
+  .rating-stars-stats--fraction {
+    margin-left: 9px;
+  }
+
+  .reviews-btn-container,
+  .reviews-header-rating {
+    text-align: center;
+
+    @include respond-at-and-above(500px) {
+      text-align: left;
+      display: inline-block;
+      width: 50%;
+      vertical-align: top;
+    }
+  }
+
+  .reviews-btn-container {
+    padding-top: 1.5em;
+
+    @include respond-at-and-above(500px) {
+      text-align: right;
+      padding-top: 10px;
+    }
+  }
+
+  .reviews-title-one-size {
+    color: color(primary);
+    text-align: center;
+    margin-bottom: .6em;
+
+    @include respond-at-and-above(500px) {
+      text-align: left;
+    }
+  }
+
+  .review:last-child {
+    border-bottom: 0;
+  }
+}
+

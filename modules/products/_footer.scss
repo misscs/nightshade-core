@@ -1,0 +1,99 @@
+// @@@ Revisit: Waiting to merge in SEO pages to clean up photo-panel
+// module in a way that continues to work for the former pattern.
+// May not use photo-panel classes for the shipping and newsletter blocks.
+.product-footer {
+  // @@@ REFACTOR THIS WHEN THE GRID ISSUE IS ADDRESSED
+  // @see grids.
+
+  .grid-two-column-container {
+    @include respond-between($break-large, $break-xl) {
+      padding: 35px 3em 40px;
+    }
+
+
+    @include respond-at-and-above($break-xl) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+
+    @include respond-at-and-above($break-small) {
+      padding: 5em 0 5em;
+    }
+
+
+    @include respond-at-and-above($break-medium) {
+      .r-section-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  @include respond-below(767px) {
+    .r-section-wrapper + .r-section-wrapper {
+      padding-top: 0;
+    }
+  }
+
+
+  .photo-panel-title {
+    @include respond-below(1023px) {
+      .line-break {
+        display: block;
+      }
+    }
+  }
+
+  .shipping-returns-block {
+    max-width: 24em;
+  }
+
+  .newsletter-block {
+    max-width: 25em;
+  }
+
+  .cta-banner {
+    margin-top: size(small);
+    height: 300px;
+    background: none;
+
+    .cta-content {
+      @include z-index(size-selector);
+
+      position: relative;
+    }
+
+    .cta-bg {
+      @include z-index(bump);
+
+      display: block;
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    .cta-bg-img {
+      display: block;
+      min-width: 1440px;
+    }
+
+    .cta-bg-vid {
+      display: none;
+    }
+
+    @include respond-at-and-above($break-medium) {
+      .cta-bg-img {
+        display: none;
+      }
+
+      .cta-bg-vid {
+        display: block;
+      }
+    }
+  }
+}

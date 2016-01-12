@@ -1,0 +1,28 @@
+// short full width product banner, on all products
+// currently has free shipping and returns message
+
+.message-banner {
+  padding: size(small) size(medium);
+  letter-spacing: size(medium-tracking);
+  font-size: 12px;
+  text-transform: uppercase;
+  border-top: solid 1px color(dark-border);
+  border-bottom: solid 1px color(dark-border);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 14px;
+    height: size(condensed-header-height);
+    line-height: size(condensed-header-height);
+    padding: 0;
+  }
+}
+
+// sizing so that the message breaks at the correct word in the message
+// if the banner content changes, this portion has to be re evaluated
+@include respond-below($break-mobile) {
+  .message-banner-inner {
+    max-width: 230px;
+    margin: 0 auto;
+    display: inline-block;
+  }
+}

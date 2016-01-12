@@ -1,0 +1,18 @@
+// Mattress Product Page
+
+@import "modules/products/shared";
+
+// Product hero with carousel and add to cart module
+@import "modules/products/mattress/gallery";
+@import "modules/forms/size_selector_exposed";
+
+// Values and lifestyle gallery
+
+// Mattress info
+@import "modules/products/mattress/add_to_cart";
+@import "modules/products/mattress/diagram";
+@import "modules/products/mattress/infographic";
+@import "modules/products/mattress/props";
+
+// Amazon Gift Card
+@import "modules/products/mattress/gift_card_banner";

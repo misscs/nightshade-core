@@ -1,0 +1,232 @@
+// 1. Becuase of inconsistent icon sizing, need some hacky stuff to visually center icons
+
+@include keyframes(pulse) {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+.review-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 23px 75px;
+
+  .form-input {
+    background-size: 12px 12px;
+  }
+}
+
+.review-form-title {
+  padding: size(largest) 0;
+  border-bottom: 1px solid color(border);
+  margin-bottom: size(largest);
+}
+
+.review-form-title-field {
+  padding-top: size(largest);
+}
+
+.review-form-hours-group {
+  padding-top: size(massive);
+  padding-bottom: size(massive);
+  margin-top: size(large);
+  border-top: 1px solid color(border);
+  border-bottom: 1px solid color(border);
+  align-items: center;
+
+  .review-form-hours-label {
+    flex: 1 1 70%;
+  }
+
+  .review-form-hours-input {
+    flex: 1 1 30%;
+  }
+
+  .form-label {
+    margin-bottom: 0;
+  }
+}
+
+.review-form-radio-field {
+  padding-top: size(largest);
+  padding-bottom: size(largest);
+  border-bottom: 1px solid color(border);
+  margin-bottom: 0;
+}
+
+.review-form-radio {
+  @include is-hidden;
+}
+
+.review-form-radio-group {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  text-align: center;
+  width: 100%;
+  margin: size(large) auto 0;
+
+  @include respond-at-and-above($break-mobile) {
+    width: 80%;
+  }
+}
+
+.review-form-radio-choice-wrapper {
+  transition: transform 0.15s;
+
+  &:hover {
+    .icon {
+      fill: color(primary);
+    }
+
+    [data-icon="star"] .icon {
+      fill: color(star-gold);
+    }
+  }
+
+  .icon {
+    transition: transform 0.15s, fill 0.15s;
+    fill: color(dark-grey);
+  }
+
+  .icon-sad {
+    fill: color(dark-grey);
+    margin-bottom: 3px;
+  }
+
+  .icon-dog,
+  .icon-cat {
+    margin-left: 2px;
+  }
+
+  .icon-pig {
+    margin-left: 1px;
+    margin-bottom: -3px;
+
+    & + .icon-text {
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .icon-solo {
+    margin-bottom: 5px;
+  }
+
+  .icon-text {
+    transition: transform 0.15s, fill 0.15s;
+    color: color(text);
+  }
+
+  input:checked + label {
+    .icon {
+      fill: color(primary);
+
+      @include animation(pulse, 0.2s, $iteration-count: 1);
+    }
+
+    [data-icon="star"] .icon {
+      fill: color(star-gold);
+    }
+  }
+
+  .multiple_partners {
+    width: 72px;
+    height: 52px;
+  }
+}
+
+.review-form-radio-choice-wrapper--stars {
+  @include respond-below($break-medium) {
+    width: 100%;
+    margin-bottom: size(large);
+  }
+}
+
+.icon-radio-icon-wrapper {
+  height: 4em;
+  width: size(larger);
+  display: inline-block;
+  transition: transform 0.15s;
+  cursor: pointer;
+
+  &--pig {
+    width: size(largest);
+  }
+
+  .icon {
+    @include square(100%);
+  }
+
+  &--star {
+    @include square(auto);
+
+    display: block;
+  }
+}
+
+.review-form-stars-label {
+  padding-top: size(smallest);
+}
+
+.review-form-partners {
+  .icon-radio-icon-wrapper {
+    @include square(auto);
+
+    .icon {
+      height: size(largest);
+      width: size(larger);
+      display: inline;
+    }
+  }
+}
+
+.review-form-radio-choice-mobile-break {
+  width: 100%;
+
+  @include respond-at-and-above($break-small) {
+    @include is-hidden;
+  }
+}
+
+.form-label-rating {
+  label.error {
+    @extend %verlag-light;
+
+    text-transform: none;
+    font-size: size(normal);
+    letter-spacing: 0;
+  }
+}
+
+// This takes most of the tooltip styling from the reviews page and fits it into the form
+.review-form {
+  .reviews-header-description {
+    min-width: 250px;
+    margin-left: 10%;
+
+    @include respond-at-and-above($break-medium) {
+      min-width: 500px;
+    }
+  }
+
+  [data-placement="bottom"] {
+    left: 50%;
+    top: 200%;
+
+    &:after {
+      left: 25.5%;
+    }
+  }
+}

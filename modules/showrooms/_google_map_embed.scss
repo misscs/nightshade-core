@@ -1,0 +1,142 @@
+// styles for google map embed on showroom pages
+// IDs are necessary for google map api
+
+.showroom-address-card {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  padding: 10px;
+  height: auto;
+  width: 225px;
+  font-size: 15px;
+  line-height: 18px;
+  background: color(background);
+  font-weight: normal;
+  color: color(text);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+
+  @include respond-at-and-above($break-medium) {
+    line-height: 24px;
+    padding: 20px;
+    width: 300px;
+  }
+
+
+  @include respond-at-and-above($break-xl) {
+    left: -15px;
+  }
+
+
+  @include respond-between($break-xl, $site-max-width) {
+    padding-left: 35px;
+  }
+
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.8;
+    transition: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 1px;
+    height: 0;
+    width: 0;
+    border: transparent solid;
+    border-width: 7.5px;
+    border-color: color(darkest-grey);
+    border-bottom-color: color(lightest-grey);
+    border-left-color: color(lightest-grey);
+    display: none;
+
+    @include respond-at-and-above($break-xl) {
+      display: block;
+    }
+  }
+
+  [data-icon="gmap-arrow"] {
+    @include square(22px);
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    @include respond-below($break-medium) {
+      @include square(18px);
+
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
+
+.showroom-location {
+  height: 300px;
+  width: 100%;
+  position: relative;
+
+  .showroom-map-container {
+    &:after {
+      @include square(100%);
+
+      content: "";
+      box-shadow: inset 0px 2px 4px -1px rgba(0, 0, 0, 0.2), inset 0px -2px 4px -1px rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  }
+
+  .showroom-map,
+  .showroom-map-container {
+    @include square(100%);
+  }
+
+  .zoom-in,
+  .zoom-out {
+    @include square(40px);
+
+    position: absolute;
+    bottom: 20px;
+    color: color(primary);
+    cursor: pointer;
+
+    &:after {
+      @include square(100%);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 50px;
+      font-weight: bold;
+    }
+  }
+
+  .zoom-in {
+    right: 40px;
+
+    &:after {
+      content: "+";
+      line-height: 40px;
+    }
+  }
+
+  .zoom-out {
+    right: 0;
+
+    &:after {
+      content: "-";
+      line-height: 36px;
+    }
+  }
+}

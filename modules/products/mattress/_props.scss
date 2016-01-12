@@ -1,0 +1,127 @@
+
+
+.product-prop--mattress-bounce {
+  padding: 0 23px;
+
+  @include respond-at-and-above($break-medium){
+    margin-top: -90px
+  }
+
+  .product-prop-illustration--mobile {
+    margin-top: 0;
+  }
+
+  .product-prop-container {
+    background-color: color(background);
+  }
+
+
+  // line break on mobile for various line breaks
+  .product-prop-title {
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-at-and-above($break-small) {
+      max-width: none;
+    }
+
+    @include respond-at-and-above($break-xl){
+      max-width: 360px;
+    }
+  }
+
+  .prop-illustration-image--mobile {
+    max-width: none;
+    width: 300%;
+    margin-left: -20%;
+
+    @include respond-at-and-above($break-mobile) {
+      width: 220%;
+      max-width: 925px;
+      margin-left: -20px;
+    }
+  }
+
+  .prop-illustration-video {
+
+    @include respond-at-and-above($break-medium) {
+      margin-left: -14%;
+      width: 240%;
+    }
+    @include respond-at-and-above(900px) {
+      margin-left: 20%;
+    }
+
+    @include respond-at-and-above($info-nav-break){
+      margin-left: -15%;
+    }
+  }
+}
+
+
+.product-prop--mattress-cool {
+  padding: 4em 23px size(large) 0;
+
+  @include respond-at-and-above($break-medium) {
+    padding-bottom: 0;
+    padding-left: 4em;
+    margin-top: -(size(largest));
+  }
+
+  .product-prop-title {
+    padding-left: 1em;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include respond-at-and-above($break-small) {
+      max-width: none;
+    }
+
+    @include respond-at-and-above($break-medium) {
+      padding-left: 0;
+    }
+
+  }
+
+  .product-prop-copy {
+    padding: 0 size(small) 0 size(large);
+    // padding: 0 size(large) 0 size(largest);
+
+    @include respond-at-and-above($break-medium) {
+      padding-left: 0;
+      padding-right: 5em;
+    }
+  }
+
+  .product-prop-illustration--mobile {
+    margin: size(largest) 0 size(large) 0;
+  }
+
+  // line breaks for the title
+  .product-prop-title {
+
+    @include respond-at-and-above($break-medium){
+      max-width: 400px;
+    }
+  }
+
+  .product-prop-info {
+    padding: 0;
+
+    @include respond-between($break-medium, $break-xl) {
+      margin-left: -(size(largest));
+    }
+  }
+
+  .prop-illustration-video {
+    transform: rotate(-90deg) translate(21%);
+    left: -52%;
+    width: 175%;
+    max-height: 520px;
+    z-index: -1;
+  }
+}
+
+

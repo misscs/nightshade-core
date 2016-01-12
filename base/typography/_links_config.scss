@@ -1,0 +1,38 @@
+// Links
+// @@@ perhaps this link mixin is too terse and we need two
+// one for underlines and one create basic links
+
+$link: '&:link, &:visited';
+$focus: '&:hover, &:focus';
+$active: '&:active';
+
+@mixin link(
+  $color: primary,
+  $hover: primary,
+  $fancy: false
+) {
+  &,
+  #{$link} {
+    color: color($color);
+    cursor: pointer;
+    padding-bottom: 3px;
+
+    @content;
+  }
+
+  #{$focus},
+  #{$active} {
+    padding-bottom: 2px;
+    color: color($hover);
+    border-bottom: 1px solid color($hover);
+  }
+
+  @if $fancy {
+    @include after('›') {
+       color: inherit;
+       font-style: normal;
+       line-height: 1;
+       margin-left: 2px;
+    }
+  }
+}

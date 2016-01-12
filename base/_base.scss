@@ -1,5 +1,5 @@
-@import 'plugins/box-sizing';
-@import 'plugins/root';
+@import '../plugins/box-sizing';
+@import '../plugins/root';
 
 html {
   @extend %verlag-light;

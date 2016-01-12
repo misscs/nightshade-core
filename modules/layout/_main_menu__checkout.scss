@@ -4,7 +4,7 @@
 // 2. Explicitly declare width for IE10 overlap bug. Cannot use
 // shortform flex: 1 1 70px.
 
-@import "modules/layout/main_menu_config";
+@import "main_menu_config";
 
 .nav-main--checkout {
   display: flex;

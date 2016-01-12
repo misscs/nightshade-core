@@ -21,7 +21,7 @@
 
 // --- end doc
 
-@import "modules/flashes_config";
+@import "flashes_config";
 
 .flash-container {
   @include z-index(flash);

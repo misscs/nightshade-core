@@ -3,33 +3,33 @@
  */
 
 // Locals
-@import "plugins/clearfix";
-@import "plugins/flex-embed";
+@import "../../plugins/clearfix";
+@import "../../plugins/flex-embed";
 
-@import "modules/forms/custom_select";
-@import "modules/modal";
-@import "modules/layout/grids";
-@import "modules/layout/photo_panel";
-@import "modules/gallery/gallery";
-@import "modules/gallery/background";
-@import "modules/gallery/lifestyle_gallery";
-@import "modules/newsletter/block";
-@import "modules/financing/modal";
-@import "modules/props";
+@import "../forms/custom_select";
+@import "../modal";
+@import "../layout/grids";
+@import "../layout/photo_panel";
+@import "../gallery/gallery";
+@import "../gallery/background";
+@import "../gallery/lifestyle_gallery";
+@import "../newsletter/block";
+@import "../financing/modal";
+@import "../props";
 
 // Shared product Modules
-@import "modules/products/shipping_returns";
-@import "modules/products/specs";
-@import "modules/products/hoisted";
-@import "modules/products/purchase";
-@import "modules/products/footer";
-@import "modules/products/add_to_cart";
-@import "modules/products/infographic";
-@import "modules/products/diagram";
-@import "modules/products/msg_banner";
-@import "modules/products/product_gallery";
+@import "shipping_returns";
+@import "specs";
+@import "hoisted";
+@import "purchase";
+@import "footer";
+@import "add_to_cart";
+@import "infographic";
+@import "diagram";
+@import "msg_banner";
+@import "product_gallery";
 
 // For reviews modules on the product pages
-@import "modules/ratings_stars";
-@import "modules/reviews/reviews_stats_table";
-@import "modules/products/review";
+@import "../ratings_stars";
+@import "../reviews/reviews_stats_table";
+@import "review";

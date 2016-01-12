@@ -10,7 +10,7 @@
     "url": "git+https://github.com/CasperSleep/nightshade-styles.git"
   },
   "author": "Casper Dev Team",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CasperSleep/nightshade-styles/issues"
   },

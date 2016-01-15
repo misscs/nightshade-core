@@ -1,12 +1,49 @@
-@import '../plugins/box-sizing';
-@import '../plugins/root';
+/**
+ * Set the global `box-sizing` state to `border-box`.
+ *
+ * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+ * paulirish.com/2012/box-sizing-border-box-ftw
+ */
+
+ /**
+  * High-, page-level styling.
+  * 2. Set the default `font-size` and `line-height` for the entire project,
+  *    sourced from our default variables. The `font-size` is calculated to
+  *    exist in ems, the `line-height` is calculated to exist unitlessly.
+  * 3. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+  *    navigating between pages that do/do not have enough content to produce
+  *    scrollbars naturally.
+  * 4. Ensure the page always fills at least the entire height of the viewport.
+  * 5. Prevent certain mobile browsers from automatically zooming fonts.
+  * 6. Fonts on OSX will look more consistent with other systems that do not
+  *    render text using sub-pixel anti-aliasing.
+  * 7. This enables kerning and optional ligatures. [See docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering)
+ */
 
 html {
   @extend %verlag-light;
+  box-sizing: border-box;
   background: color(background);
   color: color(text);
   max-width: 100%;
+  min-height: 100%; // [4]
+  font-size: $base-font-size / 16px * 1em; // [2]
+  line-height: $base-line-height; // [2]
   overflow-x: hidden;
+  overflow-y: scroll; // [3]
+  text-rendering: optimizeLegibility; // [7]
+  -webkit-text-size-adjust: 100%; // [5]
+  -ms-text-size-adjust: 100%; // [5]
+  -webkit-font-smoothing: antialiased; // [6]
+  -moz-osx-font-smoothing: grayscale; // [6]
+
+  * {
+    &,
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
 }
 
 body {

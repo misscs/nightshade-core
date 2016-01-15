@@ -1,0 +1,61 @@
+// Copied from Accoutrement accessiblity
+
+@mixin is-hidden--position {
+  left: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+
+@mixin is-hidden--clip {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(1px 1px 1px 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
+@mixin is-hidden(
+  $method: clip
+) {
+  @if $method == position {
+    @include is-hidden--position;
+  } @else {
+    @include is-hidden--clip;
+  }
+}
+
+%is-hidden {
+  @include is-hidden;
+}
+
+.is-hidden {
+  @extend %is-hidden;
+}
+
+
+.is-hidden-on-mobile {
+  display: none !important;
+
+  @include respond-at-and-above($break-small) {
+    display: block !important;
+  }
+}
+
+
+.show-on-mobile {
+  display: inline-block !important;
+
+  @include respond-at-and-above($break-small) {
+    display: none !important;
+  }
+}
+
+
+.show-up-to-tablet {
+  display: inline-block !important;
+
+  @include respond-at-and-above(812px) {
+    display: none !important;
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "nightshade-styles",
+  "name": "@casper/nightshade-styles",
   "version": "1.0.0",
-  "description": "Casper's base CSS and core front-end plugins",
+  "description": "Casper pattern and style scss library. Under development",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/CasperSleep/nightshade-styles.git"
   },
-  "author": "Casper Dev Team",
+  "author": "Casper Coders",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/CasperSleep/nightshade-styles/issues"

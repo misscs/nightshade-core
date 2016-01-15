@@ -12,7 +12,7 @@ Install the repo with npm:
 npm install git+https://github.com/CasperSleep/nightshade-styles.git#v1.x.x
 ```
 
-Include stylesheets in your application. To get all of our tooling and plugins, 
+Include stylesheets in your application. To get all of our tooling and plugins,
 
 ```
 @import './node_modules/nightshade-styles/plugins/positioning';
@@ -31,3 +31,7 @@ Include stylesheets in your application. To get all of our tooling and plugins,
 @import './node_modules/nightshade-styles/base/grids';
 @import './node_modules/nightshade-styles/base/base';
 ```
+
+## License
+
+ © Casper Coders

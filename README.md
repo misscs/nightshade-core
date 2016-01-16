@@ -8,13 +8,13 @@ environment for the time being.`_
 
 Install the repo with npm:
 
-```
-npm install git+https://github.com/CasperSleep/nightshade-styles.git#v1.x.x
+```bash
+npm install CasperSleep/nightshade-styles.git#v1.1.0
 ```
 
 Include stylesheets in your application. To get all of our tooling and plugins,
 
-```
+```sass
 @import './node_modules/nightshade-styles/plugins/positioning';
 @import './node_modules/nightshade-styles/plugins/z-index';
 @import './node_modules/nightshade-styles/plugins/queries_config';

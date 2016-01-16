@@ -87,33 +87,3 @@
 }
 
 
-.is-hidden {
-  @extend %is-hidden;
-}
-
-
-.is-hidden-on-mobile {
-  display: none !important;
-
-  @include respond-at-and-above($break-small) {
-    display: block !important;
-  }
-}
-
-
-.show-on-mobile {
-  display: inline-block !important;
-
-  @include respond-at-and-above($break-small) {
-    display: none !important;
-  }
-}
-
-
-.show-up-to-tablet {
-  display: inline-block !important;
-
-  @include respond-at-and-above(812px) {
-    display: none !important;
-  }
-}

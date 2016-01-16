@@ -3,6 +3,33 @@
 /// @group visual-utilities
 ////
 
+// Mixins for creating block style :before and :after pseudo elements
+// @param {key} position - Position value
+// @param {key} content - Text content of pseudo element
+@mixin before(
+  $position: absolute,
+  $content: ""
+) {
+  &:before {
+    display: block;
+    position: $position;
+    content: $content;
+    @content;
+  }
+}
+
+@mixin after(
+  $position: absolute,
+  $content: ""
+) {
+  &:after {
+    display: block;
+    position: $position;
+    content: $content;
+    @content;
+  }
+}
+
 // Mixin for creating a square
 /// @param {number} size - Numeric value with units
 @mixin square($size) {
@@ -18,7 +45,8 @@
 /// @todo Add `@see` param for Accoutrement Colors
 @mixin circle(
   $size,
-  $bg: null) {
+  $bg: null
+) {
   @include square($size);
   background-color: color($bg);
   border-radius: 50%;

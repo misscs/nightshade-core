@@ -1,7 +1,7 @@
 {
   "name": "@casper/nightshade-styles",
   "version": "1.1.0",
-  "description": "Casper pattern and style scss library. Under development",
+  "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postversion": "git push && git push --tags"
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/CasperSleep/nightshade-styles/issues"
   },
-  "homepage": "https://github.com/CasperSleep/nightshade-styles#readme"
+  "homepage": "https://github.com/CasperSleep/nightshade-styles#readme",
+  "dependencies": {
+    "accoutrement-color": "^1.0.3",
+    "susy": "^2.2.11"
+  }
 }

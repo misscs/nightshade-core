@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CasperSleep/nightshade-styles#readme",
   "dependencies": {
-    "accoutrement-color": "^1.0.3"
+    "accoutrement-color": "^1.0.3",
+    "susy": "^2.2.11"
   }
 }

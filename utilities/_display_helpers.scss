@@ -25,12 +25,8 @@
   }
 }
 
-%is-hidden {
-  @include is-hidden;
-}
-
 .is-hidden {
-  @extend %is-hidden;
+  @include is-hidden;
 }
 
 .hide-on-small-screens {

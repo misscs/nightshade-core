@@ -11,7 +11,6 @@
   $content: ""
 ) {
   &:before {
-    display: block;
     position: $position;
     content: $content;
     @content;
@@ -23,7 +22,6 @@
   $content: ""
 ) {
   &:after {
-    display: block;
     position: $position;
     content: $content;
     @content;

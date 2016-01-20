@@ -73,7 +73,6 @@
 ) {
   @include animation(loading, 0.8s);
   @include circle($size);
-  display: block;
   position: absolute;
   border: 2px solid $color;
   border-right-color: transparent;

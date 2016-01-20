@@ -25,37 +25,20 @@
   }
 }
 
-%is-hidden {
+.is-hidden {
   @include is-hidden;
 }
 
-.is-hidden {
-  @extend %is-hidden;
-}
+.hide-on-small-screens {
 
-
-.is-hidden-on-mobile {
-  display: none !important;
-
-  @include respond-at-and-above($break-small) {
-    display: block !important;
-  }
-}
-
-
-.show-on-mobile {
-  display: inline-block !important;
-
-  @include respond-at-and-above($break-small) {
+  @include respond-below($break-small) {
     display: none !important;
   }
 }
 
+.hide-on-large-screens {
 
-.show-up-to-tablet {
-  display: inline-block !important;
-
-  @include respond-at-and-above(812px) {
+  @include respond-at-and-above($break-small) {
     display: none !important;
   }
 }

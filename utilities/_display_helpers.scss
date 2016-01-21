@@ -25,8 +25,12 @@
   }
 }
 
-.is-hidden {
+.is-invisible {
   @include is-hidden;
+}
+
+.is-hidden {
+  display: none;
 }
 
 .hide-on-small-screens {

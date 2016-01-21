@@ -216,7 +216,7 @@
   }
 
   &.is-expanded,
-  &.is-hidden {
+  &.is-invisible {
     [data-icon="arrow"] {
       transform: rotate(-90deg);
     }

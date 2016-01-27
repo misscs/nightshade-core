@@ -11,6 +11,18 @@ element. Default color is `color(text)`.
 
 */
 
+// Base styles
+
+ol,
+ul {
+  @extend %lists;
+}
+
+a {
+  text-decoration: none;
+  color: color(primary);
+}
+
 
 // Color Modifiers
 // ---------------

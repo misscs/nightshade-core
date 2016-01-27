@@ -14,10 +14,9 @@
   *    navigating between pages that do/do not have enough content to produce
   *    scrollbars naturally.
   * 4. Ensure the page always fills at least the entire height of the viewport.
-  * 5. Prevent certain mobile browsers from automatically zooming fonts.
-  * 6. Fonts on OSX will look more consistent with other systems that do not
+  * 5. Fonts on OSX will look more consistent with other systems that do not
   *    render text using sub-pixel anti-aliasing.
-  * 7. This enables kerning and optional ligatures. [See docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering)
+  * 6. This enables kerning and optional ligatures. [See docs](https://developer.mozilla.org/en-US/docs/Web/CSS/text-rendering)
  */
 
 html {
@@ -62,21 +61,10 @@ img {
   vertical-align: middle;
 }
 
-svg {
-  pointer-events: none;
-}
-
-
-ol,
-ul {
-  @extend %lists;
-}
-
-a {
-  text-decoration: none;
-  color: color(primary);
-}
-
-video {
-  outline: 0;
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
+  }
 }

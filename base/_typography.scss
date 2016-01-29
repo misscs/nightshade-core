@@ -65,8 +65,16 @@ a {
   @extend %body--sans-medium;
 }
 
+.body--sans-large {
+  @extend %body--sans-large;
+}
+
 .body--quote {
   @extend %body--quote;
+}
+
+.body--numerals-large {
+  @extend %body--numerals-large;
 }
 
 // Headings
@@ -99,7 +107,7 @@ h2,
 h3,
 .h3 {
   @extend %h3;
-  margin-bottom: size(normal);
+  margin-bottom: size(small);
 }
 
 

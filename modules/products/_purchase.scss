@@ -65,13 +65,6 @@
     text-align: center;
   }
 
-  .form-input--price {
-
-    @include respond-below(374px) {
-      font-size: 36px;
-    }
-  }
-
   .add-to-cart-button {
     @include padding-sides(size(smallest));
     flex-shrink: 1; // Fix for IE10

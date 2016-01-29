@@ -90,19 +90,30 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
 
 %body--sans-small {
   @extend %verlag-light;
-  letter-spacing: size(smaller-tracking);
-  font-size: 17px;
-  line-height: 1.313;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
 }
 
 
 %body--sans-medium {
-  @extend %body--sans-small;
-
   @include respond-at-and-above($break-medium) {
-    font-size: 21px;
+    font-size: 19px;
     line-height: 1.4;
+    letter-spacing: size(smaller-tracking);
   }
+
 }
 
+%body--sans-large {
+  @extend %verlag-light;
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+}
 
+%body--numerals-large {
+  font-size: 46px;
+  letter-spacing: .05em;
+  margin-top: 2px;
+}

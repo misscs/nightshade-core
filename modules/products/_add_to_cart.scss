@@ -15,25 +15,12 @@
   flex: 1 1 62%;
 }
 
-
 .form-input--price {
-
-  @include respond-below(374px) {
-    font-size: 36px;
-  }
-}
-
-.study-1 .form-input--price {
   @extend %chronicle-deck;
 
   font-size: 42px;
   line-height: 0.75;
 }
-
-.study-2 .form-input--price {
-  @extend %body--numerals-large;
-}
-
 
 .add-to-cart-title {
   font-size: 21px;

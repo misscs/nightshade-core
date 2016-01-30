@@ -17,15 +17,15 @@ npm install CasperSleep/nightshade-styles -D
 To get all of our tooling and plugins, import the files you want into your application. 
 
 ```sass
-@import '/node_modules/accoutrement-color/sass/color';
-@import '/node_modules/susy/sass/susy';
+@import './node_modules/accoutrement-color/sass/color';
+@import './node_modules/susy/sass/susy';
 
-@import './node_modules/@casper/nightshade-styles/utilities/positioning';
-@import './node_modules/@casper/nightshade-styles/utilities/z-index';
 @import './node_modules/@casper/nightshade-styles/utilities/queries_config';
-@import './node_modules/@casper/nightshade-styles/utilities/visual_utilities';
 @import './node_modules/@casper/nightshade-styles/utilities/animations';
 @import './node_modules/@casper/nightshade-styles/utilities/arrows_config';
+@import './node_modules/@casper/nightshade-styles/utilities/positioning';
+@import './node_modules/@casper/nightshade-styles/utilities/visual_utilities';
+@import './node_modules/@casper/nightshade-styles/utilities/z-index';
 
 @import './node_modules/@casper/nightshade-styles/base/z-index_config';
 @import './node_modules/@casper/nightshade-styles/base/breakpoints_config';
@@ -34,7 +34,14 @@ To get all of our tooling and plugins, import the files you want into your appli
 @import './node_modules/@casper/nightshade-styles/base/colors_config';
 @import './node_modules/@casper/nightshade-styles/base/typography/bundle';
 @import './node_modules/@casper/nightshade-styles/base/grids';
+
+
+// Generates Output
 @import './node_modules/@casper/nightshade-styles/base/base';
+@import './node_modules/@casper/nightshade-styles/base/typography';
+@import './node_modules/@casper/nightshade-styles/utilities/display_helpers';
+@import './node_modules/@casper/nightshade-styles/utilities/flex-embed';
+
 ```
 
 ## License

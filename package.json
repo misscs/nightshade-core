@@ -1,6 +1,6 @@
 {
   "name": "@casper/nightshade-styles",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

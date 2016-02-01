@@ -71,7 +71,6 @@ Responsive size breakpoints are baked into each element or its respective class.
 %h3 {
   font-size: 19px;
   letter-spacing: size(normal-tracking);
-  }
 }
 
 
@@ -79,7 +78,6 @@ Responsive size breakpoints are baked into each element or its respective class.
   font-size: 14px;
   margin-bottom: size(smallest);
   letter-spacing: size(normal-tracking);
-}
 
   @include respond-at-and-above($break-medium) {
     font-size: 14px;
@@ -90,6 +88,5 @@ Responsive size breakpoints are baked into each element or its respective class.
 %h5 {
   font-size: 13px;
   letter-spacing: 0.1em;
-}
 
 }

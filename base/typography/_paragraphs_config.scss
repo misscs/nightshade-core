@@ -101,3 +101,11 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
     line-height: 1.4;
   }
 }
+
+
+%body--sans-large {
+  @extend %verlag-light;
+  font-size: 21px;
+  line-height: 1.4;
+  letter-spacing: size(smaller-tracking);
+}

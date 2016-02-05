@@ -1,20 +1,5 @@
-//doc
-// ---
-// title: Icons
-// name: icons
-// category: components
-// ---
-//
-// Casper icon system leverages SVG `<use>` and `<symbols>`. To use an icon,
-// find the ID of the icons you want to use
-//
-// ```haml_example
-// = render 'nightshade/shared/icons'
-//
-// ```
 
-// --- end doc
-
+// @@@ This is probably best kept with buttons
 button.icon {
   transition: opacity 0.2s;
 
@@ -23,6 +8,7 @@ button.icon {
   }
 }
 
+// @@@ Todo: Remove from this file. too specific.
 .icon-lock {
   @include square(20px);
 

@@ -1,0 +1,10 @@
+@mixin color-steps($steps, $colorName, $mixColor: white, $type: 'light') {
+  @each $step in $steps {
+    $i: index($steps, $step);
+    $background-color: mix(color($colorName), $mixColor, (100 - $step));
+
+    .#{$colorName}--#{$type}#{$i} {
+      background: $background-color;
+    }
+  }
+}

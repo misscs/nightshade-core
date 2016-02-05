@@ -1,0 +1,13 @@
+{% macro icon(name, size="default", use_svg=false) %}
+  {% if use_svg == true %}
+    <svg class="icon icon-{{ name }}" aria-labelledby="title" role="img">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/node_modules/@casper/nightshade-icons/test/sprite.symbol.svg#{{ name }}"></use>
+    </svg>
+  {% else %}
+    <span data-icon="{{ name }}" data-size="{{ size }}">
+      <svg class="icon" aria-labelledby="title" role="img">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/node_modules/@casper/nightshade-icons/test/sprite.symbol.svg#{{ name }}"></use>
+      </svg>
+    </span>
+  {% endif %}
+{% endmacro %}

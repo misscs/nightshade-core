@@ -33,14 +33,14 @@
   display: none;
 }
 
-.hide-on-small-screens {
+.is-hidden-on-small-screens {
 
   @include respond-below($break-small) {
     display: none !important;
   }
 }
 
-.hide-on-large-screens {
+.is-hidden-on-large-screens {
 
   @include respond-at-and-above($break-small) {
     display: none !important;

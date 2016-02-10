@@ -1,61 +1,23 @@
-//doc
-// ---
-// title: Buttons
-// name: buttons
-// category: stylekit
-// ---
-//
-// Button styles can be applied to any element. Typically you'll want
-// to use either a `<button>` or an `<a>` element. If the button is actually a link to another page, please use the `<a>` element, while if your button performs an action, such as submitting a form or triggering some javascript event, then use a `<button>` element.
-//
-//
-// When using `<button>` the default type is `submit`. Use `type="button"`
-// for anything that doesn't submit the form and `type="submit"` for anything
-// that submits the form.
-//
-//
-// ```haml_example
-// %button{:type => "button", :class =>"btn btn--primary"} See the Mattress
-//
-// %a{:href=> "http://casper.com", :class => "btn btn--primary"} Casper
-// ```
-//
-//
-// ## Button Styles
-//
-// There are three main buttons styles. The base class `.btn` must be used in
-// conjuction with one of the following classes to create Casper buttons.
-//
-// Styles                                                   | Modifier Class
-// -------------------------------------------------------- | -----------------
-// <button class="btn btn--primary">Primary</button>        | `btn--primary`
-// <button class="btn btn--secondary">Secondary</button>    | `btn--secondary`
-// <button class="btn btn--accent">Accent</button>          | `btn--accent`
-// <button class="btn btn--link">Link text</button>          | `btn--link`
-//
-// ## Important Caveats
-// On iOS, if you omit `webkit-appearance: none`, buttons with `type="submit"`
-// will *not*  apply top & bottom padding as you might expect.
-//
-// A common mistake is to attempt to use `webkit-appearnce: button` to fix the
-// problem or append `!important` to top & bottom padding values with no change.
-
-// --- end doc
-
-// Base class for all buttons. This class must be used when building a button
-.btn {
+// Base structure for all buttons
+[data-button] {
   @extend %verlag-black;
-
-  -webkit-appearance: none;
-  transition: background-color 0.15s, color 0.15s;
-  border-radius: size(normal-corners);
-  cursor: pointer;
   display: inline-block;
-  font-size: 0.875em;
-  line-height: normal;
-  text-align: center;
   padding: 1.15em 3em;
+  font-size: 0.875em;
+  line-height: 1.2;
+  text-align: center;
   letter-spacing: size(medium-tracking);
+  text-transform: uppercase;
+  color: color(primary);
+  cursor: pointer;
+  border-radius: size(normal-corners);
+  transition: background-color 0.15s, color 0.15s;
+  -webkit-appearance: none;
+
+  @include respond-below($break-small) {
+    font-size: 0.85rem;
+    padding: 1rem 1.5rem;
+  }
 
   // Native disabled attribute is preferred over state class
   &:disabled,
@@ -64,21 +26,42 @@
     background-color: color(disabled);
   }
 
-  @include respond-below($break-small) {
-    font-size: 0.85rem;
-    padding: 1rem 1.5rem;
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+
+    @include after("") {
+      @include spinner($color: mix(color(background), color(primary), 70%));
+
+      top: 50%;
+      right: 1.15em;
+      margin-top: -8px;
+    }
+
+    @include respond-below($break-small) {
+      padding-right: 2.6rem;
+    }
   }
 }
 
-// Button size modifiers
-.btn--small {
+// Button sizes
+[data-button][data-size~="small"] {
   font-size: 13px;
   padding: 1em 2em;
+
+  &.is-loading {
+    padding-right: 2.6rem;
+  }
+}
+
+// Full width buttons
+[data-button][data-size~="full"] {
+  width: 100%;
 }
 
 // Primary button style across the site. If in doubt, use this one.
 // @@@ TODO generate a mixin color + hoverstate of our buttons
-.btn--primary {
+[data-button="primary"] {
   background-color: color(primary);
   color: color(background);
 
@@ -90,14 +73,13 @@
     color: mix(color(background), color(primary), 70%);
   }
 
-  &.disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
+  &.is-loading {
+    background-color: mix(color(background), color(primary), 20%);
+    color: mix(color(background), color(primary), 70%);
   }
 }
 
-// Secondary button when you still want to be scene but don't need to be first
-.btn--secondary {
+[data-button="secondary"] {
   background-color: color(secondary);
   color: color(primary);
 
@@ -108,10 +90,20 @@
   #{$active} {
     color: mix(color(background), color(primary), 20%);
   }
+
+  &.is-loading {
+    background-color: mix(color(background), color(secondary), 20%);
+    color: mix(color(background), color(primary), 20%);
+
+    &:after {
+      border-color: mix(color(background), color(primary), 20%);
+      border-right-color: transparent;
+    }
+  }
 }
 
 // Accent button to call attention
-.btn--accent {
+[data-button="accent"] {
   background-color: color(accent);
   color: color(background);
 
@@ -122,66 +114,20 @@
   #{$active} {
     color: mix(color(background), color(accent), 70%);
   }
-}
 
-// Link styles
-.link {
-  @include link(medium-text, medium-text);
-  text-align: left;
-  letter-spacing: size(smallest-tracking);
-  font-size: inherit;
-}
-
-.link--fancy {
-  @extend %serif-family-stack;
-  @include link(medium-text, medium-text);
-  font-style: italic;
-  font-size: inherit;
-}
-
-// Loading buttons for forms
-.btn--loading {
   &.is-loading {
-    position: relative;
-    pointer-events: none;
+    background-color: mix(color(background), color(accent), 20%);
+    color: mix(color(background), color(accent), 70%);
 
-    @include after() {
-      @include spinner($color: mix(color(background), color(primary), 70%));
-      top: 50%;
-      right: 1.25em;
-      margin-top: -8px;
-    }
-
-    // @@@ refactor with mixins & functions
-    &.btn--primary {
-      background-color: mix(color(background), color(primary), 20%);
-      color: mix(color(background), color(primary), 70%);
-    }
-
-    &.btn--secondary {
-      background-color: mix(color(background), color(secondary), 20%);
-      color: mix(color(background), color(primary), 20%);
-
-      &:after {
-        border-color: mix(color(background), color(primary), 20%);
-        border-right-color: transparent;
-      }
-    }
-
-    &.btn--accent {
-      background-color: mix(color(background), color(accent), 20%);
-      color: mix(color(background), color(accent), 70%);
-
-      &:after {
-        border-color: mix(color(background), color(accent), 70%);
-        border-right-color: transparent;
-      }
+    &:after {
+      border-color: mix(color(background), color(accent), 70%);
+      border-right-color: transparent;
     }
   }
 }
 
 // Subtle button without fill
-.btn--ghost {
+[data-button="ghost"] {
   border: 1px solid color(dark-border);
   color: color(text);
 
@@ -190,24 +136,17 @@
   }
 }
 
-// Toggle button with an arrow that rotates
-.btn-toggler {
-  cursor: pointer;
+[data-button="simple"] {
+  color: color(dark-grey);
+  border: 1px solid color(lighter-grey);
+  background-color: #fff;
 
-  [data-icon="arrow"] {
-    margin: 0 3px;
-    transform: rotate(90deg);
-  }
-
-  &.is-expanded,
-  &.is-invisible {
-    [data-icon="arrow"] {
-      transform: rotate(-90deg);
-    }
+  &:hover {
+    background-color: color(lightest-grey);
   }
 }
 
-.btn--play {
+[data-button="play"] {
   position: relative;
   display: inline-block;
   min-height: 56px;
@@ -242,5 +181,22 @@
     top: 31px;
     border-top-width: 6px;
     border-bottom-width: 6px;
+  }
+}
+
+// Toggle button (revisit)
+.btn-toggler {
+  cursor: pointer;
+
+  [data-icon="arrow"] {
+    margin: 0 3px;
+    transform: rotate(90deg);
+  }
+
+  &.is-expanded,
+  &.is-invisible {
+    [data-icon="arrow"] {
+      transform: rotate(-90deg);
+    }
   }
 }

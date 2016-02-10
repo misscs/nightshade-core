@@ -1,0 +1,14 @@
+// Link styles
+.link {
+  @include link(medium-text, medium-text);
+  text-align: left;
+  letter-spacing: size(smallest-tracking);
+  font-size: inherit;
+}
+
+.link--fancy {
+  @extend %serif-family-stack;
+  @include link(medium-text, medium-text);
+  font-style: italic;
+  font-size: inherit;
+}

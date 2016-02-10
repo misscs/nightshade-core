@@ -42,9 +42,7 @@
     margin-right: size(medium);
     white-space: nowrap;
 
-    @include after("") {
-      display: block;
-      position: absolute;
+    @include after() {
       top: -6px;
       right: -(size(smaller));
       width: 1px;
@@ -155,8 +153,7 @@
   position: relative;
 
   @include respond-below($break-main-nav - 1) {
-    @include before("") {
-      position: absolute;
+    @include before() {
       top: 0;
       left: 0;
       width: 100%;
@@ -251,8 +248,7 @@
   }
 
   @include respond-at-and-above($break-main-nav) {
-    @include before("") {
-      position: fixed;
+    @include before($position: fixed) {
       top: 60px;
       left: 0;
       width: 100%;
@@ -275,7 +271,7 @@
     }
 
     @include respond-at-and-above($break-main-nav) {
-      @include before("") {
+      &:before {
         visibility: visible;
         opacity: 1;
       }
@@ -284,7 +280,7 @@
 
   &.is-retracted {
     @include respond-at-and-above($break-main-nav) {
-      @include before("") {
+      &:before {
         opacity: 0;
       }
     }
@@ -461,8 +457,7 @@
       position: relative;
       margin-right: 5.5em;
 
-      @include after("") {
-        position: absolute;
+      @include after() {
         top: 7.5%;
         right: -(size(larger));
         height: 85%;

@@ -31,31 +31,25 @@
     @include is-hidden;
   }
 
-
-  @include before("") {
+  @include before() {
     @extend %btn-close-main-menu;
-
     transform: translateY(-8px);
   }
 
-
-  @include after("") {
+  @include after() {
     @extend %btn-close-main-menu;
-
     transform: translateY(8px);
   }
-
 
   .is-open & {
     width: 26px;
     background-color: transparent;
 
-    @include before("") {
+    &:before {
       transform: translateY(0) rotate(45deg);
     }
 
-
-    @include after("") {
+    &:after {
       transform: translateY(0) rotate(-45deg);
     }
   }

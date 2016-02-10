@@ -22,8 +22,7 @@
     opacity: 0;
   }
 
-  @include before("") {
-    position: absolute;
+  @include before() {
     top: 0;
     left: 0;
     width: 100%;

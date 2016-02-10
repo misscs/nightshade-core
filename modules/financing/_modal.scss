@@ -53,11 +53,9 @@
   padding-left: 82px;
   max-width: 420px;
 
-  @include before("") {
+  @include before() {
     background-image: image-url("affirm-icons.png");
     background-size: 79px 489px;
-    display: block;
-    position: absolute;
     top: 0;
     left: 0;
     width: 62px;

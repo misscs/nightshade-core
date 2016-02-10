@@ -128,7 +128,6 @@
 // Link styles
 .link {
   @include link(medium-text, medium-text);
-
   text-align: left;
   letter-spacing: size(smallest-tracking);
   font-size: inherit;
@@ -136,9 +135,7 @@
 
 .link--fancy {
   @extend %serif-family-stack;
-
   @include link(medium-text, medium-text);
-
   font-style: italic;
   font-size: inherit;
 }
@@ -149,14 +146,12 @@
     position: relative;
     pointer-events: none;
 
-    @include after("") {
+    @include after() {
       @include spinner($color: mix(color(background), color(primary), 70%));
-
       top: 50%;
       right: 1.25em;
       margin-top: -8px;
     }
-
 
     // @@@ refactor with mixins & functions
     &.btn--primary {
@@ -239,15 +234,12 @@
     padding-top: size(normal);
   }
 
-
   &:hover {
     background-color: color(med-dark-background);
   }
 
-  @include before("") {
+  @include before() {
     @include square(40px);
-
-    position: absolute;
     left: 8px;
     top: 7px;
     border-radius: percentage(1 / 2);
@@ -255,10 +247,8 @@
     border: 1px solid color(dark-border);
   }
 
-
-  @include after("") {
+  @include after() {
     @include arrow(right, color(primary), 10px);
-
     left: 24px;
     top: 31px;
     border-top-width: 6px;

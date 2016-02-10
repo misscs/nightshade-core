@@ -24,9 +24,8 @@
     .custom-select-option {
       padding-left: 45px;
 
-      @include before("") {
+      @include before() {
         @include square(22px);
-        position: absolute;
         top: 12px;
         left: 12px;
         border: 1px solid color(dark-border);
@@ -36,7 +35,7 @@
 
       &[data-color*="chambray"] {
 
-        @include before("") {
+        &:before {
           background-image: linear-gradient(135deg, color(background) 50%, color(medium-grey) 50%, color(medium-grey));
         }
       }

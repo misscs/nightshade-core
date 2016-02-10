@@ -28,11 +28,12 @@ $active: '&:active';
   }
 
   @if $fancy {
-    @include after('›') {
-       color: inherit;
-       font-style: normal;
-       line-height: 1;
-       margin-left: 2px;
+    &:after {
+      content: "›";
+      color: inherit;
+      font-style: normal;
+      line-height: 1;
+      margin-left: 2px;
     }
   }
 }

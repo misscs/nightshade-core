@@ -20,7 +20,7 @@
     padding: size(normal) 10px 10px;
     transition: 0.25s opacity;
 
-    @include before("") {
+    @include before() {
       @include arrow(top, background, 14px);
       -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.10));
       top: -8px;
@@ -31,7 +31,7 @@
 
   @include respond-at-and-above($info-nav-break) {
 
-    @include before("") {
+    &:before {
       right: 37px;
     }
   }
@@ -40,7 +40,9 @@
   &[data-currency="CAD"] {
 
     .item-total {
-      @include before("C");
+      &:before {
+        content: "C";
+      }
     }
   }
 }
@@ -110,11 +112,11 @@
     width: 26px;
     background-color: transparent;
 
-    @include before('') {
+    &:before {
       transform: translateY(0) rotate(45deg);
     }
 
-    @include after('') {
+    &:after {
       transform: translateY(0) rotate(-45deg)
     }
   }
@@ -144,7 +146,7 @@
   @include respond-at-and-above($break-main-nav) {
     border-radius: size(normal-corners);
 
-    @include before("") {
+    @include before() {
       @include arrow(top, background, 14px);
       right: 11px;
       left: auto;
@@ -153,7 +155,7 @@
 
   @include respond-at-and-above($info-nav-break) {
 
-    @include before("") {
+    &:before {
       right: 27px;
     }
   }
@@ -350,7 +352,7 @@
 
   .cart--updating & {
 
-    @include after("") {
+    @include after() {
       @include spinner;
       top: 4px;
       right: 1px;

@@ -28,7 +28,7 @@
     background-color: color(tab-hover);
     border: 1px solid color(tab-hover);
 
-    @include after("") {
+    @include after() {
       @include arrow(bottom, tab-hover, 16px);
     }
   }

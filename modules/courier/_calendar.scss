@@ -15,7 +15,7 @@
   text-align: center;
   position: relative;
 
-  @include after("") {
+  @include after() {
     @include arrow(top, background, 16px);
   }
 }

@@ -73,10 +73,12 @@
   }
 
   .comma {
-    @include after(",");
-
     display: inline;
     margin: 0 2px 0 -2px;
+
+    &:after {
+      content: ",";
+    }
   }
 
   .edit-link {

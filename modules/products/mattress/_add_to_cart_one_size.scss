@@ -49,8 +49,7 @@
   text-align: center;
   font-size: 12px;
 
-  @include after("") {
-    position: absolute;
+  @include after() {
     top: 50%;
     left: 0;
     width: 100%;
@@ -137,5 +136,3 @@
     }
   }
 }
-
-

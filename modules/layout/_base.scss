@@ -20,7 +20,6 @@
  */
 
 html {
-  @extend %verlag-light;
   box-sizing: border-box;
   background: color(background);
   color: color(text);
@@ -33,6 +32,10 @@ html {
   text-rendering: optimizeLegibility; // [6]
   -webkit-font-smoothing: antialiased; // [5]
   -moz-osx-font-smoothing: grayscale; // [5]
+}
+
+body {
+  @extend %verlag-light;
 }
 
 * {

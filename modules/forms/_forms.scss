@@ -345,7 +345,7 @@ select {
 }
 
 .form-help {
-  @extend %serif-family-stack;
+  @extend %chronicle-italic;
 
   font-size: 14px;
   color: color(text);

@@ -61,6 +61,10 @@ img {
   vertical-align: middle;
 }
 
+body {
+  @extend %verlag-light;
+}
+
 * {
   &,
   &:before,

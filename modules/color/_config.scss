@@ -8,7 +8,7 @@ $colors:(
   background: #fff,
   secondary: #c6f6e8,
   accent: #fbd4d0,
-  base-gray: #aaa,
+  base-gray: #505050,
   lightest-grey: #f5f5f5,
   lighter-grey: #dbdbdb,
   light-grey: #e7e8e8,
@@ -30,10 +30,25 @@ $colors:(
   dark-border: lighter-grey,
   medium-border: dark-grey,
   stacks: (
-    primary: (#00237e, #031f6a, #071a53),
-    secondary: (#c6f6e8, #9ef0d8, #7beac9),
-    light-blue: (#edf9fa, #dcf4f6, #caeff2),
-    accent: (#fbd4d0, #ee675b, #ed5a4d),
-    base-gray: (#505050, #6a6a6a, #7c7c7c, #a8a8a8, #b9b9b9, #cbcbcb, #d3d3d3, #e5e5e5, #efefef, #f6f6f6)
+    base-gray: (
+      mixColor: #fff,
+      steps: (15, 25, 50, 60, 70, 75, 85, 91, 95)
+    ),
+    primary: (
+      mixColor: #0b153c,
+      steps: (30, 65)
+    ),
+    secondary: (
+      mixColor: #6ee8c4,
+      steps: (45, 85)
+    ),
+    light-blue: (
+      mixColor: #a7e4ea,
+      steps: (25, 50)
+    ),
+    accent: (
+      mixColor: #ec5446,
+      steps: (85, 95)
+    )
   )
 );

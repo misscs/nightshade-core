@@ -13,6 +13,7 @@
   border-radius: size(normal-corners);
   transition: background-color 0.15s, color 0.15s;
   -webkit-appearance: none;
+  fill: currentColor; // For buttons with icons
 
   @include respond-below($break-small) {
     font-size: 0.85rem;
@@ -41,6 +42,11 @@
     @include respond-below($break-small) {
       padding-right: 2.6rem;
     }
+  }
+
+  // For buttons with icons
+  [data-icon] {
+    margin-right: size(smallest);
   }
 }
 

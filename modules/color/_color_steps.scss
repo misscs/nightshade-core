@@ -1,4 +1,10 @@
-@mixin color-steps($steps, $colorName, $mixColor: white, $type: 'light') {
+@mixin color-steps($steps, $colorName, $mixColor: white) {
+  $type: light !default;
+
+  @if lightness($mixColor) < lightness(color($colorName)) {
+    $type: dark;
+  }
+
   @each $step in $steps {
     $i: index($steps, $step);
     $background-color: mix(color($colorName), $mixColor, (100 - $step));

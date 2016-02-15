@@ -1,0 +1,32 @@
+// Tooltip styles
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 18px);
+  transform: translateX(-50%);
+  min-width: 160px;
+  padding: size(smaller) size(small);
+  background: color(#6a6a6a); // Replace with map value
+  color: color(background);
+  font-size: 13px;
+  line-height: 1.3;
+  font-weight: bold;
+  letter-spacing: size(smaller-tracking);
+  text-align: center;
+  border-radius: size(normal-corners);
+  pointer-events: none;
+  z-index: 1;
+
+  &.is-invisible {
+    visibility: hidden;
+  }
+
+  &:after {
+    content: "";
+    @include arrow('bottom', #6a6a6a, 10px);  // Replace with map value
+  }
+}

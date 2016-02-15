@@ -1,0 +1,3 @@
+{% macro tooltip(text=text, class=class, id=id) %}
+<span class="tooltip {% if class %}{{ class }}{% endif %} is-invisible"{% if id %} id="{{ id }}"{% endif %} aria-expanded="false">{{ text }}</span>
+{% endmacro %}

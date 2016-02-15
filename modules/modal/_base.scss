@@ -6,6 +6,8 @@
 //     For some reason I think the polyfill adds in top inline styles, which cause
 //     the dialog to not show up at the top of the screen.  These !importants ignore those
 
+@import '../layout/positioning_config';
+
 .dialog {
   will-change: transform, opacity;
   top: 25vh !important;

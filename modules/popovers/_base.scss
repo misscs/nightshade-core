@@ -1,0 +1,105 @@
+@include keyframes(pulse-scale-hoizontal-center) {
+  0% {
+    transform: scale3d(1, 1, 1) translate(-50%, 0);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05) translate(-50%, 0);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translate(-50%, 0);
+  }
+}
+
+
+@include keyframes(pulse-scale-vertical-center) {
+  0% {
+    transform: scale3d(1, 1, 1) translate(0, -50%);
+  }
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05) translate(0, -50%);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translate(0, -50%);
+  }
+}
+
+// Popover styles
+.popover-container {
+  position: relative;
+}
+
+.popover {
+  position: absolute;
+  min-width: 320px;
+  padding: 25px;
+  background-color: color(background);
+  text-align: center;
+  border-radius: size(normal-corners);
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.08);
+  cursor: default;
+  z-index: 1;
+
+  &.is-invisible {
+    visibility: hidden;
+  }
+
+  &:after {
+    content: ""; // Make arrows display
+  }
+
+  &[data-position="top"] {
+    left: 50%;
+    bottom: calc(100% + 25px);
+    transform: translateX(-50%);
+
+    &:after {
+      @include arrow('bottom', background, 15px, $shadow: true);
+    }
+
+    .no-touch &[aria-expanded="true"] {
+      @include animation(pulse-scale-hoizontal-center, 0.2s, $iteration-count: 1);
+    }
+  }
+
+  &[data-position="right"] {
+    top: 50%;
+    left: calc(100% + 25px);
+    transform: translateY(-50%);
+
+    &:after {
+      @include arrow('left', background, 15px, $shadow: true);
+    }
+
+    .no-touch &[aria-expanded="true"] {
+      @include animation(pulse-scale-vertical-center, 0.2s, $iteration-count: 1);
+    }
+  }
+
+  &[data-position="bottom"] {
+    left: 50%;
+    top: calc(100% + 25px);
+    transform: translateX(-50%);
+
+    &:after {
+      @include arrow('top', background, 15px, $shadow: true);
+    }
+
+    .no-touch &[aria-expanded="true"] {
+      @include animation(pulse-scale-hoizontal-center, 0.2s, $iteration-count: 1);
+    }
+  }
+
+  &[data-position="left"] {
+    top: 50%;
+    right: calc(100% + 25px);
+    transform: translateY(-50%);
+
+    &:after {
+      @include arrow('right', background, 15px, $shadow: true);
+    }
+
+    .no-touch &[aria-expanded="true"] {
+      @include animation(pulse-scale-vertical-center, 0.2s, $iteration-count: 1);
+    }
+  }
+}

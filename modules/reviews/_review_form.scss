@@ -202,8 +202,6 @@
 
 .form-label-rating {
   label.error {
-    @extend %verlag-light;
-
     text-transform: none;
     font-size: size(normal);
     letter-spacing: 0;

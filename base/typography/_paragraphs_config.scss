@@ -56,7 +56,7 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
 
   @include respond-at-and-above(640px) {
     //@@@ TODO switch to chronicle deck?
-    font-family: $serif, $serif-stack;
+    font-family: $chronicle-deck;
     font-weight: 400;
     font-style: normal;
   }
@@ -76,7 +76,6 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
 
 
 %body--sans {
-  @extend %verlag-light;
   letter-spacing: size(smaller-tracking);
   font-size: 18px;
   line-height: 1.5;
@@ -89,7 +88,6 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
 
 
 %body--sans-small {
-  @extend %verlag-light;
   font-size: 16px;
   line-height: 1.4;
   letter-spacing: 0.05em; // New variable, or use smaller-tracking?
@@ -106,7 +104,6 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
 }
 
 %body--sans-large {
-  @extend %verlag-light;
   font-size: 21px;
   line-height: 1.4;
   letter-spacing: size(smaller-tracking);

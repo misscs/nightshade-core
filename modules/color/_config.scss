@@ -1,13 +1,13 @@
 $colors:(
   blue: #00237e,
   dark-blue: #001856,
-  light-blue: #dff5f7,
+  light-blue: #caeff2,
   trial-blue: #6c96bc,
   purple: #f2f4fa,
   primary: #00237e,
   background: #fff,
-  secondary: #c6f6e8,
-  accent: #fbd4d0,
+  secondary: #7beac9,
+  accent: #ed5a4d,
   base-gray: #505050,
   lightest-grey: #f5f5f5,
   lighter-grey: #dbdbdb,
@@ -39,16 +39,16 @@ $colors:(
       steps: (30, 65)
     ),
     secondary: (
-      mixColor: #6ee8c4,
+      mixColor: #fff,
       steps: (45, 85)
     ),
     light-blue: (
-      mixColor: #a7e4ea,
-      steps: (25, 50)
+      mixColor: #fff,
+      steps: (50, 75)
     ),
     accent: (
-      mixColor: #ec5446,
-      steps: (85, 95)
+      mixColor: #fff,
+      steps: (5, 15)
     )
   )
 );

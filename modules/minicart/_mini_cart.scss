@@ -306,7 +306,6 @@
   }
 
   .btn-quantity-icon {
-    @extend %verlag-light;
     @include square(24px);
     display: inline-block;
     font-size: 21px;

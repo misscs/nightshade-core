@@ -16,8 +16,6 @@
 
 // displays in form-legends
 .order-email {
-  @extend %verlag-light;
-
   float: right;
   text-transform: lowercase;
 }

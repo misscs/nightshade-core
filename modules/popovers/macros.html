@@ -1,0 +1,3 @@
+{% macro popover(position='top', text=text, class=class, id=id) %}
+<span class="popover {% if class %}{{ class }}{% endif %} is-invisible"{% if id %} id="{{ id }}"{% endif %} data-position="{{ position }}" aria-expanded="false">{{ text }}</span>
+{% endmacro %}

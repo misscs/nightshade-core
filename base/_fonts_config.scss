@@ -29,12 +29,25 @@
 
  */
 
+
+$calibre-light: "Calibre Light";
 $verlag: "Verlag A", "Verlag B";
+$verlag-black: "Verlag Black A", "Verlag Black B";
 $chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
-$chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
+$chronicle-ssm: "Chronicle SSm A", "Chronicle SSm B";
 
 $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-stack: Georgia, serif;
+
+%calibre-light {
+ font-family: $sans-stack;
+ font-weight: 400;
+ font-style: normal;
+
+ .wf-active & {
+   font-family: $calibre-light;
+ }
+}
 
 %verlag {
  font-family: $sans-stack;
@@ -42,7 +55,7 @@ $serif-stack: Georgia, serif;
  font-style: normal;
 
  .wf-active & {
-   font-family: $sans;
+   font-family: $verlag;
  }
 }
 
@@ -52,7 +65,7 @@ $serif-stack: Georgia, serif;
  font-style: normal;
 
  .wf-active & {
-   font-family: $sans;
+   font-family: $verlag;
  }
 }
 
@@ -62,7 +75,7 @@ $serif-stack: Georgia, serif;
  font-style: normal;
 
  .wf-active & {
-   font-family: "Verlag Black A", "Verlag Black B";
+   font-family: $verlag-black;
  }
 }
 
@@ -72,7 +85,7 @@ $serif-stack: Georgia, serif;
  font-style: normal;
 
  .wf-active & {
-   font-family: $serif;
+   font-family: $chronicle-deck;
  }
 }
 
@@ -82,7 +95,7 @@ $serif-stack: Georgia, serif;
  font-style: normal;
 
  .wf-active & {
-   font-family: "Chronicle SSm A", "Chronicle SSm B";
+   font-family: $chronicle-ssm;
  }
 }
 
@@ -92,6 +105,6 @@ $serif-stack: Georgia, serif;
  font-style: italic;
 
  .wf-active & {
-   font-family: $serif;
+   font-family: $chronicle-deck;
  }
 }

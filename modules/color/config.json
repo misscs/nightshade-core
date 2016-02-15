@@ -39,16 +39,16 @@
       "steps": ["30", "65"]
     },
     "secondary": {
-      "mixColor": "#fff",
-      "steps": ["45", "85"]
+      "mixColor": "#c6f6e8",
+      "steps": ["47", "100"]
     },
     "light-blue": {
-      "mixColor": "#fff",
-      "steps": ["50", "75"]
+      "mixColor": "#edf9fa",
+      "steps": ["50", "100"]
     },
     "accent": {
-      "mixColor": "#fff",
-      "steps": ["5", "15"]
+      "mixColor": "#fbd4d0",
+      "steps": ["10.5", "100"]
     }
   }
 }

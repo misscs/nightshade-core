@@ -1,0 +1,79 @@
+//doc
+// ---
+// title: Notifications
+// name: notifications
+// category: components
+// ---
+//
+// Notifications are used to display important information to the user.
+// Different types of notifications are used depending on the sensitivity and
+// urgency of the message.
+//
+//
+// ```haml_example
+// %div{:class =>"flash flash--notice"} A generic notification to alert the user
+//
+// %div{:class =>"flash flash--success"} Success notifications alert of successfully completed action or event
+//
+// %div{:class =>"flash flash--error"} Used to display warnings and errors.
+//
+// ```
+
+// --- end doc
+
+@import "flashes_config";
+
+.flash-container {
+  @include z-index(flash);
+}
+
+.flash {
+  max-width: 100%;
+  display: block;
+  padding: size(large);
+}
+
+.flash-inner {
+  padding-right: size(large);
+}
+
+.flash-content {
+  @extend %body--sans-small;
+
+  text-align: center;
+}
+
+.flash--notice {
+  @include notifications-color(notice);
+}
+
+// No longer using mixin for success messages at least 'til we overhaul flash.
+.flash--success {
+  @extend %body--sans-small;
+
+  background-color: color(flash-blue);
+  color: color(primary);
+
+  [data-icon="checkmark"] {
+    vertical-align: top;
+    margin-top: 4px;
+    margin-right: size(smallest);
+    fill: color(primary);
+  }
+}
+
+.flash--error,
+.flash--checkout_error,
+.flash--registration_error {
+  @include notifications-color(error);
+}
+
+.flash-alert-close {
+  @include z-index(flash);
+
+  position: absolute;
+  right: 40px;
+  color: inherit;
+  top: 50%;
+  transform: translate(0, -50%);
+}

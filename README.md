@@ -12,37 +12,48 @@ Install with npm. This will install the latest tag available in `master`.
 npm install CasperSleep/nightshade-styles -D
 ```
 
-## Include stylesheets in your application.
+## Including components in your library
 
-To get all of our tooling and plugins, import the files you want into your application.
+Import modules, libraries, and utilities in your file.
+
+### External Dependencies
+
+Third party libraries we rely on for tooling.
 
 ```sass
 @import './node_modules/accoutrement-color/sass/color';
 @import './node_modules/susy/sass/susy';
+```
 
+### Utilities
+
+Sass tools for web development
+
+```sass
 @import './node_modules/@casper/nightshade-styles/utilities/queries_config';
 @import './node_modules/@casper/nightshade-styles/utilities/animations';
 @import './node_modules/@casper/nightshade-styles/utilities/arrows_config';
 @import './node_modules/@casper/nightshade-styles/utilities/positioning';
 @import './node_modules/@casper/nightshade-styles/utilities/visual_utilities';
 @import './node_modules/@casper/nightshade-styles/utilities/z-index';
-
-@import './node_modules/@casper/nightshade-styles/base/z-index_config';
-@import './node_modules/@casper/nightshade-styles/base/breakpoints_config';
-@import './node_modules/@casper/nightshade-styles/base/sizing_config';
-@import './node_modules/@casper/nightshade-styles/base/fonts_config';
-@import './node_modules/@casper/nightshade-styles/base/colors_config';
-@import './node_modules/@casper/nightshade-styles/base/typography/bundle';
-@import './node_modules/@casper/nightshade-styles/base/grids';
-
-
-// Generates Output
-@import './node_modules/@casper/nightshade-styles/base/base';
-@import './node_modules/@casper/nightshade-styles/base/typography';
-@import './node_modules/@casper/nightshade-styles/utilities/display_helpers';
-@import './node_modules/@casper/nightshade-styles/utilities/flex-embed';
-
 ```
+
+
+### Modules
+
+The core collection of Casper modules that comprise the Nightshade Design System.
+
+At the moment, the modules are in flux. We recommend checking `modules` directory to find out the file(s) to import.
+
+Check out [the discussion](https://github.com/CasperSleep/nightshade-styles/issues/19) on the topic. Input and feedback welcome and open
+to all!
+
+
+
+### Other Nightshade Repos
+
+* [Nightshade Icons](https://github.com/CasperSleep/nightshade-icons)
+
 
 ## License
 

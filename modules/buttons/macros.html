@@ -1,0 +1,9 @@
+{% from '../icons/macros.html' import icon as icon_macro %}
+
+{% macro button(text, style='primary', size=size, type='button', class=class, id=id, href=href, icon=icon) %}
+  {% if type == 'link' %}
+    <a href="{{ href }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</a>
+  {% else %}
+    <button type="{{ type }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</button>
+  {% endif %}
+{% endmacro %}

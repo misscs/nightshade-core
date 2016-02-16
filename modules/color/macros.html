@@ -1,6 +1,6 @@
-{% macro color_swatch(name, hex=null, cmyk=null, class=null) %}
+{% macro color_swatch(name, hex=null, cmyk=null) %}
 <div class="color-swatches-item">
-  <div class="color-swatches-swatch {{ class }}" {% if not class %}style="background-color: {{ hex }}"{% endif %}></div>
+  <div class="color-swatches-swatch {{ name }}"></div>
   <code class="color-swatches-name">{{ name }}</code>
   <code class="color-swatches-hex">{{ hex }}</code>
   <code class="color-swatches-cmyk">{{ cmyk }}</code>

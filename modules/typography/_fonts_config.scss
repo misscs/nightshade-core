@@ -58,16 +58,6 @@ $serif-stack: Georgia, serif;
  }
 }
 
-%verlag-light {
- font-family: $sans-stack;
- font-weight: 300;
- font-style: normal;
-
- .wf-active & {
-   font-family: $verlag;
- }
-}
-
 %verlag-black {
  font-family: $sans-stack;
  font-weight: 800;

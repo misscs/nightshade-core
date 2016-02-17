@@ -1,0 +1,26 @@
+{#
+  * @overview Collection of macros for rendering form elements.
+#}
+
+{% from 'nightshade-styles/modules/buttons/macros.html' import button %}
+
+{#
+  * Renders a simple form with one input and submit button.
+  * Used for email signup and promotions.
+  *
+  * @todo Refactor JS. Currently a coffeescript. https://trello.com/c/JMPae5RS
+  * @todo Refactor macro so that it is a generic form input group comprised
+  * of one field and a submit button. Create a second macro for email signup
+  * that extends the input group and applies the necessary IDs, classes, and
+  * styles to render email_signup.
+#}
+{% macro email_signup() %}
+<form action="#" class="email-signup-form js-email-signup-form" method="get" target="_blank">
+  <div class="form-input-group">
+    <input class="form-input email-signup-input js-email-signup-input" inputmode="email" name="EMAIL" placeholder="Enter your email" required="true" type="email" value="" x-inputmode="email">
+
+    {{ button('SUBMIT', 'secondary', type="submit", class="email-signup-submit") }}
+  </div>
+</form>
+<div class="email-signup-response-text js-email-signup-response-text"></div>
+{% endmacro %}

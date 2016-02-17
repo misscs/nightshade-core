@@ -5,12 +5,6 @@
 // 2. Explicitly declare width for IE10 overlap bug. Cannot use
 // shortform flex: 1 1 70px.
 
-@import "main_menu_config";
-@import "menu/mobile_menu_icon";
-@import "menu/logo";
-@import "menu/mobile_overlay";
-@import "menu/states";
-
 .nav-main {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   height: 100%;

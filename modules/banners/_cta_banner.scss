@@ -1,33 +1,3 @@
-//doc
-// ---
-// title: CTA banner
-// name: cta-banner
-// category: components
-// ---
-//
-// Call-to-action banners to click-through to other sections of site.
-// When calling the helper, do not take out key-value pairs, just leave params
-// as empty strings.
-//
-// All params are optional. Omitting a param
-//
-// Param             |  Description
-// ----------------  | -----------------
-// `header_copy`     | Content for the headline
-// `header-class`    | Typography classes for the headline
-// `button_copy`     | Text for the button
-// `button_class`    | Classes for buttons. Pass only modifier. Default class is `btn`
-// `url`             | Link for the button
-// `height`          | Default is `300px`
-// `background_color`| Link for the button
-// `background_image`| Full cover image
-//
-// ```haml_example
-// = cta_banner({header_copy: "One Perfect Mattress", header_class: "h2 -dark", button_copy: "SHOP NOW", button_class: "btn--primary", url: 'google.com', height: "300px",  background_color: "", background_image: "nightshade/banner/one-perfect-mattress.jpg"})
-// ```
-
-// --- end doc
-
 .cta-banner {
   display: flex;
   justify-content: center;
@@ -38,4 +8,18 @@
 }
 
 
+.product-footer .cta-banner .cta-bg-vid {
+    display: none;
+}
 
+.product-footer .cta-banner .cta-bg {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

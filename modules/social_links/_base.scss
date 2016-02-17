@@ -1,0 +1,22 @@
+.social-links {
+  padding: size(smaller) 0;
+  line-height: 1;
+}
+
+.social-link {
+  display: inline-block;
+  fill: color(background);
+  transition: opacity 0.2s ease;
+
+  &:not(:last-child) {
+    margin-right: size(smaller);
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  [data-icon] {
+    @include square(20px);
+  }
+}

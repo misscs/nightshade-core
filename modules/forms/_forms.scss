@@ -304,11 +304,12 @@ select {
 }
 
 // Grouped input/submit buttons (e.g. Newsletter signup)
+// @TODO use a class for the group instead of `data-button`
 .form-input-group {
   display: flex;
 
   .form-input,
-  .btn {
+  [data-button] {
     height: 48px;
   }
 
@@ -317,7 +318,7 @@ select {
     border-bottom-right-radius: 0;
   }
 
-  .btn {
+  [data-button] {
     padding: size(smaller) size(small);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

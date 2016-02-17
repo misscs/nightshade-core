@@ -1,0 +1,60 @@
+{% from 'nightshade-styles/modules/icons/macros.html' import icon %}
+{% import 'nightshade-styles/modules/forms/forms.macros.html' as form %}
+
+
+
+{% macro stacked_2_column_grid() %}
+<div class="grid-two-column-container r-inner">
+  <div class="grid-two-column-left r-section-wrapper">
+
+  </div>
+
+  <div class="grid-two-column-right r-section-wrapper">
+  </div>
+</div>
+{% endmacro %}
+
+{% macro social_links() %}
+<div class="social-links"><a class="social-link" href="https://www.facebook.com/caspersleep" target="blank"><span data-icon="facebook"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg></span></a><a class="social-link" href="https://twitter.com/casper" target="blank"><span data-icon="twitter"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg></span></a><a class="social-link" href="https://instagram.com/casper" target="blank"><span data-icon="instagram"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg></span></a><a class="social-link" href="https://www.pinterest.com/caspersleep" target="blank"><span data-icon="pinterest"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-pinterest"></use></svg></span></a></div>
+{% endmacro %}
+
+{% macro shipping_returns() %}
+<section class="r-section r-centered shipping-returns-block mx-auto">
+  <header class="photo-panel-header">
+
+      {{ icon("truck", size="medium" )}}
+
+      <h2 class="photo-panel-title -dark">
+      Free shipping &
+      <span class="line-break">
+        returns
+      </span>
+    </h2>
+  </header>
+  <ul>
+    <li class="shipping-returns-text body--sans mx-auto">Free UPS delivery to your door in the US and Canada</li>
+    <li class="shipping-returns-text body--sans mx-auto">Change your mind? No problem, returns are free and easy</li>
+  </ul>
+</section>
+{% endmacro %}
+
+{% macro newsletter_signup() %}
+<section class="r-section r-centered newsletter-block mx-auto">
+  <header class="photo-panel-header">
+
+    {{ icon("book-closed", size="medium" )}}
+
+    <h2 class="photo-panel-title -dark">
+      More bedtime
+      <span class="line-break">
+        reading
+      </span>
+    </h2>
+  </header>
+  <p class="newsletter-block-text body--sans">
+    Sign up to receive our monthly Snoozeletter and other updates
+  </p>
+  {{ form.email_signup() }}
+
+</section>
+{% endmacro %}

@@ -27,6 +27,7 @@ html {
   min-height: 100%; // [4]
   font-size: $base-font-size / 16px * 1em; // [2]
   line-height: $base-line-height; // [2]
+  letter-spacing: size(smaller-tracking);
   overflow-x: hidden;
   overflow-y: scroll; // [3]
   text-rendering: optimizeLegibility; // [7]

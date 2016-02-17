@@ -1,0 +1,61 @@
+/**
+ * @file Breadcrumbs
+ * @module breadcrumbs
+ * @overview Styles for Casper breadcrumbs
+ * @todo Decouple breadcrumbs pattern from its imiplementaiton in the footer. 
+ */
+ 
+.breadcrumb-list {
+  padding-bottom: size(large);
+  list-style: none;
+
+  a {
+    display: inline-block;
+  }
+
+  [data-icon="casper-logo-mark"] {
+    @include square(19px);
+    fill: color(background);
+  }
+}
+
+.breadcrumb-hide {
+  @include respond-below($break-414) {
+    @include is-hidden
+  }
+}
+
+.breadcrumb-item,
+.breadcrumbs-arrow {
+  @extend %verlag;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: size(medium-tracking);
+  vertical-align: middle;
+  opacity: .45;
+}
+
+.breadcrumb-item {
+  margin: 0 1.2em;
+  transition: 0.25s opacity ease;
+  -webkit-backface-visibility: hidden;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    pointer-events: none;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.breadcrumbs-arrow {
+  position: relative;
+  margin: 0;
+}

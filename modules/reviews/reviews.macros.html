@@ -1,0 +1,61 @@
+{#
+  * @overview Macros for rending reviews and ratings.
+#}
+
+{% from '../buttons/macros.html' import button %}
+
+{#
+  * Renders a single review with a button to read all reviews.
+  * Currently used on product pages
+  *
+  * @todo Refactor review macros. Use same markup for both display versions
+  * https://github.com/CasperSleep/nightshade-core/issues/13
+#}
+{% macro single() %}
+<div class="product-page-review-inner">
+  <h2 class="product-page-review-title -dark">Casper sheets reviews</h2>
+
+    {{ star_rating() }}
+    {{ stat_rating() }}
+
+<div class="body--sans-small product-page-review-time">
+  Posted
+  <time data-local="weekday-or-date" datetime="2016-02-03T00:00:00Z" title="February 2, 2016 at 7:00pm EST">Feb 2</time>
+</div>
+<div class="js-review-text">
+  <div class="js-review-text-body product-page-review-copy body--serif" itemprop="reviewBody" style="max-height: none;">
+    Look and feel great
+  </div>
+</div>
+<div class="product-page-review-info"><span class="product-page-review-name body--sans-small">Jeffrey Zurek</span><span class="product-page-review-age body--sans-small">, 37 years old,</span><span class="product-page-review-info body--sans-small">
+Tampa, FL
+</span></div>
+
+  {{ button('READ ALL REVIEWS', 'secondary', href="/sheets/reviews", class="product-page-review-btn") }}
+{% endmacro %}
+
+
+{#
+  * Accessible display of stars
+  * @todo Can this get simplified? We we use svg icons instead of relying on
+  * svgs from css?
+  * https://github.com/CasperSleep/nightshade-core/issues/12
+#}
+{% macro star_rating() %}
+<abbr class="rating-stars" title="(4.5 out of 5 Stars)"><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:53.92156862745098%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span></abbr>{% endmacro %}
+
+
+{#
+  * Outputs average star review and total sample size of the data set
+  *
+  * @todo https://github.com/CasperSleep/nightshade-core/issues/12
+#}
+{% macro stat_rating() %}
+    <span class="rating-stars-stats--fraction" itemprop="ratingValue">
+      4.5/5
+    </span>
+    <span class="rating-stars-stats--total" itemprop="reviewCount">
+      (102)
+    </span>
+  </span>
+{% endmacro %}

@@ -1,0 +1,632 @@
+{% from '../buttons/macros.html' import button %}
+{% import '../reviews/reviews.macros.html' as reviews %}
+
+{% macro sheets() %}
+  <div class="fieldset-product-purchase-inner add-to-cart sheets r-section-wrapper">
+    <h1 class="add-to-cart-title">The Casper Sheets</h1>
+
+    <ul class="product-purchase-details">
+      <li class="product-purchase-details-item product-purchase-details--rating">
+        {{ reviews.star_rating() }}
+        {{ reviews.stat_rating() }}
+      </li>
+      <li class="product-purchase-details-item product-purchase-details--ships-by">
+        <p class="product-purchase-details-ships-by-date tooltip-container">
+          Ships by
+          <span id="product-purchase-details-ships-by-date">December 25</span>
+        </p>
+      </li>
+    </ul>
+
+
+    <form accept-charset="UTF-8" action="/orders/capulate" autocomplete="off" class="sheets-purchase-form" data-remote="true" id="sheets-purchase-form" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div>    <div class="add-to-cart-form r-section sheets" data-hook="inside_product_cart_form" id="inside-product-cart-form" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+          <input id="product-id" name="variants[][variant_id]" type="hidden" value="78">
+          <input id="product-qty" min="1" name="variants[][quantity]" type="hidden" value="1">
+          <input id="duvet-id" name="variants[][variant_id]" type="hidden" value="67">
+          <input id="duvet-qty" name="variants[][quantity]" type="hidden" value="0">
+          <input id="show-notification" name="show_notification" type="hidden" value="false">
+          <div class="sheets-select-nav r-centered">
+            <div class="sheet-select-tab-container">
+              <a class="body--sans sheets-select-tab js-sheets-select-tab sheets-select-tab--set is-active" data-name="sheets-set" href="#"><div class="sheets-select-nav-tab-text">SETS</div>
+              </a>
+            </div>
+            <div class="sheet-select-tab-container">
+              <a class="body--sans sheets-select-tab js-sheets-select-tab sheets-select-tab--custom" data-name="sheets-custom" href="#"><div class="sheets-select-nav-tab-text">SEPARATES</div>
+              </a>
+            </div>
+          </div>
+          <div class="sheets-select-container">
+            <div class="sheets-select sheets-select--set js-sheets-product js-sheets-product--set" data-category="Sheets" data-id="78" data-name="Casper Sheet Set" data-options="Size: Queen, Color: White/Chambray" data-price="180.0" data-ships-by="December 25" data-sku="QUEENSETWC" data-slug="sheets" id="sheets-set">
+              <div class="form-field form-field--duvet">
+                <ul class="sheets-set-and-duvet">
+                  <li class="duvet-list-item">
+                    <label id="sheets-add-duvet" data-id="67" data-sku="DUVETQUWC" data-price="140.0">
+                      <input checked="" class="duvet-radio js-duvet-radio" name="duvet-radio" type="radio">
+                        <div class="duvet-label-title">Standard</div>
+                        <div class="duvet-label-copy">
+                          The set: 1 flat &amp; 1 fitted sheet, 2 <span class="sheets-pillowcase" id="sheets-king-pillowcase">king</span>
+                          <span class="sheets-pillowcase is-visible" id="sheets-standard-pillowcase">standard</span> pillowcases
+                        </div>
+
+                    </label>
+                  </li>
+                  <li class="duvet-list-item">
+                    <label class="form-label--duvet" data-category="Sheets" data-id="66" data-name="Casper Duvet Cover" data-options="Size: Full/Queen, Color: White/White" data-price="140.0" data-ships-by="November 30" data-sku="DUVETQUWW" data-slug="casper-duvet-cover" id="sheets-add-duvet">
+                      <input class="js-duvet-radio duvet-radio" id="add-duvet-cover" name="duvet-radio" type="radio">
+                        <div class="duvet-label-title">Standard + Duvet Cover</div>
+
+                    </label>
+                  </li>
+                </ul>
+              </div>
+              <div class="form-field form-field--color-exposed">
+                <div class="exposed-select exposed-select--color js-custom-select js-select-color">
+                  <div class="exposed-select-label exposed-select-label--color">Color</div>
+                  <ul class="exposed-select-options js-exposed-select-options">
+                    <li class="exposed-select-container">
+                      <label class="exposed-select-option js-exposed-select-option" data-color="white/white">
+                        <input class="exposed-select-radio js-custom-select-radio is-invisible" data-option="White/White" name="sheets-color" type="radio" value="White/White">
+                        <div class="exposed-select-radio-target"></div>
+                      </label>
+                    </li>
+                    <li class="exposed-select-container">
+                      <label class="exposed-select-option js-exposed-select-option" data-color="white/chambray">
+                        <input checked="" class="exposed-select-radio js-custom-select-radio is-invisible" data-option="White/Chambray" name="sheets-color" type="radio" value="White/Chambray">
+                        <div class="exposed-select-radio-target"></div>
+                      </label>
+                    </li>
+                  </ul>
+                  <div class="exposed-select-color-display js-exposed-select-color-display">
+                    White/Chambray
+                  </div>
+                </div>
+              </div>
+              <div class="form-field form-field--size form-field--size-set">
+                <div class="custom-select js-custom-select js-select-size">
+                  <div class="custom-select-label exposed-select-label exposed-select-label--size">Size</div>
+                  <div class="custom-select-selected js-custom-select-selected" tabindex="0">Queen</div>
+                  <ul class="custom-select-options js-custom-select-options">
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input class="custom-select-radio js-custom-select-radio" data-option="Twin" name="sheets-size" type="radio" value="Twin">
+                        Twin
+                      </label>
+                    </li>
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input class="custom-select-radio js-custom-select-radio" data-option="Twin XL" name="sheets-size" type="radio" value="Twin XL">
+                        Twin XL
+                      </label>
+                    </li>
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input class="custom-select-radio js-custom-select-radio" data-option="Full" name="sheets-size" type="radio" value="Full">
+                        Full
+                      </label>
+                    </li>
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input checked="" class="custom-select-radio js-custom-select-radio" data-option="Queen" name="sheets-size" type="radio" value="Queen">
+                        Queen
+                      </label>
+                    </li>
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input class="custom-select-radio js-custom-select-radio" data-option="King" name="sheets-size" type="radio" value="King">
+                        King
+                      </label>
+                    </li>
+                    <li class="custom-select-row">
+                      <label class="custom-select-option js-custom-select-option">
+                        <input class="custom-select-radio js-custom-select-radio" data-option="CAL King" name="sheets-size" type="radio" value="CAL King">
+                        CAL King
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="form-actions"><div class="form-field form-field--price">
+                  <div class="form-input--price r-centered" id="sheets-set-price">
+                    <span class="currency-unit">$</span><span class="currency-value">180</span>
+                  </div>
+                </div><button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+                </button>
+              </div>
+            </div>
+            <div class="sheets-select sheets-select--custom sheets-select--hide" id="sheets-custom">
+              <ul class="sheets-custom-products" id="sheets-custom-products">
+                <li class="js-product-btn-casper-flat-sheet js-sheets-product sheets-product sheets-product--collapsed slug-casper-flat-sheet" data-category="Sheets" data-id="43" data-name="Casper Flat Sheet" data-options="Size: Queen, Color: White/Chambray" data-price="80.0" data-ships-by="December 25" data-sku="FLTSHEETQUWC" data-slug="casper-flat-sheet">
+                  <header class="sheets-product-header">
+                    <img alt="Casper Flat Sheet" class="sheets-product-img" src="/assets/nightshade/products/sheets/casper-flat-sheet.svg">
+                    <h3 class="sheets-product-title js-product-title">Flat Sheet</h3>
+                    <div class="sheets-product-price-range">
+                      from
+                      <span class="currency-unit">$</span><span class="currency-value">60</span>
+                    </div>
+                    <div class="sheets-product-price js-product-price">
+                      <span class="currency-unit">$</span><span class="currency-value">80</span>
+                      each
+                    </div>
+                  </header>
+                  <div class="sheets-product-form">
+                    <div class="form-field form-field--color">
+                      <div class="custom-select custom-select--color js-custom-select js-select-color">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0" data-color="white/chambray">White/Chambray</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/white">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="White/White" name="casper-flat-sheet-color" type="radio" value="White/White">
+                              White/White
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/chambray">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="White/Chambray" name="casper-flat-sheet-color" type="radio" value="White/Chambray">
+                              White/Chambray
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--size">
+                      <div class="custom-select js-custom-select js-select-size">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">Queen</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Twin/Twin XL" name="casper-flat-sheet-size" type="radio" value="Twin/Twin XL">
+                              Twin/Twin XL
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Full" name="casper-flat-sheet-size" type="radio" value="Full">
+                              Full
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="Queen" name="casper-flat-sheet-size" type="radio" value="Queen">
+                              Queen
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="King/CAL King" name="casper-flat-sheet-size" type="radio" value="King/CAL King">
+                              King/CAL King
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--quantity">
+                      <div class="custom-select js-custom-select js-select-quantity">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">1</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="1" name="casper-flat-sheet-quantity" type="radio" value="1">
+                              1
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="2" name="casper-flat-sheet-quantity" type="radio" value="2">
+                              2
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="3" name="casper-flat-sheet-quantity" type="radio" value="3">
+                              3
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="4" name="casper-flat-sheet-quantity" type="radio" value="4">
+                              4
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="5" name="casper-flat-sheet-quantity" type="radio" value="5">
+                              5
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+                    </button>
+                    <button class="btn--close js-btn-close" type="button">
+                      <span data-icon="close"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use></svg></span>
+                    </button>
+                  </div>
+                </li>
+                <li class="js-product-btn-casper-fitted-sheet js-sheets-product sheets-product sheets-product--collapsed slug-casper-fitted-sheet" data-category="Sheets" data-id="53" data-name="Casper Fitted Sheet" data-options="Size: Queen, Color: White/Chambray" data-price="80.0" data-ships-by="December 25" data-sku="FITSHEETQUWC" data-slug="casper-fitted-sheet">
+                  <header class="sheets-product-header">
+                    <img alt="Casper Fitted Sheet" class="sheets-product-img" src="/assets/nightshade/products/sheets/casper-fitted-sheet.svg">
+                    <h3 class="sheets-product-title js-product-title">Fitted Sheet</h3>
+                    <div class="sheets-product-price-range">
+                      from
+                      <span class="currency-unit">$</span><span class="currency-value">50</span>
+                    </div>
+                    <div class="sheets-product-price js-product-price">
+                      <span class="currency-unit">$</span><span class="currency-value">80</span>
+                      each
+                    </div>
+                  </header>
+                  <div class="sheets-product-form">
+                    <div class="form-field form-field--color">
+                      <div class="custom-select custom-select--color js-custom-select js-select-color">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0" data-color="white/chambray">White/Chambray</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/white">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="White/White" name="casper-fitted-sheet-color" type="radio" value="White/White">
+                              White/White
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/chambray">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="White/Chambray" name="casper-fitted-sheet-color" type="radio" value="White/Chambray">
+                              White/Chambray
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--size">
+                      <div class="custom-select js-custom-select js-select-size">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">Queen</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Twin" name="casper-fitted-sheet-size" type="radio" value="Twin">
+                              Twin
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Twin XL" name="casper-fitted-sheet-size" type="radio" value="Twin XL">
+                              Twin XL
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Full" name="casper-fitted-sheet-size" type="radio" value="Full">
+                              Full
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="Queen" name="casper-fitted-sheet-size" type="radio" value="Queen">
+                              Queen
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="King" name="casper-fitted-sheet-size" type="radio" value="King">
+                              King
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="CAL King" name="casper-fitted-sheet-size" type="radio" value="CAL King">
+                              CAL King
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--quantity">
+                      <div class="custom-select js-custom-select js-select-quantity">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">1</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="1" name="casper-fitted-sheet-quantity" type="radio" value="1">
+                              1
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="2" name="casper-fitted-sheet-quantity" type="radio" value="2">
+                              2
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="3" name="casper-fitted-sheet-quantity" type="radio" value="3">
+                              3
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="4" name="casper-fitted-sheet-quantity" type="radio" value="4">
+                              4
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="5" name="casper-fitted-sheet-quantity" type="radio" value="5">
+                              5
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+                    </button>
+                    <button class="btn--close js-btn-close" type="button">
+                      <span data-icon="close"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use></svg></span>
+                    </button>
+                  </div>
+                </li>
+                <li class="js-product-btn-casper-pillowcase js-sheets-product sheets-product sheets-product--collapsed slug-casper-pillowcase" data-category="Sheets" data-id="60" data-name="Casper Pillowcase" data-options="Size: Standard, Color: White/Chambray" data-price="50.0" data-ships-by="December 25" data-sku="PILLOWCSTDWC" data-slug="casper-pillowcase">
+                  <header class="sheets-product-header">
+                    <img alt="Casper Pillowcase" class="sheets-product-img" src="/assets/nightshade/products/sheets/casper-pillowcase.svg">
+                    <h3 class="sheets-product-title js-product-title">Pillowcases</h3>
+                    <div class="sheets-product-price-range">
+                      from
+                      <span class="currency-unit">$</span><span class="currency-value">50</span>
+                    </div>
+                    <div class="sheets-product-price js-product-price">
+                      <span class="currency-unit">$</span><span class="currency-value">50</span>
+                      (set of two)
+                    </div>
+                  </header>
+                  <div class="sheets-product-form">
+                    <div class="form-field form-field--color">
+                      <div class="custom-select custom-select--color js-custom-select js-select-color">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0" data-color="white/chambray">White/Chambray</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/white">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="White/White" name="casper-pillowcase-color" type="radio" value="White/White">
+                              White/White
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/chambray">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="White/Chambray" name="casper-pillowcase-color" type="radio" value="White/Chambray">
+                              White/Chambray
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--size">
+                      <div class="custom-select js-custom-select js-select-size">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">Standard</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="Standard" name="casper-pillowcase-size" type="radio" value="Standard">
+                              Standard
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="King" name="casper-pillowcase-size" type="radio" value="King">
+                              King
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--quantity">
+                      <div class="custom-select js-custom-select js-select-quantity">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">1</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="1" name="casper-pillowcase-quantity" type="radio" value="1">
+                              1
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="2" name="casper-pillowcase-quantity" type="radio" value="2">
+                              2
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="3" name="casper-pillowcase-quantity" type="radio" value="3">
+                              3
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="4" name="casper-pillowcase-quantity" type="radio" value="4">
+                              4
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="5" name="casper-pillowcase-quantity" type="radio" value="5">
+                              5
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+                    </button>
+                    <button class="btn--close js-btn-close" type="button">
+                      <span data-icon="close"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use></svg></span>
+                    </button>
+                  </div>
+                </li>
+                <li class="js-product-btn-casper-duvet-cover js-sheets-product sheets-product sheets-product--collapsed slug-casper-duvet-cover" data-category="Sheets" data-id="66" data-name="Casper Duvet Cover" data-options="Size: Full/Queen, Color: White/White" data-price="140.0" data-ships-by="November 30" data-sku="DUVETQUWW" data-slug="casper-duvet-cover">
+                  <header class="sheets-product-header">
+                    <img alt="Casper Duvet Cover" class="sheets-product-img" src="/assets/nightshade/products/sheets/casper-duvet-cover.svg">
+                    <h3 class="sheets-product-title js-product-title">Duvet Cover</h3>
+                    <div class="sheets-product-price-range">
+                      available in March
+                    </div>
+                    <div class="sheets-product-price js-product-price">
+                      <span class="currency-unit">$</span><span class="currency-value">140</span>
+                      each
+                    </div>
+                  </header>
+                  <div class="sheets-product-form">
+                    <div class="form-field form-field--color">
+                      <div class="custom-select custom-select--color js-custom-select js-select-color">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0" data-color="white/white">White/White</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/white">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="White/White" name="casper-duvet-cover-color" type="radio" value="White/White">
+                              White/White
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option" data-color="white/chambray">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="White/Chambray" name="casper-duvet-cover-color" type="radio" value="White/Chambray">
+                              White/Chambray
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--size">
+                      <div class="custom-select js-custom-select js-select-size">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">Full/Queen</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="Twin/Twin XL" name="casper-duvet-cover-size" type="radio" value="Twin/Twin XL">
+                              Twin/Twin XL
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="Full/Queen" name="casper-duvet-cover-size" type="radio" value="Full/Queen">
+                              Full/Queen
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="King/CAL King" name="casper-duvet-cover-size" type="radio" value="King/CAL King">
+                              King/CAL King
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div><div class="form-field form-field--quantity">
+                      <div class="custom-select js-custom-select js-select-quantity">
+                        <div class="custom-select-selected js-custom-select-selected" tabindex="0">1</div>
+                        <ul class="custom-select-options js-custom-select-options">
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input checked="" class="custom-select-radio js-custom-select-radio" data-option="1" name="casper-duvet-cover-quantity" type="radio" value="1">
+                              1
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="2" name="casper-duvet-cover-quantity" type="radio" value="2">
+                              2
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="3" name="casper-duvet-cover-quantity" type="radio" value="3">
+                              3
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="4" name="casper-duvet-cover-quantity" type="radio" value="4">
+                              4
+                            </label>
+                          </li>
+                          <li class="custom-select-row">
+                            <label class="custom-select-option js-custom-select-option">
+                              <input class="custom-select-radio js-custom-select-radio" data-option="5" name="casper-duvet-cover-quantity" type="radio" value="5">
+                              5
+                            </label>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+                    </button>
+
+                    <button class="btn--close js-btn-close" type="button">
+                      <span data-icon="close"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use></svg></span>
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </form>
+
+
+  </div>
+
+{% endmacro %}
+
+{% macro mattress() %}
+  <section class="add-to-cart">
+  <div class="add-to-cart-inner r-section-wrapper">
+  <h1 class="add-to-cart-title r-centered">The Casper Mattress</h1>
+  <p class="product-description body--sans-small">Springy latex and high-density memory foams come together to create one perfect sleep surface.</p>
+  <!-- / consider refactoring to make ships-by a module on the backend -->
+  <ul class="product-purchase-details">
+  </ul>
+
+  <form accept-charset="UTF-8" action="/orders/populate" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="✓"></div><div class="add-to-cart-form mattresses" data-hook="inside_product_cart_form" id="inside-product-cart-form" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+  <div class="form-field--atc form-field--size">
+  <div class="form-input--atc">
+  <div class="size-selector js-size-selector size-selector--exposed">
+  <span class="size-selector-exposed-cta">CHOOSE A SIZE:</span>
+  <span class="size-selector-exposed-dimensions js-size-selector-exposed-dimensions">60” X 80” X 10”</span>
+  <div class="size-selector-selected js-size-selector-selected">
+  <span class="size-selector-name form-label--alt js-size-selector-name">Queen</span>
+  <span class="size-selector-dimensions js-size-selector-dimensions">60” X 80” X 10”</span>
+  </div>
+  <input class="js-mattress-variant-id-input" id="variant_id" name="variant_id" type="hidden" value="5">
+  <ul class="size-selector-options js-size-selector-options">
+  <li class="size-selector-option js-size-selector-option" data-dimensions="39” X 75” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>500</span>" data-size="Twin" data-sku="CA001-01-GRY-1" data-variant-id="2">
+  <span class="size-selector-name">Twin</span>
+  <span class="size-selector-dimensions">39” X 75” X 10”</span>
+  </li>
+  <li class="size-selector-option js-size-selector-option" data-dimensions="39” X 80” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>600</span>" data-size="Twin XL" data-sku="CA001-01-GRY-2" data-variant-id="3">
+  <span class="size-selector-name">Twin XL</span>
+  <span class="size-selector-dimensions">39” X 80” X 10”</span>
+  </li>
+  <li class="size-selector-option js-size-selector-option" data-dimensions="54” X 75” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>750</span>" data-size="Full" data-sku="CA001-01-GRY-3" data-variant-id="4">
+  <span class="size-selector-name">Full</span>
+  <span class="size-selector-dimensions">54” X 75” X 10”</span>
+  </li>
+  <li class="size-selector-option js-size-selector-option is-selected" data-dimensions="60” X 80” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>850</span>" data-size="Queen" data-sku="CA001-01-GRY-4" data-variant-id="5">
+  <span class="size-selector-name">Queen</span>
+  <span class="size-selector-dimensions">60” X 80” X 10”</span>
+  </li>
+  <li class="size-selector-option js-size-selector-option" data-dimensions="76” X 80” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>950</span>" data-size="King" data-sku="CA001-01-GRY-5" data-variant-id="6">
+  <span class="size-selector-name">King</span>
+  <span class="size-selector-dimensions">76” X 80” X 10”</span>
+  </li>
+  <li class="size-selector-option js-size-selector-option" data-dimensions="72” X 84” X 10”" data-price="<span class=&quot;currency-unit&quot;>$</span><span class=&quot;currency-value&quot;>950</span>" data-size="CAL King" data-sku="CA001-01-GRY-6" data-variant-id="7">
+  <span class="size-selector-name">CAL King</span>
+  <span class="size-selector-dimensions">72” X 84” X 10”</span>
+  </li>
+  </ul>
+  </div>
+
+  </div>
+  </div>
+  <input class="title" id="quantity" min="1" name="quantity" type="hidden" value="1">
+  <link href="http://schema.org/InStock" itemprop="availability">
+  <div class="form-actions"><div class="form-field form-field--price">
+  <div class="form-input--price is-us js-add-to-cart-price-text" itemprop="price"><span class="currency-unit">$</span><span class="currency-value">850</span></div>
+  </div><button data-button="accent" class="btn btn--accent btn--loading add-to-cart-button js-add-to-cart-button" name="button" type="submit">Add To Cart
+  </button></div>
+  <div class="form-help">
+  <a class="add-to-cart-financing-link" href="#">0% financing for $<span class="js-financing-amount">142</span>/month
+  </a></div>
+  </div>
+  </form>
+
+  </div>
+  </section>
+</div>
+{% endmacro %}

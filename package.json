@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/CasperSleep/nightshade-core#readme",
   "dependencies": {
-    "@casper/nightshade-icons": "github:caspersleep/nightshade-icons#v2.1.0",
+    "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
     "susy": "^2.2.12"
   }

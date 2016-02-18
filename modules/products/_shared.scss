@@ -3,9 +3,6 @@
  */
 
 // Locals
-@import "../../utilities/clearfix";
-@import "../../utilities/flex-embed";
-
 @import "../forms/custom_select";
 @import "../modal/base";
 @import "../layout/grids";
@@ -30,6 +27,6 @@
 @import "product_gallery";
 
 // For reviews modules on the product pages
-@import "../ratings_stars";
+@import "../ratings_stars/base";
 @import "../reviews/reviews_stats_table";
 @import "review";

@@ -20,7 +20,7 @@
     text-align: left;
 
     &:not(.form-field--price) {
-      margin-bottom: size(medium);
+      margin-bottom: size(small);
     }
   }
 
@@ -28,6 +28,14 @@
     display: inline-block;
     padding-top: size(smallest);
     cursor: pointer;
+  }
+
+  .fieldset-product-purchase-inner {
+
+    @include respond-below($break-small) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }
 
@@ -53,6 +61,7 @@
 
 .sheets-select {
   transition: opacity 0.25s ease, transform 0.25s ease-out;
+  padding: 30px;
 
   // The order of these modifiers should not change
   &--hide {
@@ -82,7 +91,6 @@
 }
 
 .sheets-select--set {
-  padding-top: size(medium);
 
   .form-field {
 
@@ -98,21 +106,98 @@
           margin-bottom: size(small);
         }
       }
+
+      &-exposed {
+        margin-top: size(smallest);
+      }
     }
 
     &--size {
-      width: calc(100% / 3);
+      width: 100%;
+
+      .custom-select {
+        white-space: nowrap;
+      }
+
+      .custom-select-label {
+        display: inline-block;
+        width: calc(100% * (1 / 5));
+      }
+
+      .custom-select-selected {
+        display: inline-block;
+        width: calc(100% * (4 / 5));
+      }
 
       @include respond-below($break-mobile) {
         width: 100%;
       }
     }
   }
+
+  .form-field--size-set {
+
+    .custom-select-options {
+      width: calc(100% * (4 /5));
+      right: -4px;
+      top: 48px;
+    }
+  }
+
+  .form-actions {
+    margin-top: 0;
+  }
 }
 
 .sheets-set-and-duvet {
   padding-bottom: size(medium);
   border-bottom: 1px solid color(dark-border);
+
+  .duvet-label-title,
+  .duvet-label-copy {
+    display: inline-block;
+    margin-left: 25px;
+    width: 100%
+  }
+
+  .duvet-label-title {
+    font-weight: 600;
+    position: relative;
+    cursor: pointer;
+
+    // custom radio
+    &:before {
+      @include circle(18px);
+      content: '';
+      position: absolute;
+      left: -25px;
+      top: 1px;
+      background-color: color(light-background);
+      border: 1px solid color(dark-border);
+    }
+  }
+
+  // custom radio when checked
+  input:checked + .duvet-label-title {
+
+    &:before {
+      content: "\2022";
+      color: color(medium-text);
+      font-size: 38px;
+      line-height: 17px;
+    }
+  }
+
+  .duvet-radio {
+    display: none;
+  }
+
+  .duvet-list-item {
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
 }
 
 .sheets-set-info {
@@ -123,7 +208,6 @@
   }
 }
 
-.sheets-set-and-duvet,
 .sheets-separates-divider .text,
 .btn-sheets-customize {
   @extend %verlag;
@@ -132,37 +216,11 @@
   letter-spacing: size(normal-tracking);
 }
 
-.sheets-king-pillowcase {
+.sheets-pillowcase {
   display: none;
 
   &.is-visible {
     display: inline;
-  }
-}
-
-.sheets-separates-divider {
-  position: relative;
-  margin: size(smaller) 0;
-  line-height: 1.5;
-
-  @include after() {
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 0;
-    border-top: 1px solid color(dark-border);
-  }
-
-  .text {
-    position: relative;
-    z-index: 1;
-    padding: 0 size(smallest);
-    text-transform: uppercase;
-    background: color(background);
-
-    @include respond-at-and-above($break-large) {
-      background: color(light-background);
-    }
   }
 }
 
@@ -189,19 +247,13 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 0;
+  width: 100%;
   min-height: 100%;
   background: color(background);
   text-align: left;
-  transform: translateX(100%);
 
   @include respond-at-and-above($break-large) {
     background: color(product-gallery-background);
-  }
-
-  &.sheets-select--show {
-    width: 100%;
-    transform: translateX(0);
   }
 
   &.sheets-select--fade-out {
@@ -241,7 +293,6 @@
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: relative;
   height: 300px;
-  margin: size(medium) 0 size(small);
 }
 
 .sheets-product {
@@ -274,7 +325,8 @@
   &--collapsed {
     cursor: pointer;
 
-    @include after($content: "+") {
+    @include after("+") {
+      position: absolute;
       top: 0;
       right: 0;
       width: 30px;
@@ -289,7 +341,7 @@
     }
 
     &.slug-casper-duvet-cover {
-      &:after {
+      @include after("+") {
         visibility: hidden;
       }
     }
@@ -306,7 +358,7 @@
         cursor: not-allowed;
       }
 
-      &:after {
+      @include after("+") {
         color: color(background);
         background: color(accent);
         border-color: color(accent);
@@ -444,5 +496,263 @@
     margin-right: 3px;
     transform: scale(-1);
     transition: transform 0.15s ease-out;
+  }
+}
+
+.product-purchase--sheets {
+  .product-purchase-details {
+    border-bottom: none;
+  }
+}
+
+// Updated sheets select styling
+
+.sheets-select-container {
+  border: 1px solid color(dark-border);
+  border-top: 0;
+  clear: both;
+  position: relative;
+
+  @include respond-at-and-above(445px) {
+    border-bottom-right-radius: size(normal-corners);
+    border-bottom-left-radius: size(normal-corners);
+  }
+}
+
+
+.sheets-select-nav {
+  @include z-index(size-selector);
+  position: relative;
+  top: -4px;
+  height: 33px;
+  background-color: color(background);
+  white-space: nowrap;
+
+  @include respond-at-and-above($break-medium) {
+    top: -3px;
+  }
+
+  @include respond-at-and-above($break-large) {
+    background-color: color(light-background);
+  }
+}
+
+.sheet-select-tab-container {
+  width: 50%;
+  display: inline-block;
+}
+
+.sheets-select-nav-tab-text {
+  font-size: 12px;
+  color: color(text);
+  padding: 8px;
+  font-weight: 600;
+}
+
+.sheets-select-tab {
+  display: inline-block;
+  width: 90%;
+  border: 1px solid color(dark-border);
+  border-bottom: 0;
+  border-top-left-radius: size(normal-corners);
+  border-top-right-radius: size(normal-corners);
+  background-color: color(medium-background);
+  transition: background-color .15s, margin .15s, width .15s;
+  position: relative;
+  margin: 0 auto;
+
+ &.is-active{
+  width: 100%;
+ }
+
+
+  &--set {
+
+    &:before {
+      height: size(normal-corners);
+      width: 11px;
+      position: absolute;
+      bottom: -5px;
+      content: " ";
+      border: 1px solid color(dark-border);
+      left: -11px;
+      border-top-left-radius: size(normal-corners);
+      border-width: 1px 0 0 1px;
+      box-shadow: 2px 2px 0 color(background);
+
+      @include respond-at-and-above($break-large) {
+        box-shadow: 2px 2px 0 color(light-background);
+      }
+    }
+
+    &.is-active {
+
+      &:before {
+        width: 1px;
+        left: -1px;
+        border-top-left-radius: 0;
+      }
+
+      &:after {
+        height: size(normal-corners);
+        width: 12px;
+        position: absolute;
+        bottom: 0;
+        content: " ";
+        border: 1px solid color(dark-border);
+        right: -12px;
+        border-bottom-left-radius: size(normal-corners);
+        border-width: 0 0 1px 1px;
+        box-shadow: (-2px) 2px 0 color(background);
+
+        @include respond-at-and-above($break-large) {
+          box-shadow: (-2px) 2px 0 color(light-background);
+        }
+      }
+    }
+  }
+
+  &--custom {
+    right: 3px;
+
+    &:after {
+      height: size(normal-corners);
+      width: 11px;
+      position: absolute;
+      bottom: -5px;
+      content: " ";
+      border: 1px solid color(dark-border);
+      right: -11px;
+      border-top-right-radius: size(normal-corners);
+      border-width: 1px 1px 0 0;
+      box-shadow: (-2px) 2px 0 color(background);
+
+      @include respond-at-and-above($break-large) {
+        box-shadow: (-2px) 2px 0 color(light-background);
+      }
+    }
+
+    &.is-active {
+
+      &:before {
+        height: size(normal-corners);
+        width: 11px;
+        position: absolute;
+        bottom: 0;
+        content: " ";
+        border: 1px solid color(dark-border);
+        left: -11px;
+        border-bottom-right-radius: size(normal-corners);
+        border-width: 0 1px 1px 0;
+        box-shadow: 2px 2px 0 color(background);
+
+        @include respond-at-and-above($break-large) {
+          box-shadow: 2px 2px 0 color(light-background);
+        }
+      }
+
+      &:after {
+        width: 1px;
+        right: -1px;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+
+  &.is-active {
+    background-color: color(background);
+
+    @include respond-at-and-above($break-large) {
+      background-color: color(light-background);
+    }
+
+    &:hover {
+      background-color: color(background);
+
+      @include respond-at-and-above($break-large) {
+        background-color: color(light-background);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: darken(color(medium-background), 10%);
+  }
+}
+
+.exposed-select {
+  white-space: nowrap;
+
+  .exposed-select-options {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+  }
+
+  .exposed-select-container {
+    @include square(28px);
+    position: relative;
+    display: inline-block;
+    margin-right: size(smallest);
+
+    input:checked + .exposed-select-radio-target {
+      border-color: color(accent);
+      box-shadow: 0px 0px 0px 1px color(accent);
+      overflow: visible;
+    }
+  }
+
+  .exposed-select-option {
+
+    .exposed-select-radio-target {
+      @include square(100%);
+      position: absolute;
+      border: 1px solid color(dark-border);
+      border-radius: size(normal-corners);
+      background: color(background);
+      transition: border-color .15s, box-shadow .15s
+    }
+
+    &[data-color*="chambray"] {
+      .exposed-select-radio-target {
+        background-image: linear-gradient(135deg, color(background) 50%, color(medium-grey) 50%, color(medium-grey));
+      }
+    }
+  }
+}
+
+.form-field--color-exposed {
+  width: 100%;
+}
+
+.exposed-select-radio {
+  @extend %is-hidden;
+}
+
+.exposed-select-color-display {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  top: 4px;
+  margin-left: size(smallest);
+}
+
+.exposed-select-label {
+  display: inline-block;
+  width: calc(100% * (1 / 5));
+  text-transform: uppercase;
+  position: relative;
+  font-size: 13px;
+  letter-spacing: size(medium-tracking);
+  font-weight: 600;
+  vertical-align: top;
+
+  &--color {
+    top: 7px;
+  }
+
+  &--size {
+    top: 15px;
   }
 }

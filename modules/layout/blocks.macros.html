@@ -1,6 +1,5 @@
-{% from 'nightshade-styles/modules/icons/macros.html' import icon %}
+{% import 'nightshade-styles/modules/icons/macros.html' as icon %}
 {% import 'nightshade-styles/modules/forms/forms.macros.html' as form %}
-
 
 
 {% macro stacked_2_column_grid() %}
@@ -14,15 +13,31 @@
 </div>
 {% endmacro %}
 
+
 {% macro social_links() %}
-<div class="social-links"><a class="social-link" href="https://www.facebook.com/caspersleep" target="blank"><span data-icon="facebook"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg></span></a><a class="social-link" href="https://twitter.com/casper" target="blank"><span data-icon="twitter"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg></span></a><a class="social-link" href="https://instagram.com/casper" target="blank"><span data-icon="instagram"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg></span></a><a class="social-link" href="https://www.pinterest.com/caspersleep" target="blank"><span data-icon="pinterest"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-pinterest"></use></svg></span></a></div>
+
+  {% set socialLinksList = {
+    "facebook": "https://www.facebook.com/caspersleep",
+    "twitter": "https://twitter.com/casper",
+    "instagram": "https://instagram.com/casper",
+    "pinterest": "https://www.pinterest.com/caspersleep"
+  } %}
+
+  <div class="social-links">
+    {% for social, url in socialLinksList %}
+      <a class="social-link" href="{{ url }}" target="blank">
+        {{ icon.svg(social) }}
+      </a>
+    {% endfor %}
+   </div>
 {% endmacro %}
+
 
 {% macro shipping_returns() %}
 <section class="r-section r-centered shipping-returns-block mx-auto">
   <header class="photo-panel-header">
 
-      {{ icon("truck", size="medium" )}}
+      {{ icon.icon("truck", size="medium" )}}
 
       <h2 class="photo-panel-title -dark">
       Free shipping &
@@ -38,11 +53,12 @@
 </section>
 {% endmacro %}
 
+
 {% macro newsletter_signup() %}
 <section class="r-section r-centered newsletter-block mx-auto">
   <header class="photo-panel-header">
 
-    {{ icon("book-closed", size="medium" )}}
+    {{ icon.icon("book-closed", size="medium" )}}
 
     <h2 class="photo-panel-title -dark">
       More bedtime

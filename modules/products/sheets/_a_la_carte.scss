@@ -325,7 +325,7 @@
   &--collapsed {
     cursor: pointer;
 
-    @include after("+") {
+    @include after($content: "+") {
       position: absolute;
       top: 0;
       right: 0;
@@ -341,7 +341,7 @@
     }
 
     &.slug-casper-duvet-cover {
-      @include after("+") {
+      &:after {
         visibility: hidden;
       }
     }
@@ -358,7 +358,7 @@
         cursor: not-allowed;
       }
 
-      @include after("+") {
+      &:after {
         color: color(background);
         background: color(accent);
         border-color: color(accent);

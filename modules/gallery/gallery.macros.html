@@ -1,8 +1,8 @@
 {#
-  * @overview Gallery macros. Macros for creating galleries
+  * @overview Galleries.
   *
   * @todo Refactor all galleries to use Flickity.
-  *       Remove old_gallery dependency
+  *       Remove old_gallery dependency. https://trello.com/c/PNUPS8Q9
  #}
 
 {#
@@ -13,7 +13,6 @@
   * @todo Revisit FlexEmbed dependency
   * @todo Refactor the slide into its own macro
   * @todo Add imgix product settings js. Clean up image param.
-  *
  #}
 {% macro flickity_gallery() %}
 <div class="gallery lifestyle-gallery">
@@ -37,8 +36,6 @@
   * @todo Depreciate. Refactor instances on Casper.com that use this code.
   * @todo Remove macro from nighshade-core and nightshade. Rename
   * flickity_gallery macro to gallery.
-  *
-  *
  #}
 {% macro old_gallery() %}
 <div class="js-sheets-gallery sheets-gallery is-visible" data-color="White/White">
@@ -82,5 +79,4 @@
 </div>
 
 </div>
-
 {% endmacro %}

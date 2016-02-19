@@ -2,14 +2,11 @@
  * @fileoverview Gallery powered by Imgix.js
  * @see module: components/Showrooms.js
  *
- * @author Casper Coders
- *
  * @todo Import Imgix into this module
  */
 
 
 export const ImgixGallery = {
-
   init(gallerySelector) {
     imgix.onready(() => {
       imgix.fluid({

@@ -1,0 +1,93 @@
+// Items under the legal-section are done in markdown so they have to be styled directly
+// this is for 'legal pages', text heavy pages such as terms and warranties
+
+
+.legal-section {
+  @include respond-at-and-above($break-medium) {
+    padding: 100px 65px;
+  }
+
+  // specific for warranty section, but could easily be extended to other 'legal' pages with multiple sections
+  // this may also be temporary styling
+  &.top {
+    padding-bottom: 0px;
+
+    h4 {
+      display: inline-block;
+      padding-top: 11px;
+      margin-bottom: 8px;
+    }
+
+    [data-icon="arrow"] {
+      fill: color(primary);
+      margin-bottom: 3px;
+      margin-left: 2px;
+    }
+
+    @include respond-at-and-above($break-medium) {
+      padding: 60px 0 0 0;
+      text-align: center;
+
+      .legal-link--wrapper {
+        padding: 0 30px;
+        line-height: 8px;
+        display: inline-block;
+        border-right: solid 1px color(primary);
+
+        [data-icon="arrow"] {
+          display: none;
+        }
+
+        &.warranty-link--last {
+          border-right: none;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: color(primary);
+  }
+
+  h3 {
+    padding-top: 15px;
+    margin-bottom: 8px;
+  }
+
+  h6 {
+    @extend %body--sans-small;
+
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    @extend %body--sans-medium;
+
+    margin-bottom: 25px;
+  }
+
+  ol {
+    list-style-type: decimal;
+    padding-left: 1.3em;
+  }
+
+  ul {
+    padding-left: 1em;
+    margin-left: 5px;
+    margin-bottom: 40px;
+    list-style-type: disc;
+
+    ul {
+      margin-bottom: 8px;
+    }
+  }
+
+  li {
+    @extend %body--sans-small;
+
+    margin-top: 10px;
+  }
+}

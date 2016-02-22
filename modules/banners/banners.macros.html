@@ -2,14 +2,14 @@
   * @overview Macros for site banners.
 #}
 
+{% from '../icons/macros.html' import svg %}
+
 {#
   * Renders a basic banner for short-lines of content or a link.
-  *
-  * @todo Macro for link style banner or extend the basic banner macro
 #}
-{% macro banner(content="Free shipping and returns on all orders") %}
-<div data-banner>
-  <p data-banner-inner class="r-centered">{{ content }}</p>
+{% macro banner(content, type=type, href=href) %}
+<div data-banner{% if type %}="{{ type }}"{% endif %}>
+  <p class="r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
 </div>
 {% endmacro %}
 

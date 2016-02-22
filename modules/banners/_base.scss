@@ -2,7 +2,6 @@
 // currently has free shipping and returns message
 
 [data-banner] {
-  font-family: "Calibre Light";
   padding: size(small) size(medium);
   letter-spacing: size(medium-tracking);
   font-size: 14px;
@@ -24,14 +23,4 @@
 
 [data-banner="background"] {
   background: color(background);
-}
-
-// sizing so that the message breaks at the correct word in the message
-// if the banner content changes, this portion has to be re evaluated
-@include respond-below($break-mobile) {
-  [data-banner-inner] {
-    max-width: 230px;
-    margin: 0 auto;
-    display: inline-block;
-  }
 }

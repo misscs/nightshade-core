@@ -56,7 +56,7 @@
 }
 
 .product-specs-title {
-  font-size: 14px;
+  @extend %h4;
   margin-right: size(small);
   color: color(darkest-text);
 }

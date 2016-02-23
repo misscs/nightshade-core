@@ -1,118 +1,48 @@
-/*doc
----
-title: Paragraphs
-name: Paragraphs
-parent: typography
-category: stylekit
----
-
-Casper has four different text styles. Text style classes can be applied to `<p>` or any other element that contains copy, such as `<div>`.
-
-
-```html_example
-<p class="body--serif">Sleepy head lay down and count the sheep. Sleepy head
-laid down and counted the sheep. Sleep head was laying down counting sheep.
-</p>
-
-<div class="body--sans">
-  <p>Once upon a time, a very sleep head started counting sheep</p>
-</div>
-
-<header class="body--sans-medium">
-  Once upon a time, a very sleep head started counting sheep
-</header>
-
-
-<header class="body--sans-small">
-  Once upon a time, a very sleep head started counting sheep
-</header>
-
-```
-*/
+/*
+  * @todo Kill all extends
+ */
 
 
 %body--quote {
   @extend %chronicle-deck;
   line-height: 1.75;
   font-size: 20px;
-
-  @include respond-between($break-medium, $break-large) {
-    font-size: 26px;
-    line-height: 1.5;
-  }
-
-  @include respond-at-and-above($break-large) {
-    font-size: 28px; // @@@ refactor to ems
-    line-height: 1.6; // @@@ refactor to ems
-  }
 }
-
 
 
 %body--serif {
   @extend %chronicle-display;
   line-height: 1.75;
-  font-size: 16px;
-
-  @include respond-at-and-above(640px) {
-    //@@@ TODO switch to chronicle deck?
-    font-family: $chronicle-deck;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-  @include respond-between(640px, $break-large) {
-    font-size: 20px;
-    line-height: 1.5;
-  }
-
-  @include respond-at-and-above($break-large) {
-    font-size: 23px; // @@@ refactor to ems
-    line-height: 32px; // @@@ refactor to ems
-    letter-spacing: size(smaller-tracking);
-
-  }
+  font-size: ms(0);
+  letter-spacing: 0;
 }
 
-
-%body--sans {
-  letter-spacing: size(smaller-tracking);
-  font-size: 18px;
-  line-height: 1.5;
-
-  @include respond-at-and-above($break-medium) {
-    font-size: 21px;
-    line-height: 1.4;
-  }
-}
-
-%body--sans-large {
-  font-size: 21px;
-  line-height: 1.4;
-  letter-spacing: size(smaller-tracking);
-}
 
 %body--sans-small {
-  font-size: 16px;
+  font-size: ms(0);
   line-height: 1.4;
   letter-spacing: 0.05em; // New variable, or use smaller-tracking?
 }
 
 
-%body--sans-medium {
-  @include respond-at-and-above($break-medium) {
-    font-size: 19px;
-    line-height: 1.4;
-    letter-spacing: size(smaller-tracking);
-  }
-
+%body--sans {
+  letter-spacing: size(smaller-tracking);
+  font-size: ms(0);
+  line-height: 1.5;
 }
 
+
+%body--sans-medium {
+  font-size: ms(2);
+}
+
+
 %body--sans-large {
-  font-size: 21px;
+  font-size: ms(1);
   line-height: 1.4;
   letter-spacing: size(smaller-tracking);
 }
+
 
 %body--numerals-large {
   font-size: 46px;

@@ -8,6 +8,27 @@
   background: color(background);
   position: relative;
 
+  @include respond-between(650px, 1110px) {
+    .header-title {
+      font-size: ms(3);
+    }
+
+    .header-copy {
+      font-size: ms(1);
+    }
+  }
+
+  @include respond-at-and-above(1110px) {
+    .header-title {
+      font-size: ms(4);
+    }
+
+    .header-copy {
+      font-size: ms(1);
+    }
+  }
+
+
   @include respond-at-and-above(900px) {
     padding: 42px 23px 0;
   }
@@ -17,6 +38,7 @@
     max-width: 290px;
     margin-left: auto;
     margin-right: auto;
+    font-size: ms(1);
 
     @include respond-between($break-mobile, $break-small) {
       max-width: 350px;

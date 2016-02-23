@@ -3,7 +3,7 @@
   @extend %verlag-black;
   display: inline-block;
   padding: 1.15em 3em;
-  font-size: 0.875em;
+  font-size: ms(-1);
   line-height: 1.2;
   text-align: center;
   letter-spacing: size(medium-tracking);
@@ -52,7 +52,7 @@
 
 // Button sizes
 [data-button][data-size~="small"] {
-  font-size: 13px;
+  font-size: ms(-2);
   padding: 1em 2em;
 
   &.is-loading {

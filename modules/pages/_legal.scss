@@ -7,55 +7,36 @@
     padding: 100px 65px;
   }
 
-  // specific for warranty section, but could easily be extended to other 'legal' pages with multiple sections
-  // this may also be temporary styling
-  &.top {
-    padding-bottom: 0px;
-
-    h4 {
-      display: inline-block;
-      padding-top: 11px;
-      margin-bottom: 8px;
-    }
-
-    [data-icon="arrow"] {
-      fill: color(primary);
-      margin-bottom: 3px;
-      margin-left: 2px;
-    }
-
-    @include respond-at-and-above($break-medium) {
-      padding: 60px 0 0 0;
-      text-align: center;
-
-      .legal-link--wrapper {
-        padding: 0 30px;
-        line-height: 8px;
-        display: inline-block;
-        border-right: solid 1px color(primary);
-
-        [data-icon="arrow"] {
-          display: none;
-        }
-
-        &.warranty-link--last {
-          border-right: none;
-          text-align: right;
-        }
-      }
-    }
-  }
-
   h2,
   h3,
-  h4 {
+  h4,
+  h5,
+  h6 {
     color: color(primary);
   }
 
+  h1 {
+    font-size: ms(2);
+  }
+
+  h2 {
+    font-size: ms(1);
+  }
+
   h3 {
+    font-size: ms(0);
     padding-top: 15px;
     margin-bottom: 8px;
   }
+
+  h4 {
+    font-size: ms(-1);
+  }
+
+  h5 {
+    font-size: ms(-2);
+  }
+
 
   h6 {
     @extend %body--sans-small;

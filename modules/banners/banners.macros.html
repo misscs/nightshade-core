@@ -7,7 +7,7 @@
 {#
   * Renders a basic banner for short-lines of content or a link.
 #}
-{% macro banner(content, type=type, href=href) %}
+{% macro banner(content, type=null, href=null, class=null, id=null) %}
 <div data-banner{% if type %}="{{ type }}"{% endif %}>
   <p class="r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
 </div>

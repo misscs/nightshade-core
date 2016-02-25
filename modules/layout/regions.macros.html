@@ -98,7 +98,7 @@
 <ul class="nav-main-group nav-main-group--primary">
   <li class="has-submenu js-has-submenu submenu-uncollapsible is-collapsed" role="presentation" aria-expanded="false">
     <a class="nav-item" data-track-click-target="mattress" href="/mattresses">Shop
-      <span data-icon="arrow"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow"></use></svg></span>
+      {{ icon.icon("arrow", size="micro" )}}
     </a><div class="submenu" id="shopping-submenu">
     <ul class="submenu-items">
       <li class="submenu-item">
@@ -130,7 +130,7 @@
 </li>
 <li class="has-submenu js-has-submenu submenu-collapsible is-collapsed" role="presentation" aria-expanded="false">
   <a class="nav-item" data-track-click-target="design" href="/our-approach">About
-  {{ icon.icon("arrow", size="medium" )}}
+  {{ icon.icon("arrow", size="micro" )}}
   </a>
   <div class="submenu submenu--our-approach" id="design-submenu">
   <ul class="submenu-items">
@@ -176,8 +176,8 @@
 <ul class="nav-main-group nav-main-group--user">
 <li role="presentation">
   <span class="phone-number js-a-sup-phone">
-  <a class="nav-item" data-track-click-target="phone" href="tel:18884980003"><
-  {{ icon.icon("icon-phone", size="medium" )}}
+  <a class="nav-item" data-track-click-target="phone" href="tel:18884980003">
+  {{ icon.icon("phone")}}
   888–498–0003
 </a></span>
 </li>

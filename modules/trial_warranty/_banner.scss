@@ -30,6 +30,8 @@
   overflow: hidden;
   position: relative;
 
+  // Decide whether we are using svg or icon macro
+  .icon,
   [data-icon]  {
     @include square(130px);
     margin-bottom: size(large);
@@ -107,14 +109,15 @@
     color: color(text);
   }
 
-  [data-icon] {
+  [data-icon],
+  .icon {
     fill: color(primary);
   }
 }
 
 // styling for the dark blue version of the warranty
 .trial-warranty.dark {
-  background-color: color(trial-blue);
+  background-color: color(dark-blue);
 
   .trial-warranty-title,
   .trial-warranty-copy {

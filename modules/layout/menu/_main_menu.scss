@@ -99,7 +99,7 @@
   transition: color 0.15s;
 
   @include respond-at-and-above($break-main-nav) {
-    color: color(header-text);
+    color: color(darker-grey);
   }
 
 
@@ -130,7 +130,7 @@
     }
   }
 
-  .icon-phone {
+  [data-icon="phone"] {
     @include square(13px);
 
     fill: currentColor;
@@ -234,7 +234,6 @@
 
 .has-submenu {
   [data-icon="arrow"] {
-    @include square(8px);
     vertical-align: baseline;
     margin-left: 2px;
     transform: rotate(90deg);

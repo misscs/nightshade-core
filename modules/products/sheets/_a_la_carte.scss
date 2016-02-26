@@ -59,7 +59,7 @@
 
 .sheets-select {
   transition: opacity 0.25s ease, transform 0.25s ease-out;
-  padding: 30px;
+  padding: ms(3);
 
   // The order of these modifiers should not change
   &--hide {
@@ -148,15 +148,15 @@
 }
 
 .sheets-set-and-duvet {
-  padding-bottom: size(medium);
+  padding-bottom: ms(2);
   border-bottom: 1px solid color(dark-border);
 
-  .duvet-label-title,
-  .duvet-label-copy {
-    display: inline-block;
-    margin-left: 25px;
-    width: 100%
-  }
+  // .duvet-label-title,
+  // .duvet-label-copy {
+  //   display: inline-block;
+  //   // margin-left: 25px;
+  //   width: 100%
+  // }
 
   .duvet-label-title {
     font-weight: 600;
@@ -167,11 +167,12 @@
     &:before {
       @include circle(18px);
       content: '';
-      position: absolute;
-      left: -25px;
-      top: 1px;
+      // position: absolute;
+      // left: -25px;
+      // top: 1px;
       background-color: color(light-background);
       border: 1px solid color(dark-border);
+      display: none;
     }
   }
 
@@ -542,7 +543,7 @@
 .sheets-select-nav-tab-text {
   font-size: ms(-1);
   color: color(text);
-  padding: 8px;
+  padding: ms(-3);
   font-weight: 600;
   letter-spacing: size(small-tracking);
 }

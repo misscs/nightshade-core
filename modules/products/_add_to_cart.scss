@@ -29,8 +29,9 @@
 
 
 .add-to-cart-title {
-  font-size: 21px;
-  margin-bottom: 0.65rem;
+  font-size: ms(2);
+  margin-bottom: ms(-2);
+  text-align: center;
 
   @include respond-between($break-small, 1023px) {
     font-size: 24px;
@@ -42,8 +43,8 @@
   @include respond-below($break-large - 1) {
     max-width: 446px;
     margin: 0 auto;
-    padding-top: size(largest);
-    padding-bottom: size(largest);
+    padding-top: ms(5);
+    padding-bottom: ms(5);
   }
 
   @include respond-at-and-above($break-large) {
@@ -72,7 +73,7 @@
 .product-purchase-details {
   text-align: center;  
   letter-spacing: size(smaller-tracking);
-  padding-bottom: size(normal);
+  margin-bottom: ms(2);
   border-bottom: 1px solid color(dark-border);
 }
 

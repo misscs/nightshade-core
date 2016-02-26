@@ -17,7 +17,7 @@
 }
 
 .r-footer-bottom {
-  background-color: color(primary-dark);
+  background-color: color(dark-blue);
   overflow: hidden;
 
   @include respond-below(500px) {
@@ -137,7 +137,7 @@
   }
 
   [data-icon] {
-    fill: color(footer-bottom-icon);
+    fill: color(#6576a0); // Find a new color for this from our stacks
   }
 
   [data-icon="envelope"] {

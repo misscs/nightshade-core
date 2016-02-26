@@ -16,13 +16,6 @@
 }
 
 
-.form-input--price {
-
-  @include respond-below(374px) {
-    font-size: 36px;
-  }
-}
-
 .study-1 .form-input--price {
   @extend %chronicle-deck;
 

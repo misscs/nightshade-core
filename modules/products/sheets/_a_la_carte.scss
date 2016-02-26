@@ -2,7 +2,6 @@
 
 .add-to-cart.sheets {
   z-index: 2;
-  text-align: center;
 
   @include respond-at-and-above($break-large) {
     margin-top: -60px;
@@ -17,7 +16,6 @@
   .form-field {
     display: inline-block;
     vertical-align: top;
-    text-align: left;
 
     &:not(.form-field--price) {
       margin-bottom: size(small);

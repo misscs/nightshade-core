@@ -1,21 +1,39 @@
-{% macro value() %}
-  <section class="product-prop product-prop--sheets-thread r-centered r-inner">
-    <div class="product-prop-container">
-      <div class="product-prop-info">
-        <h1 class="product-prop-title -dark">
-          THE PERFECT SLEEP ENVIRONMENT
-        </h1>
-        <p class="product-prop-copy body--sans-medium">
-          We designed our sheets to create the ideal microclimate around your body. To do so, we balanced thread quality, yarn construction, and weave for a cool, breathable sleep environment that’s so outrageously comfortable you won’t want to leave.
-        </p>
-        <figure class="product-prop-illustration--mobile">
-          <img alt="Casper sheets roll" class="prop-illustration-image--mobile" src="https://casper.imgix.net/video/fallbacks/casper-sheets-roll.jpg?auto=format&amp;w=800">
-        </figure>
-      </div>
+{% set sheetsValueProps = [
+  {
+    title: "THE PERFECT SLEEP ENVIRONMENT",
+    description: "We designed our sheets to create the ideal microclimate around your body. To do so, we balanced thread quality, yarn construction, and weave for a cool, breathable sleep environment that’s so outrageously comfortable you won’t want to leave.",
+    image: "casper-weave-detail.png"
+  },
+  {
+    title: "SPRINKLED WITH THOUGHTFUL DETAILS",
+    description: "Making the bed will always be a chore. But with this set, we’ve done our part to make it easier and more intuitive. Each item has been thoughtfully designed to solve common bedding problems."
+  }
+  ]
+%}
 
-      <figure class="product-prop-illustration js-prop-illustration-video-container">
-      <video class="prop-illustration-video js-prop-illustration-video" poster="https://casper.imgix.net/video/fallbacks/casper-sheets-roll-poster.jpg?auto=format" preload="auto" src="https://s3.amazonaws.com/casper-images/assets/video/20151111-SheetsVP1-Overhead.mp4"></video>
+{% macro value_list() %}
+    {% for prop_content in sheetsValueProps %}
+      {{ item(prop_content) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro item(data) %}
+<section class="product-prop product-prop--sheets-thread r-centered r-inner">
+  <div class="product-prop-container">
+    <div class="product-prop-info">
+      <h1 class="product-prop-title -dark">{{ data.title }}</h1>
+      <p class="product-prop-copy body--sans">
+      {{ data.description }}
+      </p>
+      <figure class="product-prop-illustration--mobile">
+        <img alt="Casper sheets roll" class="prop-illustration-image--mobile" src="https://casper.imgix.net/video/fallbacks/casper-sheets-roll.jpg?auto=format&amp;w=800">
       </figure>
     </div>
-  </section>
+
+    <figure class="product-prop-illustration js-prop-illustration-video-container">
+    <video class="prop-illustration-video js-prop-illustration-video" poster="https://casper.imgix.net/video/fallbacks/casper-sheets-roll-poster.jpg?auto=format" preload="auto" src="https://s3.amazonaws.com/casper-images/assets/video/20151111-SheetsVP1-Overhead.mp4"></video>
+    </figure>
+  </div>
+</section>
 {% endmacro %}
+

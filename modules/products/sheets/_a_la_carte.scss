@@ -540,10 +540,11 @@
 }
 
 .sheets-select-nav-tab-text {
-  font-size: 12px;
+  font-size: ms(-1);
   color: color(text);
   padding: 8px;
   font-weight: 600;
+  letter-spacing: size(small-tracking);
 }
 
 .sheets-select-tab {
@@ -740,8 +741,8 @@
   width: calc(100% * (1 / 5));
   text-transform: uppercase;
   position: relative;
-  font-size: 13px;
-  letter-spacing: size(medium-tracking);
+  font-size: ms(-1);
+  letter-spacing: size(small-tracking);
   font-weight: 600;
   vertical-align: top;
 

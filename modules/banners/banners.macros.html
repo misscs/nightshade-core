@@ -3,6 +3,7 @@
 #}
 
 {% from '../icons/macros.html' import svg %}
+{% from '../buttons/buttons.macros.html' import button %}
 
 {#
   * Renders a basic banner for short-lines of content or a link.
@@ -30,9 +31,7 @@
 
   <div class='cta-content'>
     <h2 class='-dark'>HOW WE DESIGNED THE PERFECT SHEETS</h2>
-
-    <a class='btn btn--primary' data-track-mattress-click='cta-body' href='/sheets/design'>
-      SEE THE PROCESS
+    {{ button('SEE THE PROCESS', href='/sheets/design') }}
     </a>
   </div>
 </div>

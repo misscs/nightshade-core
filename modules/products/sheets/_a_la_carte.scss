@@ -151,40 +151,9 @@
   padding-bottom: ms(2);
   border-bottom: 1px solid color(dark-border);
 
-  // .duvet-label-title,
-  // .duvet-label-copy {
-  //   display: inline-block;
-  //   // margin-left: 25px;
-  //   width: 100%
-  // }
-
-  .duvet-label-title {
-    font-weight: 600;
-    position: relative;
-    cursor: pointer;
-
-    // custom radio
-    &:before {
-      @include circle(18px);
-      content: '';
-      // position: absolute;
-      // left: -25px;
-      // top: 1px;
-      background-color: color(light-background);
-      border: 1px solid color(dark-border);
-      display: none;
-    }
-  }
-
-  // custom radio when checked
-  input:checked + .duvet-label-title {
-
-    &:before {
-      content: "\2022";
-      color: color(medium-text);
-      font-size: 38px;
-      line-height: 17px;
-    }
+  .duvet-label-title,
+  .duvet-label-copy {
+    margin-left: 28px;
   }
 
   .duvet-radio {
@@ -196,7 +165,48 @@
       margin-bottom: 20px;
     }
   }
+}
 
+.duvet-label-title {
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+
+  // Custom radio button outer
+  &:before {
+    @include circle(18px);
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 2px;
+    border: 1px solid color(medium-border);
+    transition: 0.15s border-color ease-out;
+
+    input[type="radio"]:checked + & {
+      border-color: color(medium-grey);
+    }
+  }
+
+  // Custom radio button inner
+  &:after {
+    @include circle(12px);
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    transition: 0.15s background ease-out;
+
+    input[type="radio"]:checked + & {
+      background: color(medium-grey);
+    }
+  }
+
+  &:hover {
+
+    &:before {
+      border-color: color(medium-grey);
+    }
+  }
 }
 
 .sheets-set-info {

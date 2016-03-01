@@ -3,56 +3,47 @@
 // container is 'rating-stars', star element is 'rating-star'
 
 .rating-stars {
+  font-size: 1.3rem;
   text-decoration: none;
-}
-
-.rating-star,
-.rating-star-wrap {
-  @include square(size(small));
-  position: relative;  
-  display: inline-block;
-  margin-right: .5px;
-}
-
-.rating-star-mask {
-  @include square(size(small));
-  @include z-index(bump);
-  display: block;
-  overflow: hidden;
-  position: relative;
+  border: 0 !important; // Make sure normalize is included before to remove !
+  vertical-align: middle;
 }
 
 .rating-star {
-  position: absolute;
-  top: 0;  
-  left: 0;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  color: mix(white, color(base-gray), 70%);
+}
 
-  &--gold {
-    @include z-index(bump);
-    background-image: asset-data-url("icons/star-casper-gold.svg");
-  }
+.rating-star--full,
+.rating-star--half {
 
-  &--blue {
-    @include z-index(bump);
-    background-image: asset-data-url("icons/star-casper-blue.svg");      
+  @include before($content: "\2605") {
+    color: color(#f5d060); // Add to color map
+    overflow: hidden;
+
+    .rating-stars--blue & {
+      color: color(primary);
+    }
   }
-  
-  &--grey {
-    background-image: asset-data-url("icons/star.svg");
+}
+
+.rating-star--half {
+
+  &:before {
+    width: 50%;
   }
 }
 
 .rating-stars-stats {
   text-align: left;
-  letter-spacing: size(smaller-tracking);  
+  letter-spacing: size(smaller-tracking);
   white-space: nowrap;
   margin-left: 4px;
 }
 
-.rating-stars-stats--fraction{ 
+.rating-stars-stats--fraction {
   @include respond-at-and-above($break-medium) {
     margin: 0 4px 0 1px;
   }

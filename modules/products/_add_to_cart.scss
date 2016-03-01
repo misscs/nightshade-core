@@ -71,7 +71,7 @@
 
 // Ships by date and tooltip
 .product-purchase-details {
-  text-align: center;  
+  text-align: center;
   letter-spacing: size(smaller-tracking);
   margin-bottom: ms(2);
   border-bottom: 1px solid color(dark-border);
@@ -94,7 +94,7 @@
       left: 0;
       top: -2px;
       height: 22px;
-      width: 1px;    
+      width: 1px;
       margin-top: 2px;
       background-color: color(medium-border);
     }
@@ -120,7 +120,7 @@
   &-tooltip-toggle {
     @include circle(18px, med-dark-background);
     position: relative;
-    cursor: pointer;    
+    cursor: pointer;
     vertical-align: top;
     margin: 1px 0 0 3px;
     font-size: 14px;
@@ -143,13 +143,10 @@
 
 // stars in purchase module, overwriting base star styles
 .add-to-cart {
-  
+
   // should create a base class or redo sizing to avoid applying the same style to these classes
-  .rating-star-wrap,
-  .rating-star-mask,
-  .rating-star {
-    @include square(.75em);
-    margin-right: 0;    
+  .rating-stars {
+    font-size: ms(0);
   }
 
   .rating-stars-stats {
@@ -161,7 +158,7 @@
     @include respond-at-and-above($break-small) {
       margin-bottom: 0;
     }
-    
+
     .rating-stars-stats--fraction {
       margin: 0 2px;
     }
@@ -170,12 +167,12 @@
   .reviews-stats-table-section {
     @include z-index(tooltip);
     width: 345px;
-    max-width: none;    
-    top: 180%; 
+    max-width: none;
+    top: 180%;
 
     @include respond-below($break-mobile) {
       width: 305px;
-      padding: 20px 20px 27px;  
+      padding: 20px 20px 27px;
     }
 
     @include respond-below($break-small) {

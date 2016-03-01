@@ -15,7 +15,7 @@
 <div class="product-page-review-inner">
   <h2 class="product-page-review-title -dark">Casper sheets reviews</h2>
 
-    {{ star_rating() }}
+    {{ star_rating('blue') }}
     {{ stat_rating() }}
 
 <div class="body--sans-small product-page-review-time">
@@ -41,8 +41,11 @@ Tampa, FL
   * svgs from css?
   * https://github.com/CasperSleep/nightshade-core/issues/12
 #}
-{% macro star_rating() %}
-<abbr class="rating-stars" title="(4.5 out of 5 Stars)"><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:100.0%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span><span class="rating-star-wrap"><span class="rating-star-mask" style="width:53.92156862745098%;"><span class="rating-star rating-star--blue"></span></span><span class="rating-star rating-star--grey"></span></span></abbr>{% endmacro %}
+{% macro star_rating(color=null) %}
+<abbr class="rating-stars {% if color %}rating-stars--{{ color }}{% endif %}" title="(4.5 out of 5 Stars)">
+  <span class="rating-star rating-star--full">★</span><span class="rating-star rating-star--full">★</span><span class="rating-star rating-star--full">★</span><span class="rating-star rating-star--full">★</span><span class="rating-star rating-star--half">★</span>
+</abbr>
+{% endmacro %}
 
 
 {#

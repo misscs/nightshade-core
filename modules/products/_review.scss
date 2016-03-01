@@ -7,12 +7,6 @@
   .rating-stars-stats--fraction {
     margin-right: 6px;
   }
-  
-  .rating-star-wrap,
-  .rating-star-mask,
-  .rating-star {
-    @include square(1.1em);
-  }
 }
 
 .product-page-review-time {
@@ -26,7 +20,7 @@
 .product-page-review-copy {
   font-size: 16px;
   line-height: 1.6;
-  margin: 10px 0 5px;  
+  margin: 10px 0 5px;
   max-height: 75px;
 }
 
@@ -45,7 +39,7 @@
 }
 
 .product-page-review-inner {
-  max-width: 600px; 
+  max-width: 600px;
   margin: 0 auto;
 
   @include respond-at-and-above($form-tablet) {

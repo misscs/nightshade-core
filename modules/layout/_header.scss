@@ -5,7 +5,7 @@
 // ===============
 
 .r-header {
-  @extend %clearfix;
+  @include clearfix;
 
   @include z-index(header);
 

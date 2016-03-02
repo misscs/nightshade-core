@@ -9,7 +9,7 @@ $active: '&:active';
 @mixin link(
   $color: primary,
   $hover: primary,
-  $fancy: false
+  $fancy: ""
 ) {
   &,
   #{$link} {
@@ -27,12 +27,24 @@ $active: '&:active';
     border-bottom: 1px solid color($hover);
   }
 
-  @if $fancy {
+  @if $fancy == "before" or $fancy == "after" {
+    &:before,
     &:after {
-      content: "›";
       color: inherit;
       font-style: normal;
       line-height: 1;
+    }
+  }
+
+  @if $fancy == "before" {
+    &:before {
+      content: "‹";
+      margin-right: 2px;
+    }
+  }
+  @else if $fancy == "after" {
+    &:after {
+      content: "›";
       margin-left: 2px;
     }
   }

@@ -355,7 +355,7 @@ select {
   display: block;
 
   a {
-    @include link(text, medium-text, true);
+    @include link(text, medium-text, "after");
   }
 }
 

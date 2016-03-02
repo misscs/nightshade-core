@@ -25,6 +25,14 @@
   }
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
 .is-invisible {
   @include is-hidden;
 }
@@ -45,4 +53,8 @@
   @include respond-at-and-above($break-small) {
     display: none !important;
   }
+}
+
+.clearfix {
+  @include clearfix;
 }

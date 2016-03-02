@@ -27,19 +27,27 @@ $active: '&:active';
     border-bottom: 1px solid color($hover);
   }
 
-  @if $fancy != "" {
-    &:#{$fancy} {
+  &:before,
+  &:after {
+    color: inherit;
+    font-style: normal;
+    line-height: 1;
+  }
 
-      @if $fancy == "before" {
-        content: "‹";
-        margin-right: 2px;
-      } @else {
-        content: "›";
-        margin-left: 2px;
-      }
-      color: inherit;
-      font-style: normal;
-      line-height: 1;
+  @if $fancy == "before" {
+    &:before {
+      content: "‹";
+      margin-right: 2px;
+    }
+  } @else if $fancy == "after" {
+    &:after {
+      content: "›";
+      margin-left: 2px;
+    }
+  } @else {
+    &:before,
+    &:after {
+      content: '';
     }
   }
 

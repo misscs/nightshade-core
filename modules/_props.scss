@@ -117,7 +117,6 @@
 .product-prop-copy {
 
   text-align: center;
-  padding: 0 1em;
 
 
   @include respond-at-and-above($break-medium) {
@@ -125,9 +124,9 @@
     padding: 0 1em 0 0;
   }
 
-  @include respond-between($break-medium, 900px) {
-    font-size: 19px
-  }
+  // @include respond-between($break-medium, 900px) {
+  //   font-size: 19px
+  // }
 }
 
 

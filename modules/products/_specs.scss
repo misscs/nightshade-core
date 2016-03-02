@@ -75,7 +75,7 @@
   border-radius: size(small-corners);
   border-top-right-radius: 0;
   border-top-left-radius: 0;
-  padding: 27px 0;
+  padding: ms(3) 0 0;
   position: relative;
   max-height: 0;
   transition: max-height 0.6s;
@@ -91,7 +91,7 @@
 
 .tech-specs-info-section {
   position: relative;
-  padding: 2em size(largest);
+  padding: ms(4);
   border-bottom: 1px solid color(dark-border);
 
   &:last-child {
@@ -110,8 +110,7 @@
 
   width: auto;
   display: block;
-  padding-right: size(large);
-  font-size: size(smaller);
+  font-size: ms(-1);
 
   @include respond-at-and-above(600px) {
     width: 30%;
@@ -142,7 +141,6 @@
   @include respond-below(600px) {
     width: auto;
     display: block;
-    padding-top: size(smaller);
   }
 
 
@@ -188,7 +186,7 @@
 .tech-specs-dimensions-title {
   @extend %verlag-black;
 
-  font-size: size(smaller);
+  font-size: ms(-1);
 }
 
 .tech-specs-dimensions-size {
@@ -222,8 +220,8 @@
 
 .tech-specs-dimensions-list-section {
   display: block;
-  margin-top: size(large);
-  padding-bottom: size(large);
+  margin-top: ms(4);
+  padding-bottom: ms(4);
   border-bottom: 1px solid color(dark-border);
   width: 100%;
 
@@ -238,7 +236,7 @@
 }
 
 .tech-specs-product-header {
-  font-size: size(smaller);
+  font-size: ms(-1);
 }
 
 .tech-specs-list-item {

@@ -27,9 +27,8 @@
 }
 
 .product-diagram-item {
-  padding-bottom: size(large);
+  padding-bottom: ms(4);
   margin: 0 auto;
-  width: 265px;
 
   @include respond-between($break-mobile, $break-small) {
     width: 300px;
@@ -103,7 +102,7 @@
 }
 
 .product-diagram-item-header {
-  margin-bottom: size(smallest);
+  margin-bottom: ms(-4);
   width: auto;
 }
 

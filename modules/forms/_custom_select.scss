@@ -8,13 +8,8 @@
 }
 
 .custom-select {
-  @extend %verlag;
   position: relative;
   width: 100%;
-  font-size: 13px;
-  line-height: 1.6;
-  letter-spacing: size(medium-tracking);
-  text-transform: uppercase;
   text-align: left;
   user-select: none;
 
@@ -48,8 +43,7 @@
   position: relative;
   z-index: 1;
   height: 48px;
-  padding: 1.1em size(larger) 0.9em size(normal);
-  font-weight: 600;
+  padding: 0.7rem size(larger) 0.8rem size(normal);
   border: 1px solid color(dark-border);
   border-radius: size(normal-corners);
   background-image: image-url('nightshade/icons/select-arrow.svg');

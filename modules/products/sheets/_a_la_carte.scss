@@ -551,10 +551,10 @@
 }
 
 .sheets-select-nav-tab-text {
+  @extend %verlag-black;
   font-size: ms(-1);
   color: color(text);
   padding: ms(-3);
-  font-weight: 600;
   letter-spacing: size(small-tracking);
 }
 
@@ -748,13 +748,13 @@
 }
 
 .exposed-select-label {
+  @extend %verlag-black;
   display: inline-block;
   width: calc(100% * (1 / 5));
   text-transform: uppercase;
   position: relative;
   font-size: ms(-1);
   letter-spacing: size(small-tracking);
-  font-weight: 600;
   vertical-align: top;
 
   &--color {

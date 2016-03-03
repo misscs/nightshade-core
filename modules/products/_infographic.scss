@@ -22,8 +22,8 @@
 }
 
 .product-infographic-option-copy {
-  padding-left: size(small);
-  padding-right: size(small);
+  padding-left: ms(2);
+  padding-right: ms(2);
 }
 
 .product-infographic-drawing {
@@ -46,8 +46,8 @@
 .product-infographic-option {
   max-width: 328px;
   width: 100%;
-  margin-left: size(normal);
-  margin-right: size(normal);
+  margin-left: ms(2);
+  margin-right: ms(2);
 }
 
 // Flickity specific styles

@@ -1,0 +1,95 @@
+// ratings table
+.reviews-stats {
+  display: inline-block;
+
+  @include respond-at-and-above($break-medium) {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-right: size(largest);
+    padding-top: 25px;
+    clear: left;
+    border-right: 1px solid color(dark-border);
+  }
+}
+
+.reviews-stats-table-tooltip {
+  @include z-index(bump);
+}
+
+.reviews-stats-table-section {
+  max-width: 300px;
+
+  .reviews-stats-table {
+    width: 100%;
+    border-spacing: 5px;
+  }
+
+  .reviews-stats-table-rating {
+    width: 15%;
+    min-width: size(larger);
+  }
+
+  .reviews-stats-table-link {
+    @include link(text, text, false);
+
+    border-bottom: none;
+    transition: border-bottom 0.15s, color 0.15s;
+  }
+
+  .reviews-stats-table-row {
+    &:hover {
+      .reviews-stats-table-link {
+        border-bottom: 1px solid color(primary);
+        color: color(primary);
+      }
+
+      .reviews-stats-table-rating-bar-background {
+        background-color: color(dark-grey);
+      }
+    }
+
+    &.-disabled {
+      .reviews-stats-table-rating-bar-background {
+        background-color: color(light-grey);
+      }
+
+      .reviews-stats-table-rating,
+      .reviews-stats-table-rating-percent {
+        color: color(medium-text);
+      }
+    }
+  }
+
+  .reviews-stats-table-rating-visual {
+    width: 60%;
+
+    .reviews-stats-table-rating-bar-background {
+      background-color: color(light-grey);
+      vertical-align: middle;
+      height: 18px;
+      width: 100%;
+      transition: background-color 0.15s ease;
+
+      .reviews-stats-table-rating-bar {
+        vertical-align: middle;
+        height: 100%;
+        background-color: color(primary);
+      }
+    }
+  }
+
+  .reviews-stats-table-rating-percent {
+    width: 10%;
+    text-align: right;
+  }
+}
+
+.reviews-add-review {
+  margin: size(medium) auto 0;
+
+  .btn {
+    width: 100%;
+    border: 1px solid color(dark-border);
+  }
+}

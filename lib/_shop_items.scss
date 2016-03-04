@@ -1,0 +1,97 @@
+// Taken from the our approach/footer stylings, changed class names to be more abstract
+.shop-products {
+  padding: 4em size(medium);
+
+  &__product-image {
+    width: 100%;
+
+    @include respond-at-and-above($break-medium) {
+      padding: 0 size(mobile-sides);
+    }
+  }
+
+  &__body {
+    max-width: 600px;
+    margin: 0 auto;
+
+    @include respond-at-and-above($break-small) {
+      font-size: size(medium);
+    }
+
+    & + .product-link {
+      margin-top: size(large);
+    }
+  }
+
+  &__header {
+    max-width: 600px;
+    margin: 0 auto size(small);
+
+    @include respond-below($break-small) {
+      font-size: size(medium);
+    }
+  }
+
+  .product-link-out {
+    margin-bottom: size(medium);
+  }
+
+  .product-link {
+    max-width: 100%;
+  }
+
+  @include respond-at-and-above($break-mobile) {
+    padding: size(6em) size(mobile-sides);
+  }
+}
+
+.shop-products--row {
+  .shop-product--header {
+    color: color(primary);
+    max-width: 300px;
+    margin: 0 auto 1em;
+
+    @include respond-at-and-above($break-414) {
+      max-width: 350px;
+    }
+
+    @include respond-at-and-above(640px) {
+      max-width: 500px;
+    }
+
+    @include respond-at-and-above($break-medium){
+      margin: 0 auto 2em;
+      max-width: 600px;
+    }
+
+  }
+
+  .product-link-out {
+    margin-bottom: 2.5em;
+  }
+
+  @include respond-between($break-medium, 924px) {
+    .product-link {
+      font-size: .7em;
+      width: 212px;
+    }
+  }
+
+  @include respond-between($break-medium, 924px) {
+    .product-link {
+      font-size: .7em;
+      width: 212px;
+    }
+  }
+
+  @include respond-at-and-above($break-medium) {
+    .shop-products__products {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .product-link-out {
+      width: percentage(1/3);
+    }
+  }
+}

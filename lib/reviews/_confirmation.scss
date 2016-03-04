@@ -1,0 +1,24 @@
+// Stylings for temporary thank you page.
+
+.thank-you-outer-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thank-you-inner-container {
+  max-width: 350px;
+  text-align: center;
+}
+
+.thank-you-header {
+  color: color(primary);
+  font-size: size(super-header-height);
+}
+
+.thank-you-thumbs-up {
+  fill: color(primary);
+  margin-bottom: size(small);
+}

@@ -1,0 +1,28 @@
+// Notes
+// 1. Tried to build it using fixed headerheight and other sizing; unfortunately if you do (115px + size(fixed-header-height)) you get 115px50px
+
+$fixed-review-header-height: 115px;
+$fixed-review-scrollbar-height: 165px;
+
+.reviews-wrapper {
+  max-width: $site-max-container;
+  margin: 0 auto;
+  position: relative;
+
+  &.reviews-wrapper--header {
+    max-width: 800px;
+    text-align: center;
+  }
+}
+
+// Flash styles override
+.controller-reviews {
+  line-height: 1.7;
+
+  @include respond-at-and-above($break-small) {
+    .flash-inner {
+      text-align: center;
+      line-height: 1;
+    }
+  }
+}

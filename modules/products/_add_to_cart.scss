@@ -30,7 +30,7 @@
 
 .add-to-cart-title {
   font-size: ms(2);
-  margin-bottom: ms(-2);
+  margin-bottom: ms(-5);
   text-align: center;
 
   @include respond-between($break-small, 1023px) {
@@ -73,7 +73,7 @@
 .product-purchase-details {
   text-align: center;
   letter-spacing: size(smaller-tracking);
-  margin-bottom: ms(2);
+  margin-bottom: ms(1);
   border-bottom: 1px solid color(dark-border);
 }
 

@@ -1,8 +1,7 @@
 // recent review section -- scoping to overwrite base styles for review stars and review text
 .product-page-review {
   border-bottom: 1px solid color(border);
-  padding-top: 60px;
-  padding-bottom: 45px;
+  padding: ms(8) 0;
 
   .rating-stars-stats--fraction {
     margin-right: 6px;
@@ -20,7 +19,7 @@
 .product-page-review-copy {
   font-size: 16px;
   line-height: 1.6;
-  margin: 10px 0 5px;
+  margin: ms(-2) 0 ms(-6);
   max-height: 75px;
 }
 
@@ -29,7 +28,7 @@
 }
 
 .product-page-review-btn {
-  margin: 40px 0 10px;
+  margin: ms(5) 0 0;
 }
 
 .product-page-review-info {

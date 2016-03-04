@@ -3,6 +3,10 @@
 // 1. Safari mobile does not respect flex-direction: column. Workaround is to
 // use flex-wrap. Need to restrict width to ensure one item per row.
 
+.sheets-infographic-container {
+  margin-bottom: ms(6);
+}
+
 .sheets-infographic {
   .message-banner {
     margin-top: 2.5em;
@@ -69,7 +73,7 @@
 
   .sheets-infographic-option-copy {
     @include respond-at-and-above($break-medium + 1) {
-      padding: 0px size(medium);
+      padding: 0px ms(1);
     }
   }
 }

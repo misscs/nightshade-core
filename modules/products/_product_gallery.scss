@@ -30,7 +30,7 @@ $gallery-dot-width: 62%;
 
 
       @include respond-at-and-above(500px) {
-        bottom: 22px;
+        bottom: ms(2);
 
         // At larger sizes, dots become thumbnails
         .gallery-dot {

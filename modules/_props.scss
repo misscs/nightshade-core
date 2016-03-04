@@ -6,7 +6,7 @@
 
 .product-prop {
   display: flex; // Fix vertical alignment in IE
-  padding: size(large) 23px;
+  padding: ms(4) ms(2);
 
   &:nth-child(even) {
 

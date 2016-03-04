@@ -5,6 +5,10 @@
     background-image: url("https://casper.imgix.net/product-diagrams/sheets.jpg?auto=format&w=2500");
   }
 
+  @include respond-at-and-above($info-nav-break) {
+    margin-top: ms(3);
+  }
+
 
   @include respond-at-and-above($break-xl) {
     background-position: 10% 0;

@@ -39,7 +39,7 @@
 
     @include respond-below($break-small) {
       @include square(115px);
-      margin-bottom: size(medium);
+      margin-bottom: ms(1);
     }
 
     @include respond-below(475px) {
@@ -77,13 +77,33 @@
   }
 }
 
+.trial-warranty-title {
+
+  @include respond-between(650px, 1110px) {
+    font-size: ms(3);
+  }
+
+  @include respond-at-and-above(1110px) {
+    font-size: ms(4);
+  }
+
+}
+
 .trial-warranty-copy {
+  @extend .body--serif;
   padding: 0 1rem;
+
+  @include respond-between(650px, 1110px) {
+    font-size: ms(1);
+  }
+
+  @include respond-at-and-above(1110px) {
+    font-size: ms(2);
+  }
 
   @include respond-at-and-above($break-large) {
     padding: 0 7rem;
   }
-
 
   @include respond-between(700px, $break-large) {
     padding: 0 4rem;
@@ -125,15 +145,11 @@
   }
 
   .trial-warranty-content {
-    padding: 2em 1em;
+    padding: ms(6) ms(0);
 
     @include respond-at-and-above(475px) {
-      padding: 5.5em 2em;
+      padding: ms(9) ms(4);
     }
-  }
-
-  .trial-warranty-copy {
-    @extend .body--serif;
   }
 }
 

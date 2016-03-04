@@ -10,12 +10,6 @@
  * Based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video
  */
 
-
- @mixin aspect-ratio($ratio) {
-   padding-bottom: (1 / $ratio) * 100%;
- }
-
-
 .FlexEmbed {
   display: block;
   overflow: hidden;
@@ -81,4 +75,3 @@
   top: 0;
   width: 100%;
 }
-

@@ -9,7 +9,7 @@ environment for the time being.`_
 Install with npm. This will install the latest tag available in `master`.
 
 ```bash
-npm install CasperSleep/nightshade-styles -D
+npm install CasperSleep/nightshade-core -D
 ```
 
 ## Including components in your library
@@ -30,12 +30,12 @@ Third party libraries we rely on for tooling.
 Sass tools for web development
 
 ```sass
-@import './node_modules/@casper/nightshade-styles/utilities/queries_config';
-@import './node_modules/@casper/nightshade-styles/utilities/animations';
-@import './node_modules/@casper/nightshade-styles/utilities/arrows_config';
-@import './node_modules/@casper/nightshade-styles/utilities/positioning';
-@import './node_modules/@casper/nightshade-styles/utilities/visual_utilities';
-@import './node_modules/@casper/nightshade-styles/utilities/z-index';
+@import './node_modules/@casper/nightshade-core/src/utilities/queries_helpers';
+@import './node_modules/@casper/nightshade-core/src/animation/index';
+@import './node_modules/@casper/nightshade-core/src/utilities/arrows_helpers';
+@import './node_modules/@casper/nightshade-core/src/layout/positioning_helpers';
+@import './node_modules/@casper/nightshade-core/src/utilities/visual_utility_helpers';
+@import './node_modules/@casper/nightshade-core/src/utilities/z_index_helpers';
 ```
 
 
@@ -45,7 +45,7 @@ The core collection of Casper modules that comprise the Nightshade Design System
 
 At the moment, the modules are in flux. We recommend checking `modules` directory to find out the file(s) to import.
 
-Check out [the discussion](https://github.com/CasperSleep/nightshade-styles/issues/19) on the topic. Input and feedback welcome and open
+Check out [the discussion](https://github.com/CasperSleep/nightshade-core/issues/19) on the topic. Input and feedback welcome and open
 to all!
 
 

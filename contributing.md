@@ -25,7 +25,7 @@ comments are left on the issue.
 
 ### Tagging your release
 
-Nightshade-styles uses Semver. Here is a [good primer](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on how this project tags releases.
+Nightshade-core uses Semver. Here is a [good primer](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on how this project tags releases.
 
 Once you've closed and merged your PR, you need to bump version
 and create a new tag. We can easily accomplish this with [npm-version](https://docs.npmjs.com/cli/version).
@@ -87,5 +87,3 @@ We love new ideas. Please use the issue queue to submit your suggestions.
 ## Browser Compatibility
 
 Our code base is written as close to the spec as possible. We use autoprefixer to generate compliant code. We support last two versions of Chrome, Firefox, Opera, Safari and IE9 up.
-
-

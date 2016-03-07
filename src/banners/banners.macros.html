@@ -1,0 +1,38 @@
+{#
+  * @overview Macros for site banners.
+#}
+
+{% from '../icons/icons.macros.html' import svg %}
+{% from '../buttons/buttons.macros.html' import button %}
+
+{#
+  * Renders a basic banner for short-lines of content or a link.
+#}
+{% macro banner(content, type=null, href=null, class=null, id=null) %}
+<div data-banner{% if type %}="{{ type }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>
+  <p class="r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
+</div>
+{% endmacro %}
+
+
+{#
+  * Renders a banner with a header and a link button. Only used at the bottom
+  * of pages to drive click-through to other sections.
+
+  * @todo: Refactor macro
+  * https://github.com/CasperSleep/nightshade-core/issues/11
+ #}
+{% macro cta() %}
+<div class='cta-banner r-section r-section-wrapper r-centered'>
+
+  <video class='js-cta-bg-vid cta-bg cta-bg-vid' loop src='https://s3.amazonaws.com/casper-images/assets/video/sheets-cta.mp4'></video>
+
+  <div class='cta-bg cta-bg-img imgix-fluid' data-src='https://casper.imgix.net/video/fallbacks/bg-sheets.gif?auto=format&amp;crop=left&amp;fit=crop&amp;q=60'></div>
+
+  <div class='cta-content'>
+    <h2 class='-dark'>HOW WE DESIGNED THE PERFECT SHEETS</h2>
+    {{ button('SEE THE PROCESS', href='/sheets/design') }}
+    </a>
+  </div>
+</div>
+{% endmacro %}

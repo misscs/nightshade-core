@@ -91,6 +91,10 @@
 // to get the video bleed off to the left
 .product-prop--2 {
 
+  .prop-illustration-image--mobile {
+    left: -20vw;
+  }
+
   .prop-illustration-video,
   .prop-illustration-image-fallback {
     left: -100%;

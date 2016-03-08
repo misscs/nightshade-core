@@ -101,7 +101,7 @@ h1,
 h2,
 .h2 {
   @extend %h2;
-  margin-bottom: size(normal);
+  margin-bottom: ms(2);
 }
 
 

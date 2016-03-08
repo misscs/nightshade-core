@@ -22,7 +22,7 @@
 html {
   box-sizing: border-box;
   background: color(background);
-  color: color(text);
+  color: color(#505050); // replace with new $gray
   max-width: 100%;
   min-height: 100%; // [4]
   font-size: $base-font-size / 16px * 1em; // [2]

@@ -2,7 +2,71 @@
   * @overview Macros for rending reviews and ratings.
 #}
 
+{% import '../icons/icons.macros.html' as icon %}
 {% from '../buttons/buttons.macros.html' import button %}
+{% from '../tooltips/tooltips.macros.html' import tooltip %}
+
+{#
+  * For rendering a list of reviews
+  * Currently used on reviews pages
+  *
+#}
+{% macro multi() %}
+<article class="clearfix is-verified review" itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+  <meta content="2016-03-04" itemprop="datePublished">
+  <meta itemprop="reviewRating" ratingvalue="5">
+  <meta content="Weda A" itemprop="author">
+  <meta content="The Casper Mattress" itemprop="about">
+  <header class="review-header">
+    <div class="review-rating">
+      {{ star_rating('gold') }}
+    </div>
+    <div class="review-title body--serif">
+      Very Dreamy!
+    </div>
+    <div class="review-name">
+      Weda A
+      <div class="review-verified-wrapper js-review-verified-wrapper">
+        {{ icon.icon('checkmark', 'x-small') }}
+        {{ tooltip('Verified Casper Owner', 'js-tooltip') }}
+      </div>
+    </div>
+    <div class="review-info">
+      Fredericksburg, VA
+    </div>
+    <div class="review-age">
+      35 years old
+    </div>
+    <div class="review-date">
+      <time datetime="2016-03-04T17:47:55Z" data-local="weekday-or-date" title="March 4, 2016 at 12:47pm EST">Friday</time>
+    </div>
+  </header>
+  <div class="review-details-wrapper">
+    <div class="review-title body--serif" itemprop="name">
+      Very Dreamy!
+    </div>
+    <div class="review-text js-review-text">
+      <p class="review-text-body js-review-text-body body--serif" itemprop="reviewBody" style="max-height: none;">
+        I unpack the mattress myself, it wasn't hard but very difficult pulling the heavy box to my bedroom upstairs.   This bed is very nice to sleep on--it's firm but not too hard and it has a nice mushy softness to it at the same time.  I would highly recommend this bed  to anyone who wants to sleep tight and have sweet dreams.
+      </p>
+    </div>
+    <div class="review-details">
+      <div class="review-hours">
+        {{ icon.svg('clock') }}
+        <div class="review-hours-number">6</div>
+        <div class="review-hours-label">hours of sleep per night</div>
+      </div>
+      <div class="review-partner">
+        {{ icon.svg('solo') }}
+        {{ icon.svg('cat') }}
+
+        <div class="review-partner-label">Sleeps solo plus a cat</div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endmacro %}
+
 
 {#
   * Renders a single review with a button to read all reviews.

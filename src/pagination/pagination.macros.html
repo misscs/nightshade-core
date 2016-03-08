@@ -1,0 +1,28 @@
+{#
+  * @overview Macros for pagination component
+#}
+
+{% macro paginator() %}
+<div class="reviews-pagination r-section-wrapper">
+  <div class="reviews-wrapper">
+    <nav class="pagination">
+      <span class="page current">
+        1
+      </span>
+      <span class="page">
+        <a rel="next" href="/mattresses/reviews/2">2</a>
+      </span>
+      <span class="page">
+        <a href="/mattresses/reviews/3">3</a>
+      </span>
+      <span class="page gap">…</span>
+      <span class="next">
+        <a rel="next" href="/mattresses/reviews/2">›</a>
+      </span>
+      <span class="last">
+        <a href="/mattresses/reviews/230">»</a>
+      </span>
+    </nav>
+  </div>
+</div>
+{% endmacro %}

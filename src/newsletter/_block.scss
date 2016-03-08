@@ -1,6 +1,6 @@
 .newsletter-block {
   .email-signup-form {
-    padding-top: size(large);
+    padding-top: ms(4);
   }
 
   .form-input-group {
@@ -14,7 +14,7 @@
       border-right: none;
 
       @include respond-at-and-above($break-mobile) {
-        width: 50%;
+        width: 70%;
       }
     }
 

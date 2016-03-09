@@ -1,5 +1,5 @@
 {
-  "name": "@casper/nightshade-styles",
+  "name": "@casper/nightshade-core",
   "version": "1.9.0",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {

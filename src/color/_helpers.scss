@@ -1,4 +1,6 @@
-@mixin color-steps($steps, $baseColor, $mixColor: #fff) {
+// Generate color map of shades from a stack
+@function color-stack($steps, $baseColor, $mixColor: #fff) {
+  $colorStack: ();
   $type: light !default;
 
   @if lightness(color($mixColor)) < lightness(color($baseColor)) {
@@ -7,10 +9,36 @@
 
   @each $step in $steps {
     $i: index($steps, $step);
-    $background-color: mix(color($baseColor), color($mixColor), (100 - $step));
+    $name: #{$baseColor}--#{$type}#{$i};
+    $hex: mix(color($baseColor), color($mixColor), (100 - $step));
+    $color: ($name: $hex);
+    $colorStack: map-merge($colorStack, $color);
+  }
 
-    .#{$baseColor}--#{$type}#{$i} {
-      background: $background-color;
+  @return $colorStack;
+}
+
+// Generate new colors map with shades from all stacks
+@function generate-stacks-map($stacks) {
+  $stacksMap: ();
+
+  @each $baseColor, $options in $stacks {
+    $mixColor: map-get($options, 'mixColor');
+    $steps: map-get($options, 'steps');
+    $currentStack: color-stack($steps, $baseColor, $mixColor);
+    $stacksMap: map-merge($stacksMap, $currentStack);
+  }
+
+  @return $stacksMap;
+}
+
+// Generate color classes from a map
+@mixin color-classes($colorsMap) {
+  @each $name, $color in $colorsMap {
+    @if $name != 'stacks' {
+      .#{$name} {
+        background: color($color);
+      }
     }
   }
 }

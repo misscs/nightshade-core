@@ -7,7 +7,7 @@
   .form-label-copy {
     @extend %verlag;
 
-    color: color(dark-text);
+    color: color(medium-text);
     order: 0;
     line-height: 36px;
     margin-left: size(smaller);
@@ -22,7 +22,7 @@
     @include square(35px);
 
     order: -1;
-    fill: color(dark-text);
+    fill: color(gray--light3);
     transition: fill 0.15s;
   }
 }

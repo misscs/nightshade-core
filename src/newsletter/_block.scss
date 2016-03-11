@@ -24,11 +24,11 @@
 
       height: 100%;
       border: 1px solid color(dark-border);
-      color: color(medium-text);
-      background-color: color(lightest-grey);
+      color: color(dark-text);
+      background-color: color(light-background);
 
       #{$focus} {
-        background-color: color(light-grey);
+        background-color: color(gray--light7);
       }
 
       @include respond-at-and-above($break-mobile) {

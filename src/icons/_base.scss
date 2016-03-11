@@ -12,7 +12,7 @@ button.icon {
 .icon-lock {
   @include square(20px);
 
-  fill: color(medium-text);
+  fill: color(gray--light2);
 }
 
 [data-icon] {

@@ -4,10 +4,10 @@
 .reviews-one-size {
   .reviews-header-container {
     padding: 2.5em 0;
-    border-top: solid 1px color(light-grey);
-    border-bottom: solid 1px color(light-grey);
+    border-top: solid 1px color(border);
+    border-bottom: solid 1px color(border);
   }
-  
+
   .rating-stars-stats--fraction {
     margin-left: 9px;
   }
@@ -47,4 +47,3 @@
     border-bottom: 0;
   }
 }
-

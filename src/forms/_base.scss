@@ -136,7 +136,7 @@ select {
   appearance: none;
 
   &:focus {
-    border: 1px solid color(dark-text);
+    border: 1px solid color(gray--light3);
   }
 
   &::-ms-expand {
@@ -255,13 +255,13 @@ select {
   border: 1px solid color(border);
   margin: 0;
   padding: size(smaller) size(small);
-  color: color(medium-text);
+  color: color(dark-text);
   border-radius: size(normal-corners);
   background: color(background);
   cursor: auto;
 
   &:focus {
-    border-color: color(dark-text);
+    border-color: color(gray--light3);
   }
 
   // these are for jquery validation plugin
@@ -273,7 +273,7 @@ select {
 }
 
 .form-input--select {
-  fill: color(medium-text);
+  fill: color(gray--light2);
   padding-right: size(large);
   background-image: image-url("nightshade/icons/select-arrow.svg");
   background-repeat: no-repeat;

@@ -45,18 +45,18 @@
       }
 
       .reviews-stats-table-rating-bar-background {
-        background-color: color(dark-grey);
+        background-color: color(gray--light3);
       }
     }
 
     &.-disabled {
       .reviews-stats-table-rating-bar-background {
-        background-color: color(light-grey);
+        background-color: color(gray--light7);
       }
 
       .reviews-stats-table-rating,
       .reviews-stats-table-rating-percent {
-        color: color(medium-text);
+        color: color(dark-text);
       }
     }
   }
@@ -65,7 +65,7 @@
     width: 60%;
 
     .reviews-stats-table-rating-bar-background {
-      background-color: color(light-grey);
+      background-color: color(gray--light7);
       vertical-align: middle;
       height: 18px;
       width: 100%;

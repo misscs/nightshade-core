@@ -90,7 +90,7 @@
   color: color(primary);
 
   #{$focus} {
-    background-color: mix(#000, color(secondary), 10%);
+    background-color: mix(color(#000), color(secondary), 10%);
   }
 
   #{$active} {
@@ -114,7 +114,7 @@
   color: color(background);
 
   #{$focus} {
-    background-color: mix(#000, color(accent), 10%);
+    background-color: mix(color(#000), color(accent), 10%);
   }
 
   #{$active} {
@@ -145,7 +145,7 @@
 [data-button="simple"] {
   color: color(medium-text);
   border: 1px solid color(dark-border);
-  background-color: #fff;
+  background-color: color(background);
 
   &:hover {
     background-color: color(light-background);

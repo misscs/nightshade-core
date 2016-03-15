@@ -25,8 +25,8 @@
   }
 
   &.is-active {
-    background-color: color(tab-hover);
-    border: 1px solid color(tab-hover);
+    background-color: color(light-blue);
+    border: 1px solid color(light-blue);
 
     @include after() {
       @include arrow(bottom, tab-hover, 16px);

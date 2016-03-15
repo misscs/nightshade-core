@@ -1,4 +1,16 @@
-// Generate color map of shades from a stack
+////
+/// Mixins for color manipulations and generating color stack maps
+/// @group Colors
+////
+
+/// Function to generate stack map of shades for a given color
+/// @access public
+/// @example scss - Color stack function
+///   $colorStack: color-stack((10, 20, 30), primary, background);
+///
+/// @param {list} steps - List of color shade intervals/steps
+/// @param baseColor - Base color to create shades from
+/// @param mixColor - Mix color to lighten or darken base color [#fff]
 @function color-stack($steps, $baseColor, $mixColor: #fff) {
   $colorStack: ();
   $type: light !default;
@@ -18,7 +30,12 @@
   @return $colorStack;
 }
 
-// Generate new colors map with shades from all stacks
+/// Function to generate new colors map with shades from all stacks
+/// @access public
+/// @example scss - Generate stacks map function
+///   $stacksMap: generate-stacks-map($stacksConfig);
+///
+/// @param {map} stacks - Config map of all stacks to be made
 @function generate-stacks-map($stacks) {
   $stacksMap: ();
 
@@ -32,7 +49,12 @@
   @return $stacksMap;
 }
 
-// Generate color classes from a map
+/// Mixin to generate color classes for values in a map
+/// @access public
+/// @example scss - Generate color classes mixin
+///   @include color-classes($colors);
+///
+/// @param {map} colorsMap - Colors map with all values
 @mixin color-classes($colorsMap) {
   @each $name, $color in $colorsMap {
     @if $name != 'stacks' {

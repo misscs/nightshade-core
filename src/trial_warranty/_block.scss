@@ -19,7 +19,7 @@ $trial-warranty-block: (
     .icon-trial-seal-hundrednight {
       @include span(1 first);
       height: 75px;
-      fill: color(dark-grey);
+      fill: color(gray--light3);
     }
 
     .icon-text {

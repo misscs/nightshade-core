@@ -1,0 +1,47 @@
+{
+  "blue": "#00237e",
+  "light-blue": "#caeff2",
+  "dark-blue": "primary--dark2",
+  "red": "#ed5a4d",
+  "green": "#7beac9",
+  "gray": "#505050",
+  "gold": "#bca890",
+  "primary": "blue",
+  "secondary": "green",
+  "accent": "red",
+  "background": "#fff",
+  "light-background": "gray--light9",
+  "medium-background": "gray--light8",
+  "dark-background": "gray--light6",
+  "border": "gray--light7",
+  "medium-border": "gray--light6",
+  "dark-border": "gray--light5",
+  "text": "gray",
+  "light-text": "gray--light7",
+  "medium-text": "gray--light3",
+  "dark-text": "gray--light2",
+  "error": "accent--light2",
+  "disabled": "gray--light2",
+  "stacks": {
+    "gray": {
+      "mixColor": "#fff",
+      "steps": ["15", "25", "50", "60", "70", "78", "85", "91", "95"]
+    },
+    "primary": {
+      "mixColor": "#0b153c",
+      "steps": ["30", "65"]
+    },
+    "secondary": {
+      "mixColor": "#c6f6e8",
+      "steps": ["47", "100"]
+    },
+    "light-blue": {
+      "mixColor": "#edf9fa",
+      "steps": ["50", "100"]
+    },
+    "accent": {
+      "mixColor": "#fbd4d0",
+      "steps": ["10.5", "100"]
+    }
+  }
+}

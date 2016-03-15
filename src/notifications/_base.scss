@@ -23,6 +23,8 @@
 
 @import "flashes_config";
 
+$flash-blue: #e5ecf4; // Replace with value from map?
+
 .flash-container {
   @include z-index(flash);
 }
@@ -44,14 +46,14 @@
 }
 
 .flash--notice {
-  @include notifications-color(notice);
+  @include notifications-color(light-background);
 }
 
 // No longer using mixin for success messages at least 'til we overhaul flash.
 .flash--success {
   @extend %body--sans-small;
 
-  background-color: color(flash-blue);
+  background-color: color($flash-blue);
   color: color(primary);
 
   [data-icon="checkmark"] {

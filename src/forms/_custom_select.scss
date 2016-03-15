@@ -31,7 +31,7 @@
       &[data-color*="chambray"] {
 
         &:before {
-          background-image: linear-gradient(135deg, color(background) 50%, color(medium-grey) 50%, color(medium-grey));
+          background-image: linear-gradient(135deg, color(background) 50%, color(gray--light2) 50%, color(gray--light2));
         }
       }
     }

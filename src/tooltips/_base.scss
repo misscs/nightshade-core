@@ -10,7 +10,7 @@
   transform: translateX(-50%);
   min-width: 160px;
   padding: size(smaller) size(small);
-  background: color(#6a6a6a); // Replace with map value
+  background: color(gray--light1);
   color: color(background);
   font-size: 13px;
   line-height: 1.3;
@@ -27,6 +27,6 @@
 
   &:after {
     content: "";
-    @include arrow('bottom', #6a6a6a, 10px);  // Replace with map value
+    @include arrow('bottom', gray--light1, 10px);
   }
 }

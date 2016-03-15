@@ -90,7 +90,7 @@
   color: color(primary);
 
   #{$focus} {
-    background-color: mix(#000, color(secondary), 10%);
+    background-color: mix(color(#000), color(secondary), 10%);
   }
 
   #{$active} {
@@ -114,7 +114,7 @@
   color: color(background);
 
   #{$focus} {
-    background-color: mix(#000, color(accent), 10%);
+    background-color: mix(color(#000), color(accent), 10%);
   }
 
   #{$active} {
@@ -138,17 +138,17 @@
   color: color(text);
 
   #{$focus} {
-    background-color: color(light-grey);
+    background-color: color(gray--light7);
   }
 }
 
 [data-button="simple"] {
-  color: color(dark-grey);
-  border: 1px solid color(lighter-grey);
-  background-color: #fff;
+  color: color(medium-text);
+  border: 1px solid color(dark-border);
+  background-color: color(background);
 
   &:hover {
-    background-color: color(lightest-grey);
+    background-color: color(light-background);
   }
 }
 
@@ -168,7 +168,7 @@
   }
 
   &:hover {
-    background-color: color(med-dark-background);
+    background-color: color(medium-background);
   }
 
   @include before() {

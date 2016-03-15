@@ -20,7 +20,7 @@
 .rating-star--half {
 
   @include before($content: "\2605") {
-    color: color(#f5d060); // Add to color map
+    color: color($star-gold);
     overflow: hidden;
 
     .rating-stars--blue & {

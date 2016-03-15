@@ -35,7 +35,7 @@
   [data-icon]  {
     @include square(130px);
     margin-bottom: size(large);
-    fill: color(trial-blue);
+    fill: color($trial-blue);
 
     @include respond-below($break-small) {
       @include square(115px);
@@ -141,7 +141,7 @@
 
   .trial-warranty-title,
   .trial-warranty-copy {
-    color: color(white);
+    color: color(background);
   }
 
   .trial-warranty-content {

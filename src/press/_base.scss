@@ -76,7 +76,7 @@ $num-boxes: 35;
   fill: color(dark-background);
 
   #{$focus} {
-    background-color: mix(#000, #dbdbdb, 5%);
+    background-color: color(dark-background);
   }
 
   .icon {

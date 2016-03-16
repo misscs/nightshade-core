@@ -1,0 +1,16 @@
+{#
+  * @overview Macros for hero and featured hero modules
+#}
+
+{#
+  * Renders a hero or featured hero module.
+  * todo: Replace H2 with a caller() block if desired
+#}
+{% macro hero(heading, content, background_path=null, featured=false, class=null, id=null) %}
+<header class="hero{% if featured %} hero--featured{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} style="background-image: url('https://casper.imgix.net/{{ background_path }}')"{% endif %}>
+  <h1 class="hero-heading">{{ heading }}</h1>
+  {% if content %}
+  <h2 class="hero-subheading">{{ content }}</h2>
+  {% endif %}
+</header>
+{% endmacro %}

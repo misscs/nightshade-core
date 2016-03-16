@@ -1,25 +1,54 @@
+/**
+ * @file CTA Banner
+ * @module Banners
+ * @overview Call to action banner with headline, button and background
+ */
+
 .cta-banner {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: ms(8) ms(2);
   background-size: cover;
   background-position: center center;
+  text-align: center;
+  overflow: hidden;
 }
 
+.cta-banner--large-background {
+  justify-content: flex-start;
+  height: 1000px;
+}
 
-.product-footer .cta-banner .cta-bg-vid {
+.cta-bg {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.cta-bg--img {
+  display: block;
+
+  @include respond-at-and-above($break-medium + 1) {
     display: none;
+  }
 }
 
-.product-footer .cta-banner .cta-bg {
-    z-index: 1;
+.cta-bg--vid {
+  display: none;
+
+  @include respond-at-and-above($break-medium + 1) {
     display: block;
-    position: absolute;
-    min-width: 100%;
-    min-height: 100%;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+  }
+}
+
+.cta-content {
+  position: relative;
 }

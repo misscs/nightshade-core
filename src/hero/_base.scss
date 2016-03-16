@@ -1,18 +1,26 @@
-.banner {
-  padding: 50px 23px;
+/**
+ * @file Hero
+ * @module Hero
+ * @overview Hero and top of page featured hero modules
+ */
 
-  .user-info {
-    font-weight: 400;
-    font-size: 20px;
-  }
-
-  @include respond-at-and-above($break-large) {
-    padding-top: 78px;
-    padding-bottom: 78px;
-  }
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+  padding: ms(8) ms(2);
+  text-align: center;
+  background-size: cover;
+  background-position: center center;
 }
 
-.banner-title {
+.hero--featured {
+  justify-content: flex-start;
+  height: 90vh;
+}
+
+.hero-heading {
   font-size: 30px;
   margin-bottom: 10px;
 

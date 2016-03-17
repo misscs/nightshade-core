@@ -1,0 +1,15 @@
+{#
+  @overview Utility helper macros
+ #}
+
+{#
+  @macro add_class_id
+  @overview Adds optional Class and ID parameters within another macro
+ #}
+{% macro add_class_id(class=null, id=null, has_class=true) %}
+  {% if has_class %}
+    {% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}
+  {% else %}
+    {% if class %} class="{{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}
+  {% endif %}
+{% endmacro %}

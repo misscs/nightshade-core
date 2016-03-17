@@ -1,9 +1,10 @@
 {% from '../icons/icons.macros.html' import icon as icon_macro %}
+{% from '../utilities/utilities.macros.html' import add_class_id %}
 
 {% macro button(text, style='primary', size=null, type='button', href=null, icon=null, class=null, id=null) %}
   {% if type == 'link' %}
-    <a href="{{ href }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</a>
+    <a href="{{ href }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{{ add_class_id(class, id, false) }}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</a>
   {% else %}
-    <button type="{{ type }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</button>
+    <button type="{{ type }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{{ add_class_id(class, id, false) }}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</button>
   {% endif %}
 {% endmacro %}

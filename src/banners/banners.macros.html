@@ -19,19 +19,21 @@
   * Renders a banner with a header and a link button. Only used at the bottom
   * of pages to drive click-through to other sections.
 
-  * @todo: Refactor macro
+  * @todo: Enable playing with JS when in view, instead of `autoplay` attribute
+  * @todo: Refactor to use video `poster` attribute? See issue below
   * https://github.com/CasperSleep/nightshade-core/issues/11
  #}
-{% macro cta() %}
-<div class='cta-banner r-section r-section-wrapper r-centered'>
+{% macro cta_banner(content, cta, href, button_style='primary', background_path=null, video_path=null, video_fallback_path=null, large_background=false, class=null, id=null) %}
+<div class="cta-banner{% if large_background %} cta-banner--large-background{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} style="background-image: url('https://casper.imgix.net/{{ background_path }}')"{% endif %}>
 
-  <video class='js-cta-bg-vid cta-bg cta-bg-vid' loop src='https://s3.amazonaws.com/casper-images/assets/video/sheets-cta.mp4'></video>
+  {% if video_path %}
+  <video class="cta-bg cta-bg--vid" autoplay loop src="https://s3.amazonaws.com/casper-images/assets/video/{{ video_path }}"></video>
+  <div class="cta-bg cta-bg--img imgix-fluid" data-src="https://casper.imgix.net/video/fallbacks/{{ video_fallback_path }}?auto=format&amp;crop=left&amp;fit=crop&amp;q=60"></div>
+  {% endif %}
 
-  <div class='cta-bg cta-bg-img imgix-fluid' data-src='https://casper.imgix.net/video/fallbacks/bg-sheets.gif?auto=format&amp;crop=left&amp;fit=crop&amp;q=60'></div>
-
-  <div class='cta-content'>
-    <h2 class='-dark'>HOW WE DESIGNED THE PERFECT SHEETS</h2>
-    {{ button('SEE THE PROCESS', href='/sheets/design') }}
+  <div class="cta-content">
+    <h2 class="-dark">{{ content }}</h2>
+    {{ button(cta, button_style, href=href) }}
     </a>
   </div>
 </div>

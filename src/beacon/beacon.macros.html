@@ -1,0 +1,10 @@
+{#
+  * @overview Macros for beacon/indicator button that scrolls to a waypoint.
+#}
+
+{#
+  * Renders a beacon/indicator button
+#}
+{% macro beacon(waypoint, class=null, id=null) %}
+<span class="beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} data-waypoint="{{ waypoint }}"></span>
+{% endmacro %}

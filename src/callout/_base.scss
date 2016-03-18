@@ -1,0 +1,20 @@
+/**
+ * @file Callout
+ * @module Callout
+ * @overview Callout module with heading and layout content beneath
+ */
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: ms(8) ms(2);
+  background: color(light-background);
+  text-align: center;
+}
+
+.callout-heading {
+  max-width: 26em;
+}

@@ -1,0 +1,13 @@
+{#
+  * @overview Macros for the Callout module.
+#}
+
+{#
+  * Renders a callout module with heading and layout content beneath
+#}
+{% macro callout(heading, class=null, id=null) %}
+<div class="callout{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <h2 class="callout-heading -dark">{{ heading }}</h2>
+  {{ caller() }}
+</div>
+{% endmacro %}

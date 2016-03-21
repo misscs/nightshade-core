@@ -12,7 +12,7 @@
   <figure class="block-item-image">
     {{ svg(icon) }}
   </figure>
-  <h4 class="block-item-description">{{ content }}</h4>
+  <h4 class="block-item-description">{{ content|safe }}</h4>
 </div>
 {% endmacro %}
 

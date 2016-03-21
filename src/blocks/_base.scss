@@ -1,0 +1,38 @@
+/**
+ * @file Layout Blocks
+ * @module Blocks
+ * @overview Side-by-side or stacked layout blocks
+ */
+
+ .block-group {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   text-align: center;
+ }
+
+.block-group--stacked {
+  @include respond-below($break-medium) {
+    flex-direction: column;
+  }
+}
+
+ .block-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .block-item-image {
+   @include square(150px);
+   margin-bottom: ms(2);
+   fill: color(primary);
+
+   .icon {
+     @include square(100%);
+   }
+ }
+
+ .block-item-description {
+   max-width: 14em;
+ }

@@ -22,6 +22,8 @@
 }
 
 .background--starry {
+  position: relative;
+  overflow: hidden;
   background-color: color(dark-blue);
   background-image: url('https://casper.imgix.net/backgrounds/big-stars.png');
   background-size: cover;

@@ -52,3 +52,11 @@
 .cta-content {
   position: relative;
 }
+
+.cta-heading {
+  font-size: ms(2);
+
+  @include respond-at-and-above($break-small) {
+    font-size: ms(3);
+  }
+}

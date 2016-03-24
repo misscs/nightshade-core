@@ -61,12 +61,6 @@
 }
 
 
-.-backdrop--dark {
-  background-color: color(primary);
-  color: color(background);
-}
-
-
 .-hoisted {
   @include respond-at-and-above(1200px) {
     margin-top: -40px;
@@ -85,5 +79,3 @@
     padding: 2rem 1rem;
   }
 }
-
-

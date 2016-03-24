@@ -5,6 +5,6 @@
 {#
   * Renders a beacon/indicator button
 #}
-{% macro beacon(waypoint, class=null, id=null) %}
-<span class="beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} data-waypoint="{{ waypoint }}"></span>
+{% macro beacon(href, class=null, id=null) %}
+<a class="beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}"></a>
 {% endmacro %}

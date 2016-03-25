@@ -3,95 +3,50 @@
 {% import '../forms/forms.macros.html' as form %}
 {% import '../icons/icons.macros.html' as icon %}
 
-{% macro footer() %}
-  <div class="r-footer-top r-inner">
-    {{ breadcrumbs() }}
-    <nav class="footer-nav clearfix">
+{% macro footer_content() %}
+  {{ breadcrumbs() }}
+  <nav class="footer-nav clearfix">
+
+    <div class="footer-nav-left">
       {{ footer_menu_stack() }}
+    </div>
 
-      <div class="footer-nav-group footer-nav-group--top footer-nav-group--right footer-nav-group--connect">
-
-        <div class="footer-email-signup">
-          <h4 class="-light footer-nav-title footer-nav-title--email">Free Bedtime Reading</h4>
-          {{ form.email_signup() }}
-        </div>
-
-        {{ social_links() }}
+    <div class="footer-nav-group--right footer-nav-group--top footer-nav-group--connect">
+      <div class="footer-email-signup">
+        <h4 class="footer-nav-group-title -light">Free Bedtime Reading</h4>
+        {{ form.email_signup() }}
       </div>
-    </nav>
-  </div>
-  {{ footer_bottom() }}
+
+      {{ social_links() }}
+    </div>
+  </nav>
 {% endmacro %}
 
 {% macro footer_menu_stack() %}
 <div class="footer-nav-group footer-nav-group--top footer-nav-group--links">
-  <h4 class="-light footer-nav-title">About</h4>
-  <a class="footer-link" href="/press">Press</a>
-  <a class="footer-link" href="/team">Team</a>
-  <a class="footer-link" href="https://boards.greenhouse.io/casper" target="_blank">Jobs</a>
-  <a class="footer-link" href="http://blog.casper.com" target="_blank">Blog</a>
-  <a class="footer-link" href="/design">Design</a>
+  <h4 class="footer-nav-group-title -light">About</h4>
+  <a class="footer-nav-group-link" href="/press">Press</a>
+  <a class="footer-nav-group-link" href="/team">Team</a>
+  <a target="_blank" class="footer-nav-group-link" href="https://boards.greenhouse.io/casper">Jobs</a>
+  <a class="footer-nav-group-link" href="/design">Design</a>
 </div>
 <div class="footer-nav-group footer-nav-group--top footer-nav-group--links">
-  <h4 class="-light footer-nav-title">Support</h4>
-  <a class="footer-link" href="/help">Help</a>
-  <a class="footer-link" href="/returns">Returns</a>
-  <a class="footer-link" href="/faq">FAQ</a>
-  <a class="footer-link" href="/financing">Financing</a>
-  <a class="footer-link" href="/warranty">Warranty</a>
+  <h4 class="footer-nav-group-title -light">Support</h4>
+  <a class="footer-nav-group-link" href="/help">Help</a>
+  <a class="footer-nav-group-link" href="/returns">Returns</a>
+  <a class="footer-nav-group-link" href="/faq">FAQ</a>
+  <a class="footer-nav-group-link" href="/financing">Financing</a>
+  <a class="footer-nav-group-link" href="/warranty">Warranty</a>
 </div>
-<div class="footer-nav-group footer-nav-group--top footer-nav-group--links footer-nav-group--showrooms">
-  <h4 class="-light footer-nav-title">Showrooms</h4>
-  <a class="footer-link" href="/nyc">New York City</a>
+<div class="footer-nav-group footer-nav-group--top footer-nav-group--links">
+  <h4 class="footer-nav-group-title -light">Showrooms</h4>
+  <a class="footer-nav-group-link" href="/nyc">New York City</a>
 </div>
-{% endmacro%}
-
-{% macro footer_bottom() %}
-<div class="mobile-cta-padding r-footer-bottom">
-  <div class="r-inner">
-      <div class="footer-nav">
-        <div class="footer-nav-group footer-nav-group--bottom">
-
-        <span>
-          <a class="footer-link footer-link--country us-footer-link" href="?country_id=49">
-            {{ icon.icon("usa", size="small" )}}
-          </a>
-          <a class="footer-link footer-link--country canada-footer-link" href="?country_id=204">
-            {{ icon.icon("canada", size="small" )}}
-          </a>
-        </span>
-
-        <div class="footer-text-mobile-centered">
-          <span class="footer-text--bottom">
-          ©
-          <script>
-          document.write(new Date().getFullYear());
-          </script>
-          </span>
-          <span class="footer-text--bottom footer-address">
-            45 Bond St. New York, NY 10012
-          </span>
-          <span>
-            <a class="footer-link footer-text--bottom" href="/privacy">Privacy</a>
-            <a class="footer-link footer-text--bottom" href="/terms">Terms</a>
-          </span>
-        </div>
-      </div>
-
-      <div class="footer-nav-group footer-nav-group--right">
-        <a class="js-a-sup-phone footer-link footer-link--contact footer-link--contact-phone" href="tel:18885068980">
-          {{ icon.icon("phone", size="x-small" )}}
-          <span class="footer-text--bottom footer-text--contact">888–498–0003</span>
-        </a>
-
-        <a class="js-a-sup-email footer-link footer-link--contact" href="/help" target="_blank">
-          {{ icon.icon("envelope", size="medium" )}}
-
-          <span class="footer-text--bottom footer-text--contact">CONTACT US</span>
-        </a>
-      </div>
-    </div>
-  </div>
+<div class="footer-nav-group footer-nav-group--top footer-nav-group--links">
+  <h4 class="footer-nav-group-title -light">Read More</h4>
+  <a target="_blank" class="footer-nav-group-link" href="http://blog.casper.com">Blog</a>
+  <a target="_blank" class="footer-nav-group-link" href="http://vanwinkles.com">Van Winkle’s</a>
+  <a target="_blank" class="footer-nav-group-link" href="https://facebook.com/caspersleep">Follow Casper</a>
 </div>
 {% endmacro %}
 

@@ -1,0 +1,59 @@
+{#
+  * @overview Macros for standard and simple site Footers
+#}
+
+{% from '../icons/icons.macros.html' import icon as icon %}
+
+{#
+  * Renders a standard or simplified footer
+#}
+{% macro footer(simple=false, class=null, id=null) %}
+<footer class="footer{% if simple %} footer--simple{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <div class="footer-top r-inner">
+    {{ caller() }}
+  </div>
+  <div class="footer-bottom">
+    <nav class="footer-nav r-inner">
+      <div class="footer-nav-group footer-nav-group--bottom">
+        <span class="footer-nav-country-icons">
+          <a class="footer-nav-group-link footer-nav-group-link--country" href="?country_id=49">
+            {{ icon('usa', size='small') }}
+          </a>
+          <a class="footer-nav-group-link footer-nav-group-link--country" href="?country_id=204">
+            {{ icon('canada', size='small') }}
+          </a>
+        </span>
+        <div class="footer-nav-group-text--mobile">
+          <span class="footer-nav-group-text--bottom">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+          </span>
+          <span class="footer-nav-group-text--bottom footer-nav-group-text--address">
+            45 Bond St. New York, NY 10012
+          </span>
+          <span>
+            <a class="footer-nav-group-link footer-nav-group-text--bottom" href="/privacy">Privacy</a>
+            <a class="footer-nav-group-link footer-nav-group-text--bottom" href="/terms">Terms</a>
+          </span>
+        </div>
+      </div>
+
+      {% if not simple %}
+      <div class="footer-nav-group footer-nav-group--right">
+        <a class="footer-nav-group-link footer-nav-group-link--contact footer-nav-group-link--contact-phone" href="tel:18884980003">
+          {{ icon('phone', size='x-small') }}
+          <span class="footer-nav-group-text--bottom footer-nav-group-text--contact">888–498–0003</span>
+        </a>
+        <a target="_blank" class="footer-nav-group-link footer-nav-group-link--contact" href="/help">
+          {{ icon('envelope') }}
+          <span class="footer-nav-group-text--bottom footer-nav-group-text--contact">CONTACT US</span>
+        </a>
+      </div>
+      {% endif %}
+
+    </nav>
+  </div>
+</footer>
+{% endmacro %}

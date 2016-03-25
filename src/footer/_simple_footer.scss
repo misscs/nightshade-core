@@ -1,0 +1,54 @@
+/**
+ * @file Simple Footer
+ * @module Footer
+ * @overview Simplified site footer
+ */
+
+ .footer--simple {
+
+   .footer-top {
+     padding: ms(6) 0;
+
+     .footer-nav {
+       flex-direction: column;
+       align-items: center;
+     }
+   }
+
+   .footer-bottom {
+     padding-bottom: 0;
+
+     @include respond-at-and-above($break-medium) {
+       padding-bottom: ms(5);
+     }
+
+     .footer-nav-group {
+       display: inline-block;
+       width: auto;
+       margin-left: auto;
+       margin-right: auto;
+       white-space: nowrap;
+     }
+   }
+
+   .footer-nav-country-icons {
+     position: relative;
+     display: inline-block;
+   }
+
+   .footer-help {
+     margin-top: ms(2);
+   }
+
+   .footer-nav-group {
+     padding-right: 0;
+   }
+
+   .footer-nav-group-text--mobile {
+     position: relative;
+     display: inline-block;
+     margin-left: 0;
+     left: auto;
+     width: auto;
+   }
+ }

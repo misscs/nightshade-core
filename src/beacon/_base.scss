@@ -6,11 +6,10 @@
 
 .beacon {
   @include square(48px);
-  display: block;
   position: absolute;
   z-index: 1;
   left: 50%;
-  bottom: ms(3);
+  bottom: ms(7);
   background: color(background);
   border-radius: 50%;
   transform: translate(-50%, 50%);

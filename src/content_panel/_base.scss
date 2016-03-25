@@ -6,7 +6,7 @@
 
 .content-panel {
 
-  @include respond-at-and-above($break-medium) {
+  @include respond-at-and-above($break-medium + 1) {
     display: flex;
   }
 }
@@ -14,14 +14,26 @@
 .content-panel-image,
 .content-panel-content {
 
-  @include respond-at-and-above($break-medium) {
+  @include respond-at-and-above($break-medium + 1) {
     width: 50%;
+  }
+}
+
+.content-panel-image {
+
+  @include respond-between($break-mobile, $break-medium) {
+    height: 80vw;
+    overflow: hidden;
+
+    img {
+      margin-top: -10vw;
+    }
   }
 }
 
 .content-panel-image--right {
 
-  @include respond-at-and-above($break-medium) {
+  @include respond-at-and-above($break-medium + 1) {
     order: 1;
   }
 }
@@ -32,10 +44,45 @@
   align-items: center;
   justify-content: center;
   padding: ms(7) ms(2);
+
+  @include respond-between($break-small, $break-medium) {
+    padding: ms(10) ms(2);
+  }
+
+  @include respond-at-and-above($break-medium + 1) {
+    padding: ms(2);
+  }
+}
+
+.content-panel-heading {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: ms(0);
+
+  @include respond-between($break-small, $break-medium) {
+    font-size: ms(2);
+  }
+
+  @include respond-at-and-above($break-xl) {
+    font-size: ms(2);
+  }
 }
 
 .content-panel-content-body {
   max-width: 22em;
   font-size: ms(1);
   text-align: center;
+
+  @include respond-between($break-small, $break-medium) {
+    max-width: 26em;
+    font-size: ms(2);
+  }
+
+  @include respond-at-and-above($break-xl) {
+    max-width: 26em;
+  }
+
+  @include respond-at-and-above($break-gigantic) {
+    font-size: ms(2);
+  }
 }

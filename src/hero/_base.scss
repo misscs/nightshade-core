@@ -7,8 +7,9 @@
 .hero {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
-  min-height: 300px;
+  min-height: ms(16);
   padding: ms(8) ms(2);
   text-align: center;
   background-size: cover;
@@ -21,10 +22,6 @@
 }
 
 .hero-heading {
-  font-size: 30px;
-  margin-bottom: 10px;
-
-  @include respond-at-and-above($break-medium) {
-    font-size: 36px;
-  }
+  font-size: ms(2);
+  margin-bottom: ms(-2);
 }

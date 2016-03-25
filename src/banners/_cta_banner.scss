@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 300px;
+  min-height: ms(16);
   padding: ms(8) ms(2);
   background-size: cover;
   background-position: center center;
@@ -20,7 +20,7 @@
 
 .cta-banner--large-background {
   justify-content: flex-start;
-  height: 1000px;
+  height: 80vh;
 }
 
 .cta-bg {
@@ -51,4 +51,12 @@
 
 .cta-content {
   position: relative;
+}
+
+.cta-heading {
+  font-size: ms(2);
+
+  @include respond-at-and-above($break-small) {
+    font-size: ms(3);
+  }
 }

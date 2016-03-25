@@ -7,12 +7,12 @@
 {#
   * Renders an individual block with an icon and text beneath
 #}
-{% macro block_item(content, icon) %}
-<div class="block-item">
+{% macro block_item(content, icon, class=null, id=null) %}
+<div class="block-item{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <figure class="block-item-image">
     {{ svg(icon) }}
   </figure>
-  <h4 class="block-item-description">{{ content }}</h4>
+  <h4 class="block-item-description">{{ content|safe }}</h4>
 </div>
 {% endmacro %}
 

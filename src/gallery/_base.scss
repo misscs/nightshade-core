@@ -1,97 +1,63 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/flickity/1.2.1/flickity.min.css";
+
 .gallery {
   position: relative;
   overflow: hidden;
+  max-height: ms(16);
 
   &:hover {
-    .gallery-controls {
+
+    .flickity-prev-next-button {
       opacity: 1;
     }
   }
-}
 
-.gallery-slider {
-  width: 100%;
-  height: 100%;
-  white-space: nowrap;
-}
-
-// @@@ [1] inflexible positioning and size should not be determined
-// by the component. let each instance define their own or set
-// overideable defaults
-.gallery-controls {
-  @include z-index(gallery-controls);
-
-  @include square(65px);
-
-  border-radius: 33px;
-  transition: opacity 0.2s ease, background-color 0.15s;
-  position: absolute;
-  top: 50%;
-  margin-top: -32.5px;
-  right: 25px;
-  text-align: center;
-  cursor: pointer;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  .touch & {
-    display: none;
+  &.flickity-enabled {
+    max-height: none;
   }
 
-  [data-icon="arrow"] {
-    vertical-align: top;
-    margin-top: 24px;
-    fill: color(background);
-    transform: rotate(0deg);
+  .flickity-prev-next-button {
+    @include square(65px);
+    display: flex;
+    justify-content: center;
+    transition: opacity 0.2s ease, background 0.15s;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    &.previous {
+      left: ms(2);
+    }
+
+    &.next {
+      right: ms(2);
+    }
+
+    .touch & {
+      display: none;
+    }
+
+    svg {
+      @include square(17px);
+      position: static;
+    }
+
+    .arrow {
+      fill: color(background);
+    }
   }
 
-  #{$focus} {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-}
-
-.gallery-prev {
-  left: 25px;
-
-  [data-icon="arrow"] {
-    margin-right: 2px;
-    transform: rotate(180deg);
+  .flickity-page-dots {
+    bottom: ms(-3);
+    opacity: 0.5;
   }
 }
 
 .gallery-slide {
-  display: inline-block;
   width: 100%;
   height: 100%;
-}
-
-.gallery-slide-image {
-  width: 100%;
-  cursor: pointer;
-}
-
-.gallery-dots {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  cursor: pointer;
-}
-
-.gallery-dot {
-  @include circle(8px, primary);
-
-  @include active-opacity(0.5);
-
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
-  transition: opacity 0.2s ease;
-  margin: 6px;
-  display: inline-block;
-  background-color: rgba(0, 0, 0, 0.4);
-  background-size: contain;
-}
-
-.gallery-slide-wrapper {
-  @include square(100%);
+  white-space: nowrap;
 }

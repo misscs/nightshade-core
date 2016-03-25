@@ -1,0 +1,116 @@
+/**
+ * @file Backgrounds
+ * @module Backgrounds
+ * @overview Background and matching text styles for page modules
+ * @todo: remove _backdrops.scss since this replaces it?
+ * @todo: rename TrialWarranty to be generic, update to use Starry Background
+ */
+
+.background--light {
+  background: color(light-background);
+}
+
+.background--primary {
+  background-color: color(primary);
+  color: color(background);
+
+  h1,
+  h2,
+  h3 {
+    color: color(background);
+  }
+}
+
+.background--starry {
+  background-color: color(dark-blue);
+  background-image: url('https://casper.imgix.net/backgrounds/big-stars.png');
+  background-size: cover;
+  color: color(background);
+
+  &.is-stars-loaded {
+    background-image: none;
+  }
+
+  .background-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: color(background);
+  }
+}
+
+.background-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-size: 100% 100%;
+  background-size: cover;
+  will-change: transform;
+}
+
+.background-stars--big {
+  background-image: url('https://casper.imgix.net/backgrounds/big-stars-small@2x.png');
+
+  @include respond-below(376px, width, 2) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars-small@2x.png');
+  }
+
+
+  @include respond-below(376px, width, 3) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars-small@3x.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars-med.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width, 2) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars-med@2x.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width, 3) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars-med@3x.png');
+  }
+
+
+  @include respond-at-and-above(1025px, width) {
+    background-image: url('https://casper.imgix.net/backgrounds/big-stars.png');
+  }
+}
+
+.background-stars--small {
+  background-image: url('https://casper.imgix.net/backgrounds/small-stars-small@2x.png');
+
+  @include respond-below(376px, width, 2) {
+    background-image: url('https://casper.imgix.net/backgrounds/small-stars-small@2x.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width) {
+    background-image: url('https://casper.imgix.net/backgrounds/small-stars-med.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width, 2) {
+    background-image: url('https://casper.imgix.net/backgrounds/small-stars-med@2x.png');
+  }
+
+
+  @include respond-between(375px, 1024px, width, 3) {
+    background-image: url('https://casper.imgix.net/backgrounds/small-stars-med@3x.png');
+  }
+
+
+  @include respond-at-and-above(1025px, width) {
+    background-image: url('https://casper.imgix.net/backgrounds/small-stars.png');
+  }
+}

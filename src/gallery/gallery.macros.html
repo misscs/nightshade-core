@@ -1,83 +1,12 @@
 {#
-  * @overview Galleries hold collection of images or text that
-  * can be cycled with next/previous arrows, image thumbnails or dot.
-  *
-  * @todo Refactor all galleries to use Flickity.
-  *       Remove old_gallery dependency. https://trello.com/c/PNUPS8Q9
- #}
+  * @overview Macros for Gallery carousel that use Flickity
+#}
 
 {#
-  * @macro flickity_gallery
-  * @overview Initializes gallery module. Uses Flickity
-  * @public
-  *
-  * @todo Revisit FlexEmbed dependency
-  * @todo Refactor the slide into its own macro
-  * @todo Add imgix product settings js. Clean up image param.
- #}
-{% macro flickity_gallery() %}
-<div class="gallery lifestyle-gallery">
-<div class="FlexEmbed">
-<div class="FlexEmbed-ratio FlexEmbed-ratio--5by4 gallery-container">
-<div class="FlexEmbed-content gallery-slider">
-<div aria-label="Casper Lifestyle (Socks)" class="gallery-slide imgix-fluid--lifestyle" data-src="https://casper.imgix.net/product/sheets/casper-lifestyle-sheets.jpg?auto=format" role="img" style="background-image: url(&quot;https://casper.imgix.net/product/sheets/casper-lifestyle-sheets.jpg?auto=format&amp;dpr=2&amp;h=360&amp;ixjsv=1.1.2&amp;q=50&amp;w=830&quot;); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
-</div>
-</div>
-</div>
-</div>
-{% endmacro %}
-
-
-{#
-  * @macro old_gallery
-  * @overview A module that initializes coffeescript galleries
-  * @pulic
-  * @deprecated
-  *
-  * @todo Depreciate. Refactor instances on Casper.com that use this code.
-  * @todo Remove macro from nighshade-core and nightshade. Rename
-  * flickity_gallery macro to gallery.
- #}
-{% macro old_gallery() %}
-<div class="js-sheets-gallery sheets-gallery is-visible" data-color="White/White">
-<div class="gallery gallery--background js-sheets-white-white-gallery sheets-white-white-gallery">
-<div class="FlexEmbed">
-<div class="FlexEmbed-ratio FlexEmbed-ratio--5by4 gallery-container">
-<div class="FlexEmbed-content gallery-slider js-gallery-slider" style="transform: translate3d(0px, 0px, 0px);">
-<div class="gallery-slide-wrapper gallery-slide-wrapper-1 js-gallery-slide-wrapper is-active">
-<div aria-label="Casper White Sheets (Set)" class="gallery-slide gallery-slide-1 gallery-slide-image imgix-fluid--product-page js-gallery-next js-gallery-slide" data-src="https://casper.imgix.net/product/sheets/casper-sheets-ww-set.jpg?" role="img" style="background-image: url(&quot;https://casper.imgix.net/product/sheets/casper-sheets-ww-set.jpg?dpr=2&amp;ixjsv=1.1.2&amp;q=50&amp;w=930&quot;);"></div>
-</div>
-<div class="gallery-slide-wrapper gallery-slide-wrapper-2 js-gallery-slide-wrapper">
-<div aria-label="Casper White Sheets (Sheet)" class="gallery-slide gallery-slide-2 gallery-slide-image imgix-fluid--product-page js-gallery-next js-gallery-slide" data-src="https://casper.imgix.net/product/sheets/casper-sheets-ww-flatsheet.jpg?" role="img" style="background-image: url(&quot;https://casper.imgix.net/product/sheets/casper-sheets-ww-flatsheet.jpg?dpr=2&amp;ixjsv=1.1.2&amp;q=50&amp;w=830&quot;);"></div>
-</div>
-<div class="gallery-slide-wrapper gallery-slide-wrapper-3 js-gallery-slide-wrapper">
-<div aria-label="Casper White Sheets (Folded)" class="gallery-slide gallery-slide-3 gallery-slide-image imgix-fluid--product-page js-gallery-next js-gallery-slide" data-src="https://casper.imgix.net/product/sheets/casper-sheets-ww-folded.jpg?" role="img" style="background-image: url(&quot;https://casper.imgix.net/product/sheets/casper-sheets-ww-folded.jpg?dpr=2&amp;ixjsv=1.1.2&amp;q=50&amp;w=830&quot;);"></div>
-</div>
-<div class="gallery-slide-wrapper gallery-slide-wrapper-4 js-gallery-slide-wrapper">
-<div aria-label="Casper White Sheets (Pillowcase)" class="gallery-slide gallery-slide-4 gallery-slide-image imgix-fluid--product-page js-gallery-next js-gallery-slide" data-src="https://casper.imgix.net/product/sheets/casper-sheets-ww-pillowcase.jpg?" role="img" style="background-image: url(&quot;https://casper.imgix.net/product/sheets/casper-sheets-ww-pillowcase.jpg?dpr=2&amp;ixjsv=1.1.2&amp;q=50&amp;w=710&quot;);"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="gallery-dots">
-<span class="gallery-dot gallery-dot-1 js-gallery-dot is-active">
-<img alt="Casper White Sheets (Set)" class="gallery-thumb" src="https://casper.imgix.net/product/sheets/casper-sheets-ww-set.jpg?auto=format&amp;w=150">
-</span>
-<span class="gallery-dot gallery-dot-2 js-gallery-dot">
-<img alt="Casper White Sheets (Sheet)" class="gallery-thumb" src="https://casper.imgix.net/product/sheets/casper-sheets-ww-flatsheet.jpg?auto=format&amp;w=150">
-</span>
-<span class="gallery-dot gallery-dot-3 js-gallery-dot">
-<img alt="Casper White Sheets (Folded)" class="gallery-thumb" src="https://casper.imgix.net/product/sheets/casper-sheets-ww-folded.jpg?auto=format&amp;w=150">
-</span>
-<span class="gallery-dot gallery-dot-4 js-gallery-dot">
-<img alt="Casper White Sheets (Pillowcase)" class="gallery-thumb" src="https://casper.imgix.net/product/sheets/casper-sheets-ww-pillowcase.jpg?auto=format&amp;w=150">
-</span>
-</div>
-<a class="gallery-next js-gallery-next gallery-controls" href="javascript:void(0)"><span data-icon="arrow" data-size="x-small"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow"></use></svg></span>
-</a><div class="gallery-prev js-gallery-prev gallery-controls">
-<span data-icon="arrow" data-size="x-small"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow"></use></svg></span>
-</div>
-</div>
-
+  * Renders a Gallery carousel with custom Flickity options
+#}
+{% macro gallery(autoplay=false, arrows=true, dots=true, draggable=false, wraparound=true, class=null, id=null) %}
+<div class="gallery js-gallery{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} data-options='{ "autoPlay": {{ autoplay }}, "prevNextButtons": {{ arrows }}, "pageDots": {{ dots }}, "draggable": {{ draggable }}, "wrapAround": {{ wraparound }} }'>
+  {{ caller() }}
 </div>
 {% endmacro %}

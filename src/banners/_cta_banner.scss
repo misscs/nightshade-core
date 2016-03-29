@@ -54,13 +54,16 @@
 }
 
 .cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
 
 .cta-heading {
-  font-size: ms(2);
+  font-size: ms(1);
 
-  @include respond-at-and-above($break-small) {
+  @include respond-at-and-above($break-medium) {
     font-size: ms(3);
   }
 }

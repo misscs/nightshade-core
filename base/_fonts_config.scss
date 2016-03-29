@@ -29,52 +29,72 @@
 
  */
 
-$sans: "Verlag A", "Verlag B";
-$sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ $verlag: "Verlag A", "Verlag B";
+ $verlag-black: "Verlag Black A", "Verlag Black B";
+ $chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
+ $chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
 
-$serif: "Chronicle Deck A", "Chronicle Deck B";
-$serif-stack: Georgia, serif;
+ $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ $serif-stack: Georgia, serif;
 
-%sans-family-stack {
-  font-family: $sans, $sans-stack;
-}
 
-%serif-family-stack {
-  font-family: $serif, $serif-stack;
-}
+ %verlag {
+   font-family: $sans-stack;
+   font-weight: 400;
+   font-style: normal;
 
-%verlag {
-  @extend %sans-family-stack;
-  font-weight: 400;
-  font-style: normal;
-}
+   .wf-active & {
+     font-family: $verlag;
+   }
+ }
 
-%verlag-light {
-  @extend %sans-family-stack;
-  font-weight: 300;
-  font-style: normal;
-}
+ %verlag-light {
+   font-family: $sans-stack;
+   font-weight: 300;
+   font-style: normal;
 
-%verlag-black {
-  @extend %sans-family-stack;
-  font-weight: 800;
-  font-style: normal;
-}
+   .wf-active & {
+     font-family: $verlag;
+   }
+ }
 
-%chronicle-deck {
-  @extend %serif-family-stack;
-  font-weight: 400;
-  font-style: normal;
-}
+ %verlag-black {
+   font-family: $sans-stack;
+   font-weight: 800;
+   font-style: normal;
 
-%chronicle-display {
-  font-family: "Chronicle SSm A", "Chronicle SSm B", $serif-stack;
-  font-weight: 400;
-  font-style: normal;
-}
+   .wf-active & {
+     font-family: $verlag-black;
+   }
+ }
 
-%chronicle-italic {
-  @extend %serif-family-stack;
-  font-weight: 400;
-  font-style: italic;
-}
+ %chronicle-deck {
+   font-family: $serif-stack;
+   font-weight: 400;
+   font-style: normal;
+
+   .wf-active & {
+     font-family: $chronicle-deck;
+   }
+ }
+
+ %chronicle-display {
+   font-family: $serif-stack;
+   font-weight: 400;
+   font-style: normal;
+
+   .wf-active & {
+     font-family: $chronicle-display;
+   }
+ }
+
+ %chronicle-italic {
+   font-family: $serif-stack;
+   font-weight: 400;
+   font-style: italic;
+
+   .wf-active & {
+     font-family: $chronicle-deck;
+   }
+ }
+ 

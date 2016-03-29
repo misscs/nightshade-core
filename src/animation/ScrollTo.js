@@ -15,7 +15,7 @@ export const ScrollTo = {
   scroll({scrollTarget, offset, speed}) {
     this.offset = offset || 0;
     this.targetPosition = scrollTarget.offsetTop - this.offset;
-    this.scrollPosition = window.scrollY;
+    this.scrollPosition = window.pageYOffset;
     this.speed = speed || 1000;
     this.time = Math.max(0.1, Math.min(Math.abs(this.scrollPosition - this.targetPosition) / this.speed, 0.8));
     this.currentTime = 0;

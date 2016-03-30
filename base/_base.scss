@@ -21,7 +21,6 @@
  */
 
 html {
-  @extend %verlag-light;
   box-sizing: border-box;
   background: color(background);
   color: color(text);
@@ -36,17 +35,18 @@ html {
   -ms-text-size-adjust: 100%; // [5]
   -webkit-font-smoothing: antialiased; // [6]
   -moz-osx-font-smoothing: grayscale; // [6]
+}
 
-  * {
-    &,
-    &:before,
-    &:after {
-      box-sizing: border-box;
-    }
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: inherit;
   }
 }
 
 body {
+  @extend %verlag-light;
   margin: 0 auto;
   width: 100%;
 }

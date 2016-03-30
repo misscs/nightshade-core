@@ -22,7 +22,7 @@ export const Gallery = {
   */
   setupGalleries() {
     [...this.galleryEls].forEach((el) => {
-      const options = JSON.parse(el.dataset.options);
+      const options = JSON.parse(el.getAttribute(`data-options`));
       new Flickity(el, options);
     });
   },

@@ -12,6 +12,7 @@
   justify-content: center;
   min-height: ms(16);
   padding: ms(8) ms(2);
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   text-align: center;
@@ -35,6 +36,9 @@
 
 .cta-bg--img {
   display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 
   @include respond-at-and-above($break-medium + 1) {
     display: none;
@@ -50,13 +54,16 @@
 }
 
 .cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
 
 .cta-heading {
-  font-size: ms(2);
+  font-size: ms(1);
 
-  @include respond-at-and-above($break-small) {
+  @include respond-at-and-above($break-medium) {
     font-size: ms(3);
   }
 }

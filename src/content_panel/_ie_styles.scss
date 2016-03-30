@@ -1,0 +1,31 @@
+/**
+ * @file Content Panel IE9 styles
+ * @module Content Panel
+ * @overview Content Panel IE9 styles
+ */
+
+.content-panel {
+ @include clearfix;
+}
+
+.content-panel-image {
+ float: left;
+}
+
+.content-panel-image--right {
+ float: right;
+
+ + .content-panel-content {
+   float: left;
+ }
+}
+
+.content-panel-content {
+ float: right;
+ height: 49vw;
+}
+
+.content-panel-content-body {
+ @include margin-auto;
+ @include ie-vertical-align;
+}

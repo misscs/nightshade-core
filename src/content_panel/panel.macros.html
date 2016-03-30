@@ -5,10 +5,10 @@
 {#
   * Renders a content and image panel.
 #}
-{% macro content_panel(heading, image_path, image_description=null, image_position='left', class=null, id=null) %}
+{% macro content_panel(heading, image_path, image_description=null, image_position='left', imgix_class='imgix-fluid', class=null, id=null) %}
 <div class="content-panel{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <figure class="content-panel-image content-panel-image--{{ image_position }}">
-    <img class="imgix-fluid" src="https://casper.imgix.net/{{ image_path }}" alt="{{ image_description }}">
+    <img class="{{ imgix_class }}" src="https://casper.imgix.net/{{ image_path }}" alt="{{ image_description }}">
   </figure>
   <div class="content-panel-content">
     <div class="content-panel-content-body">

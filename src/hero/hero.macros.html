@@ -1,9 +1,18 @@
 {#
   * @overview Macros for hero and featured hero modules
+  * @module Hero
 #}
 
 {#
   * Renders a hero or featured hero module.
+  * @param {string} Heading text content
+  * @param {string} Subheading text content
+  * @param {string} Background image imgix path
+  * @param {boolean} Setting to display a large featured hero (optional, default: false)
+  * @param {string} Class name for imgix fluid targeting (optional, default: 'imgix-fluid--nocss')
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
+  *
   * todo: Replace H2 with a caller() block if desired
 #}
 {% macro hero(heading, content, background_path=null, featured=false, imgix_class='imgix-fluid--nocss', class=null, id=null) %}

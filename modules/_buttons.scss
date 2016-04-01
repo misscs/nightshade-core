@@ -191,16 +191,6 @@
   }
 }
 
-.btn--simple {
-  color: color(dark-grey);
-  border: 1px solid color(lighter-grey);
-  background-color: #fff;
-
-  &:hover {
-    background-color: color(lightest-grey);
-  }
-}
-
 // Toggle button with an arrow that rotates
 .btn-toggler {
   cursor: pointer;

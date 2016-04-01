@@ -1,9 +1,13 @@
 {#
   * @overview Macros for beacon/indicator button that scrolls to a waypoint.
+  * @module Beacon
 #}
 
 {#
   * Renders a beacon/indicator button
+  * @param {string} Anchor path for beacon target (e.g. '#content')
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
 #}
 {% macro beacon(href, class=null, id=null) %}
 <a class="beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}"></a>

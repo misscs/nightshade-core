@@ -1,10 +1,18 @@
 {#
   * @overview Macros for Gallery carousels that use Flickity
+  * @module Gallery
 #}
 
 {#
   * Renders a Gallery carousel with custom Flickity options
   * @param {boolean} Setting to display a gallery of images (optional, default: false)
+  * @param {boolean} Option to autoplay gallery (optional, default: false)
+  * @param {boolean} Option to show left/right arrows (optional, default: true)
+  * @param {boolean} Option to show gallery dots (optional, default: true)
+  * @param {boolean} Option to make gallery draggable (optional, default: false)
+  * @param {boolean} Option to gallery wraparound/loop infinitely (optional, default: true)
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
 #}
 {% macro gallery(image_gallery=false, autoplay=false, arrows=true, dots=true, draggable=false, wraparound=true, class=null, id=null) %}
 <div class="gallery{% if image_gallery %} gallery--images js-gallery--images{% else %} js-gallery{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} data-options='{ "autoPlay": {{ autoplay }}, "prevNextButtons": {{ arrows }}, "pageDots": {{ dots }}, "draggable": {{ draggable }}, "wrapAround": {{ wraparound }} }'>

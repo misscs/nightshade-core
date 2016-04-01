@@ -1,3 +1,15 @@
+{#
+  * @overview Macros for tooltips.
+  * @module Tooltips
+#}
+
+{#
+  * Renders a tooltip.
+  * @param {string} Tooltip text content
+  * @param {string} Tooltip style, which can be light (optional)
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
+#}
 {% macro tooltip(content, style=null, class=null, id=null) %}
 <span class="tooltip-container js-tooltip-container{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <span class="tooltip-toggle js-tooltip-toggle">{{ caller() }}</span>

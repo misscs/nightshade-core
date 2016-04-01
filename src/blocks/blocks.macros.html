@@ -1,11 +1,16 @@
 {#
   * @overview Macros for the Blocks module.
+  * @module Blocks
 #}
 
 {% from '../icons/icons.macros.html' import svg %}
 
 {#
   * Renders an individual block with an icon and text beneath
+  * @param {string} Block description text content
+  * @param {string} Block SVG image name
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
 #}
 {% macro block_item(content, icon, class=null, id=null) %}
 <div class="block-item{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
@@ -18,6 +23,9 @@
 
 {#
   * Renders a set of blocks with side-by-side or stacked blocks
+  * @param {boolean} Stack blocks on mobile devices (default: false)
+  * @param {string} Class name for style or JS targeting (optional)
+  * @param {string} ID for JS targeting (optional)
 #}
 {% macro block_group(stacked=false, class=null, id=null) %}
 <div class="block-group{% if stacked %} block-group--stacked{% endif %} r-inner{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>

@@ -1,6 +1,6 @@
-{% macro tooltip(content, class=null, id=null) %}
+{% macro tooltip(content, style=null, class=null, id=null) %}
 <span class="tooltip-container js-tooltip-container{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <span class="tooltip-toggle js-tooltip-toggle">{{ caller() }}</span>
-  <span class="tooltip js-tooltip is-invisible" aria-expanded="false">{{ content }}</span>
+  <span class="tooltip{% if style %} tooltip--{{ style }}{% endif %} js-tooltip is-invisible" aria-expanded="false">{{ content }}</span>
 </span>
 {% endmacro %}

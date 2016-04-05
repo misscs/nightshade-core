@@ -30,3 +30,12 @@
     @include arrow('bottom', gray--light1, 10px);
   }
 }
+
+.tooltip--light {
+  background: color(gray--light5);
+  color: color(gray--light1);
+
+  &:after {
+    border-top-color: color(gray--light5);
+  }
+}

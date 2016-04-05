@@ -16,6 +16,7 @@
 /// when using arrows for tooltips or tabs. `false` for pure shapes.
 /// @param {bool} shadow [false] - Should the arrow have a shadow. Often
 /// `true` for tooltips
+/// @param {value} shadow-opacity - Opacity for arrow shadows
 ///
 /// @todo Needs to accept compound directions
 @mixin arrow(
@@ -23,7 +24,8 @@
   $arrow-color,
   $size,
   $position: true,
-  $shadow: false
+  $shadow: false,
+  $shadow-opacity: 0.1
   ) {
 
   display: block;
@@ -37,7 +39,7 @@
     @include arrow-position($direction, $size)
   }
 
-  @include arrow-color($direction, $arrow-color, $size, $shadow)
+  @include arrow-color($direction, $arrow-color, $size, $shadow, $shadow-opacity)
 }
 
 /// Used to determined the position of the arrow when `$position: true`
@@ -95,7 +97,8 @@
   $direction,
   $arrow-color,
   $size,
-  $shadow:false
+  $shadow: false,
+  $shadow-opacity: 0.1
   ) {
 
   @if $direction == "top" {
@@ -105,7 +108,7 @@
     border-right: $size solid transparent;
 
     @if $shadow == true {
-      filter: drop-shadow(0px -7px 4px rgba(0, 0, 0, 0.10));
+      filter: drop-shadow(0px -7px 4px rgba(0, 0, 0, $shadow-opacity));
     }
   }
   @else if $direction == "right" {
@@ -115,7 +118,7 @@
     border-right: $size solid transparent;
 
     @if $shadow == true {
-      filter: drop-shadow(6px 3px 3px rgba(0,0,0,0.10));
+      filter: drop-shadow(6px 3px 3px rgba(0, 0, 0, $shadow-opacity));
     }
   }
   @else if $direction == "bottom" {
@@ -125,7 +128,7 @@
     border-left: $size solid transparent;
 
     @if $shadow == true {
-      filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, 0.10));
+      filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, $shadow-opacity));
     }
   }
   @else if $direction == "left" {
@@ -135,7 +138,7 @@
     border-right: $size solid color($arrow-color);
 
     @if $shadow == true {
-      filter: drop-shadow(-6px 3px 3px rgba(0,0,0,0.10));
+      filter: drop-shadow(-6px 3px 3px rgba(0, 0, 0, $shadow-opacity));
     }
   }
   @else if $direction == "top-left" {

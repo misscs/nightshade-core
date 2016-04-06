@@ -29,72 +29,45 @@
 
  */
 
- $verlag: "Verlag A", "Verlag B";
- $verlag-black: "Verlag Black A", "Verlag Black B";
- $chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
- $chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
+$verlag: "Verlag A", "Verlag B";
+$chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
+$chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
 
- $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
- $serif-stack: Georgia, serif;
+$sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-stack: Georgia, serif;
 
+%verlag {
+  font-family: $verlag, $sans-stack;
+  font-weight: 400;
+  font-style: normal;
+}
 
- %verlag {
-   font-family: $sans-stack;
-   font-weight: 400;
-   font-style: normal;
+%verlag-light {
+  font-family: $verlag, $sans-stack;
+  font-weight: 300;
+  font-style: normal;
+}
 
-   .wf-active & {
-     font-family: $verlag;
-   }
- }
+%verlag-black {
+  font-family: $verlag, $sans-stack;
+  font-weight: 800;
+  font-style: normal;
+}
 
- %verlag-light {
-   font-family: $sans-stack;
-   font-weight: 300;
-   font-style: normal;
+%chronicle-deck {
+  font-family: $chronicle-deck, $serif-stack;
+  font-weight: 400;
+  font-style: normal;
+}
 
-   .wf-active & {
-     font-family: $verlag;
-   }
- }
+%chronicle-display {
+  font-family: $chronicle-display, $serif-stack;
+  font-weight: 400;
+  font-style: normal;
+}
 
- %verlag-black {
-   font-family: $sans-stack;
-   font-weight: 800;
-   font-style: normal;
-
-   .wf-active & {
-     font-family: $verlag-black;
-   }
- }
-
- %chronicle-deck {
-   font-family: $serif-stack;
-   font-weight: 400;
-   font-style: normal;
-
-   .wf-active & {
-     font-family: $chronicle-deck;
-   }
- }
-
- %chronicle-display {
-   font-family: $serif-stack;
-   font-weight: 400;
-   font-style: normal;
-
-   .wf-active & {
-     font-family: $chronicle-display;
-   }
- }
-
- %chronicle-italic {
-   font-family: $serif-stack;
-   font-weight: 400;
-   font-style: italic;
-
-   .wf-active & {
-     font-family: $chronicle-deck;
-   }
- }
- 
+%chronicle-italic {
+  font-family: $chronicle-deck, $serif-stack;
+  font-weight: 400;
+  font-style: italic;
+}

@@ -27,8 +27,7 @@
     <div class="review-name">
       Weda A
       <div class="review-verified-wrapper js-review-verified-wrapper">
-        {{ icon.icon('checkmark', 'x-small') }}
-        {{ tooltip('Verified Casper Owner', 'js-tooltip') }}
+        {% call tooltip('Verified Casper Owner') %}{{ icon.icon('checkmark', 'x-small') }}{% endcall %}
       </div>
     </div>
     <div class="review-info">

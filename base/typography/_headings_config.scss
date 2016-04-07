@@ -26,7 +26,6 @@ Responsive size breakpoints are baked into each element or its respective class.
 // Headers
 %headers {
   @extend %verlag-black;
-  text-transform: uppercase;
   letter-spacing: size(normal-tracking);
   margin-top: 0
 }

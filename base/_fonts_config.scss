@@ -52,6 +52,7 @@ $serif-stack: Georgia, serif;
   font-family: $verlag, $sans-stack;
   font-weight: 800;
   font-style: normal;
+  text-transform: uppercase; // @todo: Update content to desired case, remove transform
 }
 
 %chronicle-deck {

@@ -14,7 +14,7 @@
   color: color(background);
   font-size: ms(-1);
   line-height: 1.3;
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: size(small-tracking);
   text-align: center;
   border-radius: size(normal-corners);
@@ -28,5 +28,14 @@
   &:after {
     content: "";
     @include arrow('bottom', gray--light1, 10px);
+  }
+}
+
+.tooltip--light {
+  background: color(gray--light5);
+  color: color(gray--light1);
+
+  &:after {
+    border-top-color: color(gray--light5);
   }
 }

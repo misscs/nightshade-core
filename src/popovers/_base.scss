@@ -61,7 +61,7 @@
     transform: translateX(-50%);
 
     &:after {
-      @include arrow('bottom', background, 15px, $shadow: true, $shadow-opacity: 0.05);
+      @include arrow('bottom', $arrow-color, $arrow-size, $shadow: true, $shadow-opacity: $arrow-shadow-opacity);
     }
 
     .no-touch &[aria-expanded="true"] {
@@ -75,7 +75,7 @@
     transform: translateY(-50%);
 
     &:after {
-      @include arrow('left', background, 15px, $shadow: true, $shadow-opacity: 0.05);
+      @include arrow('left', $arrow-color, $arrow-size, $shadow: true, $shadow-opacity: $arrow-shadow-opacity);
     }
 
     .no-touch &[aria-expanded="true"] {
@@ -89,7 +89,7 @@
     transform: translateX(-50%);
 
     &:after {
-      @include arrow('top', background, 15px, $shadow: true, $shadow-opacity: 0.05);
+      @include arrow('top', $arrow-color, $arrow-size, $shadow: true, $shadow-opacity: $arrow-shadow-opacity);
     }
 
     .no-touch &[aria-expanded="true"] {
@@ -103,7 +103,7 @@
     transform: translateY(-50%);
 
     &:after {
-      @include arrow('right', background, 15px, $shadow: true, $shadow-opacity: 0.05);
+      @include arrow('right', $arrow-color, $arrow-size, $shadow: true, $shadow-opacity: $arrow-shadow-opacity);
     }
 
     .no-touch &[aria-expanded="true"] {

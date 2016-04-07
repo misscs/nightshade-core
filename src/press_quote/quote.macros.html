@@ -1,16 +1,16 @@
 {#
-  * @overview Macros for press quotes.
+  * @overview Macros for Press Quotes.
   * @module Press Quote
 #}
 
 {% from '../icons/icons.macros.html' import svg %}
 
 {#
-  * Renders a single press quote with source logo beneath.
-  * @param {string} Quote text content
-  * @param {string} Associated press logo name
-  * @param {string} Class name for style or JS targeting (optional)
-  * @param {string} ID for JS targeting (optional)
+  * Renders a single Press Quote with source logo beneath.
+  * @param {string} content - Quote text content
+  * @param {string} logo - Associated press logo name, renders the SVG logo
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro press_quote(content, logo, class=null, id=null) %}
 <div class="press-quote{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>

@@ -5,13 +5,13 @@
 
 {#
   * Renders a content and image panel.
-  * @param {string} Heading text content
-  * @param {string} Panel image imgix path
-  * @param {string} Image description alt text (optional)
-  * @param {string} Image position (optional, default: 'left')
-  * @param {string} Class name for imgix fluid targeting (optional, default: 'imgix-fluid')
-  * @param {string} Class name for style or JS targeting (optional)
-  * @param {string} ID for JS targeting (optional)
+  * @param {string} heading - Heading text content
+  * @param {string} image_path - Panel image imgix path
+  * @param {string} [image_description] - Image description alt text
+  * @param {string} [image_position=left] - Image position
+  * @param {string} [imgix_class=imgix-fluid] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro content_panel(heading, image_path, image_description=null, image_position='left', imgix_class='imgix-fluid', class=null, id=null) %}
 <div class="content-panel{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>

@@ -55,12 +55,7 @@ laid down and counted the sheep. Sleep head was laying down counting sheep.
   font-size: 16px;
 
   @include respond-at-and-above(640px) {
-    font-weight: 400;
-    font-style: normal;
-
-    .wf-active & {
-      font-family: $chronicle-deck;
-    }
+    font-family: $chronicle-deck, $serif-stack;
   }
 
   @include respond-between(640px, $break-large) {

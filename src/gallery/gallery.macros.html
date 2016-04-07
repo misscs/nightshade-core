@@ -1,10 +1,18 @@
 {#
   * @overview Macros for Gallery carousels that use Flickity
+  * @module Gallery
 #}
 
 {#
   * Renders a Gallery carousel with custom Flickity options
-  * @param {boolean} Setting to display a gallery of images (optional, default: false)
+  * @param {boolean} [image_gallery=false] - Setting to display a Gallery of images
+  * @param {boolean} [autoplay=false] - Option to autoplay Gallery
+  * @param {boolean} [arrows=true] - Option to show left/right arrows
+  * @param {boolean} [dots=true] - Option to show gallery dots
+  * @param {boolean} [draggable=false] - Option to make Gallery draggable
+  * @param {boolean} [wraparound=true] - Option to Gallery wraparound/loop infinitely
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro gallery(image_gallery=false, autoplay=false, arrows=true, dots=true, draggable=false, wraparound=true, class=null, id=null) %}
 <div class="gallery{% if image_gallery %} gallery--images js-gallery--images{% else %} js-gallery{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} data-options='{ "autoPlay": {{ autoplay }}, "prevNextButtons": {{ arrows }}, "pageDots": {{ dots }}, "draggable": {{ draggable }}, "wrapAround": {{ wraparound }} }'>
@@ -14,11 +22,11 @@
 
 {#
   * Renders a Gallery image for use in a carousel
-  * @param {string} Gallery image imgix path
-  * @param {string} Image description alt text (optional)
-  * @param {string} Class name for imgix fluid targeting (optional, default: 'imgix-fluid')
-  * @param {string} Class name for style or JS targeting (optional)
-  * @param {string} ID for JS targeting (optional)
+  * @param {string} image_path - Gallery image imgix path
+  * @param {string} [image_description] - Image description alt text
+  * @param {string} [imgix_class=imgix-fluid--gallery] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro gallery_image(image_path, image_description=null, imgix_class='imgix-fluid--gallery', class=null, id=null) %}
 <img class="gallery-image {{ imgix_class }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} alt="{{ image_description }}" data-src="https://casper.imgix.net/{{ image_path }}">

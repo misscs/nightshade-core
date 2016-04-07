@@ -1,9 +1,17 @@
 {#
   * @overview Macros for content and image panels with square ratios.
+  * @module Content Panel
 #}
 
 {#
   * Renders a content and image panel.
+  * @param {string} heading - Heading text content
+  * @param {string} image_path - Panel image imgix path
+  * @param {string} [image_description] - Image description alt text
+  * @param {string} [image_position=left] - Image position
+  * @param {string} [imgix_class=imgix-fluid] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro content_panel(heading, image_path, image_description=null, image_position='left', imgix_class='imgix-fluid', class=null, id=null) %}
 <div class="content-panel{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>

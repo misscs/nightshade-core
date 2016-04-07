@@ -1,12 +1,21 @@
 {#
-  * @overview Macros for hero and featured hero modules
+  * @overview Macros for Hero and featured Hero modules
+  * @module Hero
 #}
 
 {#
-  * Renders a hero or featured hero module.
-  * todo: Replace H2 with a caller() block if desired
+  * Renders a Hero or featured Hero module.
+  * @param {string} heading - Heading text content
+  * @param {string} [content] - Subheading text content
+  * @param {string} [background_path] - Background image imgix path
+  * @param {boolean} [featured=false] - Setting to display a large featured hero
+  * @param {string} [imgix_class=imgix-fluid--nocss] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+  *
+  * todo: If no content, use a caller() block
 #}
-{% macro hero(heading, content, background_path=null, featured=false, imgix_class='imgix-fluid--nocss', class=null, id=null) %}
+{% macro hero(heading, content=null, background_path=null, featured=false, imgix_class='imgix-fluid--nocss', class=null, id=null) %}
 <header class="hero{% if featured %} hero--featured{% endif %} {{ imgix_class }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} data-src="https://casper.imgix.net/{{ background_path }}"{% endif %}>
   <h1 class="hero-heading">{{ heading }}</h1>
   {% if content %}

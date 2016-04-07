@@ -1,12 +1,18 @@
 {#
-  * @overview Macros for site banners.
+  * @overview Macros for site Banners.
+  * @module Banners
 #}
 
 {% from '../icons/icons.macros.html' import svg %}
 {% from '../buttons/buttons.macros.html' import button %}
 
 {#
-  * Renders a basic banner for short-lines of content or a link.
+  * Renders a basic Banner for short-lines of content or a link.
+  * @param {string} content - Banner text content
+  * @param {string} [type] - Banner type
+  * @param {string} [href] - URL for Banners that have click-through CTAs
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
 #}
 {% macro banner(content, type=null, href=null, class=null, id=null) %}
 <div data-banner{% if type %}="{{ type }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>
@@ -16,9 +22,20 @@
 
 
 {#
-  * Renders a banner with a header and a link button. Only used at the bottom
+  * Renders a Banner with a header and a link button. Only used at the bottom
   * of pages to drive click-through to other sections.
-
+  * @param {string} content - Banner text content
+  * @param {string} cta - Call to action text
+  * @param {string} href - Path or full URL for Banner CTA button
+  * @param {string} [button_style=primary] - Button style
+  * @param {string} [background_path] - Background image imgix path
+  * @param {string} [video_path] - Video background s3 asset path
+  * @param {string} [video_fallback_path] - Video fallback image imgix path
+  * @param {boolean} [large_background=false] - Setting to display a large hero style image
+  * @param {string} [imgix_class=imgix-fluid--nocss] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+  *
   * @todo: Enable playing with JS when in view, instead of `autoplay` attribute
   * @todo: Refactor to use video `poster` attribute? See issue below
   * https://github.com/CasperSleep/nightshade-core/issues/11

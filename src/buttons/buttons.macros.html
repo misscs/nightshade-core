@@ -1,9 +1,25 @@
+{#
+  * @overview Macros for site Buttons.
+  * @module Buttons
+#}
+
 {% from '../icons/icons.macros.html' import icon as icon_macro %}
 
-{% macro button(text, style='primary', size=null, type='button', href=null, icon=null, class=null, id=null) %}
+{#
+  * Renders a Button
+  * @param {string} content - Button text content
+  * @param {string} [style=primary] - Button style
+  * @param {string} [size] - Button size
+  * @param {string} [type=button] - Button element type attribute
+  * @param {string} [href] - Path or full URL for Button style links
+  * @param {string} [icon] - Icon name for Buttons with icons
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro button(content, style='primary', size=null, type='button', href=null, icon=null, class=null, id=null) %}
   {% if href %}
-    <a href="{{ href }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</a>
+    <a href="{{ href }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ content }}</a>
   {% else %}
-    <button type="{{ type }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ text }}</button>
+    <button type="{{ type }}" data-button="{{ style }}"{% if size %} data-size="{{ size }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>{% if icon %}{{ icon_macro(icon) }}{% endif %}{{ content }}</button>
   {% endif %}
 {% endmacro %}

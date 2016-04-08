@@ -169,9 +169,9 @@
 }
 
 .footer-nav-group-text--contact {
+  @extend %calibre-medium;
   padding-right: 0;
   margin-right: 0;
-  font-weight: 600;
   display: none;
 
   @include respond-at-and-above($break-medium) {

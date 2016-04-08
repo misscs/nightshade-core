@@ -1,0 +1,25 @@
+{#
+  * @overview Macros for Links.
+  * @module Links
+  *
+  * @todo Consider moving this to typography when we revise type
+#}
+
+{% from '../icons/icons.macros.html' import icon as icon_macro %}
+
+{#
+  * Renders a link with an icon to the right.
+  * @param {string} content - Link text content
+  * @param {string} href - Path or full URL for link
+  * @param {string} [icon=arrow] - Name of icon that renders and SVG icon
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro link(content, href, icon='arrow', class=null, id=null) %}
+<a class="link{% if icon %} link--icon{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}">
+  {{ content }}
+  {% if icon %}
+    {{ icon_macro(icon) }}
+  {% endif %}
+</a>
+{% endmacro %}

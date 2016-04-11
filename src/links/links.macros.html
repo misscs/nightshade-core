@@ -19,7 +19,7 @@
 <a class="link{% if icon %} link--icon{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}">
   {{ content }}
   {% if icon %}
-    {{ icon_macro(icon) }}
+    {{ icon_macro(icon, size="tiny") }}
   {% endif %}
 </a>
 {% endmacro %}

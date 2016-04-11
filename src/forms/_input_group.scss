@@ -1,0 +1,63 @@
+// Input group has an input and a button_one
+// If the button has text, it is alongside the input field, if it has an icon, it is
+// positioned absolutely on top
+
+.input-group {
+  display: flex;
+
+  .input {
+    @extend %body--sans-small;
+
+    width: 100%;
+    border: 1px solid color(border);
+    margin: 0;
+    padding: size(smaller) size(small);
+    color: color(dark-text);
+    border-radius: size(normal-corners);
+    background: color(background);
+    cursor: auto;
+
+    &:focus {
+      border-color: color(gray--light3);
+    }
+  }
+
+  [data-button] {
+    padding: size(smaller) size(small);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.input-group--button {
+  .input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .input,
+  [data-button] {
+    height: 48px;
+  }
+}
+
+.input-group--button-icon {
+  position: relative;
+
+  .input {
+    padding-right: 60px;
+    height: 48px;
+  }
+
+  [data-button] {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    height: 46px;
+    border: 0;
+  }
+
+  [data-icon] {
+    @include square(16px);
+  }
+}

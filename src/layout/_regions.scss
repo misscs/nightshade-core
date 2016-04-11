@@ -4,6 +4,7 @@
 // 2. Height is necessary for IE10/11 sticky-footer with Flexbox but breaks
 // modern browsers.
 // 3. Accomodations for flexbox on IE10/11
+// 4. Spree-auth-devise hax
 
 .container {
   display: flex;
@@ -39,5 +40,60 @@
 
   &.home {
     flex: none;
+  }
+}
+
+// class for defining sections of content
+.r-section {
+  position: relative;
+}
+
+// wrapper that contrains regions to max site width
+.r-wrapper {
+  width: $site-max-width;
+}
+
+// class for centering sections
+.r-centered {
+  text-align: center;
+}
+
+#search-bar {
+  display: none; // [4]
+}
+
+.r-wrapper-centered {
+  width: $site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.r-inner {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.r-section-wrapper {
+  padding: ms(5) ms(2);
+}
+
+.r-section-wrapper--sm {
+  padding: 40px 23px 30px;
+
+  /*@include respond-between($break-large, $site-max-container) {
+    padding: 30px 50px;
+  }*/
+}
+
+.r-section-wrapper--large {
+  padding: 5rem 0 7rem;
+
+  @include respond-at-and-above($break-large) {
+    padding: 5.5rem 0 2rem;
+  }
+
+  @include respond-below(475px) {
+    padding: 2rem 1rem;
   }
 }

@@ -24,3 +24,21 @@
 </form>
 <div class="email-signup-response-text js-email-signup-response-text"></div>
 {% endmacro %}
+
+
+{#
+  * Renders an input group of an input and button.
+  * @param {string} input_name - Name attribute for the input element
+  * @param {string} [input_placeholder] - Placeholder text for the input
+  * @param {string} [button_content=''] - Button text content
+  * @param {string} [button_style=primary] - Button style
+  * @param {string} [button_icon] - Icon name for Buttons with icons
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro input_button(input_name, input_placeholder=null, button_content='', button_style='primary', button_icon=null, class=null, id=null) %}
+<div class="input-group {% if button_icon %}input-group--button-icon{% else %}input-group--button{% endif %}{% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
+  <input class="input" name="{{ input_name }}" placeholder="{{ input_placeholder }}" required>
+  {{ button(button_content, style=button_style, icon=button_icon, type="submit") }}
+</div>
+{% endmacro %}

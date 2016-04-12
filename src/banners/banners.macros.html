@@ -9,14 +9,14 @@
 {#
   * Renders a basic Banner for short-lines of content or a link.
   * @param {string} content - Banner text content
-  * @param {string} [type] - Banner type
+  * @param {boolean} [background=false] - Setting to give Banner a white background fill
   * @param {string} [href] - URL for Banners that have click-through CTAs
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro banner(content, type=null, href=null, class=null, id=null) %}
-<div data-banner{% if type %}="{{ type }}"{% endif %}{% if class %} class="{{ class }}"{% endif %}{% if id %} id="{{ id }}"{% endif %}>
-  <p class="r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
+{% macro banner(content, background=false, href=null, class=null, id=null) %}
+<div class="banner{% if background %} banner--background{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <p class="banner-content r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
 </div>
 {% endmacro %}
 

@@ -1,4 +1,9 @@
-// Layout helper classes
+/**
+ * @file Layout Helper Classes
+ * @module Helper Classes
+ * @overview Utility helper classes for common layout manipulations
+ * @todo remove .mx-auto, .-hoisted when we redo storefront pages
+ */
 
 .is-invisible {
   @include is-hidden;

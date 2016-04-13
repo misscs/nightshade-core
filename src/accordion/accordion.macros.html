@@ -1,0 +1,51 @@
+{#
+  * @overview Macros for Accordions
+  * @module Accordion
+  *
+#}
+
+{% from 'nightshade-core/src/icons/icons.macros.html' import icon %}
+{% from 'nightshade-core/src/links/links.macros.html' import link %}
+
+{#
+  * Renders a special list for content within accordions
+  * @param {object} data - Title/toggle icon for the section and an array of items to be made a list of links
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro accordion_section(data, class=null, id=null) %}
+<div class="accordion-section js-accordion-section{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <h4 class="accordion-section-toggle js-accordion-section-toggle">{{ data.toggle_content }} {{ icon("arrow", size="tiny") }}</h4>
+  <ul class="accordion-section-list js-accordion-section-content">
+  {% for item in data.list %}
+    <li class="accordion-section-list-item">
+      {{ link(item.content, href=item.href) }}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endmacro %}
+
+
+{#
+  * Renders an Accordion
+  * @param {array} data - Collection of section headings and content in each section to populate the accordion
+  * @param {string} [title] - Main title for the entire Accordion
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro accordion(data, accordion_title=null, class=null, id=null) %}
+<div class="accordion{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  {% if accordion_title %}
+    <h3>{{ accordion_title }}</h3>
+  {% endif %}
+
+  <ul class="accordion-list">
+  {% for item in data.sections %}
+    <li class="accordion-list-item">
+      {{ accordion_section(item) }}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endmacro %}

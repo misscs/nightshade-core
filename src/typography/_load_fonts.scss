@@ -1,0 +1,18 @@
+/**
+ * @file Load Web Fonts
+ * @module Typography
+ * @overview Load self-hosted web fonts with @font-face
+ * @see app/assets/js/load-fonts.js
+ */
+
+@font-face {
+  font-family: "Calibre Light";
+  src: url('/nightshade-core/src/typography/fonts/CalibreWeb-Light.woff2') format('woff2'),
+       url('/nightshade-core/src/typography/fonts/CalibreWeb-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Calibre Medium";
+  src: url('/nightshade-core/src/typography/fonts/CalibreWeb-Medium.woff2') format('woff2'),
+       url('/nightshade-core/src/typography/fonts/CalibreWeb-Medium.woff') format('woff');
+}

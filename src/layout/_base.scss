@@ -46,3 +46,8 @@ body {
     box-sizing: inherit;
   }
 }
+
+// Disable 300ms delay on touch devices
+.no-touch-delay {
+  touch-action: manipulation;
+}

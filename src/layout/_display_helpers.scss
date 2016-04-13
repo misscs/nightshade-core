@@ -32,29 +32,3 @@
     clear: both;
   }
 }
-
-.is-invisible {
-  @include is-hidden;
-}
-
-.is-hidden {
-  display: none;
-}
-
-.is-hidden-on-small-screens {
-
-  @include respond-below($break-small) {
-    display: none !important;
-  }
-}
-
-.is-hidden-on-large-screens {
-
-  @include respond-at-and-above($break-small) {
-    display: none !important;
-  }
-}
-
-.clearfix {
-  @include clearfix;
-}

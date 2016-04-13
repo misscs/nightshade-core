@@ -1,7 +1,7 @@
 // short full width product banner, on all products
 // currently has free shipping and returns message
 
-[data-banner] {
+.banner {
   padding: 1.1em ms(3) ms(0);
   letter-spacing: size(small-tracking);
   font-size: ms(0);
@@ -22,6 +22,6 @@
   }
 }
 
-[data-banner="background"] {
+.banner--background {
   background: color(background);
 }

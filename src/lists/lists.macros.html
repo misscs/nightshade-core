@@ -16,7 +16,9 @@
 #}
 {% macro list(data, action_link=false, action_link_icon='arrow', class=null, id=null) %}
 <div class="list{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
-  <h3 class="list-heading">{{ data.heading }}</h3>
+  {% if data.heading %}
+    <h3 class="list-heading">{{ data.heading }}</h3>
+  {% endif %}
   <ul class="list-items">
   {% for item in data.list %}
     {% if action_link and loop.last %}

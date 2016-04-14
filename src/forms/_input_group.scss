@@ -1,6 +1,9 @@
-// Input group has an input and a button_one
-// If the button has text, it is alongside the input field, if it has an icon, it is
-// positioned absolutely on top
+/**
+ * @file Input Group
+ * @module Input Group
+ * @overview Input group has an input and a button.  If the button has text, it
+ * is alongside the input field, if it has an icon, it is positioned absolutely on top
+ */
 
 .input-group {
   display: flex;

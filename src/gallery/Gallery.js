@@ -4,7 +4,7 @@
 */
 
 import Flickity from 'flickity';
-import { ImgixSettings } from '../media/ImgixSettings';
+import { ImgixSettings } from '../media/ImgixSettings.js';
 
 export const Gallery = {
 

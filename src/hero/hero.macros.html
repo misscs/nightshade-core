@@ -7,19 +7,41 @@
   * Renders a Hero or featured Hero module.
   * @param {string} heading - Heading text content
   * @param {string} [content] - Subheading text content
-  * @param {string} [background_path] - Background image imgix path
+  * @param {object} [images] - Object with list of imgix image paths for each breakpoint
+  * @param {string} [image_path] - Background image imgix path for Heros without art direction
+  * @param {string} [image_description] - Image description alt text
   * @param {boolean} [featured=false] - Setting to display a large featured hero
-  * @param {string} [imgix_class=imgix-fluid--nocss] - Class name for custom imgix.js fluid targeting/manipulations
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
   *
   * todo: If no content, use a caller() block
 #}
-{% macro hero(heading, content=null, background_path=null, featured=false, imgix_class='imgix-fluid--nocss', class=null, id=null) %}
-<header class="hero{% if featured %} hero--featured{% endif %} {{ imgix_class }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} data-src="https://casper.imgix.net/{{ background_path }}"{% endif %}>
-  <h1 class="hero-heading">{{ heading }}</h1>
-  {% if content %}
-  <h2 class="hero-subheading">{{ content }}</h2>
+{% macro hero(heading, content=null, images=null, image_path=null, image_description=null, featured=false, class=null, id=null) %}
+{% if not images and image_path %}
+  {% set images = { largest: image_path, large: image_path, small: image_path, mobile: image_path } %}
+{% endif %}
+<header class="hero{% if featured %} hero--featured{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} data-src="https://casper.imgix.net/{{ background_path }}"{% endif %}>
+  {% if images %}
+  <div class="hero-image">
+    <picture>
+      <source srcset="https://casper.imgix.net/{{ images.largest }}?auto=format&dpr=1.5&w=1600 2x, https://casper.imgix.net/{{ images.largest }}?auto=format&w=1600 1x" media="(min-width: 1024px)">
+      <source srcset="https://casper.imgix.net/{{ images.large }}?auto=format&dpr=1.5&w=1024 2x, https://casper.imgix.net/{{ images.large }}?auto=format&w=1024 1x" media="(min-width: 600px)">
+      <source srcset="https://casper.imgix.net/{{ images.small }}?auto=format&dpr=1.5&w=600 2x, https://casper.imgix.net/{{ images.small }}?auto=format&w=600 1x" media="(min-width: 420px)">
+      <source srcset="https://casper.imgix.net/{{ images.mobile }}?auto=format&dpr=1.5&w=420 2x, https://casper.imgix.net/{{ images.mobile }}?auto=format&w=420 1x">
+      <!--[if !IE 9]>-->
+      <img src="https://casper.imgix.net/{{ images.largest }}?auto=format&w=1600" sizes="100vw" alt="{{ image_description }}">
+      <!-- <![endif]-->
+      <!--[if IE 9]>
+      <img src="https://casper.imgix.net/{{ images.largest }}?auto=format" alt="{{ image_description }}">
+      <![endif]-->
+    </picture>
+  </div>
   {% endif %}
+  <div class="hero-content">
+    <h1 class="hero-heading">{{ heading }}</h1>
+    {% if content %}
+    <h2 class="hero-subheading">{{ content }}</h2>
+    {% endif %}
+  </div>
 </header>
 {% endmacro %}

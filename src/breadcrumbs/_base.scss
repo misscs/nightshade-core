@@ -2,60 +2,36 @@
  * @file Breadcrumbs
  * @module breadcrumbs
  * @overview Styles for Casper breadcrumbs
- * @todo Decouple breadcrumbs pattern from its imiplementaiton in the footer. 
+ * todo: work on styling, here they have styles to support grey on white and white on blue (like on the main site)
  */
- 
-.breadcrumb-list {
-  padding-bottom: ms(3);
-  list-style: none;
 
-  a {
-    display: inline-block;
+.breadcrumbs {
+  .link {
+    color: color(text);
   }
 
+  [data-icon="arrow"],
   [data-icon="casper-logo-mark"] {
-    @include square(19px);
-    fill: color(background);
+    fill: color(text);
+  }
+
+  &.dark {
+    .link {
+      color: color(blue);
+    }
+
+    [data-icon="arrow"],
+    [data-icon="casper-logo-mark"] {
+      fill: color(blue);
+    }
   }
 }
 
-.breadcrumb-hide {
-  @include respond-below($break-414) {
-    @include is-hidden
-  }
-}
-
-.breadcrumb-item,
-.breadcrumbs-arrow {
-  @extend %verlag;
+.breadcrumbs-list-item {
   display: inline-block;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: size(medium-tracking);
-  vertical-align: middle;
-  opacity: .45;
-}
-
-.breadcrumb-item {
-  margin: 0 1.2em;
-  transition: 0.25s opacity ease;
-  -webkit-backface-visibility: hidden;
+  margin: 0 ms(-6);
 
   &:first-child {
     margin-left: 0;
   }
-
-  &:last-child {
-    pointer-events: none;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.breadcrumbs-arrow {
-  position: relative;
-  margin: 0;
 }

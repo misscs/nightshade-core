@@ -13,18 +13,17 @@ export const Gallery = {
    * @returns {void}
   */
   init() {
-    const galleryEls = document.querySelectorAll(`.js-gallery`);
-    this.setupGalleries(galleryEls);
+    this.galleryEls = document.querySelectorAll(`.js-gallery`);
+    this.setupGalleries();
     this.setupImageGalleries();
   },
 
   /**
    * Instantiates Flickity on each gallery, with their respective options
-   * @param {object} Gallery DOM elements to setup
    * @returns {void}
   */
-  setupGalleries(galleryEls) {
-    [...galleryEls].forEach((el) => {
+  setupGalleries() {
+    [...this.galleryEls].forEach((el) => {
       const options = JSON.parse(el.getAttribute(`data-options`));
       new Flickity(el, options);
     });

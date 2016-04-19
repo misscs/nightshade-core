@@ -17,9 +17,9 @@
 <header class="hero{% if featured %} hero--featured{% endif %} {{ imgix_class }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} data-src="https://casper.imgix.net/{{ background_path }}"{% endif %}>
   <h1 class="hero-heading">{{ heading }}</h1>
   {% if content %}
-  <h2 class="hero-subheading">{{ content }}</h2>
+    <h2 class="hero-subheading">{{ content }}</h2>
   {% else %}
-  {{ caller() }}
+    {{ caller() }}
   {% endif %}
 </header>
 {% endmacro %}

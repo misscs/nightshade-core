@@ -5,17 +5,17 @@
 
 export const Accordion = {
 
-  accordionID: ``,
   accordionSection : `.js-accordion-section`,
   accordionSectionTrigger: `.js-accordion-section-toggle`,
-  openClass: `is-open`,
+  openClass: `is-accordion-open`,
 
   /**
    * Inits accordion elements
+   * @param {string} accordionEl Accordion DOM Element
    * @returns {void}
   */
-  init(accordionID) {
-    this.accordion = document.querySelector(accordionID);
+  init(accordionEl) {
+    this.accordion = document.querySelector(accordionEl);
     this.accordionSections = this.accordion.querySelectorAll(this.accordionSection);
 
     [...this.accordionSections].forEach((el) => {
@@ -38,6 +38,7 @@ export const Accordion = {
 
   /**
    * Opens the given Accordion section
+   * @param {object} section DOM element to toggle state class on
    * @returns {void}
   */
   openAccordionSection(section) {
@@ -46,7 +47,8 @@ export const Accordion = {
   },
 
   /**
-   * Closes the given Accordion section
+   * Closes the given Accordion
+   * @param {object} section DOM element to toggle state class on
    * @returns {void}
   */
   closeAccordionSection(section) {

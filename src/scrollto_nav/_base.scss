@@ -1,0 +1,56 @@
+/**
+ * @file ScrollTo Nav
+ * @module ScrollTo Nav
+ * @overview ScrollTo Nav with links that scroll to corresponding sections
+ */
+
+.scrollto-nav {
+  background: color(background);
+  line-height: 1.2;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+
+  &.is-sticky {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+  }
+}
+
+.scrollto-nav-inner {
+  display: flex;
+  justify-content: center;
+  padding: ms(0) 0;
+  text-align: center;
+}
+
+.scrollto-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  border-right: 1px solid color(medium-border);
+
+  &:first-child {
+    border-left: 1px solid color(medium-border);
+  }
+}
+
+.scrollto-nav-link {
+  width: 100%;
+  padding: 0 ms(3);
+  color: color(text);
+
+  &:hover {
+    color: color(dark-text);
+  }
+
+  &.is-selected {
+    @extend %calibre-medium;
+  }
+}
+
+.scrollto-nav-link-text {
+  display: inline-block;
+  max-width: 8em;
+}

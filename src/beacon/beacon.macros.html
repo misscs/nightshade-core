@@ -1,5 +1,5 @@
 {#
-  * @overview Macros for Beacon button that scrolls to a waypoint.
+  * @overview Macros for Beacon button that scrolls to a page section.
   * @module Beacon
 #}
 
@@ -10,5 +10,5 @@
   * @param {string} [id] - ID for JS targeting
 #}
 {% macro beacon(href, class=null, id=null) %}
-<a class="beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}"></a>
+<a class="beacon js-beacon{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %} href="{{ href }}"></a>
 {% endmacro %}

@@ -7,9 +7,9 @@ export const ScrollTo = {
 
   /**
    * Initiates a smooth scrolling animation to a specified page element
-   * @param {object} DOM element to scroll to
-   * @param {number} Element position offset (optional)
-   * @param {number} Speed of animation in ms (optional, default: 1000)
+   * @param {object} scrollTarget - DOM element to scroll to
+   * @param {number} [offset=0] - Scroll target offset
+   * @param {number} [speed=1000] Speed of animation in ms
    * @returns {void}
   */
   scroll({scrollTarget, offset, speed}) {
@@ -25,8 +25,28 @@ export const ScrollTo = {
   },
 
   /**
+   * Binds scrolling animation to a set of links and their related target els
+   * @param {string} linkSelector - Selector for the links to be handled
+   * @param {number} [offset=0] - Scroll target offset
+   * @returns {void}
+  */
+  bindScrollLinks(linkSelector, offset = 0) {
+    const linkEls = document.querySelectorAll(linkSelector);
+
+    [...linkEls].forEach((el) => {
+      const targetId = el.getAttribute(`href`).replace(`#`, ``);
+      const scrollTarget = document.getElementById(targetId);
+
+      el.addEventListener(`click`, (e) => {
+        e.preventDefault();
+        this.scroll({scrollTarget: scrollTarget, offset: offset});
+      });
+    });
+  },
+
+  /**
    * Returns a position based easing value using the easeInOutQuint curve
-   * @param {number} Position
+   * @param {number} position - Position value
    * @returns {void}
    * @private
   */

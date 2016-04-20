@@ -21,6 +21,17 @@
   }
 }
 
+.background--dark-blue {
+  background-color: color(dark-blue);
+  color: color(background);
+
+  h1,
+  h2,
+  h3 {
+    color: color(background);
+  }
+}
+
 .background--starry {
   position: relative;
   overflow: hidden;

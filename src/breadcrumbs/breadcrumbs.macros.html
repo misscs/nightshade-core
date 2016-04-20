@@ -1,17 +1,37 @@
-{% from '../icons/icons.macros.html' import icon %}
+{#
+  * @overview Macros for Breadcrumbs
+  * @module Breadcrumbs
+#}
+{% from 'nightshade-core/src/icons/icons.macros.html' import icon %}
+{% from 'nightshade-core/src/links/links.macros.html' import link %}
 
-{% macro breadcrumbs() %}
-<div class="breadcrumbs">
-  <ol class="breadcrumb-list">
-    <li class="breadcrumb-item ">
-      <a class="-light" href="/">
-        {{ icon("casper-logo-mark", size="medium" )}}
+{#
+  * Renders Breadcrumbs
+  * @param {array} data - List of links for Breadcrumbs
+  * @param {string} [color] - Indicates the color theme for the Breadcrumbs
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+
+{% macro breadcrumbs(data, color=null, class=null, id=null) %}
+<div class="breadcrumbs{% if color %} breadcrumbs--{{ color }}{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <ol class="breadcrumbs-list">
+    <li class="breadcrumbs-list-item">
+      <a class="" href="#">
+        {{ icon('casper-logo-mark', size='small') }}
       </a>
     </li>
 
-    <li class="breadcrumbs-arrow -light">&gt;</li>
+   {% for item in data %}
+      <li class="breadcrumbs-list-item">
+        {{ icon('arrow', size='tiny') }}
+      </li>
 
-    <li class="breadcrumb-item -light">Mattresses</li>
+      <li class="breadcrumbs-list-item">
+        {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
+      </li>
+    {% endfor %}
+
   </ol>
 </div>
 {% endmacro %}

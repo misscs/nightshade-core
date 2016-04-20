@@ -6,24 +6,28 @@
  */
 
 .breadcrumbs {
-  .link {
+  .breadcrumbs-link {
     color: color(text);
+
+    &:hover {
+      border-color: currentColor;
+    }
   }
 
   [data-icon="arrow"],
   [data-icon="casper-logo-mark"] {
     fill: color(text);
   }
+}
 
-  &.dark {
-    .link {
-      color: color(blue);
-    }
+.breadcrumbs--dark {
+  .breadcrumbs-link {
+    color: color(blue);
+  }
 
-    [data-icon="arrow"],
-    [data-icon="casper-logo-mark"] {
-      fill: color(blue);
-    }
+  [data-icon="arrow"],
+  [data-icon="casper-logo-mark"] {
+    fill: color(blue);
   }
 }
 

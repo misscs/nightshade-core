@@ -3,8 +3,20 @@
 {% import '../forms/forms.macros.html' as form %}
 {% import '../icons/icons.macros.html' as icon %}
 
+{% set breadcrumbs_data = [
+  {
+    content: "Mattress",
+    href: "#"
+  },
+  {
+    content: "Full Mattress",
+    href: "#"
+  }
+  ]
+%}
+
 {% macro footer_content() %}
-  {{ breadcrumbs() }}
+  {{ breadcrumbs(breadcrumbs_data) }}
   <nav class="footer-nav clearfix">
 
     <div class="footer-nav-left">

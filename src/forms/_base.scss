@@ -241,7 +241,7 @@ select {
 }
 
 .form-label--alt {
-  @extend %verlag;
+  @extend %verlag-black;
 
   font-size: 15px;
   text-transform: uppercase;
@@ -384,7 +384,7 @@ label.error {
 // jQuery's validation plugin generates a label. We don't display it to
 // sighted users, but accessible hide it for unsighted users
 label.has-errors {
-  @extend %is-hidden;
+  @include is-hidden;
 
   color: color(accent);
 }

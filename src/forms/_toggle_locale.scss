@@ -5,7 +5,7 @@
   }
 
   .form-label-copy {
-    @extend %verlag;
+    @extend %verlag-black;
 
     color: color(medium-text);
     order: 0;
@@ -15,7 +15,7 @@
   }
 
   .form-input {
-    @extend %is-hidden;
+    @include is-hidden;
   }
 
   [data-icon] {

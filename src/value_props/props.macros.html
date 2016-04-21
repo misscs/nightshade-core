@@ -1,0 +1,26 @@
+{#
+  * @overview Macros for Value Props with side by side content and images.
+  * @module Value Props
+#}
+
+{#
+  * Renders a value prop with content and image.
+  * @param {string} heading - Heading text content
+  * @param {string} content - Panel body copy
+  * @param {string} image_path - Panel image or graphic path
+  * @param {string} [image_description] - Image description alt text
+  * @param {string} [image_position=left] - Image position
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro value_prop(heading, content, image_path, image_description=null, image_position='left', class=null, id=null) %}
+<div class="value-prop r-inner{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <figure class="value-prop-image value-prop-image--{{ image_position }}">
+    <img src="{{ image_path }}" alt="{{ image_description }}">
+  </figure>
+  <div class="value-prop-content">
+    <h2 class="value-prop-heading -dark">{{ heading }}</h2>
+    <p class="value-prop-body">{{ content|safe }}</p>
+  </div>
+</div>
+{% endmacro %}

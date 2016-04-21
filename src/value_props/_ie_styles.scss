@@ -1,0 +1,29 @@
+/**
+ * @file Value Props IE9 styles
+ * @module Value Props
+ * @overview Value Props IE9 styles
+ */
+
+.value-prop {
+ @include clearfix;
+}
+
+.value-prop-image {
+ float: left;
+}
+
+.value-prop-image--right {
+ float: right;
+
+ + .value-prop-content {
+   float: left;
+ }
+}
+
+.value-prop-content {
+ float: right;
+}
+
+.value-prop-content-body {
+ @include ie-vertical-align;
+}

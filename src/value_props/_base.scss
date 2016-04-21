@@ -1,0 +1,52 @@
+/**
+ * @file Value Props
+ * @module Value Props
+ * @overview Value props with side by side content and images
+ */
+
+.value-prop {
+  padding: ms(8) 0;
+
+  @include respond-at-and-above($break-medium + 1) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.value-prop-image {
+  width: 50%;
+  margin: 0 auto ms(4);
+
+  @include respond-at-and-above($break-medium + 1) {
+    width: 25%;
+    margin: 0 ms(9);
+  }
+}
+
+.value-prop-image--right {
+
+  @include respond-at-and-above($break-medium + 1) {
+    order: 1;
+  }
+}
+
+.value-prop-content {
+  max-width: 22em;
+  font-size: ms(1);
+  text-align: center;
+
+  @include respond-at-and-above($break-medium + 1) {
+    width: 40%;
+  }
+}
+
+.value-prop-heading {
+  @include margin-auto;
+  font-size: ms(0);
+
+  @include respond-at-and-above($break-medium + 1) {
+    font-size: ms(2);
+  }
+}

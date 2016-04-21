@@ -6,6 +6,10 @@
  * @todo: rename TrialWarranty to be generic, update to use Starry Background
  */
 
+.background--white {
+  background: color(background);
+}
+
 .background--light {
   background: color(light-background);
 }

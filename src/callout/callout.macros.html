@@ -3,7 +3,7 @@
   * @module Callout
 #}
 
-{% import '../icons/icons.macros.html' as icon_macro %}
+{% from '../icons/icons.macros.html' import svg %}`
 
 {#
   * Renders a Callout module with heading and layout content beneath
@@ -15,7 +15,7 @@
 {% macro callout(heading, icon=null, class=null, id=null) %}
 <div class="callout{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   {% if icon %}
-    {{ icon_macro.svg(icon)}}
+    {{ svg(icon) }}
   {% endif %}
 
   <h2 class="callout-heading -dark">{{ heading }}</h2>

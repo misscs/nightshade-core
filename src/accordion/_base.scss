@@ -6,7 +6,11 @@
  **/
 
 .accordion-list-item {
-   margin: ms(1) 0;
+   border-bottom: solid 1px color(border);
+
+   &:last-child {
+     border-bottom: 0;
+   }
  }
 
 .accordion-section-list {
@@ -15,6 +19,7 @@
   transition: max-height 0.3s ease-in-out;
 
   .is-accordion-open & {
+    padding-bottom: ms(1);
     max-height: 1000px;
 
     @include respond-at-and-above($break-medium) {
@@ -25,8 +30,11 @@
 
 .accordion-section-toggle {
   cursor: pointer;
+  padding: ms(1) 0;
+  margin-bottom: 0;
 
   [data-icon="arrow"] {
+    float: right;
     transform: rotate(90deg);
 
     .is-accordion-open & {

@@ -115,5 +115,5 @@
 }
 
 .custom-select-radio {
-  @extend %is-hidden;
+  @include is-hidden;
 }

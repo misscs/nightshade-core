@@ -18,13 +18,18 @@
   padding-bottom: ms(1);
 }
 
+.accordion-section-toggle-content {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
 .accordion-section-toggle {
   cursor: pointer;
   padding: ms(1) 0;
   margin-bottom: 0;
+  display: flex;
 
   [data-icon="arrow"] {
-    border: solid 1px black;
     float: right;
     transform: rotate(90deg);
 

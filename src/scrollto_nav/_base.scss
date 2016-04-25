@@ -5,8 +5,11 @@
  */
 
 .scrollto-nav {
+  @extend %headers;
   background: color(background);
-  line-height: 1.2;
+  font-size: ms(-1);
+  line-height: 1.4;
+  letter-spacing: size(normal-tracking);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
 
   &.is-sticky {
@@ -39,18 +42,15 @@
 .scrollto-nav-link {
   width: 100%;
   padding: 0 ms(3);
-  color: color(text);
+  color: color(dark-text);
 
-  &:hover {
-    color: color(dark-text);
-  }
-
+  &:hover,
   &.is-selected {
-    @extend %calibre-medium;
+    color: color(primary);
   }
 }
 
 .scrollto-nav-link-text {
   display: inline-block;
-  max-width: 8em;
+  max-width: 10em;
 }

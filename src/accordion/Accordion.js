@@ -13,6 +13,7 @@ export const Accordion = {
   /**
    * Inits accordion elements
    * @param {string} accordionEl Accordion DOM Element
+   * @param {integer} [time=300] Duration for open/close transition in the Accordion
    * @returns {void}
   */
   init(accordionEl, time = 300) {

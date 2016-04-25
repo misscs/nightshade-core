@@ -6,6 +6,7 @@
 export const Accordion = {
 
   accordionSection : `.js-accordion-section`,
+  accordionSectionContent : `.js-accordion-section-content`,
   accordionSectionTrigger: `.js-accordion-section-toggle`,
   openClass: `is-accordion-open`,
 
@@ -27,10 +28,12 @@ export const Accordion = {
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
+        let sectionContent = el.querySelectorAll(this.accordionSectionContent);
+
         if (el.classList.contains(this.openClass)) {
-          this.closeAccordionSection(el);
+          this.closeAccordionSection(el, sectionContent);
         } else {
-          this.openAccordionSection(el);
+          this.openAccordionSection(el, sectionContent);
         }
       });
     });
@@ -41,9 +44,10 @@ export const Accordion = {
    * @param {object} section DOM element to toggle state class on
    * @returns {void}
   */
-  openAccordionSection(section) {
+  openAccordionSection(section, sectionContent) {
     section.setAttribute(`aria-expanded`, true)
     section.classList.add(this.openClass);
+    Velocity(sectionContent, `slideDown`);
   },
 
   /**
@@ -51,8 +55,9 @@ export const Accordion = {
    * @param {object} section DOM element to toggle state class on
    * @returns {void}
   */
-  closeAccordionSection(section) {
+  closeAccordionSection(section, sectionContent) {
     section.setAttribute(`aria-expanded`, false)
     section.classList.remove(this.openClass);
+    Velocity(sectionContent, `slideUp`);
   },
 };

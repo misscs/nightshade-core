@@ -10,7 +10,7 @@
   @include respond-at-and-above($break-medium + 1) {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
   }
 }
@@ -21,7 +21,7 @@
 
   @include respond-at-and-above($break-medium + 1) {
     width: 25%;
-    margin: 0 ms(9);
+    margin: 0 ms(8);
   }
 }
 

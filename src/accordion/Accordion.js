@@ -9,6 +9,7 @@ export const Accordion = {
   accordionSectionContent : `.js-accordion-section-content`,
   accordionSectionTrigger: `.js-accordion-section-toggle`,
   openClass: `is-accordion-open`,
+  transitionDuration: 500,
 
   /**
    * Inits accordion elements
@@ -47,7 +48,7 @@ export const Accordion = {
   openAccordionSection(section, sectionContent) {
     section.setAttribute(`aria-expanded`, true)
     section.classList.add(this.openClass);
-    Velocity(sectionContent, `slideDown`);
+    Velocity(sectionContent, `slideDown`, this.transitionDuration);
   },
 
   /**
@@ -58,6 +59,6 @@ export const Accordion = {
   closeAccordionSection(section, sectionContent) {
     section.setAttribute(`aria-expanded`, false)
     section.classList.remove(this.openClass);
-    Velocity(sectionContent, `slideUp`);
+    Velocity(sectionContent, `slideUp`, this.transitionDuration);
   },
 };

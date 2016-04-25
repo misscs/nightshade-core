@@ -14,18 +14,8 @@
  }
 
 .accordion-section-list {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-in-out;
-
-  .is-accordion-open & {
-    padding-bottom: ms(1);
-    max-height: 1000px;
-
-    @include respond-at-and-above($break-medium) {
-      max-height: 500px;
-    }
-  }
+  display: none;
+  padding-bottom: ms(1);
 }
 
 .accordion-section-toggle {
@@ -34,6 +24,7 @@
   margin-bottom: 0;
 
   [data-icon="arrow"] {
+    border: solid 1px black;
     float: right;
     transform: rotate(90deg);
 

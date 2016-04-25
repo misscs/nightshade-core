@@ -9,15 +9,15 @@ export const Accordion = {
   accordionSectionContent : `.js-accordion-section-content`,
   accordionSectionTrigger: `.js-accordion-section-toggle`,
   openClass: `is-accordion-open`,
-  transitionDuration: 500,
 
   /**
    * Inits accordion elements
    * @param {string} accordionEl Accordion DOM Element
    * @returns {void}
   */
-  init(accordionEl) {
+  init(accordionEl, time = 300) {
     this.accordion = document.querySelector(accordionEl);
+    this.transitionDuration = time;
     this.accordionSections = this.accordion.querySelectorAll(this.accordionSection);
 
     [...this.accordionSections].forEach((el) => {

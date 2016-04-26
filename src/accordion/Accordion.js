@@ -30,7 +30,7 @@ export const Accordion = {
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
-        let sectionContent = el.querySelectorAll(this.accordionSectionContent);
+        let sectionContent = el.querySelector(this.accordionSectionContent);
 
         if (el.classList.contains(this.openClass)) {
           this.closeAccordionSection(el, sectionContent);

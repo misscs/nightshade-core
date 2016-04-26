@@ -5,29 +5,27 @@
  * is alongside the input field, if it has an icon, it is positioned absolutely on top
  */
 
- .input {
-   @extend %body--sans-small;
 
-   width: 100%;
-   border: 1px solid color(border);
-   margin: 0;
-   border-radius: size(normal-corners);
-   padding: size(smaller) size(small);
-   color: color(dark-text);
-   background: color(background);
-   cursor: auto;
-
-   &:focus {
-     border-color: color(gray--light3);
-   }
- }
 
 // Generic Input Group, consists of an input and a button
 .input-group {
   display: flex;
 
   .input {
+    @extend %body--sans-small;
+
+    width: 100%;
+    border: 1px solid color(border);
+    margin: 0;
+    padding: size(smaller) size(small);
+    color: color(dark-text);
+    background: color(background);
+    cursor: auto;
     border-radius: size(normal-corners) 0 0 size(normal-corners);
+
+    &:focus {
+      border-color: color(gray--light3);
+    }
   }
 
   [data-button] {

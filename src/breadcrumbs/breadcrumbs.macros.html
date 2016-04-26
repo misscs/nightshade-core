@@ -9,24 +9,26 @@
   * Renders Breadcrumbs
   * @param {array} data - List of links for Breadcrumbs
   * @param {string} [color] - Indicates the color theme for the Breadcrumbs
+  * @param {boolean} [logo=false] - Determines if the logo should be in the breadcrumbs
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
 
-{% macro breadcrumbs(data, color=null, class=null, id=null) %}
+{% macro breadcrumbs(data, color=null, logo=false, class=null, id=null) %}
 <div class="breadcrumbs{% if color %} breadcrumbs--{{ color }}{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <ol class="breadcrumbs-list">
-    <li class="breadcrumbs-list-item">
-      <a class="" href="#">
-        {{ icon('casper-logo-mark', size='small') }}
-      </a>
-    </li>
+    {% if logo %}
+      <li class="breadcrumbs-list-item">
+        <a class="" href="./">
+          {{ icon('casper-logo-mark', size='small') }}
+        </a>
+      </li>
+    {% endif %}
 
-   {% for item in data %}
+    {% for item in data %}
       <li class="breadcrumbs-list-item">
         {{ icon('arrow', size='tiny') }}
       </li>
-
       <li class="breadcrumbs-list-item">
         {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
       </li>

@@ -23,15 +23,24 @@
           {{ icon('casper-logo-mark', size='small') }}
         </a>
       </li>
-    {% endif %}
-
-    {% for item in data %}
       <li class="breadcrumbs-list-item">
         {{ icon('arrow', size='tiny') }}
       </li>
-      <li class="breadcrumbs-list-item">
-        {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
-      </li>
+    {% endif %}
+
+    {% for item in data %}
+      {% if loop.first %}
+        <li class="breadcrumbs-list-item">
+          {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
+        </li>
+      {% else %}
+        <li class="breadcrumbs-list-item">
+          {{ icon('arrow', size='tiny') }}
+        </li>
+        <li class="breadcrumbs-list-item">
+          {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
+        </li>
+      {% endif %}
     {% endfor %}
 
   </ol>

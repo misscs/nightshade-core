@@ -7,37 +7,47 @@
 .value-prop {
   padding: ms(8) 0;
 
-  @include respond-at-and-above($break-medium + 1) {
+  @include respond-at-and-above($break-medium) {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
   }
 }
 
 .value-prop-image {
-  width: 50%;
+  width: 70%;
   margin: 0 auto ms(4);
 
-  @include respond-at-and-above($break-medium + 1) {
+  @include respond-at-and-above($break-medium) {
+    width: 30%;
+    margin: 0 7vw 0 0;
+  }
+
+  @include respond-at-and-above($break-large) {
     width: 25%;
-    margin: 0 ms(8);
   }
 }
 
 .value-prop-image--right {
 
-  @include respond-at-and-above($break-medium + 1) {
+  @include respond-at-and-above($break-medium) {
     order: 1;
+    margin: 0 0 0 7vw;
   }
 }
 
 .value-prop-content {
-  max-width: 22em;
+  max-width: 15em;
   font-size: ms(1);
   text-align: center;
 
-  @include respond-at-and-above($break-medium + 1) {
+  @include respond-at-and-above($break-medium) {
+    width: 47%;
+    max-width: 22em;
+  }
+
+  @include respond-at-and-above($break-large) {
     width: 40%;
   }
 }
@@ -46,7 +56,7 @@
   @include margin-auto;
   font-size: ms(0);
 
-  @include respond-at-and-above($break-medium + 1) {
+  @include respond-at-and-above($break-xl) {
     font-size: ms(2);
   }
 }

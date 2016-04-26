@@ -26,12 +26,12 @@
     {% endif %}
 
     {% for item in data %}
-        <li class="breadcrumbs-list-item">
-          {{ icon('arrow', size='tiny') }}
-        </li>
-        <li class="breadcrumbs-list-item">
-          {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
-        </li>
+      <li class="breadcrumbs-list-item">
+        {{ icon('arrow', size='tiny') }}
+      </li>
+      <li class="breadcrumbs-list-item">
+        {{ link(item.content, href=item.href, class='breadcrumbs-link') }}
+      </li>
     {% endfor %}
 
   </ol>

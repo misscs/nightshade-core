@@ -40,7 +40,7 @@
 #}
 {% macro input_group(name, placeholder=null, button_content='', button_style='primary', button_icon=null, required='true', class=null, id=null) %}
 <div class="input-group {% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
-  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}" {% endif %}required="{{ required }}">
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required="{{ required }}">
   {{ button(button_content, style=button_style, icon=button_icon, type="submit") }}
 </div>
 {% endmacro %}
@@ -55,7 +55,7 @@
 #}
 {% macro search_input(name, placeholder=null, class=null, id=null) %}
 <form class="input-group search-input{% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
-  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}" {% endif %}required>
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required>
   {{ button(style='icon', size='small', icon='search', type="submit") }}
 </form>
 {% endmacro %}

@@ -37,35 +37,22 @@
   }
 }
 
-.input-group--button {
-  .input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-
-  .input,
-  [data-button] {
-    height: 48px;
-  }
-}
-
-.input-group--button-icon {
+// Search Input field
+.search-input {
   position: relative;
 
   .input {
-    padding-right: 60px;
-    height: 48px;
+    // width of the search icon in a button
+    padding-right: 40px;
+    border-radius: size(normal-corners);
   }
 
+  // Need a better way to vertical align this button
   [data-button] {
     position: absolute;
-    right: 1px;
-    top: 1px;
-    height: 46px;
-    border: 0;
-  }
-
-  [data-icon] {
-    @include square(16px);
+    top: 0;
+    right: 0;
+    padding: 0;
+    margin-top: size(smallest);
   }
 }

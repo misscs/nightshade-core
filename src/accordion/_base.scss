@@ -30,7 +30,8 @@
   display: flex;
 
   [data-icon="arrow"] {
-    float: right;
+    align-self: auto;
+    fill: currentColor;
     transform: rotate(90deg);
 
     .is-accordion-open & {

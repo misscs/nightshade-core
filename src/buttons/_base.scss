@@ -152,6 +152,11 @@
   }
 }
 
+// Button element for an icon as a button
+// @TODO add some hover states
+[data-button="icon"] {
+}
+
 [data-button="play"] {
   position: relative;
   display: inline-block;

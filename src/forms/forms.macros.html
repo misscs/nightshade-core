@@ -28,9 +28,9 @@
 
 
 {#
-  * Renders an input group of an input and button.
-  * @param {string} input_name - Name attribute for the input element
-  * @param {string} [input_placeholder] - Placeholder text for the input
+  * Renders a generic input group of an input and button.
+  * @param {string} name - Name attribute for the input element
+  * @param {string} [placeholder] - Placeholder text for the input
   * @param {string} [button_content=''] - Button text content
   * @param {string} [button_style=primary] - Button style
   * @param {string} [button_icon] - Icon name for Buttons with icons
@@ -38,9 +38,24 @@
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro input_button(input_name, input_placeholder=null, button_content='', button_style='primary', button_icon=null, required='true', class=null, id=null) %}
-<div class="input-group {% if button_icon %}input-group--button-icon{% else %}input-group--button{% endif %}{% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
-  <input class="input" name="{{ input_name }}" placeholder="{{ input_placeholder }}" required="{{ required }}">
+{% macro input_group(name, placeholder=null, button_content='', button_style='primary', button_icon=null, required='true', class=null, id=null) %}
+<div class="input-group {% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required="{{ required }}">
   {{ button(button_content, style=button_style, icon=button_icon, type="submit") }}
 </div>
+{% endmacro %}
+
+
+{#
+  * Renders a Search input with a search cta
+  * @param {string} name - Name attribute for the input element
+  * @param {string} [placeholder] - Placeholder text for the input
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro search_input(name, placeholder=null, class=null, id=null) %}
+<form class="input-group search-input{% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required>
+  {{ button(style='icon', size='small', icon='search', type="submit") }}
+</form>
 {% endmacro %}

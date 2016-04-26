@@ -6,27 +6,32 @@
  **/
 
 .accordion-list-item {
-   margin: ms(1) 0;
+   border-bottom: solid 1px color(border);
+
+   &:last-child {
+     border-bottom: 0;
+   }
  }
 
 .accordion-section-list {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease-in-out;
+  display: none;
+  padding-bottom: ms(1);
+}
 
-  .is-accordion-open & {
-    max-height: 1000px;
-
-    @include respond-at-and-above($break-medium) {
-      max-height: 500px;
-    }
-  }
+.accordion-section-toggle-content {
+  flex-grow: 1;
+  margin-bottom: 0;
 }
 
 .accordion-section-toggle {
   cursor: pointer;
+  padding: ms(1) 0;
+  margin-bottom: 0;
+  display: flex;
 
   [data-icon="arrow"] {
+    align-self: auto;
+    fill: currentColor;
     transform: rotate(90deg);
 
     .is-accordion-open & {

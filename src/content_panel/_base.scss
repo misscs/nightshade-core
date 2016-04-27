@@ -77,6 +77,10 @@
     font-size: ms(2);
   }
 
+  @include respond-below($break-medium) {
+    margin-bottom: ms(-2);
+  }
+
   @include respond-at-and-above($break-xl) {
     max-width: 26em;
   }

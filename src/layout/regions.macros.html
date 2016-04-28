@@ -1,3 +1,5 @@
+{# TODO: refactor dropdown() macro to work with header() macro #}
+
 {% from '../breadcrumbs/breadcrumbs.macros.html' import breadcrumbs %}
 {% from '../layout/blocks.macros.html' import social_links %}
 {% import '../forms/forms.macros.html' as form %}
@@ -62,7 +64,7 @@
 </div>
 {% endmacro %}
 
-{% macro header() %}
+{% macro dropdown() %}
 <nav class="js-nav-main nav-main nav-main--primary">
 <div class="menu-trigger js-menu-trigger">
 <span class="menu-trigger-icon"></span>
@@ -169,4 +171,27 @@
     <span class="cart-count-item" id="cart-count">1</span>
   </a>
 </nav>
+{% endmacro %}
+
+{% macro header(simple=false, fixed=true) %}
+<header id="header" class="r-header{% if simple %} r-header--simple{% endif %}{% if not fixed %} r-header--static{% endif %}" role="banner">
+  <div class="header-wrapper">
+    <nav class="js-nav-main nav-main nav-main--primary">
+      <a class="nav-item logo nav-item--unique" data-track-click-target="home" href="/">
+        {{ icon.svg("logo")}}
+        <span class="nav-item-text is-invisible">Home</span>
+      </a>
+      <ul class="nav-main-group nav-main-group--user">
+        <li role="presentation">
+          <span class="phone-number js-a-sup-phone">
+            <a class="nav-item" data-track-click-target="phone" href="tel:18884980003">
+              {{ icon.icon("phone")}}
+              888–498–0003
+            </a>
+          </span>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
 {% endmacro %}

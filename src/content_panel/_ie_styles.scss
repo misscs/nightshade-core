@@ -5,27 +5,27 @@
  */
 
 .content-panel {
- @include clearfix;
+  @include clearfix;
 }
 
 .content-panel-image {
- float: left;
+  float: left;
 }
 
 .content-panel-image--right {
- float: right;
+  float: right;
 
- + .content-panel-content {
-   float: left;
- }
+  + .content-panel-content {
+    float: left;
+  }
 }
 
 .content-panel-content {
- float: right;
- height: 49vw;
+  float: right;
+  height: 49vw;
 }
 
 .content-panel-content-body {
- @include margin-auto;
- @include ie-vertical-align;
+  @include margin-auto;
+  @include ie-vertical-align;
 }

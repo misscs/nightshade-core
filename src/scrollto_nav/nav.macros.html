@@ -1,0 +1,20 @@
+{#
+  * @overview Macros for the ScrollTo Nav.
+  * @module ScrollTo Nav
+#}
+
+{#
+  * Renders a ScrollTo Nav with links that scroll to corresponding sections
+  * @param {object} links - Data object with nav links and their properties
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro scrollto_nav(links, class=null, id=null) %}
+<nav class="scrollto-nav{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <ul class="scrollto-nav-inner r-inner">
+    {% for link in links %}
+    <li class="scrollto-nav-item"><a class="scrollto-nav-link js-scrollto-nav-link" href="{{ link.href }}"><span class="scrollto-nav-link-text">{{ link.content }}</span></a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}

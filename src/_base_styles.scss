@@ -3,6 +3,8 @@
  * @overview Site scaffolding and helper classes that generate output
  */
 
+@import './node_modules/normalize.scss/normalize';
+
 @import 'typography/index';
 @import 'layout/grids';
 @import 'animation/custom_animations';

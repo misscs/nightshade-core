@@ -19,6 +19,7 @@
   "dependencies": {
     "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
+    "normalize.scss": "github:caspersleep/normalize.scss",
     "susy": "^2.2.12"
   }
 }

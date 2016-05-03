@@ -25,9 +25,13 @@
 
 .accordion-section-toggle {
   cursor: pointer;
-  padding: ms(1) 0 ms(0);
+  padding: ms(2) 0 ms(0);
   margin-bottom: 0;
   display: flex;
+
+  @include respond-at-and-above($break-small) {
+    padding: ms(3) 0 ms(2);
+  }
 
   [data-icon="arrow"] {
     align-self: auto;

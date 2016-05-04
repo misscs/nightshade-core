@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
-    "test": "ava \"src/**/*/test.js\" --verbose",
+    "test": "ava \"src/**/*/*.test.js\" --verbose",
     "postversion": "git push && git push --tags",
     "watch:test": "npm run test -- --watch"
   },
@@ -23,7 +23,8 @@
     "susy": "^2.2.12"
   },
   "devDependencies": {
-    "ava": "^0.14.0"
+    "ava": "^0.14.0",
+    "jsdom": "^8.5.0"
   },
   "ava": {
     "require": [

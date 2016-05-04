@@ -25,7 +25,7 @@ npm run test
 To continuously run the unit tests as you develop:
 
 ```sh
-npm run watch:test
+npm run test:watch
 ```
 
 ### Labels

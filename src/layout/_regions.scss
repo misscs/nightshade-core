@@ -76,6 +76,10 @@
 
 .r-section-wrapper {
   padding: ms(5) ms(2);
+
+  @include respond-at-and-above($break-medium) {
+    padding: ms(5) ms(4);
+  }
 }
 
 .r-section-wrapper--sm {

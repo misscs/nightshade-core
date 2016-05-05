@@ -4,19 +4,43 @@
  * @overview Styles for Casper breadcrumbs
  */
 
-.breadcrumbs {
+.breadcrumbs-list-item {
+   display: inline-block;
+   margin-left: ms(-7);
+
+   &:before {
+     content: "\003E";
+     margin-right: ms(-7);
+   }
+
+   &:first-child {
+     margin-left: 0;
+
+     &:before {
+       display: none;
+     }
+   }
+
+   &:last-child {
+     pointer-events: none;
+   }
+ }
+
+ .breadcrumbs-link {
+   font-size: ms(-1);
+   letter-spacing: size(normal-tracking);
+ }
+
+
+// Styling for default Breadcrumbs
+.breadcrumbs--default {
 
   .breadcrumbs-link {
     color: color(text);
 
     &:hover {
-      border-color: currentColor;
+      color: color(blue);
     }
-  }
-
-  [data-icon="arrow"],
-  [data-icon="casper-logo-mark"] {
-    fill: color(text);
   }
 }
 

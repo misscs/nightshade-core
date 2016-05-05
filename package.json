@@ -22,6 +22,7 @@
   "dependencies": {
     "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
+    "eslint": "^2.9.0",
     "susy": "^2.2.12"
   },
   "devDependencies": {

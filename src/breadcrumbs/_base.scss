@@ -2,7 +2,6 @@
  * @file Breadcrumbs
  * @module Breadcrumbs
  * @overview Styles for Casper breadcrumbs
- * @TODO: expand/solidify styling, here they have styles to support grey and blue (like on the main site)
  */
 
 .breadcrumbs {
@@ -21,23 +20,33 @@
   }
 }
 
-.breadcrumbs--dark {
-  
+// Styling for Breadcrumbs in the footer
+.breadcrumbs--footer {
+
   .breadcrumbs-link {
-    color: color(blue);
+    color: color(white);
+    opacity: 0.45;
+    transition: 0.25s opacity ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
-  [data-icon="arrow"],
+  .breadcrumbs-list-item {
+    color: color(white);
+    vertical-align: middle;
+
+    &:before {
+      opacity: 0.45;
+    }
+
+    &:first-child {
+      margin-top: -5px;
+    }
+  }
+
   [data-icon="casper-logo-mark"] {
-    fill: color(blue);
-  }
-}
-
-.breadcrumbs-list-item {
-  display: inline-block;
-  margin: 0 ms(-6);
-
-  &:first-child {
-    margin-left: 0;
+    fill: color(white);
   }
 }

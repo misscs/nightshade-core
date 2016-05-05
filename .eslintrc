@@ -25,16 +25,6 @@
     "modules": true
   },
   "rules": {
-    "array-bracket-spacing": [
-      2,
-      "never",
-      {
-        "singleValue": true,
-        "arraysInArrays": false,
-        "objectInArrays": false
-      }
-    ],
-
     "indent": [
       2,
       2

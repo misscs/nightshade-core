@@ -11,10 +11,11 @@
   * @param {array} data - Collection of heading, links, and hrefs to populate the list
   * @param {boolean} [action_link=false] - Action link that is the last item, has an icon
   * @param {string} [action_link_icon=arrow] - Option to specify different icon for the action link
+  * @param {string} [icon_size='tiny'] - Option to specify the size of the action link icon
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro list(data, action_link=false, action_link_icon='arrow', class=null, id=null) %}
+{% macro list(data, action_link=false, action_link_icon='arrow', icon_size='tiny',class=null, id=null) %}
 <div class="list{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   {% if data.heading %}
     <h3 class="list-heading">{{ data.heading }}</h3>
@@ -23,7 +24,7 @@
   {% for item in data.list %}
     {% if action_link and loop.last %}
     <li>
-      {{ link_icon(item.content, href=item.href, icon=action_link_icon) }}
+      {{ link_icon(item.content, href=item.href, icon=action_link_icon, icon_size=icon_size) }}
     </li>
     {% else %}
     <li>

@@ -1,11 +1,13 @@
 import test from 'ava';
 import jsdom from 'jsdom';
 import nunjucks from 'nunjucks';
-
 import { Accordion } from './Accordion';
 
+import {env} from '../../nunjucks-helper.js';
+
+
 test.beforeEach(t => {
-  global.document = jsdom.jsdom(nunjucks.render(`./Accordion.test.html`));
+  global.document = jsdom.jsdom(env.render('accordion/Accordion.test.html'));
 });
 
 // @todo: Write real tests

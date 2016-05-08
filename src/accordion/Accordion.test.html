@@ -1,29 +1,45 @@
-`
-<div id="accordion">
-  <ul class="accordion-list">
-    <li class="accordion-list-item">
-      <div class="accordion-section js-accordion-section">
-        <div class="accordion-section-toggle js-accordion-section-toggle">
-          <h4 class="accordion-section-toggle-content">Header</h4>
-        </div>
-        <ul class="accordion-section-list js-accordion-section-content">
-          <li class="accordion-section-list-item">
-            Content
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="accordion-list-item">
-      <div class="accordion-section js-accordion-section">
-        <div class="accordion-section-toggle js-accordion-section-toggle">
-          <h4 class="accordion-section-toggle-content">Header</h4>
-        </div>
-        <ul class="accordion-section-list js-accordion-section-content">
-          <li class="accordion-section-list-item">
-            Content
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>`
+{% from 'accordion/accordion.macros.html' import accordion %}
+
+{% set faqCategory = {
+  accordionQuestions: [
+    {
+      toggle_content: "ABOUT THE CASPER MATTRESS",
+      list: [
+        {
+          content: "Setting up your Casper Mattress",
+          href: "./question.html"
+        },
+        {
+          content: "Is the Casper Mattress right for you?",
+          href: "./question.html"
+        },
+        {
+          content: "Does the foam smell?",
+          href: "./question.html"
+        },
+        {
+          content: "What are the mattress dimensions?",
+          href: "./question.html"
+        },
+        {
+          content: "Setting up your Casper Mattress",
+          href: "./question.html"
+        },
+        {
+          content: "Is the Casper Mattress right for you?",
+          href: "./question.html"
+        },
+        {
+          content: "Does the foam smell?",
+          href: "./question.html"
+        },
+        {
+          content: "What are the mattress dimensions?",
+          href: "./question.html"
+        }
+      ]
+    }
+  ]
+} %}
+
+{{ accordion(faqCategory.accordionQuestions, class="faq-category-accordion faq-question-list", id="accordion") }}

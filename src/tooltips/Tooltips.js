@@ -4,7 +4,6 @@
 */
 
 import feature from 'viljamis/feature.js';
-import pepjs from 'pepjs';
 
 export const Tooltips = {
 
@@ -13,12 +12,11 @@ export const Tooltips = {
   /**
    * Queries page for Tooltips to be initialized, caching them to variables
    * before calling setup
-   * @param {string} Selector for toggler elements that trigger Tooltips
-   * @param {string} Selector for the Tooltips to be handled
+   * @param {string} togglerSelector Selector for toggler elements that trigger Tooltips
+   * @param {string} tooltipSelector Selector for the Tooltips to be handled
    * @returns {void}
   */
   tooltip({togglerSelector, tooltipSelector}) {
-    console.log(`Setting up Tooltips`);
     this.togglerEls = document.querySelectorAll(togglerSelector);
     this.tooltipEls = document.querySelectorAll(tooltipSelector);
     this.tooltipSelector = tooltipSelector;
@@ -54,7 +52,7 @@ export const Tooltips = {
 
   /**
    * Determines whether to expand (show) or collapse (hide) a given Tooltip
-   * @param {object} Tooltip DOM element to be expanded or collapsed
+   * @param {object} tooltipEl Tooltip DOM element to be expanded or collapsed
    * @returns {void}
    * @private
   */
@@ -69,7 +67,7 @@ export const Tooltips = {
 
   /**
    * Handles expanding of a given Tooltip
-   * @param {object} Tooltip DOM element to be expanded
+   * @param {object} el Tooltip DOM element to be expanded
    * @returns {void}
   */
   expandTooltip(el) {
@@ -79,7 +77,7 @@ export const Tooltips = {
 
   /**
    * Handles collapsing of a given Tooltip
-   * @param {object} Tooltip DOM element to be collapsed
+   * @param {object} el Tooltip DOM element to be collapsed
    * @returns {void}
   */
   collapseTooltip(el) {

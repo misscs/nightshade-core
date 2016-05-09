@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Fri May 06 2016 13:00:31 GMT-0400 (EDT)
 
+var istanbul = require('browserify-babel-istanbul');
+
 module.exports = function(config) {
   config.set({
 
@@ -16,8 +18,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/babel-polyfill/browser.js',
-      'src/accordion/*.js',
-      'src/accordion/*.html'
+      'src/**/*.test.js',
+      'src/**/*.html'
     ],
 
 
@@ -29,7 +31,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/accordion/*.js': ['browserify'],
+      'src/**/*.test.js': ['browserify'],
       '**/*.html': ['html2js']
     },
 
@@ -43,14 +45,9 @@ module.exports = function(config) {
           {
             presets: 'es2015'
           }
-        ], [
-          'browserify-istanbul',
-          {
-            instrumenterConfig: {
-              embedSource: true
-            }
-          }
-        ]
+        ], istanbul({
+          ignore: ['**/*.test.js']
+        })
       ]
     },
 

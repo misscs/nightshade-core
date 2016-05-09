@@ -11,7 +11,6 @@ import imgix from 'imgix.js';
 export const ImgixSettings = {
 
   init(opts = {}) {
-
     /**
      * Standard settings for Imgix shared across all images
     */
@@ -40,7 +39,7 @@ export const ImgixSettings = {
 
   /**
    * Sets Imigx.js settings on Imgix objects (images)
-   * @param {object} Hash of Imgix settings
+   * @param {object} settings Hash of Imgix settings
    * @returns {void}
   */
   setImgix(settings) {

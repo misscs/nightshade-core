@@ -4,7 +4,6 @@
  * @module Beacon.js
 */
 
-import pepjs from 'pepjs';
 import { ScrollTo } from '../animation/ScrollTo.js';
 
 export const Beacon = {

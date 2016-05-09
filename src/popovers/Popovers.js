@@ -3,8 +3,6 @@
  * @module Popovers.js
 */
 
-import pepjs from 'pepjs';
-
 export const Popovers = {
 
   collapsedClass: `is-invisible`,
@@ -12,12 +10,11 @@ export const Popovers = {
   /**
    * Queries page for Popovers to be initialized, caching them to variables
    * before calling setup
-   * @param {string} Selector for toggler elements that trigger Popovers
-   * @param {string} Selector for the Popovers to be handled
+   * @param {string} togglerSelector Selector for toggler elements that trigger Popovers
+   * @param {string} popoverSelector Selector for the Popovers to be handled
    * @returns {void}
   */
   popover({togglerSelector, popoverSelector}) {
-    console.log(`Setting up Popovers`);
     this.togglerEls = document.querySelectorAll(togglerSelector);
     this.popoverEls = document.querySelectorAll(popoverSelector);
     this.popoverSelector = popoverSelector;
@@ -43,7 +40,7 @@ export const Popovers = {
 
   /**
    * Determines whether to expand (show) or collapse (hide) a given Popover
-   * @param {object} Popover DOM element to be expanded or collapsed
+   * @param {object} popoverEl Popover DOM element to be expanded or collapsed
    * @returns {void}
    * @private
   */
@@ -58,7 +55,7 @@ export const Popovers = {
 
   /**
    * Handles expanding of a given Popover, collapsing any open Popovers first
-   * @param {object} Popover DOM element to be expanded
+   * @param {object} el Popover DOM element to be expanded
    * @returns {void}
   */
   expandPopover(el) {
@@ -68,7 +65,7 @@ export const Popovers = {
 
   /**
    * Handles collapsing of a given Popover
-   * @param {object} Popover DOM element to be collapsed
+   * @param {object} el Popover DOM element to be collapsed
    * @returns {void}
   */
   collapsePopover(el) {

@@ -3,7 +3,7 @@
  * @module Accordion.js
 */
 
-import * as velocity from 'velocity-animate';
+import velocity from 'velocity-animate';
 
 export const Accordion = {
 

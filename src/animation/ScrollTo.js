@@ -39,7 +39,7 @@ export const ScrollTo = {
 
       el.addEventListener(`click`, (e) => {
         e.preventDefault();
-        this.scroll({scrollTarget: scrollTarget, offset: offset});
+        this.scroll({scrollTarget, offset});
       });
     });
   },
@@ -73,5 +73,5 @@ export const ScrollTo = {
     } else {
       window.scrollTo(0, this.targetPosition);
     }
-  }
+  },
 };

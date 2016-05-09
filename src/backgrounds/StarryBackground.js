@@ -45,7 +45,7 @@ export const StarryBackground = {
       el.appendChild(starsFragment);
 
       // Add scroll listener to trigger parallax effect
-      window.addEventListener(`scroll`, (e) => {
+      window.addEventListener(`scroll`, () => {
         // If element is viewable, change position
         if(el.getBoundingClientRect().top <= window.innerHeight && el.getBoundingClientRect().bottom >= 0) {
           this.updateStarPosition(elementPosition, bigStarsEl, smallStarsEl);
@@ -56,9 +56,9 @@ export const StarryBackground = {
 
   /**
    * Updates the position of the stars when a user scrolls the page
-   * @param {number} Top offset position of container element
-   * @param {object} DOM element for the larger stars
-   * @param {object} DOM element for the smaller stars
+   * @param {number} elementPosition Top offset position of container element
+   * @param {object} bigStarsEl DOM element for the larger stars
+   * @param {object} smallStarsEl DOM element for the smaller stars
    * @returns {void}
   */
   updateStarPosition(elementPosition, bigStarsEl, smallStarsEl) {

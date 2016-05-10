@@ -18,7 +18,8 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/babel-polyfill/browser.js',
-      'src/**/*.test.js'
+      'src/**/*.test.js',
+      'src/**/*.html'
     ],
 
 
@@ -30,7 +31,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.test.js': ['browserify']
+      'src/**/*.test.js': ['browserify'],
+      'src/**/*.html': ['html2js']
     },
 
     // Browserify configuration
@@ -101,6 +103,7 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-coverage',
       'karma-fixture',
+      'karma-html2js-preprocessor',
       'karma-mocha',
       'karma-mocha-reporter',
       'karma-phantomjs-launcher'

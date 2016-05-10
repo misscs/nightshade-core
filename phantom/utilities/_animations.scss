@@ -1,0 +1,91 @@
+////
+/// Mixins for handling animations
+/// @group Animations
+////
+
+/// Mixin for setting up animations
+/// @access public
+/// @example sass - Animation mixin
+///   +animation(pulse-scale-horizontal-center, 1s, 5s, ease, 3)
+///
+/// @param {string} animation-name - Name of the animation.
+///   Must match keyframes name
+/// @param {s | ms} duration - How long the animation should run
+/// @param {s | ms} delay [0s]
+/// @param timing [linear]
+/// @param iteration-count [infinite]
+/// @param direction [normal]
+///
+/// @todo Revisit this mixin to leverage autoprefixer
+@mixin animation (
+  $animation-name,
+  $duration,
+  $delay: 0s,
+  $timing: linear,
+  $iteration-count: infinite,
+  $direction: normal) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation-name;
+  -webkit-animation-timing-function: $timing ;
+  -webkit-animation-iteration-count: $iteration-count;
+  -webkit-animation-direction: $direction;
+  -webkit-animation-fill-mode: forwards;
+
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation-name;
+  -moz-animation-iteration-count: $iteration-count;
+  -moz-animation-direction: $direction;
+  -moz-animation-fill-mode: forwards;
+
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation-name;
+  -o-animation-direction: $direction;
+  -o-animation-fill-mode: forwards;
+
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation-name;
+  animation-timing-function: $timing;
+  animation-iteration-count: $iteration-count;
+  animation-direction: $direction;
+  animation-fill-mode: forwards; // prevents the animation from restarting
+}
+
+
+/// Setup keyframes (steps) for animations.
+/// @access public
+/// @example sass - Keyframes
+///   +keyframes(pulse-scale-horizontal-center)
+///     0%
+///       transform: scale3d(1,1,1) translate(-50%, 0)
+///     50%
+///       transform: scale3d(1.05,1.05,1.05) translate(-50%, 0)
+///     100%
+///       transform: scale3d(1,1,1) translate(-50%, 0)
+
+/// @content Properties for animation. At a minimum, block must include
+/// 0% (from) and 100% (to).
+/// @author https://gist.github.com/ericam/1607696
+/// @see {mixin} animation
+///
+/// @param animation-name - Must match `animation-name`
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

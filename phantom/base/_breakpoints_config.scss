@@ -1,0 +1,28 @@
+// Media Query Break Points --------------------------------------------
+
+$break-tiny: 320px;
+$break-414: 414px;
+$break-mobile: 420px;
+$break-small: 600px;
+$break-700: 700px;
+$break-medium: 768px;
+$break-large: 1024px;
+$break-xl: 1280px;
+$break-gigantic: 1600px;
+$footer-med-break: $break-medium + 107px;
+$phone-header-break: 660px;
+
+$break-main-nav: $break-medium + 1px;
+
+$form-2col: 812px;
+$form-tablet: 920px;
+$form-desktop: 730px;
+$form-max: 1080px;
+
+// For styleguide
+// @@@ move this out
+$nightshade-menu-drawer: 50em;
+
+//For value props of home page
+$info-nav-width: 1080px;
+$info-nav-break: 900px;

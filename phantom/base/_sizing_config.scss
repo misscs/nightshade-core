@@ -1,0 +1,64 @@
+$site-max-width: 1680px;
+$site-max-container: 1080px;
+
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+// @@@ Very arbitrary. Fix me.
+
+$sizing: (
+  tiny: 0.25em,
+  smallest: 0.5em,
+  smaller: 0.75em,
+  small: 1em,
+  normal: 1.25em,
+  medium: 1.5em,
+  large: 2em,
+  larger: 2.5em,
+  largest: 3em,
+  massive: 75px,
+
+  mobile-sides: 23px,
+
+  header-height: 60px,
+  condensed-header-height: 50px,
+  super-header-height: 35px,
+  mobile-super-header-height: 50px,
+
+  // Border radius sizes
+  small-corners: 4px,
+  normal-corners: 6px,
+  large-corners: 12px,
+
+  smallest-tracking: 0.01em,
+  smaller-tracking: 0.04em,
+  small-tracking: 0.07em,
+  normal-tracking: 0.1em,
+  medium-tracking: 0.125em,
+  larger-tracking: 0.15em,
+
+  newsletter-input: 53px,
+
+  video-quote: 21px,
+
+  between-form-spacing: 100px,
+
+  content-max: 1080px,
+
+  product-thumb-small: 80px,
+  product-thumb-medium: 125px,
+  product-thumb-large: 150px,
+
+  courier-header: 48px,
+  courier-text-width: 518px,
+
+);
+
+// Size
+// -----
+@function size($size) {
+
+  $size: map-get($sizing, $size) or $size;
+
+  @return #{$size};
+}

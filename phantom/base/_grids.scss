@@ -1,0 +1,31 @@
+ // Grids Configuration
+//
+// Casper leverages Susy framework for grids. We set defaults in base. Local
+// modules override and create their own grid layouts in their own
+// `grid` partial
+//
+// @note these are still a work in progress
+// @todo only have debug options in development
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: isolate,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  column-width: false,
+  global-box-sizing: border-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .8),
+    output: background,
+    toggle: bottom right,
+  ),
+  use-custom: (
+    box-sizing: true,
+    clearfix: false,
+    rem: false,
+  )
+);

@@ -1,0 +1,18 @@
+////
+/// Mixin for accessing and setting z-index values from a list.
+/// @group z-index
+////
+
+/// @param {key} layer - Value from `$z-index` list
+/// @param {list} list [$z-index] - List of z-index layers
+
+@mixin z-index(
+  $layer,
+  $list: $z-index) {
+
+  @if not index($list, $layer) {
+    @warn "Whoops, we did not find `#{$layer}` in z-index list.";
+  }
+
+  z-index: index($list, $layer);
+}

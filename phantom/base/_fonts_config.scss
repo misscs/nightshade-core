@@ -1,0 +1,74 @@
+/*doc
+
+ ---
+ title: Fonts
+ name: fonts
+ category: stylekit
+ ---
+
+ Casper uses **Verlag** and **Chronicle**. We use Verlag because it
+ doesn't take itself seriously while maintaining polish and sophistication.
+ We use Chronicle because it pairs well with Verlag, complimenting its playful
+ sophistication.
+
+*NB:** _Font extend helpers should only be used for rapid prototyping. Font extends
+ should be avoided in production. Use heading and paragraphs classes for
+ typographic styles._
+
+  Font Usage                                                  | Extend helpers
+  ------------------------------------------------------------ | -----------------
+  <p class="verlag">Used for text</p>                          | `%verlag`
+  <p class="verlag-light">Light text variant</p>               | `%verlag-light`
+  <p class="verlag-black">Used for headlines</p>               | `%verlag-black`
+  <p class="chronicle-deck">Body copy larger than 16px</p>     | `%chronicle-deck`
+  <p class="chronicle-display">Body copy smaller than 16px</p> | `%chronicle-display`
+  <p class="chronicle-italic">Italic text for emphasis</p>     | `%chronicle-italic`
+
+
+ Fonts are served from [cloud.typography.com](cloud.typography.com).
+
+ */
+
+$verlag: "Verlag A", "Verlag B";
+$chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
+$chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
+
+$sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-stack: Georgia, serif;
+
+%verlag {
+  font-family: $verlag, $sans-stack;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%verlag-light {
+  font-family: $verlag, $sans-stack;
+  font-weight: 300;
+  font-style: normal;
+}
+
+%verlag-black {
+  font-family: $verlag, $sans-stack;
+  font-weight: 800;
+  font-style: normal;
+  text-transform: uppercase; // @todo: Address for i18n. Update content to desired case, remove transform
+}
+
+%chronicle-deck {
+  font-family: $chronicle-deck, $serif-stack;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%chronicle-display {
+  font-family: $chronicle-display, $serif-stack;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%chronicle-italic {
+  font-family: $chronicle-deck, $serif-stack;
+  font-weight: 400;
+  font-style: italic;
+}

@@ -1,0 +1,150 @@
+/*doc
+---
+title: Colors
+name: colors
+category: stylekit
+---
+
+Casper colors are accessed from the colors map using `color()` function.
+Colors should never be accessed by their color name. If a semantic usage name
+does not exist, add one to the colors map in [`base/colors.config`](base/_colors.config.scss).
+
+```css_example
+.swatch
+  background: color(accent)
+  color: color(background)
+```
+
+Casper is leveraging the [accoutrement-colors](https://github.com/oddbird/accoutrement-color) plugin which also provides helper functions for tinting and shading.
+
+
+<div class="line">
+    <div class="col">
+      <div class="swatch color-blue"></div>
+      <code>color(primary)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-dark-blue"></div>
+      <code>color(primary-dark)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-teal"></div>
+      <code>color(secondary)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-red"></div>
+      <code>color(accent)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-white"></div>
+      <code>color(background)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-lightest-grey"></div>
+      <code>color(light-background)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-lighter-grey"></div>
+      <code>color(medium-background)</code>
+      <code>color(dark-border)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-light-grey"></div>
+      <code>
+        color(light-text)
+      </code>
+      <code>
+        color(border)
+      </code>
+    </div>
+    <div class="col">
+      <div class="swatch color-medium-grey"></div>
+      <code>color(medium-text)</code>
+    </div>
+    <div class="col">
+      <div class="swatch color-dark-grey"></div>
+    </div>
+    <div class="col">
+      <div class="swatch color-darkest-grey"></div>
+    </div>
+    <div class="col">
+      <div class="swatch color-light-blue"></div>
+      <code>color(tab-hover)</code>
+    </div>
+</div>
+
+*/
+
+
+// If you add a new color or usage to the map, add a new swatch to the docs
+// Don't add swatches for one-off components
+$colors: (
+
+  // Palette
+  // @note never access the palette colors directly with the color() function
+  // palette colors should be mapped to a semantic namespace denoting usage
+
+  blue: #00237e,
+  dark-blue: #001856,
+  light-blue: #dff5f7,
+  trial-blue: #6c96bc,
+  flash-blue: #e5ecf4,
+
+  purple: #f2f4fa,
+
+  teal: #5fe6be,
+
+  lightest-grey: #f5f5f5,
+  lighter-grey: #dbdbdb,
+  light-grey: #e7e8e8,
+  medium-grey: #7d7d7d,
+  dark-grey: #b0aeae,
+  darker-grey: #a9a9a9,
+  darkest-grey: #616161,
+
+  red: #ec5446,
+
+  gold: #bca890,
+  star-gold: #f5d060,
+
+  // Usage
+
+  primary: blue,
+  primary-dark: dark-blue,
+  secondary: teal,
+  accent: red,
+
+  text: darkest-grey,
+  light-text: light-grey,
+  medium-text: medium-grey,
+  dark-text: dark-grey,
+  darkest-text: darkest-grey,
+
+  background: #ffffff,
+  light-background: lightest-grey,
+  medium-background: lighter-grey,
+  med-dark-background: light-grey,
+  dark-background: dark-grey,
+
+  border: light-grey,
+  dark-border: lighter-grey,
+  medium-border: dark-grey,
+
+  tab-hover: light-blue,
+
+  notice: lightest-grey,
+  success: #dff0d8,
+  error: #f2dede,
+  disabled: medium-grey,
+  selected-background: primary,
+  selected-text: background,
+
+  // Individual components
+
+  trial-warranty: #001856,
+  product-gallery-background: lightest-grey,
+  footer-bottom-icon: #6576a0,
+  header-text: darker-grey,
+  mattress-icon: gold,
+  trial-warranty-banner-icon: #6c96bc,
+);

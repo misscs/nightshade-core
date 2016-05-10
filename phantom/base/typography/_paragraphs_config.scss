@@ -1,0 +1,103 @@
+/*doc
+---
+title: Paragraphs
+name: Paragraphs
+parent: typography
+category: stylekit
+---
+
+Casper has four different text styles. Text style classes can be applied to `<p>` or any other element that contains copy, such as `<div>`.
+
+
+```html_example
+<p class="body--serif">Sleepy head lay down and count the sheep. Sleepy head
+laid down and counted the sheep. Sleep head was laying down counting sheep.
+</p>
+
+<div class="body--sans">
+  <p>Once upon a time, a very sleep head started counting sheep</p>
+</div>
+
+<header class="body--sans-medium">
+  Once upon a time, a very sleep head started counting sheep
+</header>
+
+
+<header class="body--sans-small">
+  Once upon a time, a very sleep head started counting sheep
+</header>
+
+```
+*/
+
+
+%body--quote {
+  @extend %chronicle-deck;
+  line-height: 1.75;
+  font-size: 20px;
+
+  @include respond-between($break-medium, $break-large) {
+    font-size: 26px;
+    line-height: 1.5;
+  }
+
+  @include respond-at-and-above($break-large) {
+    font-size: 28px; // @@@ refactor to ems
+    line-height: 1.6; // @@@ refactor to ems
+  }
+}
+
+
+
+%body--serif {
+  @extend %chronicle-display;
+  line-height: 1.75;
+  font-size: 16px;
+
+  @include respond-at-and-above(640px) {
+    font-family: $chronicle-deck, $serif-stack;
+  }
+
+  @include respond-between(640px, $break-large) {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  @include respond-at-and-above($break-large) {
+    font-size: 23px; // @@@ refactor to ems
+    line-height: 32px; // @@@ refactor to ems
+    letter-spacing: size(smaller-tracking);
+
+  }
+}
+
+
+%body--sans {
+  @extend %verlag-light;
+  letter-spacing: size(smaller-tracking);
+  font-size: 18px;
+  line-height: 1.5;
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+}
+
+
+%body--sans-small {
+  @extend %verlag-light;
+  letter-spacing: size(smaller-tracking);
+  font-size: 17px;
+  line-height: 1.313;
+}
+
+
+%body--sans-medium {
+  @extend %body--sans-small;
+
+  @include respond-at-and-above($break-medium) {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+}

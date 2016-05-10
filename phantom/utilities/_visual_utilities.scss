@@ -1,0 +1,88 @@
+////
+/// Visual utility helpers
+/// @group visual-utilities
+////
+
+// Mixins for creating block style :before and :after pseudo elements
+// @param {key} position - Position value
+// @param {key} content - Text content of pseudo element
+@mixin before(
+  $position: absolute,
+  $content: ""
+) {
+  &:before {
+    position: $position;
+    content: $content;
+    @content;
+  }
+}
+
+@mixin after(
+  $position: absolute,
+  $content: ""
+) {
+  &:after {
+    position: $position;
+    content: $content;
+    @content;
+  }
+}
+
+// Mixin for creating a square
+/// @param {number} size - Numeric value with units
+@mixin square($size) {
+  height: size($size);
+  width: size($size);
+}
+
+/// Mixin for creating circles
+/// @param {number} size - Number value with units
+/// @param {key} bg - (optional) Color value from colors map
+///
+/// @see {mixin} square
+/// @todo Add `@see` param for Accoutrement Colors
+@mixin circle(
+  $size,
+  $bg: null
+) {
+  @include square($size);
+  background-color: color($bg);
+  border-radius: 50%;
+}
+
+/// Easily set opacity active changes
+/// @param {decimal | integer} opacity - Valid value for opacity 0-1
+/// @param {decimal | integer} active - Valid value for opacity of the
+///   active item between 0-1
+@mixin active-opacity($opacity: 0, $active: 1) {
+  opacity: $opacity;
+
+  &.is-active {
+    opacity: $active;
+  }
+}
+
+/// Mixin for creating a loading spinner
+/// @param {number} size - Number value with units
+/// @param {key} color - Color value
+///
+/// @see {mixin} circle
+@mixin spinner(
+  $size: 16px,
+  $color: color(darker-grey)
+) {
+  @include animation(loading, 0.8s);
+  @include circle($size);
+  position: absolute;
+  border: 2px solid $color;
+  border-right-color: transparent;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+}

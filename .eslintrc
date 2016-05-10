@@ -21,7 +21,7 @@
     "Modernizr": false,
     "google": false,
     "Spree": false,
-    "nunjucks": false
+    "fixture": false
   },
   "ecmaFeatures": {
     "modules": true

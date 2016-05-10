@@ -33,8 +33,6 @@ export const Accordion = {
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
-        const sectionContent = el.querySelector(this.accordionSectionContent);
-
         this.toggleAccordionSection(el, sectionContent);
       });
     });

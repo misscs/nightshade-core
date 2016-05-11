@@ -5,7 +5,7 @@
 }
 
 .review {
-  @extend %body--sans-small;
+  @extend %sans-small;
 
   padding-top: size(larger);
   padding-bottom: size(larger);

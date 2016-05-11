@@ -39,25 +39,19 @@
 }
 
 
-%body--sans-small {
+%sans-small {
   font-size: ms(0);
   letter-spacing: size (smaller-tracking);
 }
 
 
-%body--sans {
+%sans-medium {
   font-size: ms(1);
   letter-spacing: size(smaller-tracking);
 }
 
 
-%body--sans-medium {
-  font-size: ms(1);
-  letter-spacing: size(smaller-tracking);
-}
-
-
-%body--sans-large {
+%sans-large {
   font-size: ms(2);
   letter-spacing: size(smaller-tracking);
 }

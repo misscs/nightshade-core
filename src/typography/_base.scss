@@ -53,20 +53,20 @@ a {
   @include serif-small;
 }
 
-.body--sans {
-  @extend %body--sans;
+.sans-small {
+  @extend %sans-small;
 }
 
-.body--sans-small {
-  @extend %body--sans-small;
+.sans-small {
+  @extend %sans-small;
 }
 
-.body--sans-medium {
-  @extend %body--sans-medium;
+.sans-medium {
+  @extend %sans-medium;
 }
 
-.body--sans-large {
-  @extend %body--sans-large;
+.sans-large {
+  @extend %sans-large;
 }
 
 .body--quote {

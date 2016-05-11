@@ -118,13 +118,13 @@
   .trial-warranty-title {
     @extend h1;
 
-    @extend .body--sans;
+    @extend .sans-small;
 
     color: color(primary);
   }
 
   .trial-warranty-copy {
-    @extend .body--sans;
+    @extend .sans-small;
 
     color: color(text);
   }

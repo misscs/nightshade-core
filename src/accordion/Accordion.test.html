@@ -1,29 +1,44 @@
-`
-<div id="accordion">
-  <ul class="accordion-list">
-    <li class="accordion-list-item">
-      <div class="accordion-section js-accordion-section">
-        <div class="accordion-section-toggle js-accordion-section-toggle">
-          <h4 class="accordion-section-toggle-content">Header</h4>
-        </div>
-        <ul class="accordion-section-list js-accordion-section-content">
-          <li class="accordion-section-list-item">
-            Content
-          </li>
-        </ul>
-      </div>
-    </li>
-    <li class="accordion-list-item">
-      <div class="accordion-section js-accordion-section">
-        <div class="accordion-section-toggle js-accordion-section-toggle">
-          <h4 class="accordion-section-toggle-content">Header</h4>
-        </div>
-        <ul class="accordion-section-list js-accordion-section-content">
-          <li class="accordion-section-list-item">
-            Content
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>`
+{% from 'accordion/accordion.macros.html' import accordion %}
+
+{% set example = {
+
+  sections: [
+    {
+      toggle_content: "Toggle One",
+      list: [
+        {
+          content: "Item one",
+          href: "#"
+        },
+        {
+          content: "Item two",
+          href: "#"
+        },
+        {
+          content: "Item three",
+          href: "#"
+        }
+      ]
+    },
+    {
+      toggle_content: "Toggle Two",
+      list: [
+        {
+          content: "Item one",
+          href: "#"
+        },
+        {
+          content: "Item two",
+          href: "#"
+        },
+        {
+          content: "Item three",
+          href: "#"
+        }
+      ]
+    }
+    ]
+  }
+%}
+
+{{ accordion(example, accordion_title="Title", class="faq-category-accordion faq-question-list", id="accordion") }}

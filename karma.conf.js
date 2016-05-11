@@ -12,14 +12,15 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'browserify', 'fixture'],
+    frameworks: ['mocha', 'browserify'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'node_modules/babel-polyfill/browser.js',
+      'node_modules/nunjucks/browser/nunjucks.js',
       'src/**/*.test.js',
-      'src/**/*.html'
+      'precompiled-templates.js'
     ],
 
 
@@ -31,8 +32,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.test.js': ['browserify'],
-      'src/**/*.html': ['html2js']
+      'src/**/*.test.js': ['browserify']
     },
 
     // Browserify configuration
@@ -102,7 +102,6 @@ module.exports = function(config) {
       'karma-browserify',
       'karma-chrome-launcher',
       'karma-coverage',
-      'karma-fixture',
       'karma-html2js-preprocessor',
       'karma-mocha',
       'karma-mocha-reporter',

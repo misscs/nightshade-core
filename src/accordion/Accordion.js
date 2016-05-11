@@ -25,6 +25,7 @@ export const Accordion = {
 
     [...this.accordionSections].forEach((el) => {
       const trigger = el.querySelector(this.accordionSectionTrigger);
+      const sectionContent = el.querySelector(this.accordionSectionContent);
 
       trigger.setAttribute(`touch-action`, `none`);
       el.setAttribute(`aria-expanded`, false);
@@ -32,13 +33,7 @@ export const Accordion = {
       trigger.addEventListener(`pointerup`, (e) => {
         e.stopPropagation();
 
-        const sectionContent = el.querySelector(this.accordionSectionContent);
-
-        if (el.classList.contains(this.openClass)) {
-          this.closeAccordionSection(el, sectionContent);
-        } else {
-          this.openAccordionSection(el, sectionContent);
-        }
+        this.toggleAccordionSection(el, sectionContent);
       });
     });
   },
@@ -65,5 +60,19 @@ export const Accordion = {
     section.setAttribute(`aria-expanded`, false);
     section.classList.remove(this.openClass);
     velocity(sectionContent, `slideUp`, this.transitionDuration);
+  },
+
+  /**
+   * Toggles the given Accordion section
+   * @param {object} section DOM element to toggle state class on
+   * @param {object} sectionContent DOM element to toggle animation on
+   * @returns {void}
+  */
+  toggleAccordionSection(section, sectionContent) {
+    if (section.classList.contains(this.openClass)) {
+      this.closeAccordionSection(section, sectionContent);
+    } else {
+      this.openAccordionSection(section, sectionContent);
+    }
   },
 };

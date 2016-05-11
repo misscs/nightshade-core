@@ -1,45 +1,44 @@
 {% from 'accordion/accordion.macros.html' import accordion %}
 
-{% set faqCategory = {
-  accordionQuestions: [
+{% set example = {
+
+  sections: [
     {
-      toggle_content: "ABOUT THE CASPER MATTRESS",
+      toggle_content: "Toggle One",
       list: [
         {
-          content: "Setting up your Casper Mattress",
-          href: "./question.html"
+          content: "Item one",
+          href: "#"
         },
         {
-          content: "Is the Casper Mattress right for you?",
-          href: "./question.html"
+          content: "Item two",
+          href: "#"
         },
         {
-          content: "Does the foam smell?",
-          href: "./question.html"
+          content: "Item three",
+          href: "#"
+        }
+      ]
+    },
+    {
+      toggle_content: "Toggle Two",
+      list: [
+        {
+          content: "Item one",
+          href: "#"
         },
         {
-          content: "What are the mattress dimensions?",
-          href: "./question.html"
+          content: "Item two",
+          href: "#"
         },
         {
-          content: "Setting up your Casper Mattress",
-          href: "./question.html"
-        },
-        {
-          content: "Is the Casper Mattress right for you?",
-          href: "./question.html"
-        },
-        {
-          content: "Does the foam smell?",
-          href: "./question.html"
-        },
-        {
-          content: "What are the mattress dimensions?",
-          href: "./question.html"
+          content: "Item three",
+          href: "#"
         }
       ]
     }
-  ]
-} %}
+    ]
+  }
+%}
 
-{{ accordion(faqCategory.accordionQuestions, class="faq-category-accordion faq-question-list", id="accordion") }}
+{{ accordion(example, accordion_title="Title", class="faq-category-accordion faq-question-list", id="accordion") }}

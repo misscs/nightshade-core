@@ -18,7 +18,7 @@
   Font Usage                                                  | Extend helpers
   ------------------------------------------------------------ | -----------------
   <p class="verlag">Used for text</p>                          | `%verlag`
-  <p class="verlag-light">Light text variant</p>               | `%verlag-light`
+  <p class="calibre-light">Light text variant</p>               | `%calibre-light`
   <p class="verlag-black">Used for headlines</p>               | `%verlag-black`
   <p class="chronicle-deck">Body copy larger than 16px</p>     | `%chronicle-deck`
   <p class="chronicle-display">Body copy smaller than 16px</p> | `%chronicle-display`
@@ -42,7 +42,7 @@ $serif-stack: Georgia, serif;
   font-style: normal;
 }
 
-%verlag-light {
+%calibre-light {
   font-family: $verlag, $sans-stack;
   font-weight: 300;
   font-style: normal;

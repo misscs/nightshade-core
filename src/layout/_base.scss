@@ -30,36 +30,9 @@ html {
   letter-spacing: size(smaller-tracking);
   overflow-x: hidden;
   overflow-y: scroll; // [3]
-  text-rendering: optimizeLegibility; // [7]
-  -webkit-text-size-adjust: 100%; // [5]
-  -ms-text-size-adjust: 100%; // [5]
-  -webkit-font-smoothing: antialiased; // [6]
-  -moz-osx-font-smoothing: grayscale; // [6]
-}
-
-* {
-  &,
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
-}
-
-body {
-  @extend %verlag-light;
-  margin: 0 auto;
-  width: 100%;
-}
-
-figure,
-img {
-  border-style: none;
-  max-width: 100%;
-  margin: 0;
-}
-
-img {
-  vertical-align: middle;
+  text-rendering: optimizeLegibility; // [6]
+  -webkit-font-smoothing: antialiased; // [5]
+  -moz-osx-font-smoothing: grayscale; // [5]
 }
 
 body {

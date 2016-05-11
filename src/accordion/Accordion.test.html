@@ -1,0 +1,45 @@
+{% from 'accordion/accordion.macros.html' import accordion %}
+
+{% set faqCategory = {
+  accordionQuestions: [
+    {
+      toggle_content: "ABOUT THE CASPER MATTRESS",
+      list: [
+        {
+          content: "Setting up your Casper Mattress",
+          href: "./question.html"
+        },
+        {
+          content: "Is the Casper Mattress right for you?",
+          href: "./question.html"
+        },
+        {
+          content: "Does the foam smell?",
+          href: "./question.html"
+        },
+        {
+          content: "What are the mattress dimensions?",
+          href: "./question.html"
+        },
+        {
+          content: "Setting up your Casper Mattress",
+          href: "./question.html"
+        },
+        {
+          content: "Is the Casper Mattress right for you?",
+          href: "./question.html"
+        },
+        {
+          content: "Does the foam smell?",
+          href: "./question.html"
+        },
+        {
+          content: "What are the mattress dimensions?",
+          href: "./question.html"
+        }
+      ]
+    }
+  ]
+} %}
+
+{{ accordion(faqCategory.accordionQuestions, class="faq-category-accordion faq-question-list", id="accordion") }}

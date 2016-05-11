@@ -1,0 +1,113 @@
+/**
+ * @file Flickity
+ * @module Gallery
+ * @overview Styles for custom Flickity controls (based on v1.2.1 http://flickity.metafizzy.co)
+ */
+
+.flickity-enabled {
+  position: relative;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.is-draggable {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+
+  .is-draggable & {
+    cursor: move;
+    cursor: grab;
+  }
+
+  .is-draggable &.is-pointer-down {
+    cursor: grabbing;
+  }
+}
+
+.flickity-slider {
+  @include square(100%);
+  position: absolute;
+}
+
+.flickity-prev-next-button {
+  @include square(65px);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease, background 0.15s;
+  opacity: 0;
+
+  &:hover,
+  &:active {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: auto;
+  }
+
+  &.previous {
+    left: ms(2);
+  }
+
+  &.next {
+    right: ms(2);
+  }
+
+  &.no-svg {
+    color: color(gray);
+    font-size: ms(3);
+  }
+
+  .touch & {
+    display: none;
+  }
+
+  .flickity-enabled:hover & {
+    opacity: 1;
+  }
+
+  svg {
+    @include square(17px);
+  }
+
+  .arrow {
+    fill: color(background);
+  }
+}
+
+.flickity-page-dots {
+  position: absolute;
+  width: 100%;
+  bottom: ms(-1);
+  text-align: center;
+  line-height: 1;
+
+  .dot {
+    @include square(10px);
+    display: inline-block;
+    margin: 0 ms(-4);
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &.is-selected {
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

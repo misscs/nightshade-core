@@ -1,0 +1,66 @@
+/**
+ * @file Fonts Config
+ * @module Typography
+ * @overview Font configuration
+ * @see app/assets/js/load-fonts.js
+ *
+ * @todo Create a mixin for fonts. https://trello.com/c/pjMl9MoQ
+ */
+
+$calibre-light: "Calibre Light";
+$calibre-medium: "Calibre Medium";
+$verlag: "Verlag A", "Verlag B";
+$chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
+
+$sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif-stack: Georgia, serif;
+
+%calibre-light {
+ font-family: $sans-stack;
+ font-weight: 400;
+ font-style: normal;
+
+ .wf-active & {
+   font-family: $calibre-light;
+ }
+}
+
+%calibre-medium {
+ font-family: $sans-stack;
+ font-weight: 400;
+ font-style: normal;
+
+ .wf-active & {
+   font-family: $calibre-medium;
+ }
+}
+
+%verlag-black {
+ font-family: $sans-stack;
+ font-weight: 800;
+ font-style: normal;
+
+ .wf-active & {
+   font-family: $verlag;
+ }
+}
+
+%chronicle-deck {
+ font-family: $serif-stack;
+ font-weight: 400;
+ font-style: normal;
+
+ .wf-active & {
+   font-family: $chronicle-deck;
+ }
+}
+
+%chronicle-italic {
+ font-family: $serif-stack;
+ font-weight: 400;
+ font-style: italic;
+
+ .wf-active & {
+   font-family: $chronicle-deck;
+ }
+}

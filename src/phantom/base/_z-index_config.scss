@@ -1,0 +1,16 @@
+// z-index list
+// Ordered from lowest (bump) to highest. Add your layer wherever you need.
+
+$z-index:
+  'bump',
+  'trial-warranty',
+  'size-selector',
+  'tooltip',
+  'gallery-controls',
+  'flash',
+  'mobile-sticky-cta',
+  'nav-mobile-overlay',
+  'header',
+  'menu',
+  'modal'
+  ;

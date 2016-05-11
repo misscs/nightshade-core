@@ -1,0 +1,33 @@
+/**
+ * @file Hero
+ * @module Hero
+ * @overview Hero and top of page featured hero modules
+ */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: ms(16);
+  padding: ms(8) ms(2);
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.hero--featured {
+  justify-content: flex-start;
+  height: 90vh;
+}
+
+.hero-heading,
+.hero-subheading {
+  color: color(primary);
+}
+
+.hero-heading {
+  font-size: ms(1);
+  margin-bottom: ms(2);
+}

@@ -1,0 +1,61 @@
+{#
+  * @overview Collection of macros for rendering form elements.
+  * @TODO Keep generic form and button macro but make specific ones that build on top, ex: search
+#}
+
+{% from 'nightshade-core/src/buttons/buttons.macros.html' import button %}
+
+{#
+  * Renders a simple form with one input and submit button.
+  * Used for email signup and promotions.
+  *
+  * @todo Refactor JS. Currently a coffeescript. https://trello.com/c/JMPae5RS
+  * @todo Refactor macro so that it is a generic form input group comprised
+  * of one field and a submit button. Create a second macro for email signup
+  * that extends the input group and applies the necessary IDs, classes, and
+  * styles to render email_signup.
+#}
+{% macro email_signup() %}
+<form action="#" class="email-signup-form js-email-signup-form" method="get" target="_blank">
+  <div class="form-input-group">
+    <input class="form-input email-signup-input js-email-signup-input" inputmode="email" name="EMAIL" placeholder="Enter your email" required="true" type="email" value="" x-inputmode="email">
+
+    {{ button('SUBMIT', 'secondary', type="submit", class="email-signup-submit") }}
+  </div>
+</form>
+<div class="email-signup-response-text js-email-signup-response-text"></div>
+{% endmacro %}
+
+
+{#
+  * Renders a generic input group of an input and button.
+  * @param {string} name - Name attribute for the input element
+  * @param {string} [placeholder] - Placeholder text for the input
+  * @param {string} [button_content=''] - Button text content
+  * @param {string} [button_style=primary] - Button style
+  * @param {string} [button_icon] - Icon name for Buttons with icons
+  * @param {boolean} [required=true] - Boolean for whether or not the input is required
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro input_group(name, placeholder=null, button_content='', button_style='primary', button_icon=null, required='true', class=null, id=null) %}
+<div class="input-group {% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required="{{ required }}">
+  {{ button(button_content, style=button_style, icon=button_icon, type="submit") }}
+</div>
+{% endmacro %}
+
+
+{#
+  * Renders a Search input with a search cta
+  * @param {string} name - Name attribute for the input element
+  * @param {string} [placeholder] - Placeholder text for the input
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro search_input(name, placeholder=null, class=null, id=null) %}
+<form class="input-group search-input{% if class %} {{ class }}{% endif %}" {% if id %} id="{{ id }}"{% endif %}>
+  <input class="input" name="{{ name }}" id="{{ name }}"{% if placeholder %} placeholder="{{ placeholder }}"{% endif %} required>
+  {{ button(style='icon', size='small', icon='search', type="submit") }}
+</form>
+{% endmacro %}

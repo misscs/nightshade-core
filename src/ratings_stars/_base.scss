@@ -1,0 +1,50 @@
+// styling specifically for product ratings, with stars as a visual
+// base styling for rating stars
+// container is 'rating-stars', star element is 'rating-star'
+
+.rating-stars {
+  font-size: 1.3rem;
+  text-decoration: none;
+  border: 0 !important; // Make sure normalize is included before to remove !
+  vertical-align: middle;
+}
+
+.rating-star {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  color: color(gray--light5);
+}
+
+.rating-star--full,
+.rating-star--half {
+
+  @include before($content: "\2605") {
+    color: color($star-gold);
+    overflow: hidden;
+
+    .rating-stars--blue & {
+      color: color(primary);
+    }
+  }
+}
+
+.rating-star--half {
+
+  &:before {
+    width: 50%;
+  }
+}
+
+.rating-stars-stats {
+  text-align: left;
+  letter-spacing: size(smaller-tracking);
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+.rating-stars-stats--fraction {
+  @include respond-at-and-above($break-medium) {
+    margin: 0 4px 0 1px;
+  }
+}

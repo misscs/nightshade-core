@@ -1,0 +1,66 @@
+
+// @@@ This is probably best kept with buttons
+button.icon {
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// @@@ Todo: Remove from this file. too specific.
+.icon-lock {
+  @include square(20px);
+
+  fill: color(gray--light2);
+}
+
+[data-icon] {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  pointer-events: none; // Required to prevent click bubbling issues
+
+  .icon {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &[data-size="large"] {
+    @include square(64px);
+  }
+
+  &[data-size="medium"] {
+    @include square(48px);
+  }
+
+  &[data-size="default"] {
+    @include square(32px);
+  }
+
+  &[data-size="small"] {
+    @include square(24px);
+  }
+
+  &[data-size="x-small"] {
+    @include square(16px);
+  }
+
+  &[data-size="tiny"] {
+    @include square(10px);
+  }
+
+  &[data-size="micro"] {
+    @include square(8px);
+  }
+}
+
+[data-icon="close"] {
+  @include square(13px);
+  vertical-align: top;
+  fill: color(text);
+  cursor: pointer;
+}

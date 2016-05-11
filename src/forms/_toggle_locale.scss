@@ -1,0 +1,50 @@
+.form-toggle-locale {
+  .form-label {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .form-label-copy {
+    @extend %verlag-black;
+
+    color: color(medium-text);
+    order: 0;
+    line-height: 36px;
+    margin-left: size(smaller);
+    transition: color 0.15s;
+  }
+
+  .form-input {
+    @include is-hidden;
+  }
+
+  [data-icon] {
+    @include square(35px);
+
+    order: -1;
+    fill: color(gray--light3);
+    transition: fill 0.15s;
+  }
+}
+
+.form-field-locale {
+  &:hover {
+    .form-label-copy {
+      color: color(primary);
+    }
+
+    [data-icon] {
+      fill: color(primary);
+    }
+  }
+
+  &.is-selected {
+    .form-label-copy {
+      color: color(primary);
+    }
+
+    [data-icon] {
+      fill: color(primary);
+    }
+  }
+}

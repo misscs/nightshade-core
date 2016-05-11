@@ -1,0 +1,18 @@
+/**
+ * @file Accordion IE9 styles
+ * @module Accordion
+ * @overview Accordion IE9 styles
+ */
+
+ .accordion-section-toggle-content {
+  display: inline-block;
+  width: percentage(9/10);
+}
+
+.accordion-section-toggle {
+
+  [data-icon="arrow"] {
+    display: inline-block;
+    width: percentage(1 / 10);
+  }
+}

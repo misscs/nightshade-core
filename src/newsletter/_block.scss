@@ -1,0 +1,47 @@
+.newsletter-block {
+  .email-signup-form {
+    padding-top: ms(4);
+  }
+
+  .form-input-group {
+    justify-content: center;
+    height: 50px;
+
+    .email-signup-input {
+      padding-left: size(small);
+      width: 58%;
+      height: 100%;
+      border-right: none;
+
+      @include respond-at-and-above($break-mobile) {
+        width: 70%;
+      }
+    }
+
+    // Designer specific submit button for product pages
+    .email-signup-submit {
+      @include padding-sides(small);
+
+      height: 100%;
+      border: 1px solid color(dark-border);
+      color: color(dark-text);
+      background-color: color(light-background);
+
+      #{$focus} {
+        background-color: color(gray--light7);
+      }
+
+      @include respond-at-and-above($break-mobile) {
+        @include padding-sides(large);
+      }
+    }
+  }
+}
+
+.newsletter-block-text {
+  @include respond-at-and-above($break-mobile) {
+    .line-break {
+      display: block;
+    }
+  }
+}

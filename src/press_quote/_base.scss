@@ -1,0 +1,33 @@
+/**
+ * @file Press Quote
+ * @module Press Quote
+ * @overview Single press quote with source logo beneath
+ */
+
+.press-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: ms(16);
+  padding: ms(8) ms(2);
+  text-align: center;
+  background: color(light-background);
+
+  .icon {
+    height: 30px;
+    fill: color(gray);
+  }
+}
+
+.press-quote-copy {
+  max-width: 27em;
+  margin-bottom: ms(2);
+  font-size: ms(2);
+  line-height: 1.5;
+  white-space: normal;
+
+  @include respond-at-and-above($break-small) {
+    font-size: ms(4);
+  }
+}

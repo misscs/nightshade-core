@@ -1,0 +1,35 @@
+{#
+  * @overview Macros for Breadcrumbs
+  * @module Breadcrumbs
+#}
+{% from 'nightshade-core/src/icons/icons.macros.html' import icon %}
+
+{#
+  * Renders Breadcrumbs
+  * @param {array} data - List of links for Breadcrumbs
+  * @param {boolean} [footer=false] - Indicates if these are footer breadcrumbs
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+
+{% macro breadcrumbs(data, footer=false, class=null, id=null) %}
+<div class="breadcrumbs{% if footer %} breadcrumbs--footer{% else %} breadcrumbs--default{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <ol class="breadcrumbs-list">
+    {% if footer %}
+      <li class="breadcrumbs-list-item">
+        <a class="breadcrumbs-link" href="./">
+          {{ icon('casper-logo-mark', size='x-small') }}
+        </a>
+      </li>
+    {% endif %}
+
+    {% for item in data %}
+      <li class="breadcrumbs-list-item">
+        <a class="breadcrumbs-link" href="item.href">
+          {{ item.content }}
+        </a>
+      </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endmacro %}

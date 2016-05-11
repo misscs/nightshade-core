@@ -1,0 +1,63 @@
+// Tooltip related styles
+
+.reviews-header-description {
+  width: auto;
+  min-width: 275px;
+  margin-left: -20%;
+  white-space: normal;
+  text-align: left;
+  text-transform: none;
+  font-size: 16px;
+
+  @include respond-at-and-above($break-medium) {
+    min-width: 450px;
+    margin-left: 100%;
+  }
+}
+
+.reviews-tooltip {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+
+  @include respond-at-and-above($break-large) {
+    margin-left: 4px;
+  }
+
+  .reviews-tooltip-toggle {
+    @extend %verlag-black;
+
+    min-width: 100px;
+    color: color(primary);
+    display: block;
+    font-size: 1em;
+    padding-top: 2px;
+    transition: opacity 0.15s;
+    opacity: 1;
+    position: absolute;
+    top: -20px;
+
+    @include respond-at-and-above($break-medium) {
+      position: relative;
+      top: 0;
+    }
+
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  [data-placement="bottom"] {
+    top: 20px;
+    transform: translate(-57%, 0);
+
+    &:after {
+      left: 83%;
+
+      @include respond-between($break-medium, 820px) {
+        left: 70%;
+      }
+    }
+  }
+}

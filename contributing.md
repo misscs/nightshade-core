@@ -14,6 +14,36 @@ We think it's best for the project if the code you write looks like the code the
 - Add a label to your PR
 - Once your PR is merged, update the version, create a tag, and write a release.
 
+## Testing
+
+To run the unit tests:
+
+```sh
+npm run test
+```
+
+Now, you can go to `coverage/index.html` for in-depth code coverage info!
+
+To continuously run the unit tests as you develop:
+
+```sh
+npm run test:watch
+```
+
+## Code Coverage
+
+To check JavaScript code coverage:
+
+```sh
+npm run cover
+```
+
+To continuously check code coverage as you develop:
+
+```sh
+npm run cover:watch
+```
+
 ### Labels
 
 We use labels to help tag the state of a PR.
@@ -25,7 +55,7 @@ comments are left on the issue.
 
 ### Tagging your release
 
-Nightshade-styles uses Semver. Here is a [good primer](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on how this project tags releases.
+Nightshade-core uses Semver. Here is a [good primer](http://www.sitepoint.com/semantic-versioning-why-you-should-using/) on how this project tags releases.
 
 Once you've closed and merged your PR, you need to bump version
 and create a new tag. We can easily accomplish this with [npm-version](https://docs.npmjs.com/cli/version).
@@ -87,5 +117,3 @@ We love new ideas. Please use the issue queue to submit your suggestions.
 ## Browser Compatibility
 
 Our code base is written as close to the spec as possible. We use autoprefixer to generate compliant code. We support last two versions of Chrome, Firefox, Opera, Safari and IE9 up.
-
-

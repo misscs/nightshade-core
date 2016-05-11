@@ -1,0 +1,56 @@
+.tabpanel {
+  overflow-x: hidden;
+}
+
+.tabs-container {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.tab {
+  transition: background-color 0.15s;
+  position: relative;
+  float: left;
+  display: inline-block;
+  height: 100%;
+  border: 1px solid color(border);
+  margin-right: -1px;
+  flex: 1;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.is-active {
+    background-color: color(light-blue);
+    border: 1px solid color(light-blue);
+
+    @include after() {
+      @include arrow(bottom, tab-hover, 16px);
+    }
+  }
+}
+
+.tab-content {
+  display: block;
+  width: 100%;
+  outline: none;
+  padding: size(smaller);
+}
+
+// class for the element that contains the content for each tab
+.tabpanel {
+  transition: opacity 0.2s ease;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}

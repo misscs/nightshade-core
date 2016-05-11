@@ -1,0 +1,32 @@
+/**
+ * @file Gallery
+ * @module Gallery
+ * @overview Gallery carousels that use Flickity
+ */
+
+.gallery {
+  overflow: hidden;
+  max-height: ms(16);
+
+  &.flickity-enabled {
+    max-height: none;
+  }
+}
+
+.gallery--images {
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+
+  &.is-loaded {
+    opacity: 1;
+  }
+}
+
+.gallery-slide {
+  width: 100%;
+  min-height: 100%;
+}
+
+.gallery-image {
+  width: 100%;
+}

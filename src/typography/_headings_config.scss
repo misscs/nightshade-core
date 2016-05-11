@@ -1,0 +1,49 @@
+/*
+  * @todo Kill all extends
+ */
+
+%headers {
+  @extend %verlag-black;
+  text-transform: uppercase;
+  letter-spacing: size(small-tracking);
+  margin-top: 0
+}
+
+
+%headers--dark {
+  color: color(primary);
+}
+
+
+%headers--light {
+  color: color(background);
+}
+
+
+%h1 {
+  font-size: ms(2);
+}
+
+
+%h2 {
+  font-size: ms(1);
+}
+
+
+%h3 {
+  font-size: ms(0);
+  letter-spacing: size(normal-tracking);
+}
+
+
+%h4 {
+  font-size: ms(-1);
+  margin-bottom: ms(-3);
+  letter-spacing: size(normal-tracking);
+}
+
+
+%h5 {
+  font-size: ms(-2);
+  letter-spacing: size(normal-tracking);
+}

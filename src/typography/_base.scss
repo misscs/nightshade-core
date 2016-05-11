@@ -1,0 +1,141 @@
+/*doc
+---
+title: Typography
+name: typography
+category: stylekit
+---
+
+Typography styles are applied with classes in the markup.
+Use `-light` and `-dark` modifier classes to change the text color for any
+element. Default color is `color(text)`.
+
+*/
+
+// Base styles
+
+ol,
+ul {
+  @extend %lists;
+}
+
+a {
+  text-decoration: none;
+  color: color(primary);
+}
+
+
+// Color Modifiers
+// ---------------
+// Modifier classes for light (white) or dark (Casper blue) headlines or copy
+
+.-light {
+  color: color(background);
+}
+
+.-medium {
+  color: color(medium-text);
+}
+
+.-dark {
+  color: color(primary);
+}
+
+.-darkest {
+  color: color(dark-text);
+}
+
+
+// Paragraphs and Content
+// -----------------------
+// Classes for styling blocks of copy
+
+.body--serif {
+  @extend %body--serif;
+}
+
+.body--sans {
+  @extend %body--sans;
+}
+
+.body--sans-small {
+  @extend %body--sans-small;
+}
+
+.body--sans-medium {
+  @extend %body--sans-medium;
+}
+
+.body--sans-large {
+  @extend %body--sans-large;
+}
+
+.body--quote {
+  @extend %body--quote;
+}
+
+.body--numerals-large {
+  @extend %body--numerals-large;
+}
+
+// Headings
+// ---------
+// Base styling and classes for styling headers
+
+$headings: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
+
+// Generates h1-h4 and complimentary heading classes
+@each $element in $headings {
+  #{$element} {
+    @extend %headers;
+  }
+}
+
+
+h1,
+.h1 {
+  @extend %h1;
+}
+
+
+h2,
+.h2 {
+  @extend %h2;
+  margin-bottom: ms(2);
+}
+
+
+h3,
+.h3 {
+  @extend %h3;
+  margin-bottom: size(small);
+}
+
+h4,
+.h4 {
+  @extend %h4;
+}
+
+h5,
+.h5 {
+  @extend %h5;
+}
+
+
+p {
+  margin: 0;
+}
+
+
+.-spaced {
+  margin-bottom: size(large);
+}
+
+
+.-no-trailer {
+  margin-bottom: 0 !important;
+}
+
+
+.-nowrap {
+  white-space: nowrap;
+}

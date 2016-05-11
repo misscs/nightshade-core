@@ -1,0 +1,212 @@
+.press-header {
+  background-color: color(light-background);
+  width: 100%;
+  padding: 75px 0px;
+}
+
+.press-container {
+  width: 100%;
+  padding: 0 40px;
+}
+
+.press-title {
+  font-size: 0.75em;
+  color: color(primary);
+  letter-spacing: 0.2em;
+}
+
+.press-copy {
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4em;
+  color: color(text);
+  font-size: 46px;
+  letter-spacing: 0;
+
+  @include respond-below($break-large) {
+    max-width: 650px;
+  }
+
+
+  @include respond-below(666px) {
+    font-size: 36px;
+    line-height: 1.3em;
+  }
+}
+
+.press-logo-container {
+  width: 100%;
+  font-size: 2em;
+
+  @include respond-below($break-medium) {
+    font-size: 1.75em;
+  }
+
+
+  .icon-press-nyt {
+    width: 200px;
+    height: 1em;
+    vertical-align: middle;
+    padding-bottom: 5px;
+
+    @include respond-below($break-medium) {
+      width: 175px;
+    }
+  }
+}
+
+$num-boxes: 35;
+
+.press-grid {
+  overflow: visible;
+
+  position:relative {}
+}
+
+.press-grid-press-box {
+  background-color: color(medium-background);
+  transition: background-color 0.2s ease;
+  float: left;
+  width: (100% / 7);
+  height: 100px;
+  border: 1px solid color(light-text);
+  position: relative;
+  cursor: pointer;
+  fill: color(dark-background);
+
+  #{$focus} {
+    background-color: color(dark-background);
+  }
+
+  .icon {
+    @include vertical-align;
+
+    transition: fill 0.2s ease;
+    margin: 0 auto;
+    width: 80%;
+    max-height: 100%;
+
+    @include respond-below(800px) {
+      width: 100%;
+    }
+  }
+
+  .icon-newyorktimes {
+    width: 75%;
+
+    @include respond-below(800px) {
+      width: 90%;
+    }
+  }
+
+  &.is-active {
+    background-color: color(primary);
+    fill: color(background);
+  }
+
+  @include respond-below($break-xl) {
+    width: (100% / 6);
+
+    @for $i from 0 to 5 {
+      &.press-grid-box-#{$num-boxes - $i} {
+        display: none;
+      }
+    }
+  }
+
+
+  @include respond-below($break-large) {
+    width: (100% / 5);
+
+    @for $i from 5 to 10 {
+      &.press-grid-box-#{$num-boxes - $i} {
+        display: none;
+      }
+    }
+  }
+
+
+  @include respond-below($break-medium) {
+    width: (100% / 4);
+
+    @for $i from 10 to 15 {
+      &.press-grid-box-#{$num-boxes - $i} {
+        display: none;
+      }
+    }
+  }
+
+
+  @include respond-below($break-small) {
+    width: (100% / 3);
+    height: 75px;
+
+    @for $i from 15 to 20 {
+      &.press-grid-box-#{$num-boxes - $i} {
+        display: none;
+      }
+    }
+  }
+
+
+  // to allow touch users to click the logo to launch tooltip
+  svg {
+    pointer-events: none;
+  }
+}
+
+.press-grid-tooltip {
+  width: 200%;
+  margin-bottom: 22px;
+
+  &.-right-align {
+    left: initial;
+    right: -90%;
+  }
+
+  &.-left-align {
+    left: 110%;
+  }
+
+  @include respond-below($break-small) {
+    padding: 20px;
+  }
+}
+
+.press-grid-tooltip-copy {
+  font-size: 21px;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: color(primary);
+
+  @include respond-below($break-medium) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
+
+.press-grid-tooltip-date {
+  position: relative;
+  margin-top: 15px;
+
+  @include respond-below($break-small) {
+    margin-top: 10px;
+  }
+}
+
+.press-grid-tooltip-link {
+  @extend %headers;
+
+  color: color(dark-text);
+  font-size: 12px;
+  letter-spacing: size(normal-tracking);
+
+  .icon-offsite {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    top: 7px;
+    left: 7px;
+  }
+}

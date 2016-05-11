@@ -1,0 +1,85 @@
+//sticky styling
+.reviews {
+  // this is the sticky styling, only tablet and above
+  @include respond-at-and-above($break-main-nav) {
+    &.is-sticky {
+      .reviews-header {
+        @include z-index(flash);
+
+        position: fixed;
+        width: 100%;
+        top: size(header-height);
+        padding-top: size(large);
+        padding-bottom: 3px;
+        overflow-y: visible;
+        max-height: 116px;
+      }
+
+      .reviews-header-lead {
+        border: 0;
+        width: 100%;
+      }
+
+      .reviews-header-lead-image {
+        display: inline-block;
+        margin-right: size(large);
+        width: 120px;
+
+        img {
+          width: 100%;
+          margin-top: -15px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .reviews-stats {
+        @include is-hidden;
+      }
+
+      .reviews-wrapper--header {
+        max-width: $site-max-container;
+      }
+
+      .reviews-image {
+        @include is-hidden;
+      }
+
+      .reviews-rating-wrapper {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .reviews-add-review {
+        display: none;
+      }
+
+      .reviews-waypoint-marker {
+        top: 420px;
+      }
+
+      .reviews-filters {
+        @include z-index(flash);
+
+        position: fixed;
+        width: 100%;
+        height: 0;
+        top: $fixed-review-scrollbar-height;
+        background-color: color(background);
+      }
+
+      .reviews-filter-tab {
+        position: fixed;
+        top: 77px;
+        left: 75%;
+      }
+
+      .reviews-tooltip {
+        @include is-hidden;
+      }
+
+      .reviews-list {
+        padding-top: 446px;
+      }
+    }
+  }
+}

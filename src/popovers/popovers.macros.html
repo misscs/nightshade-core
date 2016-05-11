@@ -1,0 +1,18 @@
+{#
+  * @overview Macros for Popovers.
+  * @module Popovers
+#}
+
+{#
+  * Renders a Popover with a specified position.
+  * @param {string} content - Popover text content
+  * @param {string} [position=top] - Position of Popover
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro popover(content, position='top', class=null, id=null) %}
+<span class="popover-container js-popover-container{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <span class="popover-toggle js-popover-toggle">?</span>
+  <span class="popover js-popover is-invisible" data-position="{{ position }}" aria-expanded="false">{{ content }}</span>
+</span>
+{% endmacro %}

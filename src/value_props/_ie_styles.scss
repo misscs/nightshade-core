@@ -1,0 +1,18 @@
+/**
+ * @file Value Props IE9 styles
+ * @module Value Props
+ * @overview Value Props IE9 styles
+ */
+
+.value-prop-image,
+.value-prop-content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.value-prop-image--right {
+
+  @include respond-at-and-above($break-medium) {
+    margin: 0 7vw 0 0;
+  }
+}

@@ -1,10 +1,14 @@
 {
   "name": "@casper/nightshade-core",
-  "version": "1.11.0",
+  "version": "2.0.0",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postversion": "git push && git push --tags"
+    "test": "ava \"src/**/*.test.js\" --verbose",
+    "postversion": "git push && git push --tags",
+    "eslint": "eslint src",
+    "cover": "nyc npm run test",
+    "cover:watch": "nodemon --quiet --watch src --exec npm run cover -s",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -17,7 +21,21 @@
   },
   "homepage": "https://github.com/CasperSleep/nightshade-core#readme",
   "dependencies": {
+    "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
+    "ava": "^0.14.0",
+    "eslint": "^2.9.0",
+    "jsdom": "^8.5.0",
+    "modularscale-sass": "^2.1.1",
+    "nodemon": "^1.9.2",
+    "nunjucks": "^2.4.2",
+    "nyc": "^6.4.2",
     "susy": "^2.2.12"
-  }
+  },
+  "devDependencies": {
+    "pre-commit": "^1.1.2"
+  },
+  "pre-commit": [
+    "eslint"
+  ]
 }

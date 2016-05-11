@@ -1,0 +1,57 @@
+{#
+  * @overview Macros for site Banners.
+  * @module Banners
+  * @todo (CTA Banner) Consider optional alternative content image beneath CTA
+#}
+
+{% from '../icons/icons.macros.html' import svg %}
+{% from '../buttons/buttons.macros.html' import button %}
+
+{#
+  * Renders a basic Banner for short-lines of content or a link.
+  * @param {string} content - Banner text content
+  * @param {boolean} [background=false] - Setting to give Banner a white background fill
+  * @param {string} [href] - URL for Banners that have click-through CTAs
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro banner(content, background=false, href=null, class=null, id=null) %}
+<div class="banner{% if background %} banner--background{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  <p class="banner-content r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
+</div>
+{% endmacro %}
+
+
+{#
+  * Renders a Banner with a header and a link button. Only used at the bottom
+  * of pages to drive click-through to other sections.
+  * @param {string} content - Banner text content
+  * @param {string} cta - Call to action text
+  * @param {string} href - Path or full URL for Banner CTA button
+  * @param {string} [button_style=primary] - Button style
+  * @param {string} [background_path] - Background image imgix path
+  * @param {string} [video_path] - Video background s3 asset path
+  * @param {string} [video_fallback_path] - Video fallback image imgix path
+  * @param {boolean} [large_background=false] - Setting to display a large hero style image
+  * @param {string} [imgix_class=imgix-fluid--nocss] - Class name for custom imgix.js fluid targeting/manipulations
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+  *
+  * @todo: Enable playing with JS when in view, instead of `autoplay` attribute
+  * @todo: Refactor to use video `poster` attribute? See issue below
+  * https://github.com/CasperSleep/nightshade-core/issues/11
+ #}
+{% macro cta_banner(content, cta, href, button_style='primary', background_path=null, video_path=null, video_fallback_path=null, large_background=false, imgix_class='imgix-fluid--nocss', class=null, id=null) %}
+<div class="cta-banner{% if large_background %} cta-banner--large-background{% endif %} {{ imgix_class }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}{% if background_path %} data-src="https://casper.imgix.net/{{ background_path }}"{% endif %}>
+
+  {% if video_path %}
+  <video class="cta-bg cta-bg--vid" autoplay loop src="https://s3.amazonaws.com/casper-images/assets/video/{{ video_path }}"></video>
+  <div class="cta-bg cta-bg--img imgix-fluid--nocss" data-src="https://casper.imgix.net/video/fallbacks/{{ video_fallback_path }}?auto=format&amp;crop=left&amp;fit=crop&amp;q=60"></div>
+  {% endif %}
+
+  <div class="cta-content">
+    <h2 class="cta-heading -dark">{{ content }}</h2>
+    {{ button(cta, button_style, href=href) }}
+  </div>
+</div>
+{% endmacro %}

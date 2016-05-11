@@ -1,0 +1,18 @@
+figure,
+img {
+  max-width: 100%;
+  margin: 0;
+  border: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+svg {
+  pointer-events: none;
+}
+
+video {
+  outline: 0;
+}

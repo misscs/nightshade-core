@@ -1,0 +1,50 @@
+/**
+ * @file Layout Blocks
+ * @module Blocks
+ * @overview Side-by-side or stacked layout blocks
+ */
+
+ .block-group {
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+   text-align: center;
+ }
+
+.block-group--stacked {
+  @include respond-below($break-medium - 1) {
+    flex-direction: column;
+  }
+}
+
+.block-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 25%;
+
+  .block-group--stacked &:not(:last-child) {
+
+    @include respond-below($break-medium - 1) {
+      margin-bottom: ms(6);
+    }
+  }
+}
+
+.block-item-image {
+  @include square(120px);
+  margin-bottom: ms(2);
+  fill: color(primary);
+
+  @include respond-at-and-above($break-large) {
+    @include square(150px);
+  }
+
+  .icon {
+    @include square(100%);
+  }
+}
+
+.block-item-description {
+  max-width: 14em;
+}

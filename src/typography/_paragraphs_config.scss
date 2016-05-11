@@ -1,0 +1,49 @@
+/*
+  * @todo Kill all extends
+ */
+
+
+%body--quote {
+  @extend %chronicle-deck;
+  line-height: 1.75;
+  font-size: 20px;
+}
+
+
+%body--serif {
+  @extend %chronicle-deck;
+  font-size: ms(1);
+  line-height: 1.5;
+  letter-spacing: size(smaller-tracking);
+}
+
+
+%body--sans-small {
+  font-size: ms(0);
+  letter-spacing: size (smaller-tracking);
+}
+
+
+%body--sans {
+  font-size: ms(1);
+  letter-spacing: size(smaller-tracking);
+}
+
+
+%body--sans-medium {
+  font-size: ms(1);
+  letter-spacing: size(smaller-tracking);
+}
+
+
+%body--sans-large {
+  font-size: ms(2);
+  letter-spacing: size(smaller-tracking);
+}
+
+
+%body--numerals-large {
+  font-size: 46px;
+  letter-spacing: 0.05em; // New variable, or use smaller-tracking?
+  margin-top: 2px;
+}

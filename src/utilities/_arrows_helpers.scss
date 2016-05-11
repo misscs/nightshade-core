@@ -1,0 +1,160 @@
+////
+/// Arrows
+/// Mixins for creating CSS arrows
+/// @group Arrows
+
+
+/// Generates a positionable CSS arrow
+/// @access public
+/// @example sass - Arrow mixin
+///   +arrow(top, primary, 22px)
+///
+/// @param {top | bottom | left | right} direction - Direction arrow will point
+/// @param {color} arrow-color - Valid color or a value from the colors map
+/// @param {value} size - `px` or `em` value
+/// @param {bool} position [true] - Absolutely positions the arrow. `true`
+/// when using arrows for tooltips or tabs. `false` for pure shapes.
+/// @param {bool} shadow [false] - Should the arrow have a shadow. Often
+/// `true` for tooltips
+/// @param {value} shadow-opacity [0.1] - Opacity for arrow shadows
+///
+/// @todo Needs to accept compound directions
+@mixin arrow(
+  $direction,
+  $arrow-color,
+  $size,
+  $position: true,
+  $shadow: false,
+  $shadow-opacity: 0.1
+  ) {
+
+  display: block;
+  height: 0;
+  width: 0;
+  transform: translateZ(0);
+  pointer-events: none;
+
+
+  @if $position == true {
+    @include arrow-position($direction, $size)
+  }
+
+  @include arrow-color($direction, $arrow-color, $size, $shadow, $shadow-opacity)
+}
+
+/// Used to determined the position of the arrow when `$position: true`
+/// @access private
+///
+/// @example sass - Arrow mixin
+///   +arrow-color(top, 22px)
+///
+/// @param {top|bottom|left|right} direction - Direction arrow will point
+/// @param {value} size - `px` or `em` value
+///
+/// @todo Needs to accept compound directions
+@mixin arrow-position(
+  $direction,
+  $size
+  ) {
+
+  position: absolute;
+
+  @if $direction == "top" {
+    bottom: 100%;
+    left: 50%;
+    margin-left: (-$size);
+  }
+  @else if $direction == "bottom" {
+    top: 100%;
+    left: 50%;
+    margin-left: (-$size);
+  }
+  @else if $direction == "left" {
+    right: 100%;
+    top: 50%;
+    margin-top: (-$size);
+  }
+  @else if $direction == "right" {
+    left: 100%;
+    top: 50%;
+    margin-top: (-$size);
+  }
+}
+
+
+/// Sets the color of the arrow and adds a shadow
+/// @access private
+///
+/// @example sass - Arrow Color
+///   +arrow-color(top, primary, 22px, true)
+///
+/// @param {top|bottom|left|right|top-left|top-right|bottom-left|bottom-right} direction - Direction arrow will point
+/// @param {color} arrow-color - Value from the colors map
+/// @param {value} size - `px` or `em` value
+/// @param {bool} shadow [false] - Should the arrow have a shadow. Often
+/// `true` for tooltips
+@mixin arrow-color(
+  $direction,
+  $arrow-color,
+  $size,
+  $shadow: false,
+  $shadow-opacity: 0.1
+  ) {
+
+  @if $direction == "top" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid color($arrow-color);
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+
+    @if $shadow == true {
+      filter: drop-shadow(0px -7px 4px rgba(0, 0, 0, $shadow-opacity));
+    }
+  }
+  @else if $direction == "right" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid color($arrow-color);
+    border-right: $size solid transparent;
+
+    @if $shadow == true {
+      filter: drop-shadow(6px 3px 3px rgba(0, 0, 0, $shadow-opacity));
+    }
+  }
+  @else if $direction == "bottom" {
+    border-top: $size solid color($arrow-color);
+    border-bottom: $size solid transparent;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+
+    @if $shadow == true {
+      filter: drop-shadow(0px 7px 4px rgba(0, 0, 0, $shadow-opacity));
+    }
+  }
+  @else if $direction == "left" {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid transparent;
+    border-right: $size solid color($arrow-color);
+
+    @if $shadow == true {
+      filter: drop-shadow(-6px 3px 3px rgba(0, 0, 0, $shadow-opacity));
+    }
+  }
+  @else if $direction == "top-left" {
+    border-top: $size solid color($arrow-color);
+    border-right: $size solid transparent;
+  }
+  @else if $direction == "top-right" {
+    border-top: $size solid color($arrow-color);
+    border-left: $size solid transparent;
+  }
+  @else if $direction == "bottom-left" {
+    border-bottom: $size solid color($arrow-color);
+    border-right: $size solid transparent;
+  }
+  @else if $direction == "bottom-right" {
+    border-bottom: $size solid color($arrow-color);
+    border-left: $size solid transparent;
+  }
+}

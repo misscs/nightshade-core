@@ -1,0 +1,24 @@
+{#
+  * @overview Macros for the Callout module.
+  * @module Callout
+#}
+
+{% from '../icons/icons.macros.html' import svg %}`
+
+{#
+  * Renders a Callout module with heading and layout content beneath
+  * @param {string} [heading] - Heading text content
+  * @param {string} [icon] - Icon above the heading
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+#}
+{% macro callout(heading=null, icon=null, class=null, id=null) %}
+<div class="callout{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+  {% if icon %}
+    {{ svg(icon) }}
+  {% endif %}
+
+  {% if heading %}<h2 class="callout-heading -dark">{{ heading }}</h2>{% endif %}
+  {{ caller() }}
+</div>
+{% endmacro %}

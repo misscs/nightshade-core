@@ -1,0 +1,14 @@
+/**
+ * @file Color
+ * @module Color
+ * @overview Generates Casper color map including values from our stacks
+ */
+
+@import "lib/config";
+
+// Create $colors map that includes values from color stacks
+// (for use with Accoutrement Color)
+$stacks: map-get($colors, 'stacks');
+$stacksColors: generate-stacks-map($stacks);
+$colorsWithoutStacks: map-remove($colors, 'stacks');
+$colors: map-merge($stacksColors, $colorsWithoutStacks);

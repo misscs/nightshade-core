@@ -1,0 +1,163 @@
+// Filter bar
+
+.reviews-waypoint-marker {
+  top: 0;
+  width: 100%;
+  position: relative;
+}
+
+.reviews-filters {
+  border: 1px solid color(dark-border);
+  border-top: 0;
+
+  @include respond-at-and-above($break-medium) {
+    padding: 0 size(mobile-sides);
+  }
+}
+
+.reviews-filter-ratings-label {
+  padding-left: size(medium);
+
+  @include respond-at-and-above($break-medium) {
+    padding-left: 0;
+  }
+}
+
+.reviews-filter-tab {
+  width: 50%;
+  float: left;
+  text-transform: uppercase;
+  padding: size(medium) 0;
+  font-size: 0.875em;
+  border-right: 1px solid color(dark-border);
+
+  @include respond-at-and-above($break-medium) {
+    padding: 15px 0;
+    border-right: 0;
+    padding-left: 0;
+  }
+
+
+  [data-icon="arrow"] {
+    transform: rotate(90deg);
+    fill: color(text);
+    vertical-align: baseline;
+
+    @include respond-at-and-above($break-medium) {
+      position: absolute;
+      top: 35%;
+      right: size(small);
+    }
+  }
+}
+
+.reviews-filter-form {
+  width: 100%;
+  overflow: visible;
+  display: inline-block;
+  position: relative;
+
+  @include respond-at-and-above($break-medium) {
+    width: auto;
+  }
+}
+
+.reviews-filter-form,
+.reviews-filter-choice {
+  @include z-index(size-selector);
+}
+
+.reviews-filter {
+  @include respond-at-and-above($break-medium) {
+    display: inline-block;
+    padding: 10px size(small);
+  }
+}
+
+.reviews-filter-title {
+  @extend %verlag-black;
+
+  letter-spacing: size(medium-tracking);
+}
+
+.reviews-filter-list {
+  @include z-index(size-selector);
+
+  position: absolute;
+  width: 100%;
+  background-color: color(background);
+  left: -1px;
+  border: 1px solid color(dark-border);
+  border-top: 0;
+  border-bottom-left-radius: size(small-corners);
+  border-bottom-right-radius: size(small-corners);
+  text-align: left;
+  box-sizing: content-box;
+  cursor: pointer;
+  margin-top: 8px;
+
+  @include respond-at-and-above($break-medium) {
+    border-color: color(dark-border);
+  }
+}
+
+.reviews-filter-rating {
+  width: 100%;
+  height: 39px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: size(medium);
+
+  &:hover {
+    background-color: color(light-background);
+  }
+
+  @include respond-at-and-above($break-medium) {
+    padding-left: size(small);
+  }
+}
+
+.reviews-filter-title {
+  padding-left: size(medium);
+
+  @include respond-at-and-above($break-medium) {
+    padding-left: 0;
+  }
+}
+
+.reviews-filter-choice {
+  text-transform: uppercase;
+  color: color(text);
+  cursor: pointer;
+  font-size: size(small);
+  position: absolute;
+  top: -53px;
+  width: 100%;
+  height: 80px;
+  padding-top: 43px;
+  text-align: left;
+  transition: border 0.15s;
+  letter-spacing: size(larger-tracking);
+
+  @include respond-at-and-above($break-medium) {
+    border-radius: size(small-corners);
+    border: 1px solid color(dark-border);
+    min-width: 112px;
+    text-align: left;
+    position: relative;
+    padding-top: 10px;
+    height: auto;
+    top: 0;
+
+    &:hover {
+      border: 1px solid color(medium-border);
+
+      .reviews-filter-list {
+        border: 1px solid color(medium-border);
+        border-top: 0;
+
+      }
+
+    }
+  }
+}

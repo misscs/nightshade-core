@@ -1,0 +1,103 @@
+// Regions define main site layout areas
+// 1. Applying to `container` causes double scroll bar in IE. Apply only to
+// touch devices that create a horizontal scroll
+// 2. Height is necessary for IE10/11 sticky-footer with Flexbox but breaks
+// modern browsers.
+// 3. Accomodations for flexbox on IE10/11
+// 4. Spree-auth-devise hax
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: size(condensed-header-height);
+
+  @include respond-at-and-above($break-main-nav) {
+    padding-top: size(header-height);
+  }
+
+
+  .touch & {
+    overflow-x: hidden;
+  }
+
+  .no-cssvmaxunit & {
+    height: 100%;
+  }
+
+  // [3]
+  &[data-action="approach"],
+  &[data-controller="nightshade/products"] {
+    .wrapper {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  flex: 1 0 auto;
+
+  &.home {
+    flex: none;
+  }
+}
+
+// class for defining sections of content
+.r-section {
+  position: relative;
+}
+
+// wrapper that contrains regions to max site width
+.r-wrapper {
+  width: $site-max-width;
+}
+
+// class for centering sections
+.r-centered {
+  text-align: center;
+}
+
+#search-bar {
+  display: none; // [4]
+}
+
+.r-wrapper-centered {
+  width: $site-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.r-inner {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.r-section-wrapper {
+  padding: ms(5) ms(2);
+
+  @include respond-at-and-above($break-medium) {
+    padding: ms(5) ms(4);
+  }
+}
+
+.r-section-wrapper--sm {
+  padding: 40px 23px 30px;
+
+  /*@include respond-between($break-large, $site-max-container) {
+    padding: 30px 50px;
+  }*/
+}
+
+.r-section-wrapper--large {
+  padding: 5rem 0 7rem;
+
+  @include respond-at-and-above($break-large) {
+    padding: 5.5rem 0 2rem;
+  }
+
+  @include respond-below(475px) {
+    padding: 2rem 1rem;
+  }
+}

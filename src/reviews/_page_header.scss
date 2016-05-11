@@ -1,0 +1,110 @@
+
+.reviews-header {
+  padding: size(largest) 35px;
+  border-top: 1px solid color(dark-border);
+  overflow-y: hidden;
+
+  @include respond-at-and-above($break-medium) {
+    max-height: 360px;
+  }
+}
+
+.reviews-header-lead {
+  padding-bottom: size(large);
+  text-align: center;
+  padding-top: 100px;
+
+  @include respond-at-and-above($break-medium) {
+    text-align: left;
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 0 size(largest) 0 0;
+    border-right: 1px solid color(dark-border);
+  }
+}
+
+.reviews-header-lead-image {
+  display: none;
+}
+
+.reviews-title {
+  text-align: left;
+  font-size: 15px;
+
+  @include respond-between(383px, $break-medium) {
+    font-size: 19px;
+  }
+
+
+  @include respond-between($break-medium, 877px) {
+    font-size: 16px;
+  }
+
+
+  @include respond-at-and-above(877px) {
+    font-size: 19px;
+  }
+}
+
+.reviews-thumbnail {
+  .reviews-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @include respond-at-and-above($break-medium) {
+      display: block;
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      margin-top: 70px;
+    }
+  }
+
+  img {
+    width: 150px;
+    margin-top: -40px;
+
+    @include respond-at-and-above($break-medium) {
+      width: 320px;
+      margin-top: -50px;
+      margin-bottom: -20px;
+    }
+  }
+
+  @include respond-at-and-above($break-medium) {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    padding-left: size(largest);
+    margin-top: 0;
+  }
+}
+
+.reviews-image {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.reviews-count {
+  display: inline-block;
+  margin-left: size(small);
+}
+
+.reviews-rating-wrapper {
+  display: inline-block;
+  vertical-align: top;
+
+  @include respond-at-and-above($break-medium) {
+    padding-bottom: size(large);
+    padding-right: 5%;
+    border-bottom: 1px solid color(dark-border); 
+  }
+}
+
+.reviews-rating {
+  text-align: left;
+}

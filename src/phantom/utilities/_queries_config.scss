@@ -1,0 +1,137 @@
+////
+/// Mixins for setting media queries
+/// @group media queries
+
+
+/// Below mixin for max width, height, or any valid media query property
+/// @param {number | var} max - `px` or `em` value or breakpoint variable
+/// @param {string} prop [width] - Name of the property the media
+/// query applies to.
+/// @param {number} pixel-ratio - Pixel Ratio to be considered for retina
+/// @content Styles to apply at the specified media query
+
+@mixin respond-below($max, $prop: width, $pixel-ratio: 1) {
+  @if type-of($max) != number {
+    @error "The current value for $max (#{max}) isn't a valid value to be used
+    for a CSS3 compliant media query after a particular viewport size"
+  }
+  @if type-of($pixel-ratio) != number {
+    @error "Pixel ratio value #{$pixel-ratio} isn't a number"
+  }
+
+  @if type-of($prop) != string {
+    @error "Value passed in $prop (#{$prop}) must be a valid string to be later interpolated to a valid
+    context for the values passed in to makea valid media query before a
+    particular viewport size"
+  }
+
+  @if $pixel-ratio == 1 {
+    @media (max-#{$prop}: $max) {
+      @content;
+    }
+  } @else {
+    @media (max-#{$prop}: $max) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (max-#{$prop}: $max) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (max-#{$prop}: $max) and (min-resolution: #{(96*$pixel-ratio)}dpi),
+    (max-#{$prop}: $max) and (min-resolution: #{$pixel-ratio}dppx){
+      @content
+    }
+
+  }
+}
+
+/// Between mixin for min and max width, height or any valid media query prop.
+/// @param {number | var} min - `px` or `em` value or breakpoint variable
+/// @param {number | var} max - `px` or `em` value or breakpoint variable
+/// @param {string} prop [width] - Name of the property the media
+/// @param {number} pixel-ratio - Pixel Ratio to be considered for retina
+//displays. 1 indicates the query should consider normal screens
+/// @content Styles to apply at the specified media query
+
+@mixin respond-between($min, $max, $prop: width, $pixel-ratio: 1) {
+  @if type-of($min) != number or type-of($max) != number {
+    @error "The current value for $min & $max (#{min} & #{max}) isn't a valid value to be used
+    for a CSS3 compliant media query between viewport sizes"
+  }
+  @if type-of($pixel-ratio) != number {
+    @error "Pixel ratio value #{$pixel-ratio} isn't a number"
+  }
+
+  @if type-of($prop) != string {
+    @error "Value passed in $prop (#{$prop}) must be a valid string to be later
+    interpolated to a valid context for the values passed in to make a valid
+    media query between viewport sizes"
+  }
+
+  @if $pixel-ratio == 1 {
+    @media (min-#{$prop}: $min) and (max-#{$prop}: $max) {
+      @content;
+    }
+  } @else {
+    @media (min-#{$prop}: $min) and (max-#{$prop}: $max) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (min-#{$prop}: $min) and (max-#{$prop}: $max) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (min-#{$prop}: $min) and (max-#{$prop}: $max) and (min-resolution: #{(96*
+    $pixel-ratio)}dpi),
+    (min-#{$prop}: $min) and (max-#{$prop}: $max) and (min-resolution:
+    #{$pixel-ratio}dppx){
+      @content
+    }
+
+  }
+}
+
+/// A mixin for min width, height or any valid media query property.
+/// @param {number | var} min - `px` or `em` value or breakpoint variable
+/// @param {string} prop [width] - Name of the property the media
+/// @param {number} pixel-ratio - Pixel Ratio to be considered for retina
+/// @content Styles to apply at the specified media query
+@mixin respond-at-and-above($min, $prop: width, $pixel-ratio: 1) {
+  @if type-of($min) != number {
+    @error "The current value for $min (#{min}) isn't a valid value to be used
+    for a CSS3 compliant media query after a particular viewport size"
+  }
+
+  @if type-of($pixel-ratio) != number {
+    @error "Pixel ratio value #{$pixel-ratio} isn't a number"
+  }
+
+  @if type-of($prop) != string {
+    @error "Value passed in $prop (#{$prop}) must be a valid string to be later
+    interpolated to a valid context value passed in to make a valid media query
+    after a particular viewport size"
+  }
+
+  @if $pixel-ratio == 1 {
+    @media (min-#{$prop}: $min) {
+      @content;
+    }
+  } @else {
+    @media (min-#{$prop}: $min) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (min-#{$prop}: $min) and (-min-device-pixel-ratio: #{$pixel-ratio}),
+    (min-#{$prop}: $min) and (min-resolution: #{(96*$pixel-ratio)}dpi),
+    (min-#{$prop}: $min) and (min-resolution: #{$pixel-ratio}dppx){
+      @content
+    }
+
+  }
+}
+
+// Mixin for placeholder heights
+
+@mixin min-height-below($max, $min-height) {
+  @include respond-below($max) {
+    min-height: $min-height;
+  }
+}
+
+@mixin min-height-between($min, $max, $min-height) {
+  @include respond-between($min, $max) {
+    min-height: $min-height;
+  }
+}
+
+@mixin min-height-at-and-above($min, $min-height) {
+  @include respond-at-and-above($min) {
+    min-height: $min-height;
+  }
+}

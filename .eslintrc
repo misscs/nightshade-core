@@ -1,0 +1,349 @@
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "es6": true,
+    "browser": true,
+    "mocha": true,
+    "jquery": true
+  },
+  "globals": {
+    "dialogPolyfill": false,
+    // Until ES6 module versions of such libs are used
+    "Rx":  false,
+    "Flickity": false,
+    "Waypoint": false,
+    "imgix": false,
+    // Until Coffeescript conversion is completed
+    "Casper": false,
+    "analytics": false,
+    // Revisit
+    "Modernizr": false,
+    "google": false,
+    "Spree": false
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "parserOptions": {
+    sourceType: "module"
+  },
+  "rules": {
+    "indent": [
+      2,
+      2
+    ],
+
+    "dot-location":  [
+      2,
+      "property"
+    ],
+
+    "no-return-assign": [
+      2
+    ],
+
+    "camelcase": [
+      2,
+      {
+        "properties": "always"
+      }
+    ],
+
+    "no-inline-comments": [
+      2
+    ],
+
+    "max-nested-callbacks": [
+      2,
+      3
+    ],
+
+    "linebreak-style": [
+      2,
+      "unix"
+    ],
+
+    "semi": [
+      2,
+      "always"
+    ],
+
+    "use-isnan": [
+      2
+    ],
+
+    "space-in-parens": [
+      2,
+      "never"
+    ],
+
+    "no-mixed-spaces-and-tabs": [
+      2
+    ],
+
+    "valid-jsdoc": [
+      2,
+      {
+        "requireReturn": false
+      }
+    ],
+
+    "require-jsdoc": [2, {
+      "require": {
+        "FunctionDeclaration": true,
+        "MethodDefinition": false,
+        "ClassDeclaration": false
+      }
+    }],
+
+    "quotes": [
+      1,
+      "backtick",
+      "avoid-escape"
+    ],
+
+    "no-extra-semi": [
+      2
+    ],
+
+    "no-var": [
+      1
+    ],
+
+    "no-this-before-super": [
+      2
+    ],
+
+    "prefer-const": [
+      1
+    ],
+
+    "computed-property-spacing": [
+      2,
+      "never"
+    ],
+
+    "object-shorthand": [
+      2,
+      "always"
+    ],
+
+    "constructor-super": [
+      2
+    ],
+
+    "padded-blocks": [
+      2,
+      "never"
+    ],
+
+    "space-before-function-paren": [
+      2,
+      "never"
+    ],
+
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 2
+      }
+    ],
+
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+
+    "no-spaced-func": [
+      2
+    ],
+
+    "comma-style": [
+      2,
+      "last"
+    ],
+
+    "new-cap": [
+      2,
+      {
+        "capIsNewExceptions": [
+          "Deferred"
+        ]
+      }
+    ],
+
+    "no-trailing-spaces": [
+      2,
+      {
+        "skipBlankLines": true
+      }
+    ],
+
+    "spaced-comment": [
+      2,
+      "always",
+      {
+        "exceptions": [
+          "-"
+        ],
+        "markers": [
+          "="
+        ]
+      }
+    ],
+
+    "space-infix-ops": [
+      2,
+      {
+        "int32Hint": true
+      }
+    ],
+
+    "func-style": [
+      2,
+      "expression"
+    ],
+
+    "array-bracket-spacing": [
+      2,
+      "always",
+      {
+        "singleValue": false,
+        "objectsInArrays": false,
+        "arraysInArrays": false
+      }
+    ],
+
+    "quote-props": [
+      2,
+      "as-needed"
+    ],
+
+    "valid-typeof": [
+      2
+    ],
+
+    "no-control-regex": [
+      2
+    ],
+
+    "no-regex-spaces": [
+      2
+    ],
+
+    "no-empty": [
+      2
+    ],
+
+    "no-extra-boolean-cast": [
+      0
+    ],
+
+    "no-dupe-keys": [
+      2
+    ],
+
+    "no-negated-in-lhs": [
+      2
+    ],
+
+    "no-obj-calls": [
+      2
+    ],
+
+    "no-ex-assign": [
+      2
+    ],
+
+    "no-unreachable": [
+      2
+    ],
+
+    "no-constant-condition": [
+      2
+    ],
+
+    "no-sparse-arrays": [
+      2
+    ],
+
+    "no-unexpected-multiline": [
+      2
+    ],
+
+    "no-dupe-args": [
+      2
+    ],
+
+    "no-cond-assign": [
+      2
+    ],
+
+    "no-unused-vars": [
+      1
+    ],
+
+    "vars-on-top": [
+      2
+    ],
+
+    "no-new-wrappers": [
+      2
+    ],
+
+    "no-eval": [
+      2
+    ],
+
+    "no-multi-spaces": [
+      2
+    ],
+
+    "eqeqeq": [
+      2,
+      "smart"
+    ],
+
+    "no-script-url": [
+      2
+    ],
+
+    "no-console": [
+      1
+    ],
+
+    "no-throw-literal": [
+      2
+    ],
+
+    "comma-dangle": [
+      2,
+      "always-multiline"
+    ],
+
+    // Until a particular bug is fixed
+    "strict": [
+      0,
+      "global"
+    ],
+
+    "global-strict": [
+      0
+    ],
+
+    "no-loop-func": [
+      0
+    ],
+
+     // allow bracket notation with snake_case properties
+    "dot-notation": [
+      2,
+      {
+        "allowPattern": "^[a-z]+(_[a-z]+)+$"
+      }
+    ]
+  }
+}

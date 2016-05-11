@@ -1,0 +1,318 @@
+// Actual review card
+.reviews-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.review {
+  @extend %body--sans-small;
+
+  padding-top: size(larger);
+  padding-bottom: size(larger);
+  border-bottom: 1px solid color(border);
+  position: relative;
+
+  .review-name {
+    @extend %verlag-black;
+
+    display: block;
+    white-space: nowrap;
+  }
+
+  .review-verified-wrapper {
+    margin-left: 3px;
+    display: none;
+  }
+
+  .review-verified-message {
+    display: none;
+  }
+
+  .review-age {
+    color: color(dark-text);
+  }
+
+  &.is-verified {
+    .review-verified-wrapper {
+      position: relative;
+      display: inline-block;
+      fill: color(gray--light3);
+
+      &:hover {
+        .review-verified-message {
+          display: block;
+        }
+      }
+
+      .review-verified-message {
+        display: none;
+        width: 160px;
+        height: 30px;
+        border-radius: size(small-corners);
+        background: black;
+        color: color(background);
+        position: absolute;
+        bottom: 100%;
+        margin-bottom: 12px;
+        padding: 0 10px;
+        left: 50%;
+        margin-left: -25px;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        pointer-events: none;
+        line-height: 32px;
+
+        &.is-revealed {
+          display: block;
+        }
+
+        &:after {
+          top: 100%;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-color: transparent;
+          border-top-color: black;
+          border-width: 10px;
+        }
+      }
+
+      [data-icon="checkmark"] {
+        vertical-align: top;
+        top: 2px;
+
+        @include respond-at-and-above($break-medium) {
+          top: 5px;
+        }
+      }
+    }
+
+    .review-name {
+      .review-verified-wrapper {
+        margin-left: 1px;
+
+        .review-verified-message {
+          margin-left: -77px;
+
+          &:after {
+            left: 42%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.review-name,
+.review-info {
+  display: inline-block;
+  letter-spacing: size(smaller-tracking);
+
+  @include respond-at-and-above($break-large) {
+    display: block;
+    line-height: 1.6;
+  }
+}
+
+.review-title {
+  font-size: 1.25em;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.review-header {
+  @include respond-at-and-above($break-large) {
+    width: 20%;
+    min-width: 180px;
+    float: left;
+    margin-top: 5px;
+    padding-bottom: size(larger);
+    padding-right: 10px;
+
+    .review-title {
+      display: none;
+    }
+  }
+}
+
+.review-details-wrapper {
+  .review-title {
+    display: none;
+
+    @include respond-at-and-above($break-large) {
+      display: block;
+    }
+  }
+
+  @include respond-at-and-above($break-large) {
+    width: 80%;
+    float: left;
+    padding-bottom: size(larger);
+    padding-left: 20px;
+  }
+}
+
+.review-info {
+  margin: 0;
+}
+
+.review-rating {
+  margin-bottom: size(medium);
+
+  .review-star {
+    @include square(size(small));
+
+    position: relative;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    &--gold {
+      background-image: asset-data-url("icons/star-casper-gold.svg");
+    }
+
+    &--grey {
+      background-image: asset-data-url("icons/star.svg");
+    }
+  }
+}
+
+.review-date {
+  padding-bottom: 7px;
+  padding-top: 15px;
+}
+
+.review-date,
+.review-details {
+  @include respond-at-and-above($break-large) {
+    position: absolute;
+    bottom: size(larger);
+  }
+}
+
+.review-text {
+  margin-top: size(normal);
+  padding-bottom: size(normal);
+
+  .more-text {
+    padding: 0;
+    display: none;
+  }
+
+  .review-continue-reading {
+    @include link(primary-dark, primary, true);
+    font-size: 16px;
+  }
+}
+
+.review-text-body {
+  @include respond-at-and-above($break-medium) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  max-height: 101px;
+
+  @include respond-below($break-medium) {
+    max-height: 152px;
+  }
+
+  // see _paragraphs_config.scss (this break is hardcoded there for some reason)
+  @include respond-below(640px) {
+    max-height: 142px;
+  }
+}
+
+.review-hours,
+.review-partner {
+  color: color(medium-text);
+
+  @include respond-at-and-above($break-small) {
+    display: inline-block;
+  }
+}
+
+.review-hours {
+  @include respond-at-and-above($break-small) {
+    width: 40%;
+    max-width: 220px;
+    margin-right: 20px;
+    display: inline;
+  }
+}
+
+.review-details {
+  clear: both;
+  .icon {
+    height: size(large);
+    width: size(normal);
+    fill: color(gray--light3);
+    position: relative;
+    top: 3px;
+  }
+
+  .review-partner {
+    .icon {
+      width: size(medium);
+      height: size(large);
+    }
+
+    .icon-solo {
+      margin-right: -5px;
+    }
+
+    .icon-pig {
+      width: size(large);
+      margin: 0 -3px 1px 3px;
+    }
+
+    .icon-cat,
+    .icon-dog {
+      margin-bottom: 1px;
+      margin-left: 5px;
+    }
+  }
+
+  .review-hours-number,
+  .review-hours-label,
+  .review-partner-label {
+    padding-bottom: 7px;
+    display: inline-block;
+    color: color(dark-text);
+  }
+
+  .review-hours-number {
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .review-hours-label {
+    vertical-align: middle;
+  }
+
+  .review-partner-label {
+    margin-left: 9px;
+    vertical-align: middle;
+    max-width: 160px;
+    display: inline-block;
+
+    @include respond-between(360px, $break-medium) {
+      max-width: 230px;
+    }
+
+
+    @include respond-at-and-above($break-medium) {
+      max-width: none;
+      vertical-align: middle;
+    }
+  }
+
+  @include respond-at-and-above($break-medium) {
+    width: 100%;
+  }
+}

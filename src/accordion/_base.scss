@@ -1,0 +1,45 @@
+/**
+   * @file Accordion
+   * @module Accordion
+   * @overview
+   * @@@ todo: standardize height transition, also make proportional to max-height/media queries
+ **/
+
+.accordion-list-item {
+   border-bottom: solid 1px color(border);
+
+   &:last-child {
+     border-bottom: 0;
+   }
+ }
+
+.accordion-section-list {
+  display: none;
+  padding-bottom: ms(1);
+}
+
+.accordion-section-toggle-content {
+  flex-grow: 1;
+  margin-bottom: 0;
+}
+
+.accordion-section-toggle {
+  cursor: pointer;
+  padding: ms(2) 0 ms(0);
+  margin-bottom: 0;
+  display: flex;
+
+  @include respond-at-and-above($break-small) {
+    padding: ms(3) 0 ms(2);
+  }
+
+  [data-icon="arrow"] {
+    align-self: auto;
+    fill: currentColor;
+    transform: rotate(90deg);
+
+    .is-accordion-open & {
+      transform: rotate(270deg);
+    }
+  }
+}

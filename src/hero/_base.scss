@@ -29,5 +29,26 @@
 
 .hero-heading {
   font-size: ms(1);
-  margin-bottom: ms(2);
+  margin-bottom: ms(-3);
+
+  @include respond-at-and-above($break-tiny + 1) {
+    font-size: ms(2);
+  }
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(4);
+    margin-bottom: ms(0);
+  }
+
+  @include respond-at-and-above($break-gigantic) {
+    font-size: ms(5);
+  }
+}
+
+.hero-subheading {
+  font-size: ms(0);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(2);
+  }
 }

@@ -1,23 +1,68 @@
-import test from 'ava';
-import jsdom from 'jsdom';
-import nunjucks from 'nunjucks';
+import assert from 'assert';
+
 import { Accordion } from './Accordion';
 
-import {env} from '../../nunjucks-helper.js';
+const isHidden = (el) => {
+  const style = window.getComputedStyle(el);
 
+  return (style.display === `none`);
+};
 
-test.beforeEach(t => {
-  global.document = jsdom.jsdom(env.render('accordion/Accordion.test.html'));
-});
+describe(`Accordion`, () => {
+  beforeEach(() => {
+    const template = nunjucks.render(`accordion/Accordion.test.html`);
 
-// @todo: Write real tests
-test('Can initialize Accordion', t => {
-  Accordion.init('#accordion');
-  t.truthy(Accordion.accordion);
-  t.is(Accordion.transitionDuration, 300);
-});
+    document.body.insertAdjacentHTML(`afterbegin`, template);
+  });
 
-test('Can initialize Accordion transitionDuration', t => {
-  Accordion.init('#accordion', 100);
-  t.is(Accordion.transitionDuration, 100);
+  afterEach(() => {
+    const accordion = document.querySelector(`#accordion`);
+    accordion.parentNode.removeChild(accordion);
+  });
+
+  it(`should initialize`, () => {
+    Accordion.init(`#accordion`);
+
+    assert(Accordion.accordion);
+    assert.equal(Accordion.transitionDuration, 300);
+  });
+
+  it(`should initialize with custom transitionDuration`, () => {
+    Accordion.init(`#accordion`, 100);
+
+    assert.equal(Accordion.transitionDuration, 100);
+  });
+
+  it(`should initialize with visible sectionContent`, () => {
+    Accordion.init(`#accordion`);
+
+    const sectionContents = document.querySelectorAll(`.js-accordion-section-content`);
+
+    for (let i = 0; i < sectionContents.length; i++) {
+      assert(!isHidden(sectionContents[i]));
+    }
+  });
+
+  it(`can toggle accordion section`, (done) => {
+    Accordion.init(`#accordion`, 0);
+
+    const section = document.querySelector(`.js-accordion-section`);
+    const sectionContent = document.querySelector(`.js-accordion-section-content`);
+
+    // close the accordion
+    Accordion.toggleAccordionSection(section, sectionContent);
+
+    setTimeout(() => {
+      assert(!isHidden(sectionContent));
+      done();
+    }, 0);
+
+    // open the accordion
+    Accordion.toggleAccordionSection(section, sectionContent);
+
+    setTimeout(() => {
+      assert(isHidden(sectionContent));
+      done();
+    }, 0);
+  });
 });

@@ -90,7 +90,7 @@
 }
 
 .trial-warranty-copy {
-  @extend .body--serif;
+  @include serif-large;
   padding: 0 1rem;
 
   @include respond-between(650px, 1110px) {

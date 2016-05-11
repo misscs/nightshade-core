@@ -50,7 +50,7 @@ a {
 // Classes for styling blocks of copy
 
 .body--serif {
-  @extend %body--serif;
+  @include serif-small;
 }
 
 .body--sans {

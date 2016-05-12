@@ -3,45 +3,42 @@
  * @module Breadcrumbs
  * @overview Styles for Casper breadcrumbs
  */
-
 .breadcrumbs-list-item {
-   display: inline-block;
-   margin-left: ms(-7);
+  display: inline-block;
+  margin-left: ms(-7);
 
-   &:before {
-     content: "\003E";
-     margin-right: ms(-7);
-   }
+  &:before {
+    content: '\003E';
+    margin-right: ms(-7);
+  }
 
-   &:first-child {
-     margin-left: 0;
+  &:first-child {
+    margin-left: 0;
 
-     &:before {
-       display: none;
-     }
-   }
+    &:before {
+      display: none;
+    }
+  }
 
-   &:last-child {
-     pointer-events: none;
-   }
- }
+  &:last-child {
+    pointer-events: none;
+  }
+}
 
- .breadcrumbs-link {
-   font-size: ms(-1);
-   letter-spacing: size(normal-tracking);
- }
+.breadcrumbs-link {
+  font-size: ms(-1);
+  letter-spacing: size(normal-tracking);
+}
 
-
- /**
+/**
   * Styling for default Breadcrumbs
   */
 .breadcrumbs--default {
-
   .breadcrumbs-link {
     color: color(text);
 
     &:hover {
-      color: color(blue);
+      color: color(primary);
     }
   }
 }
@@ -53,9 +50,9 @@
   margin-bottom: ms(2);
 
   .breadcrumbs-link {
-    color: color(white);
-    opacity: 0.45;
-    transition: 0.25s opacity ease;
+    color: color(background);
+    opacity: .45;
+    transition: .25s opacity ease;
 
     &:hover {
       opacity: 1;
@@ -63,11 +60,11 @@
   }
 
   .breadcrumbs-list-item {
-    color: color(white);
+    color: color(background);
     vertical-align: middle;
 
     &:before {
-      opacity: 0.45;
+      opacity: .45;
     }
 
     &:first-child {
@@ -75,7 +72,7 @@
     }
   }
 
-  [data-icon="casper-logo-mark"] {
-    fill: color(white);
+  [data-icon='casper-logo-mark'] {
+    fill: color(background);
   }
 }

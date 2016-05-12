@@ -1,4 +1,5 @@
 // Base structure for all buttons
+
 [data-button] {
   @extend %verlag-black;
   display: inline-block;
@@ -11,18 +12,17 @@
   color: color(primary);
   cursor: pointer;
   border-radius: size(normal-corners);
-  transition: background-color 0.15s, color 0.15s;
-  -webkit-appearance: none;
+  transition: background-color .15s, color .15s;
+  appearance: none;
   fill: currentColor; // For buttons with icons
-
   @include respond-below($break-small) {
-    font-size: 0.85rem;
+    font-size: .85rem;
     padding: 1rem 1.5rem;
   }
 
   // Native disabled attribute is preferred over state class
-  &:disabled,
-  &.is-disabled {
+  &.is-disabled,
+  &:disabled {
     pointer-events: none;
     background-color: color(disabled);
   }
@@ -31,17 +31,31 @@
     position: relative;
     pointer-events: none;
 
-    @include after("") {
+    @include after ('') {
       @include spinner($color: mix(color(background), color(primary), 70%));
 
       top: 50%;
       right: 1.15em;
       margin-top: -8px;
     }
-
     @include respond-below($break-small) {
       padding-right: 2.6rem;
     }
+  }
+
+  // Button sizes
+  &[data-size~='small'] {
+    font-size: ms(-2);
+    padding: 1em 2em;
+
+    &.is-loading {
+      padding-right: 2.6rem;
+    }
+  }
+
+  // Full width buttons
+  &[data-size~='full'] {
+    width: 100%;
   }
 
   // For buttons with icons
@@ -50,24 +64,9 @@
   }
 }
 
-// Button sizes
-[data-button][data-size~="small"] {
-  font-size: ms(-2);
-  padding: 1em 2em;
-
-  &.is-loading {
-    padding-right: 2.6rem;
-  }
-}
-
-// Full width buttons
-[data-button][data-size~="full"] {
-  width: 100%;
-}
-
 // Primary button style across the site. If in doubt, use this one.
 // @@@ TODO generate a mixin color + hoverstate of our buttons
-[data-button="primary"] {
+[data-button='primary'] {
   background-color: color(primary);
   color: color(background);
 
@@ -85,7 +84,7 @@
   }
 }
 
-[data-button="secondary"] {
+[data-button='secondary'] {
   background-color: color(secondary);
   color: color(primary);
 
@@ -109,7 +108,7 @@
 }
 
 // Accent button to call attention
-[data-button="accent"] {
+[data-button='accent'] {
   background-color: color(accent);
   color: color(background);
 
@@ -133,7 +132,7 @@
 }
 
 // Subtle button without fill
-[data-button="ghost"] {
+[data-button='ghost'] {
   border: 1px solid color(dark-border);
   color: color(text);
 
@@ -142,7 +141,7 @@
   }
 }
 
-[data-button="simple"] {
+[data-button='simple'] {
   color: color(medium-text);
   border: 1px solid color(dark-border);
   background-color: color(background);
@@ -152,12 +151,7 @@
   }
 }
 
-// Button element for an icon as a button
-// @TODO add some hover states
-[data-button="icon"] {
-}
-
-[data-button="play"] {
+[data-button='play'] {
   position: relative;
   display: inline-block;
   min-height: 56px;
@@ -166,8 +160,7 @@
   border: 1px solid color(dark-border);
   padding: 1.45em size(large) size(normal) size(4.6em);
   cursor: pointer;
-  transition: background-color 0.25s;
-
+  transition: background-color .25s;
   @include respond-at-and-above($break-medium) {
     padding-top: size(normal);
   }
@@ -175,8 +168,7 @@
   &:hover {
     background-color: color(medium-background);
   }
-
-  @include before() {
+  @include before {
     @include square(40px);
     left: 8px;
     top: 7px;
@@ -184,8 +176,7 @@
     background: color(background);
     border: 1px solid color(dark-border);
   }
-
-  @include after() {
+  @include after {
     @include arrow(right, color(primary), 10px);
     left: 24px;
     top: 31px;
@@ -198,14 +189,14 @@
 .btn-toggler {
   cursor: pointer;
 
-  [data-icon="arrow"] {
+  [data-icon='arrow'] {
     margin: 0 3px;
     transform: rotate(90deg);
   }
 
   &.is-expanded,
   &.is-invisible {
-    [data-icon="arrow"] {
+    [data-icon='arrow'] {
       transform: rotate(-90deg);
     }
   }

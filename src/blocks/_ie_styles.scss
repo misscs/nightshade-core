@@ -5,16 +5,16 @@
  */
 
 .block-group {
- font-size: 0;
+  font-size: 0;
 }
 
 .block-item {
- display: inline-block;
- width: percentage(1 / 3);
- font-size: ms(0);
+  display: inline-block;
+  width: percentage(1 / 3);
+  font-size: ms(0);
 }
 
 .block-item-image,
 .block-item-description {
- @include margin-auto;
+  @include margin-auto;
 }

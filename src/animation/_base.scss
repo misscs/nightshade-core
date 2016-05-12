@@ -24,27 +24,6 @@
   $timing: linear,
   $iteration-count: infinite,
   $direction: normal) {
-  -webkit-animation-delay: $delay;
-  -webkit-animation-duration: $duration;
-  -webkit-animation-name: $animation-name;
-  -webkit-animation-timing-function: $timing ;
-  -webkit-animation-iteration-count: $iteration-count;
-  -webkit-animation-direction: $direction;
-  -webkit-animation-fill-mode: forwards;
-
-  -moz-animation-delay: $delay;
-  -moz-animation-duration: $duration;
-  -moz-animation-name: $animation-name;
-  -moz-animation-iteration-count: $iteration-count;
-  -moz-animation-direction: $direction;
-  -moz-animation-fill-mode: forwards;
-
-  -o-animation-delay: $delay;
-  -o-animation-duration: $duration;
-  -o-animation-name: $animation-name;
-  -o-animation-direction: $direction;
-  -o-animation-fill-mode: forwards;
-
   animation-delay: $delay;
   animation-duration: $duration;
   animation-name: $animation-name;
@@ -73,18 +52,6 @@
 ///
 /// @param animation-name - Must match `animation-name`
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
-
   @keyframes #{$animation-name} {
     @content;
   }

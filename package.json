@@ -33,6 +33,7 @@
     "browserify-babel-istanbul": "^0.4.0",
     "browserify-istanbul": "^2.0.0",
     "eslint": "^2.9.0",
+    "feature.js": "^1.0.0",
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.5",
     "karma-chrome-launcher": "^1.0.1",

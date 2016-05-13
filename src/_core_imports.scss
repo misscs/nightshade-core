@@ -3,12 +3,11 @@
  * @overview Core site configuration files and helpers that don't generate output
  */
 
-@import './node_modules/modularscale-sass/stylesheets/modular-scale';
 @import './node_modules/accoutrement-color/sass/color';
 @import './node_modules/susy/sass/susy';
 
 @import 'color/index';
-@import 'scale/config';
+@import 'scale/index';
 
 @import 'layout/positioning_helpers';
 @import 'utilities/queries_helpers';

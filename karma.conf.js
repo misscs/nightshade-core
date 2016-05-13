@@ -20,6 +20,7 @@ module.exports = function(config) {
       'node_modules/babel-polyfill/browser.js',
       'node_modules/nunjucks/browser/nunjucks.js',
       'src/**/*.test.js',
+      'src/nightshade.scss',
       'precompiled-templates.js'
     ],
 
@@ -32,7 +33,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.test.js': ['browserify']
+      'src/**/*.test.js': ['browserify'],
+      'src/**/*.scss': ['scss']
     },
 
     // Browserify configuration
@@ -105,7 +107,8 @@ module.exports = function(config) {
       'karma-html2js-preprocessor',
       'karma-mocha',
       'karma-mocha-reporter',
-      'karma-phantomjs-launcher'
+      'karma-phantomjs-launcher',
+      'karma-scss-preprocessor'
     ]
   })
 }

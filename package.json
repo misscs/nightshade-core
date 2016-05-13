@@ -20,8 +20,9 @@
   "dependencies": {
     "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
-    "susy": "^2.2.12",
-    "nunjucks": "^2.4.2"
+    "modularscale-sass": "^2.1.1",
+    "nunjucks": "^2.4.2",
+    "susy": "^2.2.12"
   },
   "devDependencies": {
     "assert": "^1.3.0",
@@ -41,8 +42,10 @@
     "karma-mocha": "^1.0.1",
     "karma-mocha-reporter": "^2.0.3",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-scss-preprocessor": "^2.0.0",
     "lolex": "^1.4.0",
     "mocha": "^2.4.5",
+    "node-sass": "^3.7.0",
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "pre-commit": "^1.1.2",

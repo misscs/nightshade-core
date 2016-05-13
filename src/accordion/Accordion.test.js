@@ -9,14 +9,15 @@ const isHidden = (el) => {
 };
 
 describe(`Accordion`, () => {
-  beforeEach(() => {
+  before(() => {
     const template = nunjucks.render(`accordion/Accordion.test.html`);
 
     document.body.insertAdjacentHTML(`afterbegin`, template);
   });
 
-  afterEach(() => {
+  after(() => {
     const accordion = document.querySelector(`#accordion`);
+
     accordion.parentNode.removeChild(accordion);
   });
 
@@ -33,19 +34,32 @@ describe(`Accordion`, () => {
     assert.equal(Accordion.transitionDuration, 100);
   });
 
-  it(`should initialize with visible sectionContent`, () => {
+  it(`should initialize with hidden sectionContent`, () => {
     Accordion.init(`#accordion`);
 
     const sectionContents = document.querySelectorAll(`.js-accordion-section-content`);
 
-    for (let i = 0; i < sectionContents.length; i++) {
-      assert(!isHidden(sectionContents[i]));
-    }
+    [...sectionContents].forEach((sectionContent) => {
+      assert(isHidden(sectionContent));
+    });
   });
 
-  it(`can toggle accordion section`, (done) => {
+  it(`can open accordion section`, (done) => {
     Accordion.init(`#accordion`, 0);
 
+    const section = document.querySelector(`.js-accordion-section`);
+    const sectionContent = document.querySelector(`.js-accordion-section-content`);
+
+    // open the accordion
+    Accordion.toggleAccordionSection(section, sectionContent);
+
+    setTimeout(() => {
+      assert(!isHidden(sectionContent));
+      done();
+    }, 50);
+  });
+
+  it(`can close accordion section`, (done) => {
     const section = document.querySelector(`.js-accordion-section`);
     const sectionContent = document.querySelector(`.js-accordion-section-content`);
 
@@ -53,16 +67,8 @@ describe(`Accordion`, () => {
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
-      assert(!isHidden(sectionContent));
-      done();
-    }, 0);
-
-    // open the accordion
-    Accordion.toggleAccordionSection(section, sectionContent);
-
-    setTimeout(() => {
       assert(isHidden(sectionContent));
       done();
-    }, 0);
+    }, 50);
   });
 });

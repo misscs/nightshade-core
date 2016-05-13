@@ -50,7 +50,7 @@ describe(`Accordion`, () => {
     const section = document.querySelector(`.js-accordion-section`);
     const sectionContent = document.querySelector(`.js-accordion-section-content`);
 
-    // close the accordion
+    // open the accordion
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {
@@ -63,7 +63,7 @@ describe(`Accordion`, () => {
     const section = document.querySelector(`.js-accordion-section`);
     const sectionContent = document.querySelector(`.js-accordion-section-content`);
 
-    // open the accordion
+    // close the accordion
     Accordion.toggleAccordionSection(section, sectionContent);
 
     setTimeout(() => {

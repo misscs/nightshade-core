@@ -31,7 +31,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 1;
   width: 25%;
+  min-height: 2.42rem;
   border-right: 1px solid color(medium-border);
 
   &:first-child {
@@ -52,5 +54,4 @@
 
 .scrollto-nav-link-text {
   display: inline-block;
-  max-width: 10em;
 }

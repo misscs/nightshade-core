@@ -3,7 +3,7 @@
  * @module Tooltips.js
 */
 
-import feature from 'viljamis/feature.js';
+import feature from 'feature.js';
 
 export const Tooltips = {
 

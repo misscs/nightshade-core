@@ -1,0 +1,7 @@
+{% from 'tooltips/tooltips.macros.html' import tooltip %}
+
+<div id="tooltips">
+{% call tooltip("Test Tooltip", id="tooltip") %}Tooltip Trigger{% endcall %}
+{% call tooltip("Test Tooltip 2", id="tooltip2") %}Tooltip Trigger{% endcall %}
+{% call tooltip("Test Tooltip 3", id="tooltip3") %}Tooltip Trigger{% endcall %}
+</div>

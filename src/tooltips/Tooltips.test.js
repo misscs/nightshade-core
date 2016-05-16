@@ -36,7 +36,7 @@ describe(`Tooltip`, () => {
   it(`should be visible after expanding`, () => {
     const tooltip = document.querySelector(`.js-tooltip`);
 
-    Tooltips.expandTooltip(tooltip);
+    Tooltips.expand(tooltip);
 
     assert(!isHidden(tooltip));
   });
@@ -44,8 +44,8 @@ describe(`Tooltip`, () => {
   it(`should be hidden after closing`, () => {
     const tooltip = document.querySelector(`.js-tooltip`);
 
-    Tooltips.expandTooltip(tooltip);
-    Tooltips.collapseTooltip(tooltip);
+    Tooltips.expand(tooltip);
+    Tooltips.collapse(tooltip);
 
     assert(isHidden(tooltip));
   });
@@ -59,11 +59,11 @@ describe(`Tooltip`, () => {
 
     // expand all the tooltips
     [...tooltips].forEach((tooltip) => {
-      Tooltips.expandTooltip(tooltip);
+      Tooltips.expand(tooltip);
     });
 
     // collapse all the tooltips
-    Tooltips.collapseOpenTooltips();
+    Tooltips.collapseOpen();
 
     // check that they're closed
     [...tooltips].forEach((tooltip) => {

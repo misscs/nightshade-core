@@ -89,13 +89,18 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome_Sized'],
+    browsers: ['PhantomJS_Sized'],
 
 
     customLaunchers: {
-      'Chrome_Sized': {
-        base: 'Chrome',
-        flags: ['--window-size=400,600']
+      'PhantomJS_Sized': {
+        base: 'PhantomJS',
+        options: {
+          viewportSize: {
+            width: 400,
+            height: 600
+          }
+        }
       }
     },
 

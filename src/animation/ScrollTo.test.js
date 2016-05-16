@@ -23,6 +23,8 @@ describe(`ScrollTo`, () => {
 
     ScrollTo.scroll({ scrollTarget });
 
+    console.log(`browser height`, window.innerHeight);
+
     setTimeout(() => {
       assert.equal(window.pageYOffset + ScrollTo.offset, initialScrollTargetOffset);
 

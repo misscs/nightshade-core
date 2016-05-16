@@ -11,6 +11,8 @@ export const ScrollTo = {
    * @param {number} [offset=0] - Scroll target offset
    * @param {number} [speed=1000] Speed of animation in ms
    * @returns {void}
+   *
+   * @todo Setting speed: 0 defaults back to 1000. Setting any speed value doesn't actually change visible speed.
   */
   scroll({scrollTarget, offset, speed}) {
     this.offset = offset || 0;

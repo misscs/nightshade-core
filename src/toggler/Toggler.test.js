@@ -1,9 +1,6 @@
 import assert from 'assert';
 
-import { Tooltips } from '../tooltips/Tooltips';
-import { Popovers } from '../popovers/Popovers';
-
-const togglerPluginNames = [ `Tooltips`, `Popovers` ];
+import { Toggler } from './Toggler';
 
 const isHidden = (el) => {
   const style = window.getComputedStyle(el);
@@ -11,76 +8,78 @@ const isHidden = (el) => {
   return (style.display === `none` || style.visibility === `hidden`);
 };
 
-[...togglerPluginNames].forEach((togglerPluginName) => {
-  const Plugin = eval(togglerPluginName);
-  const plugin = {
-    dir: togglerPlugin.toLowerCase(),
-    id: togglerPlugin.toLowerCase(),
-    name: togglerPlugin,
-    class: togglerPlugin.toLowerCase().replace(/s$/, ``),
-  };
+const selectors = {
+  toggler: `.js-toggler`,
+  toggleable: `.js-toggleable`,
+  collapsed: `.is-invisible`,
+};
 
-  describe(togglerPlugin, () => {
-    beforeEach(() => {
-      const template = nunjucks.render(`${plugin.dir}/${plugin.name}.test.html`);
+describe(`Toggler`, () => {
+  beforeEach(() => {
+    const template = nunjucks.render(`toggler/Toggler.test.html`);
 
-      document.body.insertAdjacentHTML(`afterbegin`, template);
+    document.body.insertAdjacentHTML(`afterbegin`, template);
+  });
+
+  afterEach(() => {
+    const togglers = document.querySelector(`#toggler`);
+
+    togglers.parentNode.removeChild(togglers);
+  });
+
+  it(`can initialize with hidden Toggler`, () => {
+    const hiddenToggleable = document.querySelector(selectors.toggleable + selectors.collapsed);
+    const hiddenToggler = hiddenToggleable.parentNode.querySelector(selectors.toggler);
+
+    Toggler.toggler({ hiddenToggler, hiddenToggleable });
+
+    assert(isHidden(hiddenToggleable));
+  });
+
+  it(`can initialize with visible Toggler`, () => {
+    const visibleToggleable = document.querySelector(selectors.toggleable + `:not(${selectors.collapsed})`);
+    const visibleToggler = visibleToggleable.parentNode.querySelector(selectors.toggler);
+
+    Toggler.toggler({ visibleToggler, visibleToggleable });
+
+    assert(!isHidden(visibleToggleable));
+  });
+
+  it(`should be visible after expanding`, () => {
+    const toggleable = document.querySelector(selectors.toggleable);
+
+    Toggler.expand(toggleable);
+
+    assert(!isHidden(toggleable));
+  });
+
+  it(`should be hidden after closing`, () => {
+    const toggleable = document.querySelector(selectors.toggleable);
+
+    Toggler.expand(toggleable);
+    Toggler.collapse(toggleable);
+
+    assert(isHidden(toggleable));
+  });
+
+  it(`should collapse all tooltips`, () => {
+    const toggleables = document.querySelectorAll(selectors.toggleable);
+    const togglerSelector = selectors.toggler;
+    const toggleableSelector = selectors.toggleable;
+
+    Toggler.toggler({ togglerSelector, toggleableSelector });
+
+    // expand all the toggleables
+    [...toggleables].forEach((toggleable) => {
+      Toggler.expand(toggleable);
     });
 
-    afterEach(() => {
-      const togglers = document.querySelector(`#${plugin.id}`);
+    // collapse all the tooltips
+    Toggler.collapseOpen();
 
-      togglers.parentNode.removeChild(togglers);
-    });
-
-    it(`should initialize with hidden ${plugin.name}`, () => {
-      const togglerSelector = `.js-${plugin.class}-toggle`;
-      const toggleableSelector = `.js-${plugin.class}`;
-      const toggleables = document.querySelectorAll(toggleableSelector);
-
-      Plugin.tooltip({ togglerSelector, toggleableSelector });
-
-      [...toggleables].forEach((toggleable) => {
-        assert(isHidden(toggleable));
-      });
-    });
-
-    it(`should be visible after expanding`, () => {
-      const tooltip = document.querySelector(`.js-tooltip`);
-
-      Tooltips.expand(tooltip);
-
-      assert(!isHidden(tooltip));
-    });
-
-    it(`should be hidden after closing`, () => {
-      const tooltip = document.querySelector(`.js-tooltip`);
-
-      Tooltips.expand(tooltip);
-      Tooltips.collapse(tooltip);
-
-      assert(isHidden(tooltip));
-    });
-
-    it(`should collapse all tooltips`, () => {
-      const togglerSelector = `.js-tooltip-toggle`;
-      const tooltipSelector = `.js-tooltip`;
-      const tooltips = document.querySelectorAll(tooltipSelector);
-
-      Tooltips.tooltip({ togglerSelector, tooltipSelector });
-
-      // expand all the tooltips
-      [...tooltips].forEach((tooltip) => {
-        Tooltips.expand(tooltip);
-      });
-
-      // collapse all the tooltips
-      Tooltips.collapseOpen();
-
-      // check that they're closed
-      [...tooltips].forEach((tooltip) => {
-        assert(isHidden(tooltip));
-      });
+    // check that they're closed
+    [...toggleables].forEach((toggleable) => {
+      assert(isHidden(toggleable));
     });
   });
 });

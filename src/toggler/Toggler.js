@@ -11,13 +11,15 @@ export const Toggler = {
    * before calling setup
    * @param {string} togglerSelector Selector for toggler elements that trigger Togglers
    * @param {string} toggleableSelector Selector for the element to be toggled
+   * @param {string} eventType Method of toggling
    * @returns {void}
   */
-  toggler({togglerSelector, toggleableSelector}) {
+  toggler({togglerSelector, toggleableSelector, eventType = `hover`}) {
     this.collapsedClass = `is-invisible`;
     this.togglerEls = document.querySelectorAll(togglerSelector);
     this.toggleableEls = document.querySelectorAll(toggleableSelector);
     this.toggleableSelector = toggleableSelector;
+    this.eventType = eventType;
     this._setupTogglers();
   },
 
@@ -31,7 +33,7 @@ export const Toggler = {
       const toggleableEl = el.parentNode.querySelector(this.toggleableSelector);
       el.setAttribute(`touch-action`, `none`);
 
-      if (feature.touch) {
+      if (this.eventType === `click` || feature.touch) {
         el.addEventListener(`pointerup`, (e) => {
           e.stopPropagation();
           this._setupExpandingAndCollapsing(toggleableEl);

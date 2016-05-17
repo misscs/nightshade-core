@@ -6,7 +6,7 @@ import { Toggler } from '../toggler/Toggler.js';
 
 const Tooltips = Object.assign({}, Toggler, {
   tooltip({togglerSelector, tooltipSelector }) {
-    this.toggler({togglerSelector, toggleableSelector: tooltipSelector});
+    this.toggler({togglerSelector, toggleableSelector: tooltipSelector, eventType: `hover`});
   },
 });
 

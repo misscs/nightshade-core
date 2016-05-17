@@ -1,12 +1,7 @@
 import assert from 'assert';
 
 import { Toggler } from './Toggler';
-
-const isHidden = (el) => {
-  const style = window.getComputedStyle(el);
-
-  return (style.display === `none` || style.visibility === `hidden`);
-};
+import { Utils } from '../../tests/Utils';
 
 const selectors = {
   toggler: `.js-toggler`,
@@ -33,7 +28,7 @@ describe(`Toggler`, () => {
 
     Toggler.toggler({ hiddenToggler, hiddenToggleable });
 
-    assert(isHidden(hiddenToggleable));
+    assert(Utils.isHidden(hiddenToggleable));
   });
 
   it(`can initialize with visible Toggler`, () => {
@@ -42,7 +37,7 @@ describe(`Toggler`, () => {
 
     Toggler.toggler({ visibleToggler, visibleToggleable });
 
-    assert(!isHidden(visibleToggleable));
+    assert(!Utils.isHidden(visibleToggleable));
   });
 
   it(`should be visible after expanding`, () => {
@@ -50,7 +45,7 @@ describe(`Toggler`, () => {
 
     Toggler.expand(toggleable);
 
-    assert(!isHidden(toggleable));
+    assert(!Utils.isHidden(toggleable));
   });
 
   it(`should be hidden after closing`, () => {
@@ -59,7 +54,7 @@ describe(`Toggler`, () => {
     Toggler.expand(toggleable);
     Toggler.collapse(toggleable);
 
-    assert(isHidden(toggleable));
+    assert(Utils.isHidden(toggleable));
   });
 
   it(`should collapse all tooltips`, () => {
@@ -79,7 +74,7 @@ describe(`Toggler`, () => {
 
     // check that they're closed
     [...toggleables].forEach((toggleable) => {
-      assert(isHidden(toggleable));
+      assert(Utils.isHidden(toggleable));
     });
   });
 });

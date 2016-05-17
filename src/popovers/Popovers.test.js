@@ -1,32 +1,32 @@
 import assert from 'assert';
 
-import { Tooltips } from './Tooltips';
+import { Popovers } from './Popovers';
 import { Utils } from '../../tests/Utils';
 
 const selectors = {
-  toggler: `.js-tooltip-toggle`,
-  toggleable: `.js-tooltip`,
+  toggler: `.js-popover-toggle`,
+  toggleable: `.js-popover`,
   collapsed: `.is-invisible`,
 };
 
-describe(`Tooltip`, () => {
+describe(`Popover`, () => {
   beforeEach(() => {
-    const template = nunjucks.render(`tooltips/Tooltips.test.html`);
+    const template = nunjucks.render(`popovers/Popovers.test.html`);
 
     document.body.insertAdjacentHTML(`afterbegin`, template);
   });
 
   afterEach(() => {
-    const tooltips = document.querySelector(`#tooltips`);
+    const popovers = document.querySelector(`#popovers`);
 
-    tooltips.parentNode.removeChild(tooltips);
+    popovers.parentNode.removeChild(popovers);
   });
 
-  it(`should initialize with hidden tooltips`, () => {
+  it(`should initialize with hidden popovers`, () => {
     const hiddenToggleable = document.querySelector(selectors.toggleable + selectors.collapsed);
     const hiddenToggler = hiddenToggleable.parentNode.querySelector(selectors.toggler);
 
-    Tooltips.tooltip({ hiddenToggler, hiddenToggleable });
+    Popovers.popover({ hiddenToggler, hiddenToggleable });
 
     assert(Utils.isHidden(hiddenToggleable));
   });

@@ -64,7 +64,7 @@ export const Toggler = {
   },
 
   /**
-   * Handles expanding of a given Toggler, collapsing any open Togglers first
+   * Handles expanding of a given Toggler
    * @param {object} el Toggleable DOM element to be expanded
    * @returns {void}
   */

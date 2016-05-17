@@ -1,6 +1,6 @@
 /**
- * @overview A module that initializes and handles Tooltips on a page
- * @module Tooltips.js
+ * @overview A module that initializes and handles Popovers on a page
+ * @module Popovers.js
 */
 import { Toggler } from '../toggler/Toggler.js';
 

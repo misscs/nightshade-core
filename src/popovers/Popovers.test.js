@@ -23,11 +23,14 @@ describe(`Popover`, () => {
   });
 
   it(`should initialize with hidden popovers`, () => {
-    const hiddenToggleable = document.querySelector(selectors.toggleable + selectors.collapsed);
-    const hiddenToggler = hiddenToggleable.parentNode.querySelector(selectors.toggler);
+    const togglerSelector = selectors.toggler;
+    const popoverSelector = selectors.toggleable;
+    const popovers = document.querySelectorAll(popoverSelector);
 
-    Popovers.popover({ hiddenToggler, hiddenToggleable });
+    Popovers.popover({ togglerSelector, popoverSelector });
 
-    assert(Utils.isHidden(hiddenToggleable));
+    [...popovers].forEach((popover) => {
+      assert(Utils.isHidden(popover));
+    });
   });
 });

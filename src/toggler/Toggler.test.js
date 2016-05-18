@@ -23,19 +23,21 @@ describe(`Toggler`, () => {
   });
 
   it(`can initialize with hidden Toggler`, () => {
-    const hiddenToggleable = document.querySelector(selectors.toggleable + selectors.collapsed);
-    const hiddenToggler = hiddenToggleable.parentNode.querySelector(selectors.toggler);
+    const togglerSelector = selectors.toggler;
+    const toggleableSelector = selectors.toggleable + selectors.collapsed;
+    const hiddenToggleable = document.querySelector(toggleableSelector);
 
-    Toggler.toggler({ hiddenToggler, hiddenToggleable });
+    Toggler.toggler({ togglerSelector, toggleableSelector });
 
     assert(Utils.isHidden(hiddenToggleable));
   });
 
   it(`can initialize with visible Toggler`, () => {
-    const visibleToggleable = document.querySelector(selectors.toggleable + `:not(${selectors.collapsed})`);
-    const visibleToggler = visibleToggleable.parentNode.querySelector(selectors.toggler);
+    const togglerSelector = selectors.toggler;
+    const toggleableSelector = selectors.toggleable + `:not(${selectors.collapsed})`;
+    const visibleToggleable = document.querySelector(toggleableSelector);
 
-    Toggler.toggler({ visibleToggler, visibleToggleable });
+    Toggler.toggler({ togglerSelector, toggleableSelector });
 
     assert(!Utils.isHidden(visibleToggleable));
   });

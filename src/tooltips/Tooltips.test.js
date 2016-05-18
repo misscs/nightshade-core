@@ -23,11 +23,14 @@ describe(`Tooltip`, () => {
   });
 
   it(`should initialize with hidden tooltips`, () => {
-    const hiddenToggleable = document.querySelector(selectors.toggleable + selectors.collapsed);
-    const hiddenToggler = hiddenToggleable.parentNode.querySelector(selectors.toggler);
+    const togglerSelector = selectors.toggler;
+    const tooltipSelector = selectors.toggleable;
+    const tooltips = document.querySelectorAll(tooltipSelector);
 
-    Tooltips.tooltip({ hiddenToggler, hiddenToggleable });
+    Tooltips.tooltip({ togglerSelector, tooltipSelector });
 
-    assert(Utils.isHidden(hiddenToggleable));
+    [...tooltips].forEach((tooltip) => {
+      assert(Utils.isHidden(tooltip));
+    });
   });
 });

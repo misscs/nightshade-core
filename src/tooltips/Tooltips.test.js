@@ -34,7 +34,7 @@ describe(`Tooltip`, () => {
     });
   });
 
-  it(`should expand on click`, () => {
+  it(`should expand on hover`, () => {
     const firstToggler = document.querySelector(selectors.toggler);
     const firstTooltip = firstToggler.parentNode.querySelector(selectors.toggleable);
 

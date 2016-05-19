@@ -33,4 +33,16 @@ describe(`Tooltip`, () => {
       assert(Utils.isHidden(tooltip));
     });
   });
+
+  it(`should expand on click`, () => {
+    const firstToggler = document.querySelector(selectors.toggler);
+    const firstTooltip = firstToggler.parentNode.querySelector(selectors.toggleable);
+
+    Tooltips.tooltip({ togglerSelector: selectors.toggler, tooltipSelector: selectors.toggleable });
+
+    // simulate click
+    firstToggler.dispatchEvent(new Event(`pointerenter`));
+
+    assert(!Utils.isHidden(firstTooltip));
+  });
 });

@@ -25,7 +25,7 @@
 {#
   * Renders a Banner with a header and a link button. Only used at the bottom
   * of pages to drive click-through to other sections.
-  * @param {string} content - Banner text content
+  * @param {string} [content] - Banner text content
   * @param {string} cta - Call to action text
   * @param {string} href - Path or full URL for Banner CTA button
   * @param {string} [button_style=primary] - Button style
@@ -50,7 +50,9 @@
   {% endif %}
 
   <div class="cta-content">
-    <h2 class="cta-heading -dark">{{ content }}</h2>
+    {% if content %}
+      <h2 class="cta-heading -dark">{{ content }}</h2>
+    {% endif %}
     {{ button(cta, button_style, href=href) }}
   </div>
 </div>

@@ -33,4 +33,16 @@ describe(`Popover`, () => {
       assert(Utils.isHidden(popover));
     });
   });
+
+  it(`should expand on click`, () => {
+    const firstToggler = document.querySelector(selectors.toggler);
+    const firstPopover = firstToggler.parentNode.querySelector(selectors.toggleable);
+
+    Popovers.popover({ togglerSelector: selectors.toggler, popoverSelector: selectors.toggleable });
+
+    // simulate click
+    firstToggler.dispatchEvent(new Event(`pointerup`));
+
+    assert(!Utils.isHidden(firstPopover));
+  });
 });

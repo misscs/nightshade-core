@@ -55,7 +55,7 @@
   .breadcrumbs-link {
     color: color(white);
     opacity: 0.45;
-    transition: 0.25s opacity ease;
+    transition: opacity 0.25s ease;
 
     &:hover {
       opacity: 1;

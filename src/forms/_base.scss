@@ -91,6 +91,10 @@ input {
   line-height: 1;
 }
 
+::placeholder {
+  color: color(text);
+}
+
 // Get rid of number dropdown "spinners" for an overwhelming amount of browsers
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -118,12 +122,6 @@ input[type="number"] {
   -moz-appearance: textfield;
   -ms-appearance: textfield;
   appearance: textfield;
-}
-
-input[type="radio"] {
-  -webkit-appearance: radio;
-  border-radius: 50%;
-  border: 1px solid gray;
 }
 
 select {
@@ -209,6 +207,7 @@ select {
 }
 
 .form-field {
+  position: relative;
   margin-bottom: 25px;
 }
 
@@ -228,11 +227,22 @@ select {
 
 
 .form-label {
-  @extend %headers;
+  position: absolute;
+  top: ms(-4);
+  left: 1.1rem;
+  font-size: ms(-2);
+  line-height: 1;
+  color: color(text);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(ms(-9));
+  transition: transform 0.25s ease-out, opacity 0.25s ease-out;
 
-  @extend %h4;
-
-  display: block;
+  .has-text & {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 
@@ -250,18 +260,19 @@ select {
 
 .form-input {
   @extend %body--sans-small;
-
+  appearance: none;
   width: 100%;
-  border: 1px solid color(border);
+  border: 1px solid color(dark-border);
   margin: 0;
-  padding: size(smaller) size(small);
-  color: color(dark-text);
+  padding: 0.85rem ms(0) 0.85rem;
+  color: color(text);
   border-radius: size(normal-corners);
   background: color(background);
   cursor: auto;
+  transition: padding 0.25s ease-out;
 
   &:focus {
-    border-color: color(gray--light3);
+    border-color: color(primary);
   }
 
   // these are for jquery validation plugin
@@ -269,6 +280,17 @@ select {
   &.has-errors,
   &.error {
     border-color: color(accent);
+  }
+
+  .has-text & {
+    padding: 1.2rem ms(0) 0.5rem;
+  }
+}
+
+.form-input--textarea {
+
+  #{$focus} {
+    outline: 0;
   }
 }
 

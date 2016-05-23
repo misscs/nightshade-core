@@ -21,6 +21,7 @@
     "@casper/nightshade-icons": "github:caspersleep/nightshade-icons",
     "accoutrement-color": "^1.0.3",
     "modularscale-sass": "^2.1.1",
+    "normalize.scss": "github:caspersleep/normalize.scss",
     "nunjucks": "^2.4.2",
     "susy": "^2.2.12"
   },

@@ -23,11 +23,11 @@
   <ul class="list-items">
   {% for item in data.list %}
     {% if action_link and loop.last %}
-    <li>
+    <li class="list-item">
       {{ link_icon(item.content, href=item.href, icon=action_link_icon, icon_size=icon_size) }}
     </li>
     {% else %}
-    <li>
+    <li class="list-item">
       {{ link(item.content, href=item.href) }}
     </li>
     {% endif %}

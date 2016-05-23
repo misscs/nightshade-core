@@ -173,7 +173,7 @@
 </nav>
 {% endmacro %}
 
-{% macro header(simple=false, fixed=true) %}
+{% macro header(simple=false, fixed=true, phone_number='888–498–0003') %}
 <header id="header" class="r-header{% if simple %} r-header--simple{% endif %}{% if not fixed %} r-header--static{% endif %}" role="banner">
   <div class="header-wrapper">
     <nav class="js-nav-main nav-main nav-main--primary">
@@ -184,9 +184,9 @@
       <ul class="nav-main-group nav-main-group--user">
         <li role="presentation">
           <span class="phone-number js-a-sup-phone">
-            <a class="nav-item" data-track-click-target="phone" href="tel:18884980003">
+            <a class="nav-item" data-track-click-target="phone" href="tel:1{{ phone_number|replace('-', '') }}">
               {{ icon.icon("phone")}}
-              888–498–0003
+              {{ phone_number }}
             </a>
           </span>
         </li>

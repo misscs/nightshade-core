@@ -7,7 +7,7 @@
 {#
   * Renders a standard or simplified footer
 #}
-{% macro footer(simple=false, class=null, id=null) %}
+{% macro footer(simple=false, class=null, id=null, phone_number='888–498–0003') %}
 <footer class="footer{% if simple %} footer--simple{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <div class="footer-top r-inner">
     {{ caller() }}
@@ -42,9 +42,9 @@
 
       {% if not simple %}
       <div class="footer-nav-group footer-nav-group--right">
-        <a class="footer-nav-group-link footer-nav-group-link--contact footer-nav-group-link--contact-phone" href="tel:18884980003">
+        <a class="footer-nav-group-link footer-nav-group-link--contact footer-nav-group-link--contact-phone" href="tel:1{{ phone_number|replace('-', '') }}">
           {{ icon('phone', size='x-small') }}
-          <span class="footer-nav-group-text--bottom footer-nav-group-text--contact">888–498–0003</span>
+          <span class="footer-nav-group-text--bottom footer-nav-group-text--contact">{{ phone_number }}</span>
         </a>
         <a target="_blank" class="footer-nav-group-link footer-nav-group-link--contact" href="/help">
           {{ icon('envelope') }}

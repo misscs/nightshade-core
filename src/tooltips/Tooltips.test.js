@@ -1,11 +1,12 @@
 import assert from 'assert';
 
 import { Tooltips } from './Tooltips';
+import { Utils } from '../../tests/Utils';
 
-const isHidden = (el) => {
-  const style = window.getComputedStyle(el);
-
-  return (style.display === `none` || style.visibility === `hidden`);
+const selectors = {
+  toggler: `.js-tooltip-toggle`,
+  toggleable: `.js-tooltip`,
+  collapsed: `.is-invisible`,
 };
 
 describe(`Tooltip`, () => {
@@ -22,52 +23,26 @@ describe(`Tooltip`, () => {
   });
 
   it(`should initialize with hidden tooltips`, () => {
-    const togglerSelector = `.js-tooltip-toggle`;
-    const tooltipSelector = `.js-tooltip`;
+    const togglerSelector = selectors.toggler;
+    const tooltipSelector = selectors.toggleable;
     const tooltips = document.querySelectorAll(tooltipSelector);
 
     Tooltips.tooltip({ togglerSelector, tooltipSelector });
 
     [...tooltips].forEach((tooltip) => {
-      assert(isHidden(tooltip));
+      assert(Utils.isHidden(tooltip));
     });
   });
 
-  it(`should be visible after expanding`, () => {
-    const tooltip = document.querySelector(`.js-tooltip`);
+  it(`should expand on hover`, () => {
+    const firstToggler = document.querySelector(selectors.toggler);
+    const firstTooltip = firstToggler.parentNode.querySelector(selectors.toggleable);
 
-    Tooltips.expandTooltip(tooltip);
+    Tooltips.tooltip({ togglerSelector: selectors.toggler, tooltipSelector: selectors.toggleable });
 
-    assert(!isHidden(tooltip));
-  });
+    // simulate click
+    firstToggler.dispatchEvent(new Event(`pointerenter`));
 
-  it(`should be hidden after closing`, () => {
-    const tooltip = document.querySelector(`.js-tooltip`);
-
-    Tooltips.expandTooltip(tooltip);
-    Tooltips.collapseTooltip(tooltip);
-
-    assert(isHidden(tooltip));
-  });
-
-  it(`should collapse all tooltips`, () => {
-    const togglerSelector = `.js-tooltip-toggle`;
-    const tooltipSelector = `.js-tooltip`;
-    const tooltips = document.querySelectorAll(tooltipSelector);
-
-    Tooltips.tooltip({ togglerSelector, tooltipSelector });
-
-    // expand all the tooltips
-    [...tooltips].forEach((tooltip) => {
-      Tooltips.expandTooltip(tooltip);
-    });
-
-    // collapse all the tooltips
-    Tooltips.collapseOpenTooltips();
-
-    // check that they're closed
-    [...tooltips].forEach((tooltip) => {
-      assert(isHidden(tooltip));
-    });
+    assert(!Utils.isHidden(firstTooltip));
   });
 });

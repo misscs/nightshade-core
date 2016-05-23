@@ -1,0 +1,7 @@
+{% from 'popovers/popovers.macros.html' import popover %}
+
+<div id="popovers">
+{% call popover("Test Popover", id="popover") %}Popover Trigger{% endcall %}
+{% call popover("Test Popover 2", id="popover2") %}Popover Trigger{% endcall %}
+{% call popover("Test Popover 3", id="popover3") %}Popover Trigger{% endcall %}
+</div>

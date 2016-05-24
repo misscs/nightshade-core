@@ -2,3 +2,15 @@
 @import "links_config";
 @import "lists_config";
 @import "paragraphs_config";
+
+@font-face {
+  font-family: "Calibre Light";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Light.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Calibre Medium";
+  src: url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Medium.woff2') format('woff2'),
+       url('https://s3.amazonaws.com/nightshade-fonts/CalibreWeb-Medium.woff') format('woff');
+}

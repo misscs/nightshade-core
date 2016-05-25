@@ -47,6 +47,7 @@
     "nodemon": "^1.9.2",
     "phantomjs-prebuilt": "^2.1.7",
     "pre-commit": "^1.1.2",
+    "sass-lint": "^1.7.0",
     "velocity-animate": "^1.2.3",
     "watchify": "^3.7.0"
   },

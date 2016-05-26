@@ -60,5 +60,5 @@ $sizing: (
 
   $size: map-get($sizing, $size) or $size;
 
-  @return #{$size};
+  @return $size;
 }

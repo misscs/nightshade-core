@@ -33,13 +33,12 @@
     padding: ms(3) 0 ms(2);
   }
 
-  [data-icon="arrow"] {
+  [data-icon="arrow-down"] {
     align-self: auto;
     fill: currentColor;
-    transform: rotate(90deg);
 
     .is-accordion-open & {
-      transform: rotate(270deg);
+      transform: rotate(180deg);
     }
   }
 }

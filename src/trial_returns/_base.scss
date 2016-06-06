@@ -1,0 +1,48 @@
+/**
+ * @file Trial/Returns
+ * @module Trial/Returns
+ * @overview Trial/Returns module with icon and image or background image
+ * @todo Replace font definitions with mixins for new type pairings
+ */
+
+.trial-returns {
+  position: relative;
+  min-height: ms(16);
+  padding: ms(8) ms(2);
+}
+
+.trial-returns-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .icon {
+    @include square(8rem);
+    margin-bottom: ms(3);
+    fill: color(primary);
+  }
+}
+
+.trial-returns-heading {
+  max-width: 27em;
+  font-size: ms(4);
+  color: color(primary);
+}
+
+.trial-returns-copy {
+  font-size: ms(2);
+}
+
+.trial-returns-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

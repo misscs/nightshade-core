@@ -32,13 +32,8 @@
 }
 
 .block-item-image {
-  @include square(120px);
   margin-bottom: ms(2);
   fill: color(primary);
-
-  @include respond-at-and-above($break-large) {
-    @include square(150px);
-  }
 
   .icon {
     @include square(100%);

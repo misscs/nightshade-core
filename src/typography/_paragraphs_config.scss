@@ -14,7 +14,7 @@
 @mixin body--sans-small {
   @include calibre-light;
   font-size: ms(0);
-  letter-spacing: size (smaller-tracking);
+  letter-spacing: size(smaller-tracking);
 }
 
 @mixin body--sans {

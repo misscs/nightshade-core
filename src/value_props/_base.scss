@@ -29,6 +29,7 @@
   }
 }
 
+.value-prop:nth-of-type(odd) .value-prop-image,
 .value-prop-image--right {
 
   @include respond-at-and-above($break-medium) {

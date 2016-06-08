@@ -9,13 +9,13 @@
   * @param {string} content - Panel body copy
   * @param {string} image_path - Panel image or graphic path
   * @param {string} [image_description] - Image description alt text
-  * @param {string} [image_position=left] - Image position
+  * @param {string} [image_position] - Image position (left or right)
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro value_prop(heading, content, image_path, image_description=null, image_position='left', class=null, id=null) %}
+{% macro value_prop(heading, content, image_path, image_description=null, image_position=null, class=null, id=null) %}
 <div class="value-prop r-inner{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
-  <figure class="value-prop-image value-prop-image--{{ image_position }}">
+  <figure class="value-prop-image{% if image_position %} value-prop-image--{{ image_position }}{% endif %}">
     <img src="{{ image_path }}" alt="{{ image_description }}">
   </figure>
   <div class="value-prop-content">

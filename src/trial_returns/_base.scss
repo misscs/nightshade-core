@@ -20,20 +20,32 @@
   text-align: center;
 
   .icon {
-    @include square(8rem);
+    @include square(7rem);
     margin-bottom: ms(3);
     fill: color(primary);
+
+    @include respond-at-and-above($break-medium) {
+      @include square(8rem);
+    }
   }
 }
 
 .trial-returns-heading {
-  max-width: 27em;
-  font-size: ms(4);
+  max-width: 12em;
+  font-size: ms(1);
   color: color(primary);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(4);
+  }
 }
 
 .trial-returns-copy {
-  font-size: ms(2);
+  font-size: ms(1);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(2);
+  }
 }
 
 .trial-returns-background-image {
@@ -45,4 +57,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+
+// German
+
+.lang-de {
+  .trial-returns-heading {
+    max-width: 18em;
+  }
 }

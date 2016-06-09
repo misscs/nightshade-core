@@ -35,12 +35,17 @@
   font-size: ms(1);
   color: color(primary);
 
+  @include respond-at-and-above($break-small) {
+    max-width: 20em;
+  }
+
   @include respond-at-and-above($break-medium) {
     font-size: ms(4);
   }
 }
 
 .trial-returns-copy {
+  max-width: 36em;
   font-size: ms(1);
 
   @include respond-at-and-above($break-medium) {

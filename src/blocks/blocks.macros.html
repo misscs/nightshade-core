@@ -1,6 +1,7 @@
 {#
   * @overview Macros for the Blocks module.
   * @module Blocks
+  * @todo Refactor to wrap heading in a content wrapper, add an optional caller below heading
 #}
 
 {% from '../icons/icons.macros.html' import svg %}
@@ -17,7 +18,7 @@
   <figure class="block-item-image">
     {{ svg(icon) }}
   </figure>
-  <h4 class="block-item-description">{{ content|safe }}</h4>
+  <h4 class="block-item-heading">{{ content|safe }}</h4>
 </div>
 {% endmacro %}
 

@@ -15,12 +15,11 @@
   * that extends the input group and applies the necessary IDs, classes, and
   * styles to render email_signup.
 #}
-{% macro email_signup() %}
+{% macro email_signup(data) %}
 <form action="#" class="email-signup-form js-email-signup-form" method="get" target="_blank">
   <div class="form-input-group">
-    <input class="form-input email-signup-input js-email-signup-input" inputmode="email" name="EMAIL" placeholder="Enter your email" required="true" type="email" value="" x-inputmode="email">
-
-    {{ button('SUBMIT', 'secondary', type="submit", class="email-signup-submit") }}
+    <input class="form-input email-signup-input js-email-signup-input" inputmode="email" name="EMAIL" placeholder="{{ data.placeholder }}" required="true" type="email" value="" x-inputmode="email">
+    {{ button(data.input_text, 'secondary', type="submit", class="email-signup-submit") }}
   </div>
 </form>
 <div class="email-signup-response-text js-email-signup-response-text"></div>

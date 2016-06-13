@@ -20,13 +20,19 @@
 .block-item {
   display: flex;
   flex-direction: column;
+  flex: 1;
   align-items: center;
   min-width: 25%;
+  padding: 0 ms(2);
 
-  .block-group--stacked &:not(:last-child) {
+  .block-group--stacked & {
 
     @include respond-below($break-medium - 1) {
-      margin-bottom: ms(6);
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-bottom: ms(6);
+      }
     }
   }
 }

@@ -8,7 +8,13 @@
 .trial-returns {
   position: relative;
   min-height: ms(16);
-  padding: ms(8) ms(2);
+  overflow: hidden;
+}
+
+.trial-returns--background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trial-returns-content {
@@ -19,7 +25,15 @@
   justify-content: center;
   text-align: center;
 
-  .icon {
+  .trial-returns--background & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .icon,
+  [data-icon] {
     @include square(7rem);
     margin-bottom: ms(3);
     fill: color(primary);
@@ -45,30 +59,25 @@
 }
 
 .trial-returns-copy {
-  max-width: 36em;
+  max-width: 30em;
   font-size: ms(1);
 
   @include respond-at-and-above($break-medium) {
     font-size: ms(2);
   }
-}
 
-.trial-returns-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @include respond-at-and-above($break-large) {
+    max-width: 36em;
+  }
 }
-
 
 // German
-
 .lang-de {
   .trial-returns-heading {
     max-width: 18em;
+
+    @include respond-below($break-tiny) {
+      font-size: ms(0);
+    }
   }
 }

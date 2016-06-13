@@ -10,13 +10,15 @@
   @param data.icon ...
  #}
 {% macro trial_returns(data, modifier=null) %}
-<section class="trial-returns trial-returns--{{ modifier }}">
+<section class="trial-returns{% if data.background_image %} trial-returns--background{% endif %} trial-returns--{{ modifier }}">
 
   {% if data.background_image %}
-    <div class="trial-returns-background-image imgix-fluid--nocss" data-src="https://casper.imgix.net/{{ data.background_image }}" role="presentation"></div>
+    <div class="trial-returns-background-image" role="presentation">
+      {# ix_picture_tag #}
+    </div>
   {% endif %}
 
-  <div class="trial-returns-content r-inner">
+  <div class="trial-returns-content page-section r-inner">
     {{ icon.svg(data.icon) }}
     <h1 class="trial-returns-heading">{{ data.heading }}</h1>
     <p class="trial-returns-copy body--serif">{{ data.copy }}</p>

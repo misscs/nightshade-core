@@ -5,5 +5,12 @@
  */
 
 .page-section {
-  padding: ms(10) ms(2);
+  padding: ms(7) ms(2);
+
+  @include respond-at-and-above($break-small) {
+    padding: ms(8) ms(2);
+  }
+  @include respond-at-and-above($break-xl) {
+    padding: ms(10) ms(2);
+  }
 }

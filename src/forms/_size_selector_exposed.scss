@@ -27,7 +27,7 @@
   .size-selector-exposed-cta,
   .size-selector-exposed-dimensions,
   .size-selector-option {
-    @extend %verlag-black;
+    @include verlag-black;
 
     font-size: 13px;
     letter-spacing: size(normal-tracking);
@@ -110,7 +110,7 @@
 
 .form-input--price {
   .currency {
-    @extend %verlag-black;
+    @include verlag-black;
 
     display: block;
     text-align: left;
@@ -120,4 +120,3 @@
     letter-spacing: size(normal-tracking);
   }
 }
-

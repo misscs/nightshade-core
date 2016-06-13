@@ -13,7 +13,7 @@
   position: relative;
 
   .review-name {
-    @extend %verlag-black;
+    @include verlag-black;
 
     display: block;
     white-space: nowrap;

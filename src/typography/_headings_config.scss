@@ -3,7 +3,7 @@
  */
 
 %headers {
-  @extend %verlag-black;
+  @include verlag-black;
   text-transform: uppercase;
   letter-spacing: size(small-tracking);
   margin-top: 0

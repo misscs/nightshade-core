@@ -4,14 +4,13 @@
 
 
 %body--quote {
-  @extend %chronicle-deck;
+  @include chronicle-deck;
   line-height: 1.75;
   font-size: 20px;
 }
 
-
 %body--serif {
-  @extend %chronicle-deck;
+  @include chronicle-deck;
   font-size: ms(1);
   line-height: 1.5;
   letter-spacing: size(smaller-tracking);
@@ -19,30 +18,33 @@
 
 
 %body--sans-small {
+  @include calibre-light;
   font-size: ms(0);
   letter-spacing: size (smaller-tracking);
 }
 
-
 %body--sans {
+  @include calibre-light;
   font-size: ms(1);
   letter-spacing: size(smaller-tracking);
 }
 
 
 %body--sans-medium {
+  @include calibre-light;
   font-size: ms(1);
   letter-spacing: size(smaller-tracking);
 }
 
 
 %body--sans-large {
+  @include calibre-light;
   font-size: ms(2);
   letter-spacing: size(smaller-tracking);
 }
 
-
 %body--numerals-large {
+  @include calibre-light;
   font-size: 46px;
   letter-spacing: 0.05em; // New variable, or use smaller-tracking?
   margin-top: 2px;

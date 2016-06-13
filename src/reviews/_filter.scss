@@ -75,7 +75,7 @@
 }
 
 .reviews-filter-title {
-  @extend %verlag-black;
+  @include verlag-black;
 
   letter-spacing: size(medium-tracking);
 }

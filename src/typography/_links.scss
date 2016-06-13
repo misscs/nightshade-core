@@ -7,7 +7,7 @@
 }
 
 .link--fancy {
-  @extend %chronicle-italic;
+  @include chronicle-italic;
   @include link(medium-text, medium-text);
   font-style: italic;
   font-size: inherit;

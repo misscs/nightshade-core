@@ -1,9 +1,25 @@
+{#
+  * @overview Macros for SVG icons.
+  * @module Icons
+  * @todo: Add examples of icon_class and icon sizes
+#}
+
+{#
+  * Renders an icon with use method. Used for uniquely sized icons.
+  * @param {string} name - Name of the icon (nightshade.rocks/icons)
+  * @param {string} [icon_class=true] - Class name for style or JS targeting
+#}
 {% macro svg(name, icon_class=true) %}
 <svg class="icon{% if icon_class %} icon-{{ name }}{% endif %}" aria-labelledby="title" role="img">
   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#{{ name }}"></use>
 </svg>
 {% endmacro %}
 
+{#
+  * Renders an icon using set sizes
+  * @param {string} name - Name of the icon (nightshade.rocks/icons)
+  * @param {string} [size=default] - Size of the icon from preset values
+#}
 {% macro icon(name, size="default") %}
   <span data-icon="{{ name }}" data-size="{{ size }}">
     {{ svg(name, false) }}

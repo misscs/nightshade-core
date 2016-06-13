@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 25%;
+  flex: 1 0 25%;
 
   .block-group--stacked &:not(:last-child) {
 

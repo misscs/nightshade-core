@@ -196,7 +196,7 @@ $num-boxes: 35;
 }
 
 .press-grid-tooltip-link {
-  @extend %headers;
+  @include headers;
 
   color: color(dark-text);
   font-size: 12px;

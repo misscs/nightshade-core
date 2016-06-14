@@ -2,48 +2,41 @@
   * @todo Kill all extends
  */
 
-%headers {
+@mixin headers {
   @include verlag-black;
   text-transform: uppercase;
   letter-spacing: size(small-tracking);
   margin-top: 0
 }
 
-
-%headers--dark {
+@mixin headers--dark {
   color: color(primary);
 }
 
-
-%headers--light {
+@mixin headers--light {
   color: color(background);
 }
 
-
-%h1 {
+@mixin h1 {
   font-size: ms(2);
 }
 
-
-%h2 {
+@mixin h2 {
   font-size: ms(1);
 }
 
-
-%h3 {
+@mixin h3 {
   font-size: ms(0);
   letter-spacing: size(normal-tracking);
 }
 
-
-%h4 {
+@mixin h4 {
   font-size: ms(-1);
   margin-bottom: ms(-3);
   letter-spacing: size(normal-tracking);
 }
 
-
-%h5 {
+@mixin h5 {
   font-size: ms(-2);
   letter-spacing: size(normal-tracking);
 }

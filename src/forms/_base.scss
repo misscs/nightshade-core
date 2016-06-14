@@ -228,9 +228,7 @@ select {
 
 
 .form-label {
-  @extend %headers;
-
-  @extend %h4;
+  @include h4;
 
   display: block;
 }

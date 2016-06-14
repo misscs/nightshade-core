@@ -5,7 +5,7 @@
  */
 
 .scrollto-nav {
-  @extend %headers;
+  @include headers;
   background: color(background);
   font-size: ms(-1);
   line-height: 1.4;

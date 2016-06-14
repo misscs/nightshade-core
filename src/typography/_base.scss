@@ -15,7 +15,7 @@ element. Default color is `color(text)`.
 
 ol,
 ul {
-  @extend %lists;
+  @include lists;
 }
 
 a {
@@ -50,31 +50,31 @@ a {
 // Classes for styling blocks of copy
 
 .body--serif {
-  @extend %body--serif;
+  @include body--serif;
 }
 
 .body--sans {
-  @extend %body--sans;
+  @include body--sans;
 }
 
 .body--sans-small {
-  @extend %body--sans-small;
+  @include body--sans-small;
 }
 
 .body--sans-medium {
-  @extend %body--sans-medium;
+  @include body--sans-medium;
 }
 
 .body--sans-large {
-  @extend %body--sans-large;
+  @include body--sans-large;
 }
 
 .body--quote {
-  @extend %body--quote;
+  @include body--quote;
 }
 
 .body--numerals-large {
-  @extend %body--numerals-large;
+  @include body--numerals-large;
 }
 
 // Headings
@@ -86,56 +86,49 @@ $headings: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
 // Generates h1-h4 and complimentary heading classes
 @each $element in $headings {
   #{$element} {
-    @extend %headers;
+    @include headers;
   }
 }
 
-
 h1,
 .h1 {
-  @extend %h1;
+  @include h1;
   margin-top: 0;
 }
 
-
 h2,
 .h2 {
-  @extend %h2;
+  @include h2;
   margin-bottom: ms(2);
 }
 
-
 h3,
 .h3 {
-  @extend %h3;
+  @include h3;
   margin-bottom: size(small);
 }
 
 h4,
 .h4 {
-  @extend %h4;
+  @include h4;
 }
 
 h5,
 .h5 {
-  @extend %h5;
+  @include h5;
 }
-
 
 p {
   margin: 0;
 }
 
-
 .-spaced {
   margin-bottom: size(large);
 }
 
-
 .-no-trailer {
   margin-bottom: 0 !important;
 }
-
 
 .-nowrap {
   white-space: nowrap;

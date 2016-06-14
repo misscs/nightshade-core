@@ -40,7 +40,7 @@ $flash-blue: #e5ecf4; // Replace with value from map?
 }
 
 .flash-content {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   text-align: center;
 }
@@ -51,7 +51,7 @@ $flash-blue: #e5ecf4; // Replace with value from map?
 
 // No longer using mixin for success messages at least 'til we overhaul flash.
 .flash--success {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   background-color: color($flash-blue);
   color: color(primary);

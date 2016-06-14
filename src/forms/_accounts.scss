@@ -23,7 +23,7 @@
   }
 
   .login-link {
-    @extend %verlag-black;
+    @include verlag-black;
     @include link(medium-text, text);
     padding-bottom: 2px;
     border-bottom: 1px solid color(text);
@@ -42,7 +42,7 @@
   }
 
   .remember-me-label-text{
-    @extend %verlag-black;
+    @include verlag-black;
     padding-bottom: 2px;
     border-bottom: 1px solid color(text);
     color: color(text);

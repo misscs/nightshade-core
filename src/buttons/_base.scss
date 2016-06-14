@@ -1,6 +1,6 @@
 // Base structure for all buttons
 [data-button] {
-  @extend %verlag-black;
+  @include verlag-black;
   display: inline-block;
   padding: 1.15em 3em;
   font-size: ms(-1);

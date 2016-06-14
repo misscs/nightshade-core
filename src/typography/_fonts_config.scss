@@ -15,17 +15,17 @@ $chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
 $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-stack: Georgia, serif;
 
-%calibre-light {
- font-family: $sans-stack;
- font-weight: 400;
- font-style: normal;
+@mixin calibre-light {
+  font-family: $sans-stack;
+  font-weight: 400;
+  font-style: normal;
 
- .wf-active & {
-   font-family: $calibre-light;
- }
+  .wf-active & {
+    font-family: $calibre-light;
+  }
 }
 
-%calibre-medium {
+@mixin calibre-medium {
  font-family: $sans-stack;
  font-weight: 400;
  font-style: normal;
@@ -35,17 +35,17 @@ $serif-stack: Georgia, serif;
  }
 }
 
-%verlag-black {
- font-family: $sans-stack;
- font-weight: 800;
- font-style: normal;
+@mixin verlag-black {
+  font-family: $sans-stack;
+  font-weight: 800;
+  font-style: normal;
 
- .wf-active & {
+  .wf-active & {
    font-family: $verlag;
- }
+  }
 }
 
-%chronicle-deck {
+@mixin chronicle-deck {
  font-family: $serif-stack;
  font-weight: 400;
  font-style: normal;
@@ -55,7 +55,7 @@ $serif-stack: Georgia, serif;
  }
 }
 
-%chronicle-italic {
+@mixin chronicle-italic {
  font-family: $serif-stack;
  font-weight: 400;
  font-style: italic;

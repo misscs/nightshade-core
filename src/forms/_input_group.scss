@@ -12,7 +12,7 @@
   display: flex;
 
   .input {
-    @extend %body--sans-small;
+    @include body--sans-small;
 
     width: 100%;
     border: 1px solid color(border);

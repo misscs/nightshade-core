@@ -190,7 +190,7 @@ select {
 }
 
 .form-legend-alt {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   text-transform: lowercase;
   display: block;
@@ -228,9 +228,7 @@ select {
 
 
 .form-label {
-  @extend %headers;
-
-  @extend %h4;
+  @include h4;
 
   display: block;
 }
@@ -241,7 +239,7 @@ select {
 }
 
 .form-label--alt {
-  @extend %verlag-black;
+  @include verlag-black;
 
   font-size: 15px;
   text-transform: uppercase;
@@ -249,7 +247,7 @@ select {
 }
 
 .form-input {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   width: 100%;
   border: 1px solid color(border);
@@ -346,7 +344,7 @@ select {
 }
 
 .form-help {
-  @extend %chronicle-italic;
+  @include chronicle-italic;
 
   font-size: 14px;
   color: color(text);

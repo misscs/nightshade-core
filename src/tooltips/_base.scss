@@ -4,7 +4,7 @@
 }
 
 .tooltip {
-  @extend %calibre-medium;
+  @include calibre-medium;
   position: absolute;
   left: 50%;
   bottom: calc(100% + 18px);

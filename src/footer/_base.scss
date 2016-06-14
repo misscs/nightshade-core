@@ -169,7 +169,7 @@
 }
 
 .footer-nav-group-text--contact {
-  @extend %calibre-medium;
+  @include calibre-medium;
   padding-right: 0;
   margin-right: 0;
   display: none;

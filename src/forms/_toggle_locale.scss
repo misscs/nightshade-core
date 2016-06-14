@@ -5,7 +5,7 @@
   }
 
   .form-label-copy {
-    @extend %verlag-black;
+    @include verlag-black;
 
     color: color(medium-text);
     order: 0;

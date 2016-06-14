@@ -63,7 +63,7 @@
     }
 
     .product-reviews-copy {
-      @extend %chronicle-deck;
+      @include chronicle-deck;
 
       max-width: 600px;
       margin: 9px auto 20px auto;

@@ -113,7 +113,7 @@
 }
 
 .popover-toggle {
-  @extend %calibre-medium;
+  @include calibre-medium;
   @include square(18px);
   display: inline-block;
   background: color(dark-background);

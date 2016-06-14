@@ -50,31 +50,31 @@ a {
 // Classes for styling blocks of copy
 
 .body--serif {
-  @extend %body--serif;
+  @include body--serif;
 }
 
 .body--sans {
-  @extend %body--sans;
+  @include body--sans;
 }
 
 .body--sans-small {
-  @extend %body--sans-small;
+  @include body--sans-small;
 }
 
 .body--sans-medium {
-  @extend %body--sans-medium;
+  @include body--sans-medium;
 }
 
 .body--sans-large {
-  @extend %body--sans-large;
+  @include body--sans-large;
 }
 
 .body--quote {
-  @extend %body--quote;
+  @include body--quote;
 }
 
 .body--numerals-large {
-  @extend %body--numerals-large;
+  @include body--numerals-large;
 }
 
 // Headings

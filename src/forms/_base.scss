@@ -190,7 +190,7 @@ select {
 }
 
 .form-legend-alt {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   text-transform: lowercase;
   display: block;
@@ -249,7 +249,7 @@ select {
 }
 
 .form-input {
-  @extend %body--sans-small;
+  @include body--sans-small;
 
   width: 100%;
   border: 1px solid color(border);

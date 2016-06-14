@@ -3,47 +3,44 @@
  */
 
 
-%body--quote {
+@mixin body--quote {
   @include chronicle-deck;
   line-height: 1.75;
   font-size: 20px;
 }
 
-%body--serif {
+@mixin body--serif {
   @include chronicle-deck;
   font-size: ms(1);
   line-height: 1.5;
   letter-spacing: size(smaller-tracking);
 }
 
-
-%body--sans-small {
+@mixin body--sans-small {
   @include calibre-light;
   font-size: ms(0);
   letter-spacing: size (smaller-tracking);
 }
 
-%body--sans {
+@mixin body--sans {
   @include calibre-light;
   font-size: ms(1);
   letter-spacing: size(smaller-tracking);
 }
 
-
-%body--sans-medium {
+@mixin body--sans-medium {
   @include calibre-light;
   font-size: ms(1);
   letter-spacing: size(smaller-tracking);
 }
 
-
-%body--sans-large {
+@mixin body--sans-large {
   @include calibre-light;
   font-size: ms(2);
   letter-spacing: size(smaller-tracking);
 }
 
-%body--numerals-large {
+@mixin body--numerals-large {
   @include calibre-light;
   font-size: 46px;
   letter-spacing: 0.05em; // New variable, or use smaller-tracking?

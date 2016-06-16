@@ -12,27 +12,27 @@
   color: color(background);
 }
 
-@mixin h1 {
+@mixin heading-1 {
   font-size: ms(4);
   letter-spacing: size(small-tracking);
+}
+
+@mixin heading-2 {
   font-size: ms(2);
   letter-spacing: size(small-tracking);
 }
 
-@mixin h2 {
+@mixin heading-3 {
   font-size: ms(1);
   letter-spacing: size(small-tracking);
 }
 
-@mixin h3 {
+@mixin heading-4 {
   font-size: ms(0);
   letter-spacing: size(normal-tracking);
 }
 
-@mixin h4 {
+@mixin heading-5 {
   font-size: ms(-1);
-}
-
-@mixin h5 {
   letter-spacing: size(normal-tracking);
 }

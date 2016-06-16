@@ -82,6 +82,7 @@ a {
 // Base styling and classes for styling headers
 
 $headings: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
+$headings: ".heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6";
 
 // Generates h1-h4 and complimentary heading classes
 @each $element in $headings {
@@ -90,32 +91,25 @@ $headings: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
   }
 }
 
-h1,
-.h1 {
-  @include h1;
+.heading-1 {
+  @include heading-1;
   margin-top: 0;
 }
 
-h2,
-.h2 {
-  @include h2;
-  margin-bottom: ms(2);
+.heading-2 {
+  @include heading-2;
 }
 
-h3,
-.h3 {
-  @include h3;
-  margin-bottom: size(small);
+.heading-3 {
+  @include heading-3;
 }
 
-h4,
-.h4 {
-  @include h4;
+.heading-4 {
+  @include heading-4;
 }
 
-h5,
-.h5 {
-  @include h5;
+.heading-5 {
+  @include heading-5;
 }
 
 p {

@@ -1,8 +1,7 @@
 @mixin headers {
   @include verlag-black;
   text-transform: uppercase;
-  letter-spacing: size(small-tracking);
-  margin-top: 0
+  line-height: 1.4;
 }
 
 @mixin headers--dark {
@@ -14,11 +13,15 @@
 }
 
 @mixin h1 {
+  font-size: ms(4);
+  letter-spacing: size(small-tracking);
   font-size: ms(2);
+  letter-spacing: size(small-tracking);
 }
 
 @mixin h2 {
   font-size: ms(1);
+  letter-spacing: size(small-tracking);
 }
 
 @mixin h3 {
@@ -28,11 +31,8 @@
 
 @mixin h4 {
   font-size: ms(-1);
-  margin-bottom: ms(-3);
-  letter-spacing: size(normal-tracking);
 }
 
 @mixin h5 {
-  font-size: ms(-2);
   letter-spacing: size(normal-tracking);
 }

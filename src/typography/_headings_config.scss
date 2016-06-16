@@ -13,26 +13,31 @@
 }
 
 @mixin heading-1 {
+  @include headers;
   font-size: ms(4);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-2 {
+  @include headers;
   font-size: ms(2);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-3 {
+  @include headers;
   font-size: ms(1);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-4 {
+  @include headers;
   font-size: ms(0);
   letter-spacing: size(normal-tracking);
 }
 
 @mixin heading-5 {
+  @include headers;
   font-size: ms(-1);
   letter-spacing: size(normal-tracking);
 }

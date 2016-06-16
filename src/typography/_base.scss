@@ -92,15 +92,6 @@ h6 {
   font-size: ms(0);
 }
 
-$headings: ".heading-1, .heading-2, .heading-3, .heading-4, .heading-5, .heading-6";
-
-// Generates h1-h4 and complimentary heading classes
-@each $element in $headings {
-  #{$element} {
-    @include headers;
-  }
-}
-
 .heading-1 {
   @include heading-1;
 }

@@ -81,41 +81,35 @@ a {
 // ---------
 // Base styling and classes for styling headers
 
-$headings: "h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6";
-
-// Generates h1-h4 and complimentary heading classes
-@each $element in $headings {
-  #{$element} {
-    @include headers;
-  }
-}
-
+// Resets for base heading elements
 h1,
-.h1 {
-  @include h1;
-  margin-top: 0;
-}
-
 h2,
-.h2 {
-  @include h2;
-  margin-bottom: ms(2);
-}
-
 h3,
-.h3 {
-  @include h3;
-  margin-bottom: size(small);
-}
-
 h4,
-.h4 {
-  @include h4;
+h5,
+h6 {
+  margin: 0;
+  font-size: ms(0);
 }
 
-h5,
-.h5 {
-  @include h5;
+.heading-1 {
+  @include heading-1;
+}
+
+.heading-2 {
+  @include heading-2;
+}
+
+.heading-3 {
+  @include heading-3;
+}
+
+.heading-4 {
+  @include heading-4;
+}
+
+.heading-5 {
+  @include heading-5;
 }
 
 p {

@@ -116,9 +116,9 @@
   background-color: color(background);
 
   .trial-warranty-title {
-    @extend h1;
-
     @extend .body--sans;
+    
+    @include heading-1;
 
     color: color(primary);
   }

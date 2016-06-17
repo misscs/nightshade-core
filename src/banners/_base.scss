@@ -2,26 +2,20 @@
 // currently has free shipping and returns message
 
 .banner {
-  padding: 1.1em ms(3) ms(0);
+  padding: ms(0) ms(3) 0.9rem;
   letter-spacing: size(small-tracking);
   font-size: ms(0);
   text-transform: uppercase;
   border-top: solid 1px color(dark-border);
   border-bottom: solid 1px color(dark-border);
   line-height: 1.3;
-
-  @include respond-at-and-above($break-medium) {
-    font-size: ms(0);
-    height: size(condensed-header-height);
-    line-height: size(condensed-header-height);
-    padding: 0;
-  }
-
-  .icon-arrow {
-    top: 4px;
-  }
 }
 
 .banner--background {
   background: color(background);
+}
+
+.banner-content {
+  margin: 0;
+  text-align: center;
 }

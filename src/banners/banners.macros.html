@@ -17,7 +17,7 @@
 #}
 {% macro banner(content, background=false, href=null, class=null, id=null) %}
 <div class="banner{% if background %} banner--background{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
-  <p class="banner-content r-centered">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
+  <p class="banner-content">{% if href %}<a class="link-arrow" href="{{ href }}">{% endif %}{{ content }}{% if href %} {{ svg('arrow') }}</a>{% endif %}</p>
 </div>
 {% endmacro %}
 

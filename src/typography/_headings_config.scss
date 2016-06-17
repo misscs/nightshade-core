@@ -1,43 +1,41 @@
-@mixin headers {
+@mixin heading {
   @include verlag-black;
   text-transform: uppercase;
   line-height: 1.4;
-}
-
-@mixin headers--dark {
   color: color(primary);
 }
 
-@mixin headers--light {
-  color: color(background);
-}
-
 @mixin heading-1 {
-  @include headers;
+  @include heading;
   font-size: ms(4);
+  margin-bottom: ms(1);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-2 {
-  @include headers;
+  @include heading;
   font-size: ms(2);
+  margin-bottom: ms(2);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-3 {
-  @include headers;
+  @include heading;
   font-size: ms(1);
+  margin-bottom: ms(2);
   letter-spacing: size(small-tracking);
 }
 
 @mixin heading-4 {
-  @include headers;
+  @include heading;
   font-size: ms(0);
+  margin-bottom: ms(1);
   letter-spacing: size(normal-tracking);
 }
 
 @mixin heading-5 {
-  @include headers;
+  @include heading;
   font-size: ms(-1);
+  margin-bottom: ms(0);
   letter-spacing: size(normal-tracking);
 }

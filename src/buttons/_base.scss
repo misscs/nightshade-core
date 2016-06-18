@@ -143,12 +143,12 @@
 }
 
 [data-button="simple"] {
-  color: color(medium-text);
+  background-color: color(light-background);
   border: 1px solid color(dark-border);
-  background-color: color(background);
+  color: color(text);
 
-  &:hover {
-    background-color: color(light-background);
+  #{$focus} {
+    background-color: color(gray--light7);
   }
 }
 

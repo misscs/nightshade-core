@@ -250,7 +250,7 @@ select {
   @include body--sans-small;
 
   width: 100%;
-  border: 1px solid color(border);
+  border: 1px solid color(dark-border);
   margin: 0;
   padding: size(smaller) size(small);
   color: color(dark-text);
@@ -259,7 +259,7 @@ select {
   cursor: auto;
 
   &:focus {
-    border-color: color(gray--light3);
+    border-color: color(primary);
   }
 
   // these are for jquery validation plugin
@@ -314,6 +314,7 @@ select {
   .form-input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    border-right: 0;
   }
 
   [data-button] {

@@ -1,20 +1,15 @@
 .form-input-group {
   .email-signup-input {
-    height: 40px;
-    width: 180px;
+    width: 65%;
     letter-spacing: size(smaller-tracking);
 
     &:focus {
-      border-color: color(border);
-    }
-
-    @include respond-below(400px) {
-      width: 160px;
+      border-color: color(dark-border);
     }
   }
 
   .email-signup-submit {
-    height: 40px;
+    width: 35%;
     padding: size(smaller) size(small);
     font-size: 13px;
   }

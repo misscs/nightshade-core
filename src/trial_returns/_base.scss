@@ -1,0 +1,84 @@
+/**
+ * @file Trial/Returns
+ * @module Trial/Returns
+ * @overview Trial/Returns module with icon and image or background image
+ * @todo Replace font definitions with mixins for new type pairings
+ */
+
+.trial-returns {
+  position: relative;
+  min-height: ms(16);
+  overflow: hidden;
+}
+
+.trial-returns--background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trial-returns-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .trial-returns--background & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .icon,
+  [data-icon] {
+    @include square(7rem);
+    margin-bottom: ms(3);
+    fill: color(primary);
+
+    @include respond-at-and-above($break-medium) {
+      @include square(8rem);
+    }
+  }
+}
+
+.trial-returns-heading {
+  max-width: 12em;
+  font-size: ms(1);
+  color: color(primary);
+
+  @include respond-at-and-above($break-small) {
+    max-width: 20em;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(4);
+  }
+}
+
+.trial-returns-copy {
+  max-width: 30em;
+  font-size: ms(1);
+
+  @include respond-at-and-above($break-medium) {
+    font-size: ms(2);
+  }
+
+  @include respond-at-and-above($break-large) {
+    max-width: 36em;
+  }
+}
+
+// Styles for longer text languages
+.trial-returns--longer-text {
+
+  .trial-returns-heading {
+    max-width: 18em;
+
+    @include respond-below($break-tiny) {
+      font-size: ms(0);
+    }
+  }
+}

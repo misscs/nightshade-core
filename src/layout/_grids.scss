@@ -3,33 +3,8 @@ $two-column: (
   gutters: 0
 );
 
-
-// @@@ FIX THIS AFTER MERGE WHEN TIME TO THINK ABOUT COMMENT BELOW
-// KITTNS HATE YOU, CS
-.product-footer {
-  .grid-two-column-container {
-    @include respond-at-and-above($break-medium) {
-      @include with-layout($two-column) {
-        @include container(1080px);
-
-        .grid-two-column-left {
-          @include span(1 of (1 1) first);
-        }
-
-        .grid-two-column-right {
-          @include span(1 of (1 1) last);
-        }
-      }
-    }
-  }
-}
-
-
-
 // Reusable two column layout module
-// @@@ This module assumes that two column break will always happen
-// at $break-large which may or may not be the case
-// Need to make this more reusable or better scope it to its use
+// @todo Remove this when we update the site with the Blocks module
 .grid-two-column-container {
   @include respond-at-and-above($break-large) {
     @include with-layout($two-column) {
@@ -45,6 +20,3 @@ $two-column: (
     }
   }
 }
-
-
-

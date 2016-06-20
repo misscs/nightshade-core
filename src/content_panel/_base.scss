@@ -56,15 +56,6 @@
 
 .content-panel-heading {
   @include margin-auto;
-  font-size: ms(0);
-
-  @include respond-between($break-small, $break-medium) {
-    font-size: ms(2);
-  }
-
-  @include respond-at-and-above($break-xl) {
-    font-size: ms(2);
-  }
 }
 
 .content-panel-content-body {

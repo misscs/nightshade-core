@@ -1,6 +1,6 @@
 {
   "name": "@casper/nightshade-core",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "Casper pattern and style scss library. Under development.",
   "scripts": {
     "eslint": "./node_modules/.bin/eslint src",

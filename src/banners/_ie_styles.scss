@@ -1,0 +1,13 @@
+/**
+ * @file Banner/CTA Banner IE styles
+ * @module Banners
+ * @overview Banner/CTA Banner IE styles
+ */
+
+.cta-banner {
+  height: ms(16);
+}
+
+.cta-content {
+  @include ie-vertical-align;
+}

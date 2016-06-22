@@ -4,6 +4,7 @@
  * @overview Trial/Returns IE9 styles
  */
 
-.trial-returns-heading {
- @include margin-auto;
+.trial-returns-heading,
+.trial-returns-copy {
+  @include margin-auto;
 }

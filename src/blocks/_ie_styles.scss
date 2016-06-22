@@ -15,6 +15,7 @@
 }
 
 .block-item-image,
-.block-item-description {
+.block-item-description,
+.block-item-body {
  @include margin-auto;
 }

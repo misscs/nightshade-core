@@ -10,11 +10,16 @@
   @include respond-at-and-above($break-small) {
     padding: ms(8) ms(2);
   }
+}
+
+.page-section-large {
+  padding: ms(7) ms(2);
+
+  @include respond-at-and-above($break-small) {
+    padding: ms(8) ms(2);
+  }
+
   @include respond-at-and-above($break-xl) {
     padding: ms(10) ms(2);
   }
-}
-
-.page-section-compact {
-  padding: ms(7) ms(2);
 }

@@ -8,3 +8,9 @@
 .trial-returns-copy {
   @include margin-auto;
 }
+
+.trial-returns--background {
+ .trial-returns-content {
+   width: 100%;
+ }
+}

@@ -22,10 +22,10 @@
     </div>
   {% endif %}
 
-  <div class="trial-returns-content page-section r-inner">
+  <div class="trial-returns-content page-section-large r-inner">
     {{ icon.svg(data.icon) }}
-    <h1 class="heading-1 trial-returns-heading">{{ data.heading }}</h1>
-    <p class="trial-returns-copy body--serif">{{ data.copy }}</p>
+    <h1 class="trial-returns-heading heading-1">{{ data.heading }}</h1>
+    <p class="trial-returns-copy">{{ data.copy }}</p>
 
     {% if data.image %}
       <img class="trial-returns-image" src="https://casper.imgix.net/{{ data.image }}?auto=compress" alt="{{ data.image_alt }}">

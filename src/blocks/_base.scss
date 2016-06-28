@@ -40,6 +40,7 @@
 .block-item-image {
   margin-bottom: ms(2);
   fill: color(primary);
+  flex-shrink: 0; // Fix for IE10-11
 
   .icon {
     @include square(100%);
@@ -48,4 +49,8 @@
 
 .block-item-heading {
   max-width: 14em;
+}
+
+.block-item-body {
+  width: 100%; // Fix for IE10-11
 }

@@ -30,6 +30,7 @@
     top: 0;
     left: 0;
     right: 0;
+    width: 100%;
   }
 
   .icon,
@@ -69,6 +70,10 @@
   @include respond-at-and-above($break-large) {
     max-width: 32em;
   }
+}
+
+.trial-returns-image {
+  flex-shrink: 0; // Fix for IE10-11
 }
 
 // Styles for longer text languages

@@ -159,36 +159,32 @@
 
 [data-button="play"] {
   position: relative;
-  display: inline-block;
-  min-height: 56px;
-  border-radius: 35px;
+  min-height: 3.5rem;
+  border-radius: 2.19rem;
   background-color: color(light-background);
   border: 1px solid color(dark-border);
-  padding: 1.45em size(large) size(normal) size(4.6em);
-  cursor: pointer;
+  padding: ms(0) ms(2) ms(0) 4rem;
+  line-height: 1.4;
   transition: background-color 0.25s;
-
-  @include respond-at-and-above($break-medium) {
-    padding-top: size(normal);
-  }
 
   &:hover {
     background-color: color(medium-background);
   }
 
   @include before() {
-    @include square(40px);
-    left: 8px;
-    top: 7px;
+    @include square(2.5rem);
+    left: 0.5rem;
+    top: 50%;
+    margin-top: -1.25rem;
     border-radius: percentage(1 / 2);
     background: color(background);
     border: 1px solid color(dark-border);
   }
 
   @include after() {
-    @include arrow(right, color(primary), 10px);
-    left: 24px;
-    top: 31px;
+    @include arrow(right, color(primary), 0.63rem);
+    left: 1.5rem;
+    margin-top: -0.38rem;
     border-top-width: 6px;
     border-bottom-width: 6px;
   }

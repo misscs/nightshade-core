@@ -1,51 +1,8 @@
-//doc
-//
-// ---
-// title: Forms
-// name: forms
-// category: components
-// ---
-//
-// Casper form components.
-//
-// Standard form components are always preferred over custom elements.
-//
-//
-//  Class            |  Description
-//  ---------------- | -----------------
-//  `.form-field`    | The element that wraps label and input
-//  `.form-legend`   | Title of the form
-//  `.form-label`    | The element class for form label.
-//  `.form-label-copy`     | Class to use on `span` element when you need to wrap text
-//  `.form-input`    | The element class for form input
-//  `.form-help`     | Class to designate form or form field help text
-//  `.form-actions`  | The element that contains form buttons and actions
-//
-//
-// ```haml_example
-// %form
-//
-//  %fieldset
-//
-//    .form-legend I am a form
-//
-//    .form-field
-//      %label.form-label
-//        Size
-//      %input{:type => 'text', :class => 'form-input'}
-//
-//    .form-field
-//      %span.form-label Price
-//      %input{:type => 'text', :class => 'form-input'}
-//
-//      %p.form-help Financing is available
-//
-//    .form-actions
-//      %button{:type => 'submit', :class => 'btn btn--primary'} Add to Cart
-//      %input{:type => 'submit', :class => 'btn btn--accent'}
-// ```
-
-// ---------------------------------------------------------
+/**
+ * @file Forms
+ * @module Forms
+ * @overview Website form elements and components
+ */
 
 // Reset form elements
 form,
@@ -87,10 +44,6 @@ button[disabled] {
   cursor: default;
 }
 
-input {
-  line-height: 1;
-}
-
 // Get rid of number dropdown "spinners" for an overwhelming amount of browsers
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -103,7 +56,7 @@ input[type=number]::-webkit-outer-spin-button {
 input[type="radio"] {
   -webkit-appearance: radio;
   border-radius: 50%;
-  border: 1px solid gray;
+  border: 1px solid color(text);
 }
 
 // Get rid of number dropdown "spinners" for browsers
@@ -118,12 +71,6 @@ input[type="number"] {
   -moz-appearance: textfield;
   -ms-appearance: textfield;
   appearance: textfield;
-}
-
-input[type="radio"] {
-  -webkit-appearance: radio;
-  border-radius: 50%;
-  border: 1px solid gray;
 }
 
 select {
@@ -173,30 +120,26 @@ select {
 
 // the title element
 .form-legend {
-  padding-bottom: 10px;
-  margin-bottom: size(normal);
+  @include heading-3;
+  padding-bottom: ms(-2);
+  margin-bottom: ms(3);
+  color: color(text);
   border-bottom: 1px solid color(border);
   align-items: center;
 
-  @include respond-at-and-above($break-medium) {
-    padding-bottom: 15px;
-    margin-bottom: size(large);
-  }
-
-
-  @include respond-at-and-above($form-tablet) {
+  @include respond-at-and-above($form-max) {
     display: flex;
   }
 }
 
 .form-legend-alt {
-  @include body--sans-small;
-
+  font-size: ms(0);
+  letter-spacing: size(smaller-tracking);
   text-transform: lowercase;
   display: block;
-  margin-top: size(small);
+  margin-top: ms(0);
 
-  @include respond-at-and-above($form-tablet) {
+  @include respond-at-and-above($form-max) {
     margin-left: auto;
     margin-top: 0;
   }
@@ -205,11 +148,7 @@ select {
 // @@@ this is overriding default h2
 // how often are we doing this?!
 .form-section-title {
-  margin-bottom: 8px;
-}
-
-.form-field {
-  margin-bottom: 25px;
+  margin-bottom: 0.5rem;
 }
 
 @include respond-at-and-above($break-large) {
@@ -219,18 +158,77 @@ select {
     .form-field {
       flex: 1 1 50%;
 
-      &:last-child {
+      &:last-child:not(:only-child) {
         margin-left: size(normal);
       }
+
+      &.form-field--house-number:last-child {
+        margin-left: 0;
+      }
+    }
+
+    .form-field--three-quarter {
+      flex: 1 1 75%;
+    }
+
+    .form-field--quarter {
+      flex: 1 1 25%;
     }
   }
 }
 
+.form-field {
+  position: relative;
+  margin-bottom: ms(3);
 
-.form-label {
-  @include heading-4;
+  // @todo Turn this into a modifier when nightshade styles port over (e.g. form-field--standard)
+  &:not(.form-field--float) {
 
-  display: block;
+    .form-label {
+      @include heading-5;
+      display: block;
+      margin-bottom: ms(-3);
+      color: color(text);
+    }
+  }
+}
+
+.form-field--float {
+
+  &.has-text {
+
+    .form-label {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .form-input {
+      padding: 1.3rem ms(0) 0.4rem;
+    }
+
+    .form-input--select {
+      color: color(text);
+    }
+  }
+
+  .form-label {
+    position: absolute;
+    top: ms(-4);
+    left: 1.1rem;
+    font-size: ms(-1);
+    letter-spacing: size(smaller-tracking);
+    line-height: 1;
+    color: color(dark-text);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(ms(-9));
+    transition: transform 0.25s ease-out, opacity 0.25s ease-out;
+  }
+
+  .form-input--select {
+    color: color(dark-text);
+  }
 }
 
 
@@ -240,23 +238,28 @@ select {
 
 .form-label--alt {
   @include verlag-black;
-
-  font-size: 15px;
+  font-size: 0.94rem;
   text-transform: uppercase;
   letter-spacing: size(small-tracking);
 }
 
 .form-input {
-  @include body--sans-small;
-
+  @include calibre-light;
+  font-size: ms(0);
+  letter-spacing: size(smaller-tracking);
   width: 100%;
   border: 1px solid color(dark-border);
   margin: 0;
-  padding: size(smaller) size(small);
-  color: color(dark-text);
+  padding: 0.85rem ms(0);
+  color: color(text);
   border-radius: size(normal-corners);
   background: color(background);
   cursor: auto;
+  transition: padding 0.25s ease-out;
+
+  &:not(.form-input--checkbox) {
+    appearance: none;
+  }
 
   &:focus {
     border-color: color(primary);
@@ -270,14 +273,29 @@ select {
   }
 }
 
+.form-input::placeholder {
+  color: color(dark-text);
+}
+
+// Autoprefixer isn't adding -moz prefix, and Firefox needs opacity to be set
+.form-input::-moz-placeholder {
+  color: color(dark-text);
+  opacity: 1;
+}
+
+.form-input--textarea {
+
+  #{$focus} {
+    outline: 0;
+  }
+}
+
 .form-input--select {
-  fill: color(gray--light2);
   padding-right: size(large);
   background-image: image-url("nightshade/icons/select-arrow.svg");
   background-repeat: no-repeat;
   background-position: right 15px center;
   background-size: 12px 8px;
-  appearance: none;
   border-radius: size(normal-corners);
   cursor: pointer;
 
@@ -290,6 +308,10 @@ select {
 
 .form-input--checkbox {
   width: auto;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -302,22 +324,20 @@ select {
 }
 
 // Grouped input/submit buttons (e.g. Newsletter signup)
-// @TODO use a class for the group instead of `data-button`
 .form-input-group {
   display: flex;
 
   .form-input,
-  [data-button] {
+  .btn {
     height: 48px;
   }
 
   .form-input {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    border-right: 0;
   }
 
-  [data-button] {
+  .btn {
     padding: size(smaller) size(small);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -345,17 +365,17 @@ select {
 }
 
 .form-help {
-  @include chronicle-italic;
-
-  font-size: 14px;
-  color: color(text);
-  margin-top: 0.7rem;
-  font-style: italic;
-  letter-spacing: size(smallest-tracking);
   display: block;
+  font-size: ms(-1);
+  color: color(primary);
+  margin-top: 0.7rem;
 
   a {
-    @include link(text, medium-text, "after");
+    @include link(text, dark-text, "after");
+  }
+
+  &.form-help--tight {
+    margin-top: size(smallest);
   }
 }
 
@@ -407,4 +427,13 @@ form {
       box-shadow: 0px 0px 0px 2px mix(color(background), color(accent), 70%);
     }
   }
+}
+
+// Inline validation error
+.form-inline-error {
+  position: absolute;
+  bottom: -1.1rem;
+  left: 0;
+  font-size: ms(-1);
+  line-height: 1;
 }

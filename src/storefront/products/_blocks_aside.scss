@@ -1,0 +1,25 @@
+/**
+ * @file Blocks
+ * @module Products
+ * @overview Infographic, and Product Aside Blocks
+ */
+.block-item--aside {
+
+  .block-item-heading {
+    max-width: none;
+  }
+
+  .block-item-image {
+    margin-bottom: ms(-2);
+  }
+
+  .block-item-body {
+    max-width: 18em;
+    margin-bottom: ms(-1);
+  }
+
+  .email-signup-form {
+    max-width: $break-tiny;
+    margin-top: ms(-2);
+  }
+}

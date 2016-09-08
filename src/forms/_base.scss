@@ -57,6 +57,10 @@ input[type="radio"] {
   -webkit-appearance: radio;
   border-radius: 50%;
   border: 1px solid color(text);
+
+  &:checked {
+    background-color: color(gray);
+  }
 }
 
 // Get rid of number dropdown "spinners" for browsers
@@ -334,11 +338,18 @@ select {
 
 .form-input--checkbox {
   width: auto;
-  border: 0;
-  border-radius: 0;
   margin: 0;
   padding: 0;
   cursor: pointer;
+
+  // iOS styling
+  background: color(light-background);
+  border: 1px solid color(gray);
+  border-radius: 5px;
+
+  &:checked {
+    background: color(gray);
+  }
 }
 
 .form-input--radio {

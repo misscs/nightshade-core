@@ -24,6 +24,7 @@
 
 .hero-heading,
 .hero-subheading {
+  @include verlag-black;
   color: color(primary);
 }
 

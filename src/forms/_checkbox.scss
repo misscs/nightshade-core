@@ -1,4 +1,4 @@
-.checkbox {
+.checkbox__input {
   display: none;
 
   + .checkbox__label {
@@ -13,6 +13,7 @@
     }
   }
 
+  // @todo: This should be .has-error when we update the validator library
   &.error {
     & + .checkbox__label {
       @include before() {

@@ -1,0 +1,36 @@
+.checkbox {
+  display: none;
+
+  + .checkbox__label {
+    @include before() {
+      @include square(1rem);
+      top: 4px;
+      left: 0;
+      border: 1px solid color(gray--light3);
+      cursor: pointer;
+      text-align: center;
+      line-height: 0.5;
+    }
+  }
+
+  &.error {
+    & + .checkbox__label {
+      @include before() {
+        border-color: color(accent);
+      }
+    }
+  }
+
+  &:checked {
+    border-color: color(blue);
+
+    & + .checkbox__label {
+      @include before() {
+        content: '\d7';
+        color: color(primary);
+        border-color: color(primary);
+        font-size: ms(2);
+      }
+    }
+  }
+}

@@ -184,18 +184,27 @@ select {
 .form-field {
   position: relative;
   margin-bottom: ms(3);
+}
 
-  // @todo Turn this into a modifier when nightshade styles port over (e.g. form-field--standard)
-  &:not(.form-field--float) {
+.form-label {
+  @include heading-5;
+  display: block;
+  margin-bottom: ms(-6);
+  color: color(text);
 
-    .form-label {
-      @include heading-5;
-      display: block;
-      margin-bottom: ms(-6);
-      color: color(text);
+  & + .form-input {
+    margin-top: ms(-6);
+  }
 
-      & + .form-input {
-        margin-top: ms(-6);
+  &.form-label--less-emphasis {
+    @include calibre-medium;
+    font-size: ms(0);
+    letter-spacing: size(smaller-tracking);
+    text-transform: none;
+
+    &.form-label--radio-check {
+      .form-input--checkbox {
+        top: 6px;
       }
     }
   }
@@ -226,6 +235,11 @@ select {
     transform: translateY(1rem) scale(1);
     transition: transform 0.25s ease-out;
     transform-origin: 0 0;
+    text-transform: none;
+
+    & + .form-input {
+      margin-top: 0;
+    }
   }
 
   .form-input-zip--can {

@@ -1,5 +1,8 @@
+// @todo data-* styling is deprecated. Remove all data-* styling from the Casper
+// app. Use mixins on classes instead.
+
 // Base structure for all buttons
-[data-button] {
+@mixin btn {
   @include verlag-black;
   display: inline-block;
   padding: 1.15em 3em;
@@ -50,8 +53,12 @@
   }
 }
 
+[data-button] {
+  @include btn;
+}
+
 // Button sizes
-[data-button][data-size~="small"] {
+@mixin btn-small {
   font-size: ms(-2);
   padding: 1em 2em;
 
@@ -60,14 +67,19 @@
   }
 }
 
+[data-button][data-size~="small"] {
+  @include btn-small;
+}
+
 // Full width buttons
+// @todo Does a single rule need to be abstracted?
 [data-button][data-size~="full"] {
   width: 100%;
 }
 
 // Primary button style across the site. If in doubt, use this one.
-// @@@ TODO generate a mixin color + hoverstate of our buttons
-[data-button="primary"] {
+// @todo generate a mixin color + hoverstate of our buttons
+@mixin btn-primary {
   background-color: color(primary);
   color: color(background);
 
@@ -85,7 +97,11 @@
   }
 }
 
-[data-button="secondary"] {
+[data-button="primary"] {
+  @include btn-primary;
+}
+
+@mixin btn-secondary {
   background-color: color(secondary);
   color: color(primary);
 
@@ -108,8 +124,12 @@
   }
 }
 
+[data-button="secondary"] {
+  @include btn-secondary;
+}
+
 // Accent button to call attention
-[data-button="accent"] {
+@mixin btn-accent {
   background-color: color(accent);
   color: color(background);
 
@@ -132,8 +152,12 @@
   }
 }
 
+[data-button="accent"] {
+  @include btn-accent;
+}
+
 // Subtle button without fill
-[data-button="ghost"] {
+@mixin btn-ghost {
   border: 1px solid color(dark-border);
   color: color(text);
 
@@ -142,7 +166,11 @@
   }
 }
 
-[data-button="simple"] {
+[data-button="ghost"] {
+  @include btn-ghost;
+}
+
+@mixin btn-simple {
   background-color: color(light-background);
   border: 1px solid color(dark-border);
   color: color(text);
@@ -152,12 +180,11 @@
   }
 }
 
-// Button element for an icon as a button
-// @TODO add some hover states
-[data-button="icon"] {
+[data-button="simple"] {
+  @include btn-simple;
 }
 
-[data-button="play"] {
+@mixin btn-play {
   position: relative;
   min-height: 3.5rem;
   border-radius: 2.19rem;
@@ -190,7 +217,12 @@
   }
 }
 
-// Toggle button (revisit)
+[data-button="play"] {
+  @include btn-play;
+}
+
+// @todo Check if this is used. There's a duplicate definition in the Casper
+// rails repo.
 .btn-toggler {
   cursor: pointer;
 

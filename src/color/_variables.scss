@@ -1,0 +1,70 @@
+/**
+ * @file Color
+ * @module Color
+ * @overview Casper color palette variables
+ */
+
+:root {
+  // Base colors
+  --blue: #00237e;
+  --green: #7beac9;
+  --red: #ed5a4d;
+
+  // Primary stack
+  --primary: var(--blue);
+  --primary1: #031f6a;
+  --primary2: #071a53;
+
+  // Secondary stack
+  --secondary: var(--green);
+  --secondary1: #9ef0d8;
+  --secondary2: #c6f6e8;
+
+  // Accent stack
+  --accent: var(--red);
+  --accent1: #ee675b;
+  --accent2: #fbd4d0;
+
+  // Light blue stack
+  --light-blue: #caeff2;
+  --light-blue1: #dcf4f6;
+  --light-blue2: #edf9fa;
+
+  // Gray stack
+  --gray: #505050;
+  --gray1: #6a6a6a;
+  --gray2: #7c7c7c;
+  --gray3: #a8a8a8;
+  --gray4: #b9b9b9;
+  --gray5: #cbcbcb;
+  --gray6: #d9d9d9;
+  --gray7: #e5e5e5;
+  --gray8: #efefef;
+  --gray9: #f6f6f6;
+
+  // Other colors
+  --dark-blue: var(--primary2);
+  --trial-blue: #708da9;
+  --gold: #bca890;
+
+  // Text
+  --text: var(--gray);
+  --light-text: var(--gray7);
+  --medium-text: var(--gray3);
+  --dark-text: var(--gray2);
+
+  // Backgrounds
+  --background: white;
+  --light-background: var(--gray9);
+  --medium-background: var(--gray8);
+  --dark-background: var(--gray6);
+
+  // Borders
+  --border: var(--gray7);
+  --medium-border: var(--gray6);
+  --dark-border: var(--gray5);
+
+  // States
+  --error: var(--accent2);
+  --disabled: var(--gray2);
+}

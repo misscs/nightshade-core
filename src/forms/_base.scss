@@ -201,10 +201,11 @@ select {
     font-size: ms(0);
     letter-spacing: size(smaller-tracking);
     text-transform: none;
+    margin-bottom: 0;
 
     &.form-label--radio-check {
       .form-input--checkbox {
-        top: 6px;
+        top: 4px;
       }
     }
   }

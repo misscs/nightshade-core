@@ -8,9 +8,9 @@
 
 $calibre-light: "Calibre Light";
 $calibre-medium: "Calibre Medium";
-$verlag: "Verlag A", "Verlag B";
-$chronicle-deck: "Chronicle Deck A", "Chronicle Deck B";
-$chronicle-display: "Chronicle SSm A", "Chronicle SSm B";
+$verlag: "Verlag Black";
+$chronicle-deck: "Chronicle Deck";
+$chronicle-deck-italic: "Chronicle Deck Italic";
 
 $sans-stack: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $serif-stack: Georgia, serif;
@@ -47,7 +47,7 @@ $serif-stack: Georgia, serif;
 
 %verlag-light {
   font-family: $sans-stack;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 
   .wf-active & {
@@ -57,9 +57,8 @@ $serif-stack: Georgia, serif;
 
 %verlag-black {
  font-family: $sans-stack;
- font-weight: 800;
+ font-weight: 400;
  font-style: normal;
- text-transform: uppercase; // @todo: Address for i18n. Update content to desired case, remove transform
 
  .wf-active & {
    font-family: $verlag;
@@ -82,16 +81,16 @@ $serif-stack: Georgia, serif;
   font-style: normal;
 
   .wf-active & {
-    font-family: $chronicle-display;
+    font-family: $chronicle-deck;
   }
 }
 
 %chronicle-italic {
  font-family: $serif-stack;
  font-weight: 400;
- font-style: italic;
+ font-style: normal;
 
  .wf-active & {
-   font-family: $chronicle-deck;
+   font-family: $chronicle-deck-italic;
  }
 }

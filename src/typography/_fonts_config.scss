@@ -21,28 +21,33 @@ $serif-stack: Georgia, serif;
   font-weight: 400;
   font-style: normal;
 
-  .wf-active & {
+  .fonts-1 & {
     font-family: $calibre-light;
   }
 }
 
 @mixin calibre-medium {
  font-family: $sans-stack;
- font-weight: 400;
+ font-weight: bold;
  font-style: normal;
 
- .wf-active & {
+ .fonts-1 & {
+   font-family: $calibre-light;
+ }
+
+ .fonts-2 & {
    font-family: $calibre-medium;
+   font-weight: 400;
  }
 }
 
 @mixin verlag-black {
   font-family: $sans-stack;
-  font-weight: 400;
-  font-style: normal;
+  font-weight: bold;
 
-  .wf-active & {
-   font-family: $verlag-black;
+  .fonts-2 & {
+    font-family: $verlag-black;
+    font-weight: 400;
   }
 }
 
@@ -51,17 +56,18 @@ $serif-stack: Georgia, serif;
  font-weight: 400;
  font-style: normal;
 
- .wf-active & {
-   font-family: $chronicle-deck;
- }
+  .fonts-2 & {
+    font-family: $chronicle-deck;
+  }
 }
 
 @mixin chronicle-italic {
  font-family: $serif-stack;
  font-weight: 400;
- font-style: normal;
+ font-style: italic;
 
- .wf-active & {
-   font-family: $chronicle-deck-italic;
- }
+  .fonts-2 & {
+    font-family: $chronicle-deck-italic;
+    font-style: normal;
+  }
 }

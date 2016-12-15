@@ -4,6 +4,11 @@
  * @overview Value props with side by side content and images
  */
 
+.value-prop {
+  width: 100%;
+  position: relative;
+}
+
 .value-prop-inner {
   padding: ms(8) 0;
 
@@ -55,6 +60,27 @@
 
 .value-prop-heading {
   @include margin-auto;
+  @include heading-4;
   margin-bottom: ms(-1);
-  font-size: ms(0);
+
+}
+
+.value-prop  {
+  &.value-prop--no-image {
+    padding-bottom: ms(0);
+
+    @include respond-at-and-above($break-medium) {
+      width: 50%;
+      padding: ms(1) ms(0);
+    }
+
+    .value-prop-image {
+      display: none;
+    }
+
+    .value-prop-content {
+      width: 100%;
+      max-width: none;
+    }
+  }
 }

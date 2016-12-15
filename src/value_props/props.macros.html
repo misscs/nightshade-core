@@ -1,5 +1,6 @@
+
 {#
-  * @overview Macros for Value Props with side by side content and images.
+  * @overview Value props display heading and content and often have an image
   * @module Value Props
 #}
 
@@ -7,20 +8,28 @@
   * Renders a value prop with content and image.
   * @param {string} heading - Heading text content
   * @param {string} content - Panel body copy
-  * @param {string} image_path - Panel image or graphic path
+  * @param {string} [image_path] - Panel image or graphic path
   * @param {string} [image_description] - Image description alt text
   * @param {string} [image_position] - Image position (left or right)
   * @param {string} [class] - Class name for style or JS targeting
   * @param {string} [id] - ID for JS targeting
 #}
-{% macro value_prop(heading, content, image_path, image_description=null, image_position=null, class=null, id=null) %}
-<div class="value-prop{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+
+
+{% macro value_prop(heading, content, image_path=null, image_description=null, image_position=null, class=null, id=null) %}
+{% set variant_without_image = "value-prop--no-image" if not image_path %}
+
+<div class="value-prop {{ variant_without_image }}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <div class="value-prop-inner r-inner">
-    <figure class="value-prop-image{% if image_position %} value-prop-image--{{ image_position }}{% endif %}">
-      <img src="{{ image_path }}" alt="{{ image_description }}">
-    </figure>
+
+    {% if image_path %}
+      <figure class="value-prop-image{% if image_position %} value-prop-image--{{ image_position }}{% endif %}">
+        <img src="{{ image_path }}" alt="{{ image_description }}">
+      </figure>
+    {% endif %}
+
     <div class="value-prop-content">
-      <h3 class="value-prop-heading -dark">{{ heading }}</h3>
+      <h3 class="value-prop-heading">{{ heading }}</h3>
       <p class="value-prop-body">{{ content|safe }}</p>
     </div>
   </div>

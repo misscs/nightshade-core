@@ -15,14 +15,6 @@
   <div class="footer-bottom">
     <nav class="footer-nav r-inner">
       <div class="footer-nav-group footer-nav-group--bottom">
-        <span class="footer-nav-country-icons">
-          <a class="footer-nav-group-link footer-nav-group-link--country" href="?country_id=49">
-            {{ icon('usa', size='small') }}
-          </a>
-          <a class="footer-nav-group-link footer-nav-group-link--country" href="?country_id=204">
-            {{ icon('canada', size='small') }}
-          </a>
-        </span>
         <div class="footer-nav-group-text--mobile">
           <span class="footer-nav-group-text--bottom">
             &copy;
@@ -30,12 +22,10 @@
               document.write(new Date().getFullYear());
             </script>
           </span>
-          <span class="footer-nav-group-text--bottom footer-nav-group-text--address">
-            45 Bond St. New York, NY 10012
-          </span>
           <span>
-            <a class="footer-nav-group-link footer-nav-group-text--bottom" href="https://casper.com/privacy">Privacy</a>
-            <a class="footer-nav-group-link footer-nav-group-text--bottom" href="https://casper.com/terms">Terms</a>
+            {% for link in footer_links %}
+              <a class="footer-nav-group-link footer-nav-group-text--bottom" href="{{ link.url }}">{{ link.title }}</a>
+            {% endfor %}
           </span>
         </div>
       </div>

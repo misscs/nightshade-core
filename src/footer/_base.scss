@@ -34,7 +34,6 @@
 
 .footer-bottom {
   background-color: color(dark-blue);
-  padding: 0 ms(5) ms(-2);
 
   @include respond-at-and-above($break-medium) {
     padding-bottom: ms(5);

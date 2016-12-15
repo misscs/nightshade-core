@@ -17,6 +17,7 @@
 }
 
 .callout-heading {
+  @include heading;
   max-width: 27em;
   font-size: ms(0);
 

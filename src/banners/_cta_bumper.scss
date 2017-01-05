@@ -1,0 +1,201 @@
+/**
+ * @file CTA Bumper
+ * @module Banners
+ * @overview Call to action bumper with illustration, text and optional email capture
+ */
+
+@import '../forms/index';
+
+.cta-bumper {
+  @include z-index(modal);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  padding: 2.25rem 1.75rem 0;
+  width: 100%;
+  background: color(background);
+  transition: transform 0.5s ease-out;
+
+  @include respond-at-and-above($break-medium) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2.25rem 1.75rem;
+  }
+}
+
+.cta-bumper--content {
+  text-align: center;
+
+  @include respond-at-and-above($break-medium) {
+    padding-left: 2.62rem;
+    width: 60%;
+    border-left: 2px solid color(border);
+    text-align: left;
+  }
+
+  @include respond-at-and-above($break-large) {
+    padding-left: 3rem;
+    width: 50%;
+  }
+}
+
+.cta-bumper--image {
+  @include respond-below($break-medium - 1) {
+    order: 1;
+    margin-top: 1rem;
+    height: 105px;
+  }
+
+  @include respond-at-and-above($break-medium) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+    padding-right: 1.38rem;
+  }
+
+  @include respond-at-and-above($break-large) {
+    width: 50%;
+    padding-right: 2.87rem;
+  }
+}
+
+.cta-bumper--graphic {
+  position: absolute;
+  background: url('https://casper.imgix.net/landing/yahoo-lead-gen-sprite-sheet-MOBILE.jpg') no-repeat;
+  // Need pixel for clean step animation.
+  width: 322px;
+  height: 105px;
+  background-size: 322px;
+
+  @include respond-below($break-medium - 1) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @include respond-at-and-above($break-medium) {
+    bottom: 0;
+    width: 565.5px;
+    height: 187px;
+    background: url('https://casper.imgix.net/landing/yahoo-lead-gen-sprite-sheet-DESKTOP.jpg') no-repeat;
+    background-size: 565.5px;
+  }
+
+  &.graphic-animation {
+    animation: computer-sleep 9.8s steps(13) forwards;
+
+    @include respond-below($break-medium - 1) {
+      @keyframes computer-sleep {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 -1365px;
+        }
+      }
+    }
+
+    @include respond-at-and-above($break-medium) {
+      @keyframes computer-sleep {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 -2431px;
+        }
+      }
+    }
+  }
+}
+
+.cta-bumper--title {
+  @include heading;
+  margin: 0 auto ms(0);
+  max-width: 15rem;
+  letter-spacing: size(small-tracking);
+  color: color(text);
+
+  @include respond-at-and-above($break-medium) {
+    max-width: none;
+    margin: 0 0 0.5rem;
+  }
+}
+
+.cta-bumper--copy {
+  margin: 0 auto 1.88rem;
+  max-width: 18.75rem;
+
+  @include respond-at-and-above($break-medium) {
+    margin: 0 0 ms(0);
+    max-width: 25rem;
+  }
+}
+
+.cta-bumper--close {
+  position: absolute;
+  top: ms(0);
+  right: ms(0);
+
+  .icon {
+    @include square(ms(0));
+    opacity: 0.5;
+    fill: color(text);
+    transition: opacity 0.15s ease-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .icon {
+      opacity: 1;
+    }
+  }
+}
+
+.cta-bumper--hidden {
+  transform: translateY(100%);
+}
+
+.cta-bumper--form {
+  max-width: 18rem;
+
+  @include respond-below($break-medium - 1) {
+    margin: 0 auto;
+  }
+}
+
+.cta-bumper--form-input {
+  width: 70%;
+  padding: 0.75rem 1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @include respond-at-and-above($break-medium) {
+    padding: 0.72rem 1rem;
+  }
+}
+
+.cta-bumper--submit-btn {
+  float: right;
+  padding: 1rem 0.8rem;
+  width: 30%;
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.bronto-image {
+  display: none;
+}
+
+.email-signup-response-text {
+  font-size: 0.8rem;
+  width: 290px;
+
+  @include respond-below($break-medium - 1) {
+    margin: 0 auto;
+  }
+}

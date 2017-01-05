@@ -4,8 +4,8 @@
   * @todo (CTA Banner) Consider optional alternative content image beneath CTA
 #}
 
-{% from '../icons/icons.macros.html' import svg %}
 {% from '../buttons/buttons.macros.html' import button %}
+{% import '../icons/icons.macros.html' as icon %}
 
 {#
   * Renders a basic Banner for short-lines of content or a link.
@@ -54,6 +54,48 @@
       <h2 class="heading-2 cta-heading -dark">{{ content }}</h2>
     {% endif %}
     {{ button(cta, button_style, href=href) }}
+  </div>
+</div>
+{% endmacro %}
+
+
+
+{#
+  * Renders a Bumper at bottom of viewport with two columns and optional email capture.
+  * @param {string} [title] - Bumper text title
+  * @param {string} [copy] - Bumper text copy
+  * @param {string} [image_path] - Path to illustration on left
+  * @param {string} image_alt - Alt text for image
+  * @param {boolean} [email] - Setting to display email capture input
+  * @param {string} form_class - Class name for style or JS targeting of form
+  * @param {string} button_placeholder - Placeholder text for the button
+  * @param {string} [class] - Class name for style or JS targeting
+  * @param {string} [id] - ID for JS targeting
+ #}
+{% macro cta_bumper(title, copy, image_path, image_alt, email, form_class, button_placeholder, button_text, class=null, id=null) %}
+<div class="cta-bumper cta-bumper--hidden {% if class %}{{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
+
+  <div class="cta-bumper--close js-cta-bumper--close">
+    {{ icon.svg("close")}}
+  </div>
+
+  <div class="cta-bumper--image">
+    <div class="cta-bumper--graphic js-cta-bumper--graphic"></div>
+  </div>
+
+  <div class="cta-bumper--content">
+    <p class="cta-bumper--title">{{ title }}</p>
+    <p class="cta-bumper--copy">{{ copy }}</p>
+
+    {% if email %}
+      <form class="cta-bumper--form {{form_class}}">
+        <input placeholder="{{button_placeholder}}" class="form-input cta-bumper--form-input" name="EMAIL" />
+        <button class="cta-bumper--submit-btn js-email-signup-submit" data-button="primary" type="submit">
+          {{button_text}}
+        </button>
+      </form>
+      <div class="email-signup-response-text js-email-signup-response-text is-hidden"></div>
+    {% endif %}
   </div>
 </div>
 {% endmacro %}

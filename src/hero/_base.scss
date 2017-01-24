@@ -24,6 +24,7 @@
 
 .hero-heading,
 .hero-subheading {
+  @include heading;
   color: color(primary);
 }
 

@@ -7,7 +7,7 @@
 {#
   * Renders a standard or simplified footer
 #}
-{% macro footer(simple=false, class=null, id=null, phone_number='888–498–0003') %}
+{% macro footer(data, simple=false, class=null, id=null, phone_number='888–498–0003') %}
 <footer class="footer{% if simple %} footer--simple{% endif %}{% if class %} {{ class }}{% endif %}"{% if id %} id="{{ id }}"{% endif %}>
   <div class="footer-top r-inner">
     {{ caller() }}
@@ -23,7 +23,7 @@
             </script>
           </span>
           <span>
-            {% for link in footer_links %}
+            {% for link in data.footer_links %}
               <a class="footer-nav-group-link footer-nav-group-text--bottom" href="{{ link.url }}">{{ link.title }}</a>
             {% endfor %}
           </span>

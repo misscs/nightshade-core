@@ -61,6 +61,7 @@
 }
 
 .cta-heading {
+  @include heading;
   font-size: ms(1);
 
   @include respond-at-and-above($break-medium) {
